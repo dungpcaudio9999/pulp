@@ -70,6 +70,7 @@ những gì đọc từ RTL hoặc từ tài liệu của dependency**:
 
 | Tài liệu | Nội dung |
 |---|---|
+| [BAO-CAO-TONG-KET.md](BAO-CAO-TONG-KET.md) | **báo cáo tổng kết Milestone 7 — điểm vào cho người tiếp nhận** |
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | trạng thái động theo milestone |
 | [PLAN.md](PLAN.md) | kế hoạch tổng thể |
 | [plan_demo.md](plan_demo.md) | kế hoạch chương trình 9 phase, đã thực hiện xong |

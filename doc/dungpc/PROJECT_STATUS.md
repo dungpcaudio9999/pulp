@@ -2,13 +2,13 @@
 
 ## 1. Thông tin snapshot
 
-- Ngày cập nhật: `2026-09-07` (cập nhật lần 6: gap analysis ZCU104)
+- Ngày cập nhật: `2026-09-07` (cập nhật lần 7: hoàn thành Milestone 7)
 - Repository: `pulp` (fork `dungpcaudio9999/pulp`)
 - Branch: `feature/dungpc-work`
 - HEAD: `b6ae547` — bằng `origin/feature/dungpc-work`, không ahead/behind
 - Baseline ban đầu: `b6ae547` (HEAD hiện tại **chính là** baseline)
 - Máy làm việc: Linux (`dungpc-ThinkPad-P1-Gen-4i`), không còn là Windows/MSYS2
-- Giai đoạn hiện tại: Milestone 6 phần đánh giá hoàn thành; còn port thật (tùy scope) và Milestone 7
+- Giai đoạn hiện tại: Milestone 0 và 2–7 hoàn thành. Còn Milestone 1 (chờ review) và phần port ZCU104 thật (tùy scope)
 - Trạng thái tổng thể: **đang thực hiện**
 
 > **Đính chính so với snapshot `2026-09-01`.** Bản trước ghi HEAD là `ad0c389` với các
@@ -28,7 +28,7 @@
 | 4 | Cluster/offload simulation | **Hoàn thành** | `sw/full_system` 9/9 phase pass, gồm cả HWPE datamover; phép thử ngược xác nhận bắt được lỗi |
 | 5 | Waveform analysis | **Hoàn thành** | VCD 4.6 MB của `full_system`; phát hiện 70% thời gian mô phỏng là nạp JTAG |
 | 6 | Đánh giá ZCU104 | **Phần đánh giá hoàn thành** | [Gap analysis](zcu102-to-zcu104-gap.md) đầy đủ; port thật chờ quyết định scope |
-| 7 | Báo cáo và bàn giao | Chưa bắt đầu | Đã có log evidence để dựng báo cáo |
+| 7 | Báo cáo và bàn giao | **Hoàn thành** | [BAO-CAO-TONG-KET.md](BAO-CAO-TONG-KET.md) — 10 mục, quy trình tái lập đã kiểm chứng |
 
 ## 3. Công việc đã hoàn thành
 
