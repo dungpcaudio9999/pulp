@@ -49,7 +49,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          jtag_cluster_dbg = new;
          jtag_cluster_dbg.setIR(s_tck, s_tms, s_trstn, s_tdi);
@@ -60,7 +60,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          // TO BE CHECKED
          logic [255:0] dataout;
@@ -81,7 +81,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -105,7 +105,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -129,7 +129,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -153,7 +153,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -177,7 +177,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -209,7 +209,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -241,7 +241,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -273,7 +273,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_cluster_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -320,7 +320,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -339,7 +339,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -363,7 +363,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -387,7 +387,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
 
@@ -412,7 +412,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -436,7 +436,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -468,7 +468,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -500,7 +500,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -532,7 +532,7 @@ package pulp_tap_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [255:0] dataout;
          jtag_soc_dbg.start_shift(s_tck, s_tms, s_trstn, s_tdi);
@@ -565,7 +565,7 @@ package pulp_tap_pkg;
       ref logic s_tms,
       ref logic s_trstn,
       ref logic s_tdi,
-      ref logic s_tdo
+      const ref logic s_tdo
    );
       automatic logic [511:0][31:0] jtag_data;
       automatic logic [31:0]        jtag_addr;

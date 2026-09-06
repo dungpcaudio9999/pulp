@@ -183,7 +183,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          //$display("I am at jtag_goto_CAPTURE_DR_FROM_UPDATE_DR_GETDATA (%t)",$realtime);
          s_trstn = 1'b1;
@@ -220,7 +220,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          //$display("I am at jtag_goto_CAPTURE_DR_FROM_SHIFT_DR_GETDATA (%t)",$realtime);
          s_trstn = 1'b1;
@@ -268,7 +268,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          s_trstn = 1'b1;
          s_tms   = 1'b0;
@@ -289,7 +289,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          s_trstn = 1'b1;
          s_tms   = 1'b0;
@@ -317,7 +317,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
            this.jtag_shift_NBITS_SHIFT_DR(numbits, datain, dataout, s_tck, s_tms, s_trstn, s_tdi, s_tdo);
       endtask
@@ -340,7 +340,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          this.jtag_goto_SHIFT_DR(s_tck, s_tms, s_trstn, s_tdi);
          this.jtag_shift_NBITS_SHIFT_DR(size, datain, dataout, s_tck, s_tms, s_trstn, s_tdi, s_tdo);
@@ -354,7 +354,7 @@ package jtag_pkg;
       ref logic s_tms,
       ref logic s_trstn,
       ref logic s_tdi,
-      ref logic s_tdo
+      const ref logic s_tdo
    );
       automatic JTAG_reg #(.size(JTAG_IDCODE_WIDTH+1), .instr({JTAG_SOC_IDCODE, JTAG_SOC_BYPASS})) jtag_idcode = new;
       //as we have two tap in Daisy Chain, always one bit more for the bypass
@@ -374,7 +374,7 @@ package jtag_pkg;
       ref logic s_tms,
       ref logic s_trstn,
       ref logic s_tdi,
-      ref logic s_tdo
+      const ref logic s_tdo
    );
       automatic JTAG_reg #(.size(255), .instr({JTAG_SOC_BYPASS, JTAG_SOC_BYPASS})) jtag_bypass = new;
                 logic [255:0] result_data;
@@ -412,7 +412,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [8+1:0] confreg_int, dataout_int; //extra bit for bypass
          JTAG_reg #(.size(256), .instr({JTAG_SOC_BYPASS, JTAG_SOC_CONFREG})) jtag_soc_dbg = new;
@@ -433,7 +433,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [8+1:0] dataout; //extra bit for bypass
          JTAG_reg #(.size(256), .instr({JTAG_SOC_BYPASS, JTAG_SOC_CONFREG})) jtag_soc_dbg = new;
@@ -478,7 +478,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
           typedef struct packed {
@@ -537,7 +537,7 @@ package jtag_pkg;
          ref logic   s_tms,
          ref logic   s_trstn,
          ref logic   s_tdi,
-         ref logic   s_tdo
+         const ref logic s_tdo
       );
 
           logic [1:0]     dm_op;
@@ -580,7 +580,7 @@ package jtag_pkg;
          ref logic   s_tms,
          ref logic   s_trstn,
          ref logic   s_tdi,
-         ref logic   s_tdo
+         const ref logic s_tdo
       );
 
           logic [1:0]     dm_op;
@@ -606,7 +606,7 @@ package jtag_pkg;
          ref logic   s_tms,
          ref logic   s_trstn,
          ref logic   s_tdi,
-         ref logic   s_tdo
+         const ref logic s_tdo
       );
 
          dm::dmcontrol_t dmcontrol;
@@ -641,7 +641,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::dmcontrol_t dmcontrol;
@@ -675,7 +675,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::dmstatus_t dmstatus;
@@ -694,7 +694,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
 
@@ -724,7 +724,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
 
@@ -755,7 +755,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::abstractcs_t abstractcs;
@@ -796,7 +796,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
 
@@ -833,7 +833,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [31+1:0] dataout;
          JTAG_reg #(.size(32+1), .instr({JTAG_SOC_DTMCSR, JTAG_SOC_BYPASS})) jtag_soc_dbg = new;
@@ -849,7 +849,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [31+1:0] dataout;
          JTAG_reg #(.size(32+1), .instr({JTAG_SOC_DTMCSR, JTAG_SOC_BYPASS})) jtag_soc_dbg = new;
@@ -865,7 +865,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::sbcs_t sbcs;
@@ -908,7 +908,7 @@ package jtag_pkg;
                            ref logic           s_tms,
                            ref logic           s_trstn,
                            ref logic           s_tdi,
-                           ref logic           s_tdo
+                           const ref logic s_tdo
                            );
          // this task attempts to read an address, then checks the SBCS register
          // for errors. If error flags are present, they are cleared and the
@@ -940,7 +940,7 @@ package jtag_pkg;
                             ref logic s_tms,
                             ref logic s_trstn,
                             ref logic s_tdi,
-                            ref logic s_tdo
+                            const ref logic s_tdo
                             );
 
          // writing to the error flags has "clear bit" behavior:
@@ -964,7 +964,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::abstractcs_t abstractcs;
@@ -990,7 +990,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [DMI_SIZE-1+1:0] buffer;
          logic [DMI_SIZE-1:0]   buffer_riscv;
@@ -1018,7 +1018,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          logic [31:0] buffer;
          init_dtmcs(s_tck, s_tms, s_trstn, s_tdi);
@@ -1057,7 +1057,7 @@ package jtag_pkg;
          ref   logic s_tms,
          ref   logic s_trstn,
          ref   logic s_tdi,
-         ref   logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -1084,7 +1084,7 @@ package jtag_pkg;
          ref   logic s_tms,
          ref   logic s_trstn,
          ref   logic s_tdi,
-         ref   logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::dmcontrol_t dmcontrol;
@@ -1107,7 +1107,7 @@ package jtag_pkg;
          ref   logic s_tms,
          ref   logic s_trstn,
          ref   logic s_tdi,
-         ref   logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::sbcs_t sbcs;
@@ -1128,7 +1128,7 @@ package jtag_pkg;
          ref   logic s_tms,
          ref   logic s_trstn,
          ref   logic s_tdi,
-         ref   logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::sbcs_t sbcs;
@@ -1152,7 +1152,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dmi_op;
@@ -1196,7 +1196,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]     dmi_op;
@@ -1263,7 +1263,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dmi_op;
@@ -1304,7 +1304,7 @@ package jtag_pkg;
          ref logic          s_tms,
          ref logic          s_trstn,
          ref logic          s_tdi,
-         ref logic          s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dmi_op;
@@ -1344,7 +1344,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          dm::dmcontrol_t dmcontrol;
@@ -1368,7 +1368,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dmi_op;
@@ -1408,7 +1408,7 @@ package jtag_pkg;
          ref    logic s_tms,
          ref    logic s_trstn,
          ref    logic s_tdi,
-         ref    logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -1476,7 +1476,7 @@ package jtag_pkg;
          ref    logic s_tms,
          ref    logic s_trstn,
          ref    logic s_tdi,
-         ref    logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -1520,7 +1520,7 @@ package jtag_pkg;
          ref   logic s_tms,
          ref   logic s_trstn,
          ref   logic s_tdi,
-         ref   logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0][31:0]   jtag_data;
@@ -1627,7 +1627,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          dm::dmcontrol_t dmcontrol;
@@ -1687,7 +1687,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dmi_op;
@@ -1789,7 +1789,7 @@ package jtag_pkg;
          ref logic           s_tms,
          ref logic           s_trstn,
          ref logic           s_tdi,
-         ref logic           s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dmi_op;
@@ -1855,7 +1855,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [31:0]        dm_data;
@@ -1900,7 +1900,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -2037,7 +2037,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -2106,7 +2106,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [31:0]        dm_dpc;
@@ -2172,7 +2172,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -2269,7 +2269,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [1:0]         dm_op;
@@ -2377,7 +2377,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          dm::dmstatus_t dmstatus;
          error = 1'b0;
@@ -2421,7 +2421,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          dm::dmstatus_t dmstatus;
          riscv::dcsr_t  dcsr;
@@ -2522,7 +2522,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          logic [31:0]   dm_data;
@@ -2584,7 +2584,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
          // assert busy == 0 and cmderr != 0,1
          logic [1:0] dm_op;
@@ -2646,7 +2646,7 @@ package jtag_pkg;
          ref logic s_tms,
          ref logic s_trstn,
          ref logic s_tdi,
-         ref logic s_tdo
+         const ref logic s_tdo
       );
 
          dm::abstractcs_t abstractcs;
@@ -2682,7 +2682,7 @@ package jtag_pkg;
          ref logic    s_tms,
          ref logic    s_trstn,
          ref logic    s_tdi,
-         ref logic    s_tdo
+         const ref logic s_tdo
       );
          logic [31:0] dm_data;
          num_err = 0;

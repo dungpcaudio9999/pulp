@@ -1,0 +1,36 @@
+--- a/src/fpnew_pkg.sv
++++ b/src/fpnew_pkg.sv
+@@ -299,7 +299,8 @@
+   // -------------------------------------------
+   // Returns the width of a FP format
+   function automatic int unsigned fp_width(fp_format_e fmt);
+-    return FP_ENCODINGS[fmt].exp_bits + FP_ENCODINGS[fmt].man_bits + 1;
++    automatic fp_encoding_t enc = FP_ENCODINGS[fmt]; // XSim: no field access on const-array element
++    return enc.exp_bits + enc.man_bits + 1;
+   endfunction
+ 
+   // Returns the widest FP format present
+@@ -322,17 +323,20 @@
+ 
+   // Returns the number of expoent bits for a format
+   function automatic int unsigned exp_bits(fp_format_e fmt);
+-    return FP_ENCODINGS[fmt].exp_bits;
++    automatic fp_encoding_t enc = FP_ENCODINGS[fmt]; // XSim: no field access on const-array element
++    return enc.exp_bits;
+   endfunction
+ 
+   // Returns the number of mantissa bits for a format
+   function automatic int unsigned man_bits(fp_format_e fmt);
+-    return FP_ENCODINGS[fmt].man_bits;
++    automatic fp_encoding_t enc = FP_ENCODINGS[fmt]; // XSim: no field access on const-array element
++    return enc.man_bits;
+   endfunction
+ 
+   // Returns the bias value for a given format (as per IEEE 754-2008)
+   function automatic int unsigned bias(fp_format_e fmt);
+-    return unsigned'(2**(FP_ENCODINGS[fmt].exp_bits-1)-1); // symmetrical bias
++    automatic fp_encoding_t enc = FP_ENCODINGS[fmt]; // XSim: no field access on const-array element
++    return unsigned'(2**(enc.exp_bits-1)-1); // symmetrical bias
+   endfunction
+ 
+   function automatic fp_encoding_t super_format(fmt_logic_t cfg);
