@@ -16,3 +16,56 @@
 /sim/transcript
 /sim/work
 /working_dir
+
+# ==== bổ sung: artifact do công cụ sinh ra ====
+
+# ---- Questa / ModelSim ----
+/transcript
+/modelsim.ini
+/sim/waves/*.vcd
+/sim/waves/*.wlf
+/vsim.wlf
+
+# ---- Vivado ----
+/vivado*.jou
+/vivado*.log
+/vivado_*.backup.*
+/.Xil/
+/fpga/pulp/pulp-*.runs/
+/fpga/pulp/pulp-*.cache/
+/fpga/pulp/pulp-*.hw/
+/fpga/pulp/pulp-*.ip_user_files/
+/fpga/pulp/*.xpr
+/fpga/*.bit
+/fpga/*.bin
+
+# ---- Vivado XSim ----
+/xelab.log
+/xelab.pb
+/xvlog.log
+/xvlog.pb
+/rtl/xvlog.log
+/rtl/xvlog.pb
+xsim.dir/
+/xsim/work/
+/webtalk*.log
+/webtalk*.jou
+/sim/xsim/project*/
+/sim/xsim/vivado_xsim.log
+/sim/xsim/generated/compile.tcl
+/sim/xsim/generated/bender.log
+# do gen_filelists.sh / patch_sources.py sinh ra — chứa đường dẫn tuyệt đối
+/xsim/all.flist
+/xsim/sv.f
+/xsim/vhdl.f
+/xsim/incdirs.txt
+/xsim/defines.txt
+/xsim/patched/
+
+# ---- backup của các patch (bản gốc đã nằm trong git / .bender) ----
+*.before_xsim_const_ref_patch
+*.before_xsim_fpencodings_patch
+*.before_nofpu_experiment
+
+# ---- editor ----
+/.vscode/
