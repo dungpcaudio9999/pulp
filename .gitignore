@@ -77,3 +77,8 @@ xsim.dir/
 
 # Artifact build cua chuong trinh trong sw/ (ELF, vector stimuli, log runtime)
 /sw/*/build/
+
+# Tai lieu nha cung cap (UG1267 va tuong tu): khong phai san pham cua du an,
+# co ban quyen cua Xilinx/AMD, va nang. Link tai nam trong
+# doc/dungpc/zcu102-to-zcu104-gap.md
+/doc/dungpc/*.pdf

@@ -2,13 +2,13 @@
 
 ## 1. Thông tin snapshot
 
-- Ngày cập nhật: `2026-09-07` (cập nhật lần 5: giải trình lựa chọn simulator)
+- Ngày cập nhật: `2026-09-07` (cập nhật lần 6: gap analysis ZCU104)
 - Repository: `pulp` (fork `dungpcaudio9999/pulp`)
 - Branch: `feature/dungpc-work`
 - HEAD: `b6ae547` — bằng `origin/feature/dungpc-work`, không ahead/behind
 - Baseline ban đầu: `b6ae547` (HEAD hiện tại **chính là** baseline)
 - Máy làm việc: Linux (`dungpc-ThinkPad-P1-Gen-4i`), không còn là Windows/MSYS2
-- Giai đoạn hiện tại: Milestone 5 hoàn thành; còn lại Milestone 6 (ZCU104) và 7 (báo cáo)
+- Giai đoạn hiện tại: Milestone 6 phần đánh giá hoàn thành; còn port thật (tùy scope) và Milestone 7
 - Trạng thái tổng thể: **đang thực hiện**
 
 > **Đính chính so với snapshot `2026-09-01`.** Bản trước ghi HEAD là `ad0c389` với các
@@ -27,7 +27,7 @@
 | 3 | Software toolchain và FC smoke test | **Hoàn thành** | Toolchain RISC-V có sẵn; `hello` chạy pass trên Questa |
 | 4 | Cluster/offload simulation | **Hoàn thành** | `sw/full_system` 9/9 phase pass, gồm cả HWPE datamover; phép thử ngược xác nhận bắt được lỗi |
 | 5 | Waveform analysis | **Hoàn thành** | VCD 4.6 MB của `full_system`; phát hiện 70% thời gian mô phỏng là nạp JTAG |
-| 6 | Đánh giá/port ZCU104 | Chưa bắt đầu | Vivado đã có; XSim thất bại (mục 7), repo chỉ có `fpga/pulp-zcu102` |
+| 6 | Đánh giá ZCU104 | **Phần đánh giá hoàn thành** | [Gap analysis](zcu102-to-zcu104-gap.md) đầy đủ; port thật chờ quyết định scope |
 | 7 | Báo cáo và bàn giao | Chưa bắt đầu | Đã có log evidence để dựng báo cáo |
 
 ## 3. Công việc đã hoàn thành

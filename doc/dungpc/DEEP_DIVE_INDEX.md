@@ -75,6 +75,7 @@ những gì đọc từ RTL hoặc từ tài liệu của dependency**:
 | [plan_demo.md](plan_demo.md) | kế hoạch chương trình 9 phase, đã thực hiện xong |
 | [nhat-ky-mo-phong-pulp-questasim.md](nhat-ky-mo-phong-pulp-questasim.md) | quy trình dựng môi trường và chạy QuestaSim |
 | [lua-chon-simulator.md](lua-chon-simulator.md) | **giải trình chọn Questa để mô phỏng, Vivado chỉ để sinh bitstream** |
+| [zcu102-to-zcu104-gap.md](zcu102-to-zcu104-gap.md) | **gap analysis ZCU102→ZCU104, bảng chân đối chiếu UG1267** |
 | [sw/full_system/README.md](../../sw/full_system/README.md) | chương trình demo và các quyết định thiết kế |
 | [report/cluster_buoc0_20260906/](../../report/cluster_buoc0_20260906/) | bằng chứng cluster hoạt động |
 | [report/full_system_20260906/](../../report/full_system_20260906/) | chuỗi chẩn đoán phase 7 |
