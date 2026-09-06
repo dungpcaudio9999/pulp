@@ -1,0 +1,276 @@
+RM  /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build
+rm -rf /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build
+CC  testMCHAN_TCDM2TCDM_tx_rx.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/testMCHAN_TCDM2TCDM_tx_rx.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c testMCHAN_TCDM2TCDM_tx_rx.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/testMCHAN_TCDM2TCDM_tx_rx.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+In file included from testMCHAN_TCDM2TCDM_tx_rx.c:22:0:
+mchan_tests.h:28:0: warning: "PLP_DMA_2D_TCDM_BIT" redefined
+ #define PLP_DMA_2D_TCDM_BIT 0x0000017
+ 
+mchan_tests.h:17:0: note: this is the location of the previous definition
+ #define PLP_DMA_2D_TCDM_BIT 22
+ 
+testMCHAN_TCDM2TCDM_tx_rx.c: In function 'testMCHAN':
+testMCHAN_TCDM2TCDM_tx_rx.c:67:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf ("STARTING TEST FOR %d TX AND RX CONCURRENT OPERATIONS: \n",len);
+   ^~~~~~
+testMCHAN_TCDM2TCDM_tx_rx.c:67:3: warning: incompatible implicit declaration of built-in function 'printf'
+testMCHAN_TCDM2TCDM_tx_rx.c:67:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/fll-v1.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/fll-v1.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/fll-v1.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/fll-v1.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/freq-domains.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/freq-domains.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/freq-domains.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/freq-domains.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/chips/pulp/soc.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/chips/pulp/soc.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/chips/pulp/soc.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/chips/pulp/soc.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/io.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/io.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/io.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/io.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/fprintf.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/fprintf.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/fprintf.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/fprintf.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/prf.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/prf.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/prf.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/prf.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/sprintf.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/sprintf.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/sprintf.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/sprintf.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/init.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/init.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/init.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/init.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/kernel.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/kernel.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/kernel.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/kernel.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/alloc.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/alloc.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/alloc.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/alloc.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/alloc_pool.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/alloc_pool.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/alloc_pool.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/alloc_pool.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/irq.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/irq.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/irq.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/irq.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/soc_event.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/soc_event.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/soc_event.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/soc_event.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/bench.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/bench.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/bench.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/bench.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/drivers/uart.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/drivers/uart.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/drivers/uart.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/drivers/uart.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/cluster.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/cluster.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/cluster.c -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/cluster.o -MMD -MP -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/crt0.S
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/crt0.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/crt0.S -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/crt0.o -MMD -MP -DLANGUAGE_ASSEMBLY -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+CC  /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/irq_asm.S
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/irq_asm.o`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc  -c /home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel/irq_asm.S -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/irq_asm.o -MMD -MP -DLANGUAGE_ASSEMBLY -march=rv32imcxgap9 -O3 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+LD  /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/test
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/test`
+/home/dungpc/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16/bin/riscv32-unknown-elf-gcc -o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/test /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/testMCHAN_TCDM2TCDM_tx_rx.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/fll-v1.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/freq-domains.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/chips/pulp/soc.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/io.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/fprintf.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/prf.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/lib/libc/minimal/sprintf.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/init.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/kernel.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/alloc.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/alloc_pool.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/irq.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/soc_event.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/bench.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/drivers/uart.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/cluster.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/crt0.o /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/kernel/irq_asm.o -MMD -MP -march=rv32imcxgap9 -nostartfiles -nostdlib -Wl,--gc-sections -L/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel -Tchips/pulp/link.ld -lgcc 
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/modelsim.ini /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/modelsim.ini
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/work /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/work
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/boot /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/boot
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/tcl_files
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/stdout
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/fs
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/waves /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/waves
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py --binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/test --vectors=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/vectors/stim.txt
+Created stimuli generator
+  Added binary: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/test
+  Handling section (base: 0x10000004, size: 0x4004)
+  Handling section (base: 0x1c000004, size: 0xa0)
+  Init section to 0 (base: 0x1c0000a4, size: 0x844)
+  Handling section (base: 0x1c008000, size: 0x1c18)
+  Handling section (base: 0x1c010000, size: 0x4000)
+  Generating to file: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/vectors/stim.txt
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/plp_mkflash  --flash-boot-binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/test/test  --stimuli=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/vectors/qspi_stim.slm --flash-type=spi --qpi
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/slm_hyper.py  --input=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/vectors/qspi_stim.slm  --output=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build/vectors/hyper_stim.slm
+cd /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx/build && export VSIM_RUNNER_FLAGS='+ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf -gBAUDRATE=115200 -gLOAD_L2=JTAG' && vsim -64 -c -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl' -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl; run_and_exit;'
+Reading pref.tcl
+
+# 10.7c
+
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl
+# vsim -c -quiet vopt_tb -L models_lib -L vip_lib -t ps "+nowarnTRAN" "+nowarnTSCALE" "+nowarnTFMPC" "+TB_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim/../../fe/tb/" "+UVM_NO_RELNOTES" "+ENTRY_POINT=0x1c008080" -permit_unmatched_virtual_intf "+VSIM_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim" -gUSE_SDVT_SPI=0 -gUSE_SDVT_CPI=0 -gBAUDRATE=115200 -gENABLE_DEV_DPI=0 -gLOAD_L2=JTAG -gUSE_SDVT_I2S=0 
+# Start time: 15:06:18 on Sep 06,2026
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Warning: (vsim-3770) Failed to find user specified function 'jtag_tick' in DPI C/C++ source files.
+#    Time: 0 ps  Iteration: 0  Region: /SimJTAG_sv_unit File: /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/SimJTAG.sv
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_I2S" not found in design.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_SPI" not found in design.
+#  run_and_exit
+# [CORE] Core settings: PULP_SECURE =           1, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [TB]       0ns - Entry point is set to 0x1c008080
+# [TB]       0ns - Asserting hard reset
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 2  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [TB]       1ns - Using FLL
+# [TB]       1ns - Not using CAM SDVT
+# Loading default stimuli
+# [JTAG] SoftReset Done(    701ns)
+# [JTAG] Bypass Test Passed (  33301ns)
+# [JTAG] Tap ID: 249511c3 (  43701ns)
+# [JTAG] Tap ID Test PASSED (  43701ns)
+# [test_mode_if]   50301ns - Init
+# [TB]   50301ns - Enabling clock out via jtag
+# [test_mode_if]   51801ns - Setting confreg to value 002.
+# [TB]   51801ns - jtag_conf_reg set to 002
+# [TB]   51801ns - Releasing hard reset
+# [TB]   53401ns - Init PULP TAP
+# [pulp_tap_if] WRITE32 burst @1c008080 for           4 bytes.
+# [TB]   67501ns - Write32 PULP TAP
+# [JTAG] R/W test of L2 succeeded
+# [TB]  177701ns - Halting the Core
+# [TB]  236501ns - Writing the boot address into dpc
+# [TB]  280601ns - Loading L2
+# [JTAG] Loading L2 with pulp tap jtag interface
+# [pulp_tap_if] WRITE32 burst @10000000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10000400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10000800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10000c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10004000 for           8 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000800 for         232 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009c00 for          24 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013c00 for        1024 bytes.
+# [TB] 34561801ns - Resuming the CORE
+# [TB] 34620601ns retrying debug reg access
+# [TB] 34649901ns retrying debug reg access
+# [TB] 34679201ns retrying debug reg access
+# [TB] 34708501ns retrying debug reg access
+# [TB] 34737801ns retrying debug reg access
+# [TB] 34767101ns retrying debug reg access
+# [TB] 34796401ns retrying debug reg access
+# [TB] 34825701ns retrying debug reg access
+# [TB] 34855001ns retrying debug reg access
+# [TB] 34884301ns retrying debug reg access
+# [TB] 34913601ns retrying debug reg access
+# [TB] 34942901ns retrying debug reg access
+# [TB] 34972201ns retrying debug reg access
+# [TB] 35001501ns retrying debug reg access
+# [TB] 35030801ns retrying debug reg access
+# [TB] 35060101ns retrying debug reg access
+# [TB] 35089401ns retrying debug reg access
+# [TB] 35118701ns retrying debug reg access
+# [TB] 35148001ns retrying debug reg access
+# [TB] 35177301ns retrying debug reg access
+# [TB] 35206601ns retrying debug reg access
+# [TB] 35235901ns retrying debug reg access
+# [TB] 35265201ns retrying debug reg access
+# [TB] 35294501ns retrying debug reg access
+# [TB] 35323801ns retrying debug reg access
+# [TB] 35882501ns - Waiting for end of computation
+# [STDOUT-CL0_PE0] STARTING TEST FOR 8 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 16 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 32 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 64 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 128 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 256 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 512 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 1024 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 2048 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [STDOUT-CL0_PE0] STARTING TEST FOR 4096 TX AND RX CONCURRENT OPERATIONS: 
+# [STDOUT-CL0_PE0] OOOOOOK!!!!!!
+# [TB] 43716201ns - Received status core: 0x00000000
+# ** Note: $stop    : /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv(1008)
+#    Time: 43716201 ns  Iteration: 0  Instance: /tb_pulp
+# Break at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# Stopped at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# End time: 15:11:32 on Sep 06,2026, Elapsed time: 0:05:14
+# Errors: 4, Warnings: 12
