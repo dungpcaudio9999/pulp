@@ -11,46 +11,96 @@ nào phủ hết các khối** trong một binary duy nhất, và bộ test đ�
 GitLab nội bộ ETH nên không lấy được. Riêng HWPE là khối có trong RTL mà chưa có bài regression nào
 chạm tới — nhưng xem cảnh báo ngay dưới đây về việc nó bị tắt trong testbench.
 
-> ### ⚠ Cảnh báo chặn phase 7 — phát hiện `2026-09-06`
+> ### ✅ Phase 7 (HWPE) — đã giải quyết `2026-09-06`
 >
-> `rtl/tb/tb_pulp.sv:42,48` đặt **`USE_HWPE = 0`** và **`USE_HWPE_CL = 0`**, rồi truyền thẳng
-> xuống DUT (dòng 693-695). Mặc định của `rtl/pulp/pulp.sv:19-20` là `1`, nhưng **testbench ghi
-> đè xuống 0**. Nghĩa là dưới `tb_pulp` — đúng cái Questa đang chạy — **HWPE datamover không hề
-> được instantiate**. Phase 7 viết đúng đến mấy cũng sẽ đọc về rác hoặc treo, và điều này đúng cả
-> trên Questa lẫn XSim, không riêng FPGA.
+> `rtl/tb/tb_pulp.sv:42,48` đặt **`USE_HWPE = 0`** và **`USE_HWPE_CL = 0`**, ghi đè mặc
+> định `1` của `rtl/pulp/pulp.sv`. Nghĩa là mặc định HWPE datamover **không hề được
+> instantiate** dưới `tb_pulp` — phase 7 viết đúng đến mấy cũng đọc về rác hoặc treo.
 >
-> Cách xử lý: build hiện tại dùng `vopt +acc=npr -o vopt_tb tb_pulp -floatparameters+tb_pulp`
-> (`sim/Makefile:41`). Cờ `-floatparameters` chính là thứ cho phép ghi đè tham số lúc `vsim` —
-> đó là cơ chế `-gLOAD_L2=JTAG` đang dùng. Nên thử trước:
+> **Cách xử lý đã kiểm chứng: truyền `-gUSE_HWPE_CL=1` lúc `vsim`. Không cần sửa
+> `tb_pulp.sv`, không cần build lại.** Bước vopt dùng `-floatparameters+tb_pulp`
+> (`sim/Makefile:41`) nên tham số vẫn override được lúc runtime. Bằng chứng ở
+> [report/cluster_buoc0_20260906/07_hwpe_conclusion.md](../../report/cluster_buoc0_20260906/07_hwpe_conclusion.md):
 >
-> ```bash
-> make run vsim_flags="-gUSE_HWPE_CL=1"
+> ```
+> /tb_pulp/.../cluster_i/hwpe_gen/hwpe_subsystem_i (hwpe_subsystem)
+> /tb_pulp/.../hwpe_subsystem_i/datamover_gen/hwpe_top_wrap_i (datamover_top)
 > ```
 >
-> Nếu HWPE vẫn không xuất hiện (vì `USE_HWPE_CL` điều khiển generate block, có thể đã bị cố định
-> lúc vopt), thì sửa `tb_pulp.sv:48` thành `1` rồi chạy lại `make build`. Xác minh bằng cách tìm
-> `hwpe_subsystem` trong cây thiết kế trước khi viết phase 7.
+> Cũng xác nhận engine là `datamover_top`, khớp `hal_datamover.h`.
+>
+> **Cách truyền cờ — phải qua biến môi trường, không phải dòng lệnh make:**
+>
+> ```bash
+> export vsim_flags="+ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf \
+>                    -gBAUDRATE=115200 -gUSE_HWPE_CL=1"
+> make run
+> ```
+>
+> `vsim_flags` dùng `?=` rồi `+=` (`default_rules.mk:155`). Biến môi trường được `?=`
+> giữ nguyên và các `+=` vẫn nối thêm `-gLOAD_L2=JTAG`. Nếu truyền
+> `make run vsim_flags=...` trên dòng lệnh thì biến đó ghi đè cả các `+=`, làm **mất**
+> `-gLOAD_L2=JTAG` và chương trình sẽ không được nạp.
 
 Mục tiêu: **một chương trình C duy nhất** lần lượt đánh thức từng khối và tự kiểm tra kết quả, chạy
 được cả trên Questa (verify ngay) lẫn trên FPGA sau này (demo qua UART). Đây là hạng mục B trong kế
 hoạch hai bước; hạng mục A (port ZCU104) làm sau và độc lập.
 
-## Bước 0 — chạy test cluster có sẵn TRƯỚC khi viết code
+## Bước 0 — ĐÃ CHẠY XONG `2026-09-06`: cluster hoạt động
 
-Chi phí khoảng 20 phút, và nó phân tách rạch ròi hai khả năng thất bại về sau:
+Evidence đầy đủ ở [report/cluster_buoc0_20260906/](../../report/cluster_buoc0_20260906/).
 
-```bash
-cd regression_tests/parallel_bare_tests/multicore && make clean all run
-cd regression_tests/mchan_tests/testMCHAN_TCDM2TCDM_tx_rx && make clean all run
-```
+| Bài test | Kết quả |
+|---|---|
+| `mchan_tests/testMCHAN_TCDM2TCDM_tx_rx` | **PASS**, status `0x00000000`, 128→4096 giao dịch TX/RX đồng thời |
+| `parallel_bare_tests/multicore` | FAIL status `0x00000025`, nhưng **8 core đều boot và in ra** |
 
-- **Pass** → cluster boot, event unit, TCDM và MCHAN DMA đã được bảo chứng. Phase 3–6 bên dưới
-  chỉ còn là lớp bọc quanh thứ đã chạy được, và mọi lỗi sau đó gần như chắc chắn nằm ở code mới.
-- **Fail** → vấn đề nằm ở cluster bring-up, phải xử lý trước. Nếu bỏ qua bước này, một lỗi ở
-  phase 3 sẽ mơ hồ giữa "cluster chưa boot được" và "code mình viết sai".
+Bằng chứng quyết định: log có đủ `[STDOUT-CL0_PE0]` đến `[STDOUT-CL0_PE7]`, trong khi
+bài `hello` chỉ có `CL31` (chính là FC). **Phase 3–6 dưới đây do đó đã được bảo chứng
+bằng thực nghiệm** — chúng chỉ còn là lớp bọc quanh cơ chế đã chạy được:
 
-Hai bài này còn cho luôn idiom đặt mảng vào L1: `__attribute__((section(".heapsram")))`
-(`parallel_bare_tests/multicore/multicore.c:27-43`).
+- Phase 3 — PMU, cluster clk/rst, AXI SoC→CL: cluster khởi chạy được
+- Phase 4 — 8 core, event unit, barrier: cả 8 core chạy và đồng bộ đủ để in
+- Phase 5 — TCDM: mchan đọc ghi TCDM qua mọi kích thước
+- Phase 6 — MCHAN DMA, AXI hai chiều: pass sạch
+
+### Vì sao `multicore` FAIL mà không phải lỗi cluster
+
+`multicore/Makefile` khai báo `nbPe = 4` và `stackSize = 10000`. **pulp-runtime bỏ qua
+cả hai** — chúng không xuất hiện ở bất kỳ đâu trong `pulp-runtime/rules/`. Runtime
+hardcode `ARCHI_CLUSTER_NB_PE 8` (`archi/chips/pulp/properties.h:91`) và
+`CLUSTER_STACK_SIZE 0x800` = 2 KB (`pulp-runtime/include/pulp.h:21`).
+
+Bài sudokusolver đệ quy, viết cho stack ~10 KB, chạy với 2 KB nên tràn sang vùng L1 kề
+bên. Log khớp chính xác: bốn hàng đầu của lời giải đúng, từ hàng năm trở đi lẫn các giá
+trị `268435852`+ = `0x1000_000C`+ — địa chỉ TCDM rò vào mảng kết quả. PE0 chạy solver
+nên hỏng, PE1–PE7 làm việc nhẹ hơn nên `SUCCESS`. Việc `mchan` pass sạch củng cố cách
+giải thích này.
+
+> ### ⚠ Hệ quả bắt buộc cho chương trình sắp viết
+>
+> **Stack mỗi core cluster chỉ 2 KB.** Phase nào dùng đệ quy hoặc mảng cục bộ lớn phải
+> tự đặt trong `Makefile`:
+> ```make
+> PULP_CFLAGS += -DCLUSTER_STACK_SIZE=0x2000
+> ```
+> Đừng tin `stackSize` của Makefile — nó không có tác dụng. Tràn stack ở đây **không
+> gây crash**, nó âm thầm làm hỏng dữ liệu ở L1 kề bên, đúng như bài `multicore` cho thấy.
+
+## Môi trường chạy — bắt buộc đúng đủ
+
+Xem [nhật ký QuestaSim](nhat-ky-mo-phong-pulp-questasim.md), Phụ lục B. Bốn điểm dễ
+sai nhất, cả bốn đều đã tự vấp phải ngày `2026-09-06`:
+
+| Thiếu gì | Triệu chứng |
+|---|---|
+| `lmgrd` chưa chạy | `Fatal: Invalid license environment` |
+| `LD_LIBRARY_PATH` → `compat-libs` | `cc1: libmpfr.so.4: cannot open shared object file` |
+| Chưa rời conda | `ModuleNotFoundError: No module named 'elftools'` |
+| Chưa `source pulp-runtime/configs/pulp.sh` | `No rule to make target 'clean'` |
+
+Cái cuối nguy hiểm nhất vì `rules/pulp.mk` dùng `-include`, nên make **im lặng** không
+nạp target nào và thông báo lỗi không hề gợi ý nguyên nhân.
 
 ## Bốn cơ chế then chốt đã xác minh
 

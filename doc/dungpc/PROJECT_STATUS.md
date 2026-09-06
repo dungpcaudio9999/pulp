@@ -2,7 +2,7 @@
 
 ## 1. Thông tin snapshot
 
-- Ngày cập nhật: `2026-09-06`
+- Ngày cập nhật: `2026-09-06` (cập nhật lần 2: Bước 0 cluster)
 - Repository: `pulp` (fork `dungpcaudio9999/pulp`)
 - Branch: `feature/dungpc-work`
 - HEAD: `b6ae547` — bằng `origin/feature/dungpc-work`, không ahead/behind
@@ -25,7 +25,7 @@
 | 1 | Kiến trúc và source map | Gần hoàn thành | 4 chương deep-dive + source map đã viết; chưa commit, chưa review, sơ đồ Draw.io vẫn ngoài repo |
 | 2 | Dependency, toolchain và RTL build | **Hoàn thành** | Bender 0.31.0, dependency đã checkout, `vopt_tb` build sạch 0 error |
 | 3 | Software toolchain và FC smoke test | **Hoàn thành** | Toolchain RISC-V có sẵn; `hello` chạy pass trên Questa |
-| 4 | Cluster/offload simulation | Chuẩn bị | Đã có kế hoạch [plan_demo.md](plan_demo.md); chưa viết code |
+| 4 | Cluster/offload simulation | **Có bằng chứng một phần** | Cluster boot và chạy được trên cả 8 core; MCHAN DMA pass. Chưa viết `sw/full_system/` |
 | 5 | Waveform analysis | Chưa bắt đầu | `sim/waves/wave_hello.vcd` mới chỉ 118 byte (rỗng) |
 | 6 | Đánh giá/port ZCU104 | Chưa bắt đầu | Vivado đã có; XSim thất bại (mục 7), repo chỉ có `fpga/pulp-zcu102` |
 | 7 | Báo cáo và bàn giao | Chưa bắt đầu | Đã có log evidence để dựng báo cáo |
@@ -140,10 +140,48 @@ blocker: `make checkout` đã chạy được và `vopt_tb` build sạch.
 | RTL compile + `vopt_tb` | **Xong**, 0 error |
 | FC software build (`hello`) | **Xong** |
 | FC simulation trên Questa | **Pass** |
-| Cluster simulation | Chưa chạy — chưa có bài test nào bật cluster |
+| Cluster simulation | **Pass** — `mchan` status `0x00000000`; 8 core in ra `CL0_PE0..PE7` |
 | Waveform | Chưa có dữ liệu thật (VCD rỗng) |
 | Vivado XSim | **Thất bại** |
 | ZCU104 synthesis | Chưa chạy |
+
+### Bước 0 cluster — `2026-09-06`
+
+Log đầy đủ tại [report/cluster_buoc0_20260906/](../../report/cluster_buoc0_20260906/).
+
+| Bài test | Kết quả | Status core |
+|---|---|---|
+| `mchan_tests/testMCHAN_TCDM2TCDM_tx_rx` | **PASS** | `0x00000000` |
+| `parallel_bare_tests/multicore` | FAIL (lỗi của test, không phải cluster) | `0x00000025` |
+
+**Kết luận: cluster hoạt động.** Bằng chứng quyết định là dải `[STDOUT-CL0_PE0]` đến
+`[STDOUT-CL0_PE7]` — bài `hello` trước đó chỉ có `CL31`, tức FC. Được chứng minh: PMU và
+cluster clock/reset, AXI SoC↔Cluster, 8 core cùng chạy, event unit và barrier, TCDM,
+MCHAN DMA ổn định qua mọi kích thước truyền.
+
+`multicore` FAIL vì `nbPe` và `stackSize` trong Makefile của nó là biến SDK cũ mà
+pulp-runtime bỏ qua; runtime hardcode 8 core và stack 2 KB, nên bài sudoku đệ quy tràn
+stack sang vùng L1 kề bên.
+
+### Phase 7 / HWPE — đã gỡ được
+
+`tb_pulp.sv:48` đặt `USE_HWPE_CL = 0` nên mặc định HWPE không được instantiate. Đã kiểm
+chứng rằng **truyền `-gUSE_HWPE_CL=1` lúc `vsim` là đủ**, không cần sửa testbench cũng
+không cần `make build` lại — bước vopt dùng `-floatparameters+tb_pulp` nên tham số vẫn
+override được lúc runtime. Engine sinh ra là `datamover_top`, khớp `hal_datamover.h`.
+Chi tiết ở [report/cluster_buoc0_20260906/07_hwpe_conclusion.md](../../report/cluster_buoc0_20260906/07_hwpe_conclusion.md).
+
+### Bốn cạm bẫy môi trường đã vấp phải và cách xử lý
+
+| Thiếu gì | Triệu chứng | Xử lý |
+|---|---|---|
+| `lmgrd` chưa chạy | `Fatal: Invalid license environment` | Giai đoạn 1 nhật ký |
+| `LD_LIBRARY_PATH` | `cc1: libmpfr.so.4 not found` | trỏ vào `compat-libs` của toolchain |
+| Conda che python hệ thống | `ModuleNotFoundError: elftools` | rời conda; chỉ `/usr/bin/python3` có `pyelftools` |
+| Chưa `source configs/pulp.sh` | `No rule to make target 'clean'` | **thiếu trong Phụ lục B nhật ký**, đã bổ sung |
+
+Cái cuối nguy hiểm nhất: `rules/pulp.mk` dùng `-include` nên make **im lặng** không nạp
+target nào, thông báo lỗi không gợi ý gì về biến môi trường.
 
 ### Vivado XSim — thất bại (`2026-09-03`, chạy lại `2026-09-06`)
 
