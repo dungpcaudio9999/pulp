@@ -1,0 +1,4 @@
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/modelsim.ini /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/modelsim.ini
+ln: failed to create symbolic link '/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/modelsim.ini': No such file or directory
+make: *** [/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/rules/pulpos/default_rules.mk:284: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/modelsim.ini] Error 1
+make run exit status: 2

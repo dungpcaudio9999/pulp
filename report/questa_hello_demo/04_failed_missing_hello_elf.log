@@ -1,0 +1,21 @@
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/modelsim.ini /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/modelsim.ini
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/work /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/work
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/boot /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/boot
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/tcl_files
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/stdout
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/fs
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/waves /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/waves
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py --binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test --vectors=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/stim.txt
+Created stimuli generator
+  Added binary: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test
+Traceback (most recent call last):
+  File "/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py", line 554, in <module>
+    stim_gen.gen_stim_slm_64(args.vectors)
+  File "/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py", line 150, in gen_stim_slm_64
+    self.__parse_binaries(8)
+  File "/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py", line 110, in __parse_binaries
+    with open(binary, 'rb') as file:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test'
+make: *** [/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/rules/pulpos/default_rules.mk:322: run] Error 1
+make run exit status: 2

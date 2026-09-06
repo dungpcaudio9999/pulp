@@ -1,0 +1,53 @@
+PULP QuestaSim hello demonstration
+Fri Sep  4 12:37:52 AM +07 2026
+Linux dungpc-ThinkPad-P1-Gen-4i 7.0.0-30-generic #30~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  7 13:27:52 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+Vivado v2019.1 (64-bit)
+SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+Questa Sim-64 vsim 10.7c Simulator 2018.08 Aug 17 2018
+riscv32-unknown-elf-gcc (GCC) 7.1.1 20170509
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+## feature/dungpc-work...origin/feature/dungpc-work
+ M rtl/tb/dbg_pkg.sv
+ M rtl/tb/jtag_pkg.sv
+ M rtl/tb/pulp_tap_pkg.sv
+?? .vscode/
+?? adbg_axi_biu.sv
+?? clk_div.sv
+?? doc/dungpc/
+?? files.f
+?? modelsim.ini
+?? report/
+?? rtl/files.f
+?? rtl/tb/dbg_pkg.sv.before_xsim_const_ref_patch
+?? rtl/tb/jtag_pkg.sv.before_xsim_const_ref_patch
+?? rtl/tb/pulp_tap_pkg.sv.before_xsim_const_ref_patch
+?? rtl/xvlog.log
+?? rtl/xvlog.pb
+?? sim/waves/wave_hello.vcd
+?? sim/xsim/
+?? transcript
+?? vivado.jou
+?? vivado.log
+?? vivado_209283.backup.jou
+?? vivado_209283.backup.log
+?? vivado_212720.backup.jou
+?? vivado_212720.backup.log
+?? vivado_214038.backup.jou
+?? vivado_214038.backup.log
+?? vivado_216495.backup.jou
+?? vivado_216495.backup.log
+?? vivado_218142.backup.jou
+?? vivado_218142.backup.log
+?? xelab.log
+?? xelab.pb
+?? xsim/
+?? xvlog.log
+?? xvlog.pb
+PULPRT_HOME=/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime
+PULPRT_TARGET=pulp
+VSIM_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim

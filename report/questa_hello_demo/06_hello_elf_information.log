@@ -1,0 +1,7 @@
+/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test: ELF 32-bit LSB executable, UCB RISC-V, RVC, soft-float ABI, version 1 (SYSV), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+   1668	     28	   2116	   3812	    ee4	/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Machine:                           RISC-V
+  Entry point address:               0x1c008080

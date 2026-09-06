@@ -1,0 +1,12 @@
+echo 'set ROOT [file normalize [file dirname [info script]]/..]' > sim/compile.tcl
+./bender script vsim \
+	--vlog-arg="-suppress 2583 -suppress 13314 \"+incdir+\$ROOT/rtl/includes\"" --vcom-arg="" \
+	-t rtl -t test \
+	| grep -v "set ROOT" >> sim/compile.tcl
+warning[W28]: Files with unknown type:
+  - /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/deprecated/clk_div.s
+  - /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/adv_dbg_if-4a8e8ee83fb515d2/rtl/adbg_axi_biu.sv,
+ ├─› help: Known file extensions are: .sv, .v, .vp (Verilog) and .vhd, .vhdl (VHDL).
+ ╰─› help: To indicate a file type for unknown file extensions, use `sv:`, `v:`, or `vhd:` when listing the file.
+mkdir -p fpga/pulp/tcl/generated
+./bender script vivado -t fpga -t xilinx > fpga/pulp/tcl/generated/compile.tcl

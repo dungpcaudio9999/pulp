@@ -1,0 +1,6 @@
+make -C ../rtl/tb/remote_bitbang clean
+make[1]: Entering directory '/home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/remote_bitbang'
+rm -rf librbs.so remote_bitbang.o sim_jtag.o ./.d
+make[1]: Leaving directory '/home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/remote_bitbang'
+rm -r work 
+rm modelsim.ini

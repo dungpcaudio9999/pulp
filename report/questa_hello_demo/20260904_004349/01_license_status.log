@@ -1,0 +1,12 @@
+lmutil - Copyright (c) 1989-2017 Flexera Software LLC. All Rights Reserved.
+Flexible License Manager status on Fri 9/4/2026 00:43
+
+License server status: 27001@dungpc-ThinkPad-P1-Gen-4i
+    License file(s) on dungpc-ThinkPad-P1-Gen-4i: /home/dungpc/questasim/LICENSE.dat:
+
+dungpc-ThinkPad-P1-Gen-4i: license server UP (MASTER) v11.14.1
+
+Vendor daemon status (on dungpc-ThinkPad-P1-Gen-4i):
+
+     mgcld: UP v11.14.1
+

@@ -1,0 +1,31 @@
+8:/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py --binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test --vectors=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/stim.txt
+9:Created stimuli generator
+10:  Added binary: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test
+11:  Handling section (base: 0x10000004, size: 0x4)
+12:  Handling section (base: 0x1c000004, size: 0x20)
+14:  Handling section (base: 0x1c008000, size: 0x67c)
+15:  Generating to file: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/stim.txt
+16:/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/plp_mkflash  --flash-boot-binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test  --stimuli=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/qspi_stim.slm --flash-type=spi --qpi
+17:/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/slm_hyper.py  --input=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/qspi_stim.slm  --output=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/hyper_stim.slm
+18:cd /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build && export VSIM_RUNNER_FLAGS='+ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf -gBAUDRATE=115200 -gLOAD_L2=JTAG' && vsim -64 -c -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl' -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl; run_and_exit;'
+25:# vsim -c -quiet vopt_tb -L models_lib -L vip_lib -t ps "+nowarnTRAN" "+nowarnTSCALE" "+nowarnTFMPC" "+TB_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim/../../fe/tb/" "+UVM_NO_RELNOTES" "+ENTRY_POINT=0x1c008080" -permit_unmatched_virtual_intf "+VSIM_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim" -gUSE_SDVT_SPI=0 -gUSE_SDVT_CPI=0 -gBAUDRATE=115200 -gENABLE_DEV_DPI=0 -gLOAD_L2=JTAG -gUSE_SDVT_I2S=0 
+41:# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+43:# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+45:# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+47:# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+49:# ** Warning: (vsim-3770) Failed to find user specified function 'jtag_tick' in DPI C/C++ source files.
+51:# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/TQ has no driver.
+53:# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/JTQ has no driver.
+55:# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/TQ has no driver.
+57:# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/JTQ has no driver.
+59:# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/TQ has no driver.
+61:# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/JTQ has no driver.
+63:# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_I2S" not found in design.
+64:# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_SPI" not found in design.
+67:# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+79:# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+81:# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+135:# [TB] 4729101ns - Waiting for end of computation
+136:# [STDOUT-CL31_PE0] Hello !
+137:# [TB] 5387801ns - Received status core: 0x00000000
+143:# Errors: 4, Warnings: 12

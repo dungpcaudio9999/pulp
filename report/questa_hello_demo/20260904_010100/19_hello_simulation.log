@@ -1,0 +1,144 @@
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/modelsim.ini /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/modelsim.ini
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/work /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/work
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/boot /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/boot
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/tcl_files
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/stdout
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/fs
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/waves /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/waves
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py --binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test --vectors=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/stim.txt
+Created stimuli generator
+  Added binary: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test
+  Handling section (base: 0x10000004, size: 0x4)
+  Handling section (base: 0x1c000004, size: 0x20)
+  Init section to 0 (base: 0x1c000024, size: 0x844)
+  Handling section (base: 0x1c008000, size: 0x67c)
+  Generating to file: /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/stim.txt
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/plp_mkflash  --flash-boot-binary=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/test/test  --stimuli=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/qspi_stim.slm --flash-type=spi --qpi
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/slm_hyper.py  --input=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/qspi_stim.slm  --output=/home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build/vectors/hyper_stim.slm
+cd /home/dungpc/ndmoney4porche/projects/pulp/regression_tests/hello/build && export VSIM_RUNNER_FLAGS='+ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf -gBAUDRATE=115200 -gLOAD_L2=JTAG' && vsim -64 -c -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl' -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl; run_and_exit;'
+Reading pref.tcl
+
+# 10.7c
+
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl
+# vsim -c -quiet vopt_tb -L models_lib -L vip_lib -t ps "+nowarnTRAN" "+nowarnTSCALE" "+nowarnTFMPC" "+TB_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim/../../fe/tb/" "+UVM_NO_RELNOTES" "+ENTRY_POINT=0x1c008080" -permit_unmatched_virtual_intf "+VSIM_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim" -gUSE_SDVT_SPI=0 -gUSE_SDVT_CPI=0 -gBAUDRATE=115200 -gENABLE_DEV_DPI=0 -gLOAD_L2=JTAG -gUSE_SDVT_I2S=0 
+# Start time: 01:04:41 on Sep 04,2026
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Warning: (vsim-3770) Failed to find user specified function 'jtag_tick' in DPI C/C++ source files.
+#    Time: 0 ps  Iteration: 0  Region: /SimJTAG_sv_unit File: /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/SimJTAG.sv
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_I2S" not found in design.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_SPI" not found in design.
+#  run_and_exit
+# [CORE] Core settings: PULP_SECURE =           1, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [TB]       0ns - Entry point is set to 0x1c008080
+# [TB]       0ns - Asserting hard reset
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 2  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [TB]       1ns - Using FLL
+# [TB]       1ns - Not using CAM SDVT
+# Loading default stimuli
+# [JTAG] SoftReset Done(    701ns)
+# [JTAG] Bypass Test Passed (  33301ns)
+# [JTAG] Tap ID: 249511c3 (  43701ns)
+# [JTAG] Tap ID Test PASSED (  43701ns)
+# [test_mode_if]   50301ns - Init
+# [TB]   50301ns - Enabling clock out via jtag
+# [test_mode_if]   51801ns - Setting confreg to value 002.
+# [TB]   51801ns - jtag_conf_reg set to 002
+# [TB]   51801ns - Releasing hard reset
+# [TB]   53401ns - Init PULP TAP
+# [pulp_tap_if] WRITE32 burst @1c008080 for           4 bytes.
+# [TB]   67501ns - Write32 PULP TAP
+# [JTAG] R/W test of L2 succeeded
+# [TB]  177701ns - Halting the Core
+# [TB]  236501ns - Writing the boot address into dpc
+# [TB]  280601ns - Loading L2
+# [JTAG] Loading L2 with pulp tap jtag interface
+# [pulp_tap_if] WRITE32 burst @10000000 for           8 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000800 for         104 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008400 for         640 bytes.
+# [TB] 3408401ns - Resuming the CORE
+# [TB] 3452501ns retrying debug reg access
+# [TB] 3481801ns retrying debug reg access
+# [TB] 3511101ns retrying debug reg access
+# [TB] 3540401ns retrying debug reg access
+# [TB] 3569701ns retrying debug reg access
+# [TB] 3599001ns retrying debug reg access
+# [TB] 3628301ns retrying debug reg access
+# [TB] 3657601ns retrying debug reg access
+# [TB] 3686901ns retrying debug reg access
+# [TB] 3716201ns retrying debug reg access
+# [TB] 3745501ns retrying debug reg access
+# [TB] 3774801ns retrying debug reg access
+# [TB] 3804101ns retrying debug reg access
+# [TB] 3833401ns retrying debug reg access
+# [TB] 3862701ns retrying debug reg access
+# [TB] 3892001ns retrying debug reg access
+# [TB] 3921301ns retrying debug reg access
+# [TB] 3950601ns retrying debug reg access
+# [TB] 3979901ns retrying debug reg access
+# [TB] 4009201ns retrying debug reg access
+# [TB] 4038501ns retrying debug reg access
+# [TB] 4067801ns retrying debug reg access
+# [TB] 4097101ns retrying debug reg access
+# [TB] 4126401ns retrying debug reg access
+# [TB] 4155701ns retrying debug reg access
+# [TB] 4729101ns - Waiting for end of computation
+# [STDOUT-CL31_PE0] Hello !
+# [TB] 5387801ns - Received status core: 0x00000000
+# ** Note: $stop    : /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv(1008)
+#    Time: 5387801 ns  Iteration: 0  Instance: /tb_pulp
+# Break at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# Stopped at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# End time: 01:05:03 on Sep 04,2026, Elapsed time: 0:00:22
+# Errors: 4, Warnings: 12
+make run exit status: 0

@@ -1,0 +1,39 @@
+feature/dungpc-work
+b6ae547 Merge pull request #72 from pulp-platform/fix_cluster_alias
+## feature/dungpc-work...origin/feature/dungpc-work
+ M rtl/tb/dbg_pkg.sv
+ M rtl/tb/jtag_pkg.sv
+ M rtl/tb/pulp_tap_pkg.sv
+?? .vscode/
+?? adbg_axi_biu.sv
+?? clk_div.sv
+?? doc/dungpc/
+?? files.f
+?? modelsim.ini
+?? report/
+?? rtl/files.f
+?? rtl/tb/dbg_pkg.sv.before_xsim_const_ref_patch
+?? rtl/tb/jtag_pkg.sv.before_xsim_const_ref_patch
+?? rtl/tb/pulp_tap_pkg.sv.before_xsim_const_ref_patch
+?? rtl/xvlog.log
+?? rtl/xvlog.pb
+?? sim/waves/wave_hello.vcd
+?? sim/xsim/
+?? transcript
+?? vivado.jou
+?? vivado.log
+?? vivado_209283.backup.jou
+?? vivado_209283.backup.log
+?? vivado_212720.backup.jou
+?? vivado_212720.backup.log
+?? vivado_214038.backup.jou
+?? vivado_214038.backup.log
+?? vivado_216495.backup.jou
+?? vivado_216495.backup.log
+?? vivado_218142.backup.jou
+?? vivado_218142.backup.log
+?? xelab.log
+?? xelab.pb
+?? xsim/
+?? xvlog.log
+?? xvlog.pb
