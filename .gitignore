@@ -69,3 +69,11 @@ xsim.dir/
 
 # ---- editor ----
 /.vscode/
+
+# VCD sinh boi sw/full_system/wave_capture.do (4-5 MB, tai tao duoc)
+*.vcd
+*.vcd.gz
+*.wlf
+
+# Artifact build cua chuong trinh trong sw/ (ELF, vector stimuli, log runtime)
+/sw/*/build/
