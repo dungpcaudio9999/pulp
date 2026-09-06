@@ -1,5 +1,26 @@
 # Demo full-system cho PULP — chương trình C đánh thức mọi khối
 
+> ## ✅ ĐÃ THỰC HIỆN XONG — `2026-09-06`
+>
+> Kế hoạch này đã được triển khai đầy đủ tại [sw/full_system/](../../sw/full_system/).
+> **9/9 phase pass**, status `0x00000000`, log có đủ `CL0_PE0`..`CL0_PE7`. Phép thử ngược
+> (`INJECT_FAULT=1`) cho FAIL đúng như mong đợi với status `0x00000001`.
+>
+> | Tài liệu | Nội dung |
+> |---|---|
+> | [sw/full_system/README.md](../../sw/full_system/README.md) | sáu quyết định thiết kế không hiển nhiên và hai cạm bẫy môi trường |
+> | [report/cluster_buoc0_20260906/](../../report/cluster_buoc0_20260906/) | Bước 0 — bằng chứng cluster hoạt động |
+> | [report/full_system_20260906/](../../report/full_system_20260906/) | chuỗi chẩn đoán phase 7 và kết quả cuối |
+> | [report/waveform_20260906/](../../report/waveform_20260906/) | Milestone 5 — dòng thời gian và phân bổ thời gian |
+>
+> **Khác biệt lớn nhất so với kế hoạch:** băng thông HWPE datamover không phải 32 byte như
+> `test_datamover.c` của dependency ghi, cũng không phải 36 byte như suy ra từ RTL
+> (`NB_HWPE_PORTS = 9`), mà là **12 byte** — đo bằng thực nghiệm. Phase 7 phải sửa bốn
+> vòng mới chạy, đúng như phần "Rủi ro đã biết" dự đoán.
+>
+> Phần còn lại của tài liệu này giữ nguyên làm bản ghi lập luận thiết kế.
+
+
 > Bản sửa `2026-09-06`. Các mục đánh dấu **[đã kiểm]** là những chi tiết đã được đối chiếu
 > trực tiếp với RTL/runtime trong dependency đã checkout, không phải suy đoán.
 

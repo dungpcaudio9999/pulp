@@ -2,13 +2,13 @@
 
 ## 1. Thông tin snapshot
 
-- Ngày cập nhật: `2026-09-06` (cập nhật lần 2: Bước 0 cluster)
+- Ngày cập nhật: `2026-09-07` (cập nhật lần 5: giải trình lựa chọn simulator)
 - Repository: `pulp` (fork `dungpcaudio9999/pulp`)
 - Branch: `feature/dungpc-work`
 - HEAD: `b6ae547` — bằng `origin/feature/dungpc-work`, không ahead/behind
 - Baseline ban đầu: `b6ae547` (HEAD hiện tại **chính là** baseline)
 - Máy làm việc: Linux (`dungpc-ThinkPad-P1-Gen-4i`), không còn là Windows/MSYS2
-- Giai đoạn hiện tại: Milestone 3 đã có bằng chứng pass; chuẩn bị Milestone 4
+- Giai đoạn hiện tại: Milestone 5 hoàn thành; còn lại Milestone 6 (ZCU104) và 7 (báo cáo)
 - Trạng thái tổng thể: **đang thực hiện**
 
 > **Đính chính so với snapshot `2026-09-01`.** Bản trước ghi HEAD là `ad0c389` với các
@@ -25,8 +25,8 @@
 | 1 | Kiến trúc và source map | Gần hoàn thành | 4 chương deep-dive + source map đã viết; chưa commit, chưa review, sơ đồ Draw.io vẫn ngoài repo |
 | 2 | Dependency, toolchain và RTL build | **Hoàn thành** | Bender 0.31.0, dependency đã checkout, `vopt_tb` build sạch 0 error |
 | 3 | Software toolchain và FC smoke test | **Hoàn thành** | Toolchain RISC-V có sẵn; `hello` chạy pass trên Questa |
-| 4 | Cluster/offload simulation | **Có bằng chứng một phần** | Cluster boot và chạy được trên cả 8 core; MCHAN DMA pass. Chưa viết `sw/full_system/` |
-| 5 | Waveform analysis | Chưa bắt đầu | `sim/waves/wave_hello.vcd` mới chỉ 118 byte (rỗng) |
+| 4 | Cluster/offload simulation | **Hoàn thành** | `sw/full_system` 9/9 phase pass, gồm cả HWPE datamover; phép thử ngược xác nhận bắt được lỗi |
+| 5 | Waveform analysis | **Hoàn thành** | VCD 4.6 MB của `full_system`; phát hiện 70% thời gian mô phỏng là nạp JTAG |
 | 6 | Đánh giá/port ZCU104 | Chưa bắt đầu | Vivado đã có; XSim thất bại (mục 7), repo chỉ có `fpga/pulp-zcu102` |
 | 7 | Báo cáo và bàn giao | Chưa bắt đầu | Đã có log evidence để dựng báo cáo |
 
@@ -90,21 +90,30 @@ Kết luận trong `21_final_result.log`: **PULP hello test passed functionally.
 
 ## 4. Trạng thái working tree
 
-Chưa có commit nào. Thay đổi đang chờ xử lý:
+Đã có **7 commit** trên `feature/dungpc-work` (kèm merge `ad0c389` từ máy cũ):
 
-**Đã sửa (tracked):**
+```
+97132c6 test: add cluster bring-up and HWPE probe evidence
+a8d3271 docs: record cluster bring-up evidence and resolve HWPE blocker
+48b11a2 merge: hợp nhất commit ad0c389 từ máy cũ
+54aa56a test: add Questa hello simulation logs as milestone evidence
+5ebb58d sim: add experimental Vivado XSim flow for tb_pulp
+25fa939 docs: add PULP architecture analysis, project status and demo plan
+27e764e chore: ignore simulator and Vivado build artifacts
+```
 
-- `rtl/tb/dbg_pkg.sv`, `rtl/tb/jtag_pkg.sv`, `rtl/tb/pulp_tap_pkg.sv` — đổi
-  `ref logic s_tdo` → `const ref logic s_tdo`, tổng 103 dòng. Patch này **chỉ phục vụ
-  Vivado XSim**; Questa không cần và đã pass mà không cần nó. Bản gốc được giữ ở các file
-  `*.before_xsim_const_ref_patch`.
+Đang chờ commit (kết quả Milestone 4 và 5):
 
-**Chưa track, nên giữ:** `doc/dungpc/`, `report/`, `sim/xsim/`, `xsim/`
+| Mục | Nội dung |
+|---|---|
+| `sw/` | `sw/full_system/` — chương trình 9 phase, Makefile, `run_sim.sh`, `wave_capture.do`, README |
+| `report/full_system_20260906/` | chuỗi chẩn đoán phase 7 và hai log kết quả |
+| `report/waveform_20260906/` | dòng thời gian và phân bổ thời gian mô phỏng |
+| `doc/dungpc/PROJECT_STATUS.md` | file này |
+| `.gitignore` | bỏ qua `*.vcd`, `*.vcd.gz`, `*.wlf` |
 
-**Chưa track, nên dọn:** `vivado*.log`, `vivado*.jou`, `vivado_*.backup.*` (10 file),
-`xelab.log`, `xelab.pb`, `xvlog.log`, `xvlog.pb`, `rtl/xvlog.*`, `transcript`,
-`modelsim.ini`, `files.f` và `rtl/files.f` (cả hai đều **0 byte**), `adbg_axi_biu.sv`,
-`clk_div.sv` (hai file `.sv` lạc ở thư mục gốc), `.vscode/`
+Patch `const ref` trên `rtl/tb/{dbg,jtag,pulp_tap}_pkg.sv` đã được commit tại `5ebb58d`,
+kèm bằng chứng nó vô hại với Questa. Các file rác ở thư mục gốc đã dọn tại `27e764e`.
 
 ## 5. Trạng thái dependency
 
@@ -141,9 +150,46 @@ blocker: `make checkout` đã chạy được và `vopt_tb` build sạch.
 | FC software build (`hello`) | **Xong** |
 | FC simulation trên Questa | **Pass** |
 | Cluster simulation | **Pass** — `mchan` status `0x00000000`; 8 core in ra `CL0_PE0..PE7` |
-| Waveform | Chưa có dữ liệu thật (VCD rỗng) |
+| Waveform | **Có** — 16 tín hiệu, 18.27 ms, kèm dòng thời gian sự kiện |
 | Vivado XSim | **Thất bại** |
 | ZCU104 synthesis | Chưa chạy |
+
+### Milestone 4 — `sw/full_system` `2026-09-06`
+
+Nguồn tại [sw/full_system/](../../sw/full_system/), log tại
+[report/full_system_20260906/](../../report/full_system_20260906/).
+
+Chương trình C duy nhất chạy hai lần: trên FC rồi trên cả 8 core cluster.
+
+| Lượt | Kết quả |
+|---|---|
+| Sạch | **SUCCESS**, 9/9 phase OK, status `0x00000000`, log đủ `CL0_PE0`..`CL0_PE7` |
+| `INJECT_FAULT=1` | **FAIL** đúng như mong đợi, status `0x00000001` |
+
+Cả 9 khối đều được đánh thức và tự kiểm chứng: FC/L2/SoC interconnect, APB timer,
+PMU và cluster clock/reset, 8 core cluster với event unit và barrier, TCDM, MCHAN DMA,
+**HWPE datamover**, GPIO và safe domain padmux.
+
+#### Phát hiện kỹ thuật: băng thông HWPE thật là 12 byte
+
+Cả hai nguồn "chính thống" đều cho số **sai**: `test_datamover.c` của dependency hardcode
+`DATAMOVER_BW = 256/8 = 32`, còn suy từ RTL (`N_MASTER_PORT = NB_HWPE_PORTS = 9` →
+`BW = 9*32` bit = 36 byte) cũng sai. Thực đo là **12 byte = 96 bit** mỗi nhịp.
+
+Cách đo: đặt `D0_STRIDE` khác nhau rồi nhìn mẫu word bị bỏ sót. Stride 32 byte cho word
+đúng ở 0,1,2 / 8,9,10; stride 36 byte cho 0,1,2 / 9,10,11. Chu kỳ đi theo stride nhưng số
+word đúng mỗi chu kỳ luôn là 3 — tách bạch được stride (phần mềm đặt) khỏi payload
+(phần cứng cố định).
+
+#### Hai lỗi im lặng đã bị bắt
+
+1. **Cluster không chạy mà vẫn báo SUCCESS.** `cluster_start()` return im lặng khi
+   `pi_l1_malloc` cấp stack thất bại, `cluster_wait()` trả về 0 — không phân biệt được với
+   thành công. Xảy ra thật vì `CLUSTER_STACK_SIZE=0x2000` khiến 8 × 8 KB = đúng 64 KB,
+   vượt L1. Đã thêm sentinel `demo_cl_ran` để phase 3 kiểm chứng thay vì tin giá trị trả về.
+2. **Lỗi ở core khác 0 bị nuốt mất.** Runtime chỉ giữ giá trị trả về của core 0. Phép thử
+   ngược tiêm lỗi vào core 3 xác nhận cơ chế gom lỗi qua mutex hoạt động: core **2** phát
+   hiện và lỗi tới được exit status.
 
 ### Bước 0 cluster — `2026-09-06`
 
@@ -171,6 +217,24 @@ không cần `make build` lại — bước vopt dùng `-floatparameters+tb_pulp
 override được lúc runtime. Engine sinh ra là `datamover_top`, khớp `hal_datamover.h`.
 Chi tiết ở [report/cluster_buoc0_20260906/07_hwpe_conclusion.md](../../report/cluster_buoc0_20260906/07_hwpe_conclusion.md).
 
+### Milestone 5 — waveform `2026-09-06`
+
+Thu bằng [sw/full_system/wave_capture.do](../../sw/full_system/wave_capture.do), phân tích
+tại [report/waveform_20260906/](../../report/waveform_20260906/).
+
+| Giai đoạn | Dài (ms) | % |
+|---|---:|---:|
+| Reset và khởi tạo | 0.052 | 0.3% |
+| **Nạp chương trình qua JTAG** | **12.792** | **70.0%** |
+| FC thực thi (phase 0–2 + khởi động cluster) | 4.100 | 22.4% |
+| Cluster thực thi (phase 4–7) | 1.326 | 7.3% |
+
+**Phát hiện chính: 70% thời gian mô phỏng là nạp chương trình, không phải chạy nó.**
+Đổi sang `-gLOAD_L2=STANDALONE` sẽ cắt phần lớn 12.8 ms này — đáng làm cho vòng lặp
+debug, nhưng nên giữ ít nhất một lần chạy `LOAD_L2=JTAG` để bảo chứng đường nạp.
+
+VCD 4.6 MB không commit (tái tạo được, đã thêm vào `.gitignore`).
+
 ### Bốn cạm bẫy môi trường đã vấp phải và cách xử lý
 
 | Thiếu gì | Triệu chứng | Xử lý |
@@ -184,6 +248,10 @@ Cái cuối nguy hiểm nhất: `rules/pulp.mk` dùng `-include` nên make **im 
 target nào, thông báo lỗi không gợi ý gì về biến môi trường.
 
 ### Vivado XSim — thất bại (`2026-09-03`, chạy lại `2026-09-06`)
+
+> Lý do đầy đủ của quyết định "Questa để mô phỏng, Vivado để sinh bitstream" nằm ở
+> [lua-chon-simulator.md](lua-chon-simulator.md), kèm bằng chứng rằng ZCU102 và VCU118
+> cũng **chưa bao giờ** dùng Vivado để mô phỏng.
 
 Flow thử nghiệm nằm ở [sim/xsim/](../../sim/xsim/) và [xsim/](../../xsim/) (filelist, patch
 `const ref`, `dpi_stub.c` cho `jtag_tick`, script `run_hello_xsim.tcl`). Vivado **v2019.1**.
@@ -288,19 +356,33 @@ trước khi có gì để phân tích.
 
 ## 9. Next actions theo thứ tự
 
-1. Commit tài liệu `doc/dungpc/` và `report/` — hiện chưa có commit nào, mọi thứ đang ở
-   trạng thái untracked.
-2. Quyết định số phận patch `const ref` trên `rtl/tb/*.sv`: revert (vì XSim đã dừng) hay
-   commit riêng kèm ghi chú.
-3. Dọn file rác ở thư mục gốc (danh sách ở mục 4).
-4. **Chạy một bài cluster test có sẵn trước khi viết code mới** —
-   `regression_tests/parallel_bare_tests/multicore` hoặc `mchan_tests`. Đây là cách rẻ nhất
-   để chứng minh cluster boot hoạt động; nếu pass thì phase 3–6 của `plan_demo.md` coi như
-   đã được bảo chứng.
-5. Triển khai `plan_demo.md` (xem phần nhận xét kèm theo — phase HWPE nên dùng lại
-   `hal_datamover.h` có sẵn trong dependency thay vì tự suy ra register map).
-6. Bật dump waveform, chạy lại, thu VCD thật cho Milestone 5.
-7. Đánh giá ZCU104 khi các mục trên đã xong.
+Milestone 0–5 đã xong. Còn lại:
+
+1. **Commit kết quả Milestone 4 và 5** (danh sách ở mục 4).
+2. **Đóng Milestone 1** — việc duy nhất còn thiếu là review tài liệu và quyết định số phận
+   sơ đồ `pulp_domains.drawio`; xem mục 11.
+3. **Dọn đĩa trước khi bắt đầu Milestone 6.** Còn 36 GB trên `/home` (đã dùng 89%). Một
+   lượt synthesis + implementation cho ZU7EV thường ngốn 20–40 GB thư mục `.runs`; thiếu
+   chỗ sẽ hỏng sau vài giờ chạy.
+4. **Milestone 6 — dựng target ZCU104.** Vivado 2019.1 đã có sẵn part `xczu7ev*` (27 part)
+   và board file ZCU104 (2 mục), nên không vướng công cụ. Việc thật:
+   - tạo `fpga/pulp-zcu104/fpga-settings.mk` (đổi `XILINX_PART`, `XILINX_BOARD`);
+   - viết lại `constraints/zcu104.xdc` — pinout ZCU104 khác ZCU102 hoàn toàn;
+   - dùng lại `rtl/xilinx_pulp.v` gần như nguyên vẹn;
+   - thêm target `zcu104` vào `fpga/Makefile` song song với `zcu102` và `vcu118`.
+
+   Lưu ý repo **chưa từng chạy synthesis lần nào** — toàn bộ lịch sử Vivado ở đây là mô
+   phỏng XSim (xem mục 7).
+5. **Milestone 7 — báo cáo và bàn giao.** Đã có đủ evidence trong `report/`.
+
+### Việc tùy chọn, chi phí thấp
+
+- Đổi sang `-gLOAD_L2=STANDALONE` cho vòng lặp debug: cắt được ~70% thời gian mô phỏng
+  (xem Milestone 5). Giữ ít nhất một lần chạy `LOAD_L2=JTAG` để bảo chứng đường nạp.
+- Mở rộng `wave_capture.do` thu thêm nhóm `pad_*` để xác minh tín hiệu GPIO ra chân thật —
+  hiện phase 8 mới chỉ chứng minh ghi/đọc lại được thanh ghi `PADOUT`.
+- Nhánh Vivado XSim đang dừng ở lỗi bộ nhớ `43-4177` chưa được kiểm chứng trong điều kiện
+  đủ RAM (xem mục 7). Không chặn gì, chỉ là câu hỏi bỏ ngỏ.
 
 ## 10. Ranh giới build và mô phỏng
 
@@ -313,9 +395,13 @@ trước khi có gì để phân tích.
 
 ## 11. Tiêu chí đóng Milestone 1
 
-Milestone 1 chỉ chuyển sang **Hoàn thành** khi tài liệu được review, được commit, và
-snapshot này được cập nhật tương ứng. Việc xác minh file SoC/Cluster thật sau dependency
-checkout thì **đã xong**.
+Ba trong bốn điều kiện đã đạt: file SoC/Cluster thật đã được xác minh sau dependency
+checkout, tài liệu đã được commit (`25fa939`, `a8d3271`), và snapshot này được cập nhật
+liên tục. Còn thiếu:
+
+- tài liệu được **review**;
+- quyết định có đưa sơ đồ `pulp_domains.drawio` vào Git hay không — đường dẫn ghi trong
+  mục 3 thuộc user `dungpc9`, không phải `dungpc`, nên cần xác minh lại trên máy hiện tại.
 
 ## 12. Cách cập nhật file status
 

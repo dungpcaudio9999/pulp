@@ -1,5 +1,9 @@
 # Nhật ký xây dựng và mô phỏng PULP bằng QuestaSim
 
+> **Vì sao là QuestaSim chứ không phải Vivado XSim?** Xem
+> [lua-chon-simulator.md](lua-chon-simulator.md) — giải trình đầy đủ kèm bằng chứng từ
+> CI, README và các lỗi XSim đã gặp thực tế.
+
 ## 1. Mục tiêu và kết quả cuối cùng
 
 Mục tiêu của quá trình này là chạy một mô phỏng RTL hoàn chỉnh của hệ thống PULP bằng QuestaSim, sử dụng chương trình phần mềm `hello` làm smoke test.
@@ -598,6 +602,22 @@ run -all
 - PC có tiến triển.
 - Không có request treo vô hạn.
 
+## Thu waveform ở chế độ batch
+
+Cách đã dùng cho `sw/full_system`, không cần GUI: xem
+[sw/full_system/wave_capture.do](../../sw/full_system/wave_capture.do). Nó vừa ghi VCD nén
+(16 tín hiệu, 4.6 MB cho 18.27 ms) vừa dùng `when` in mốc thời gian các sự kiện.
+
+Hai biến môi trường mà repo hỗ trợ sẵn nhưng chỉ hữu ích ở GUI:
+
+| Biến | Tác dụng | Nơi định nghĩa |
+|---|---|---|
+| `RECORD_WLF=YES` | bật `-wlf gap.wlf`, tự đặt `vopt_acc_ena=YES` | `sim/tcl_files/config/vsim_custom.tcl:57-65` |
+| `DO_FILES` | nối thêm tham số `-do` vào lệnh `vsim` | cùng file |
+
+Kết quả phân tích: **70% thời gian mô phỏng là nạp chương trình qua JTAG**, chỉ 29.7% là
+thực thi thật. Chi tiết tại [report/waveform_20260906/](../../report/waveform_20260906/).
+
 ## Trạng thái chưa sạch
 
 Một số run vẫn có:
@@ -725,4 +745,23 @@ Received status core: 0x00000000
     cũ và **pulp-runtime bỏ qua hoàn toàn**. Runtime hardcode `ARCHI_CLUSTER_NB_PE 8`
     và `CLUSTER_STACK_SIZE 0x800` (2 KB). Test nào cần stack lớn phải tự đặt
     `-DCLUSTER_STACK_SIZE=...` trong `PULP_CFLAGS`.
+13. **Đừng ghi đè biến trên dòng lệnh make nếu Makefile dùng `?=` rồi `+=`.** Cả
+    `vsim_flags` (`default_rules.mk:155`) lẫn `PULP_CFLAGS` đều theo mẫu này. Biến truyền
+    trên dòng lệnh make **thắng mọi phép gán trong Makefile, kể cả `+=`**, nên sẽ xoá luôn
+    phần được nối thêm:
+    - mất `-gLOAD_L2=JTAG` → chương trình không được nạp;
+    - mất `-DPULP_CHIP_STR` → build hỏng với lỗi lạc hướng
+      `archi/chips/PULP_CHIP_STR/pulp.h: No such file or directory`.
+
+    Cách đúng: đặt qua **biến môi trường** (khi đó `?=` giữ nguyên giá trị và các `+=` vẫn
+    nối thêm), hoặc thêm một biến điều khiển riêng trong Makefile của mình.
+14. **`when` trong do-file chỉ nhận biểu thức trên tín hiệu, không nhận biến Tcl.** Viết
+    `when {... && $::now > 5000000}` sẽ bị Tcl thay `$::now` bằng `0` ngay lúc định nghĩa;
+    vsim báo `No objects found matching '0'`, macro dừng và **vsim ngồi chờ ở prompt**.
+    Ở chế độ batch nghĩa là treo vô hạn cho tới khi bị giết — không thoát với mã lỗi, nên
+    rất dễ nhầm là mô phỏng đang chạy lâu.
+15. **`add wave` chỉ có tác dụng ở GUI.** Các file `sim/waves/*.tcl` đều dùng `add wave`,
+    nên chạy batch phải thay bằng `vcd add` hoặc `log -r`. Ngoài ra
+    `sim/tcl_files/config/export_all.tcl` làm `vcd add -r` **toàn bộ** `i_dut` — với
+    18 ms sim-time sẽ sinh file rất lớn; nên giới hạn danh sách tín hiệu.
 

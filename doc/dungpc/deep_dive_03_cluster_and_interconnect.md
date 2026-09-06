@@ -65,6 +65,26 @@ Trong khi đó `pulp_soc` xuất `cluster_fetch_enable_o` và `cluster_boot_addr
 
 Khả năng Cluster được điều khiển qua register/event/AXI bên trong dependency là hợp lý, nhưng chỉ là giả thuyết cho tới khi đọc đúng revision `pulp_cluster`. Khi mô phỏng, bằng chứng đáng tin cậy là PC/fetch nội bộ, giao dịch instruction/L2, `busy` và event—not output điều khiển đang dangling ở top.
 
+> ### ✅ Giả thuyết trên đã được xác nhận — `2026-09-06`
+>
+> Sau khi checkout dependency và chạy mô phỏng thật, đường điều khiển đã rõ:
+>
+> - `fetch_en_i` chỉ đi vào `cluster_peripherals_i` (`pulp_cluster.sv:762`), **không** đi
+>   thẳng tới core.
+> - Fetch enable thật của core là `fetch_en_int = fetch_enable_reg_int`
+>   (`pulp_cluster.sv:550`) — một thanh ghi do FC ghi qua AXI.
+> - Runtime dùng đúng đường đó: `cluster_start()` gọi
+>   `plp_ctrl_core_bootaddr_set_remote()` cho từng core rồi `eoc_fetch_enable_remote()`
+>   (`pulp-runtime/kernel/cluster.c:62-95`).
+>
+> Nên việc `fetch_en_i` bị buộc `1'b0` ở top **không chặn cluster khởi chạy**, và mô tả
+> "SoC kéo fetch-enable trực tiếp" sai ở chỗ *cơ chế*, không phải ở chỗ *kết quả*.
+>
+> Bằng chứng mô phỏng: cả 8 core cluster chạy và in ra (`CL0_PE0`..`CL0_PE7`), thời điểm
+> `fetch_en_int` chuyển khác 0 đo được là 16.944 ms — xem
+> [report/waveform_20260906/](../../report/waveform_20260906/) và
+> [report/cluster_buoc0_20260906/](../../report/cluster_buoc0_20260906/).
+
 ## 6. Luồng offload có thể kiểm chứng ở boundary
 
 ```text
