@@ -1,0 +1,41 @@
+# Phase 6 (MCHAN DMA) — cho co gioi han va phep thu nguoc
+
+Khong co toolchain RISC-V tren may nay nen KHONG build duoc cho PULP.
+Logic cua phase6_dma() duoc trich nguyen van ra 08_phase6_harness.c va chay
+tren host voi stub DMA. Day la kiem chung LOGIC, khong phai kiem chung RTL.
+
+## Hai thay doi
+1. Thay plp_dma_wait() bang demo_dma_wait() poll co gioi han.
+   plp_dma_wait (mchan_v7.h:414-419) la vong while khong gioi han, than vong la
+   eu_evt_maskWaitAndClr -- core NGU cho su kien DMA. DMA khong bao xong thi core
+   ngu vinh vien: khong log, khong FAIL, mo phong dung im.
+2. Them INJECT_FAULT_DMA=1: cat ngan luot DMA ve 2 word. DMA van bao xong binh
+   thuong, chi thieu du lieu -- de chung minh phase 6 doi chieu du lieu that.
+
+## Ket qua
+
+### Luot sach
+--- DMA hoat dong binh thuong ---
+[PHASE 6] MCHAN DMA, AXI hai chieu       ... OK
+ket qua: phase6_dma() = 0
+
+--- DMA khong bao xong (status ket) ---
+[PHASE 6] MCHAN DMA, AXI hai chieu       ... FAIL  DMA L2->L1 khong bao xong sau 200000 lan poll, status=0xffffffff
+ket qua: phase6_dma() = 1
+
+### Luot tiem loi (INJECT_FAULT_DMA=1)
+--- DMA hoat dong binh thuong ---
+[PHASE 6] MCHAN DMA, AXI hai chieu       ... FAIL  word 254 sau khu hoi = 0x00000000, goc 0xa00000fe
+ket qua: phase6_dma() = 1
+
+--- DMA khong bao xong (status ket) ---
+[PHASE 6] MCHAN DMA, AXI hai chieu       ... FAIL  DMA L2->L1 khong bao xong sau 200000 lan poll, status=0xffffffff
+ket qua: phase6_dma() = 1
+
+## Doc ket qua
+Ba ket cuc phan biet duoc:
+  DMA chay dung, du lieu dung        -> OK
+  DMA chay dung, du lieu thieu       -> FAIL tai word 254 (= DEMO_L2_WORDS-2)
+  DMA khong bao xong                 -> FAIL kem status, KHONG treo
+
+Truoc thay doi nay, truong hop thu ba la mot vu treo im lang.

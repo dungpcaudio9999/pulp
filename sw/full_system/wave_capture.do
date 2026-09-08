@@ -22,8 +22,26 @@ when -label e4 "$CL/s_rst_n == 1'b1"     { mark "cluster reset nha";          no
 when -label e5 "$CL/fetch_en_int != 0"   { mark "cluster core bat dau fetch";  nowhen e5 }
 when -label e6 "$CL/busy_o == 1'b1"      { mark "cluster bao busy lan dau";   nowhen e6 }
 
-run -all
+# Watchdog: SIM_TIMEOUT gioi han thoi gian mo phong (vd "30 ms").
+# 'run -all' tran khong co gioi han: neu tb khong toi $stop thi vsim treo im
+# o prompt, khong PASS khong FAIL. tb_pulp.sv:156 khoi tao exit_status =
+# `EXIT_ERROR(-1) va chi ghi de khi test ket thuc, nen -1 = chua chay xong.
+if {[info exists ::env(SIM_TIMEOUT)] && [string trim $::env(SIM_TIMEOUT)] ne ""} {
+  set timeout [string trim $::env(SIM_TIMEOUT)]
+  echo "WATCHDOG|bat, gioi han thoi gian mo phong = $timeout"
+  eval run $timeout
+} else {
+  run -all
+}
+
 mark "mo phong dung (\$stop cua tb)"
+set st [examine -radix decimal $TB/exit_status]
 echo "EXIT-STATUS|[examine -radix hex $TB/exit_status]"
+# Luon flush VCD truoc khi thoat: waveform cua mot lan TIMEOUT chinh la thu
+# can nhat de tim cho treo.
 vcd flush
-quit -f
+if {$st == -1} {
+  echo "WATCHDOG|TIMEOUT - testbench chua ket thuc, exit_status van la EXIT_ERROR(-1)"
+  quit -f -code 124
+}
+quit -f -code $st

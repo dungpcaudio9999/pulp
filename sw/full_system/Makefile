@@ -25,6 +25,13 @@ ifdef INJECT_FAULT
 PULP_CFLAGS += -DDEMO_INJECT_FAULT_CORE3
 endif
 
+# Phep thu nguoc cho phase 6: 'make ... INJECT_FAULT_DMA=1' cat ngan luot DMA
+# ve 2 word. DMA van bao xong, chi thieu du lieu -- de chung minh phase 6 doi
+# chieu du lieu that chu khong phai chi doc thanh ghi trang thai MCHAN.
+ifdef INJECT_FAULT_DMA
+PULP_CFLAGS += -DDEMO_INJECT_FAULT_DMA
+endif
+
 # Build cho FPGA: make all PLATFORM=fpga io=uart
 ifeq ($(PLATFORM),fpga)
 PULP_CFLAGS += -DDEMO_PLATFORM_FPGA=1

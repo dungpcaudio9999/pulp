@@ -1,0 +1,25 @@
+# Khoi phuc dependency bang Bender
+
+## Lan 1: 'make bender' hong am tham
+curl toi pulp-platform.github.io/bender/init tra ve 503, nhung recipe VAN chay
+'touch bender' -> tao file rong khong executable. Lan sau make se tuong bender
+da co va bao 'Permission denied'. Phai 'rm -f bender' truoc khi cai lai.
+
+curl --proto '=https' --tlsv1.2 -sSf https://pulp-platform.github.io/bender/init \
+	| bash -s -- 0.25.2
+curl: (22) The requested URL returned error: 503
+touch bender
+./bender checkout
+bash: line 1: ./bender: Permission denied
+make: *** [Makefile:41: Bender.lock] Error 126
+
+## Lan 2: cai lai bender
+Makefile ghim 0.25.2 nhung khong con ban cho nen tang nay; script tu lui ve 0.31.0
+-- dung phien ban PROJECT_STATUS da ghi nhan.
+
+## bender checkout: THANH CONG
+so dependency checkout: 53
+
+## 'make scripts' gay: hai loi trong Bender.yml cua dependency upstream
+/tmp/claude-1000/-home-dungpc9-ndmoney4porche-uni-pulp/f19326b6-e934-447b-9b1c-63787714241e/scratchpad/scripts.log:        Error: [E31] File /home/dungpc9/ndmoney4porche/uni/pulp/.bender/git/checkouts/adv_dbg_if-4a8e8ee83fb515d2/rtl/adbg_axi_biu.sv, doesn't exist
+/tmp/claude-1000/-home-dungpc9-ndmoney4porche-uni-pulp/f19326b6-e934-447b-9b1c-63787714241e/scratchpad/checkout2.log:        Error: [E31] File /home/dungpc9/ndmoney4porche/uni/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/deprecated/clk_div.s doesn't exist

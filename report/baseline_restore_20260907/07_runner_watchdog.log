@@ -1,0 +1,53 @@
+# Runner — kiem chung doi so va watchdog wall-clock
+Chay voi mot 'make' gia in ra tung doi so; khong can Questa.
+
+## Loi cu da sua
+    exec make "${@:-clean all run}"
+Trong dau nhay, gia tri mac dinh no ra MOT tu duy nhat nen make di tim target
+ten 'clean all run'. Nghia la './run_sim.sh' khong tham so -- duong dung nhat --
+luon hong voi 'No rule to make target'.
+
+## Ket qua
+### 1. khong tham so -> phai thay 3 dong ARG rieng biet, khong phai 1
+RUNNER|make clean all run | SIM_TIMEOUT='40 ms' | WALL_TIMEOUT=1800s
+ARG[clean]
+ARG[all]
+ARG[run]
+RUNNER|PASS (exit 0)
+   runner exit=0
+
+### 2. co tham so
+RUNNER|make clean all run INJECT_FAULT=1 | SIM_TIMEOUT='40 ms' | WALL_TIMEOUT=1800s
+ARG[clean]
+ARG[all]
+ARG[run]
+ARG[INJECT_FAULT=1]
+RUNNER|PASS (exit 0)
+   runner exit=0
+
+### 3. make that bai (exit 3)
+RUNNER|make clean all run | SIM_TIMEOUT='40 ms' | WALL_TIMEOUT=1800s
+ARG[clean]
+ARG[all]
+ARG[run]
+RUNNER|FAIL (exit 3)
+   runner exit=3
+
+### 4. mo phong TIMEOUT (vsim tra 124 do watchdog tang 1)
+RUNNER|make clean all run | SIM_TIMEOUT='40 ms' | WALL_TIMEOUT=1800s
+ARG[clean]
+ARG[all]
+ARG[run]
+RUNNER|TIMEOUT mo phong - testbench khong ket thuc trong '40 ms'
+   runner exit=124
+
+### 5. make TREO -> watchdog tang 2 giet ca process group (WALL_TIMEOUT=3)
+RUNNER|make clean all run | SIM_TIMEOUT='40 ms' | WALL_TIMEOUT=3s
+ARG[clean]
+ARG[all]
+ARG[run]
+RUNNER|WALL TIMEOUT sau 3s - giet process group 182358
+RUNNER|BI GIET boi watchdog wall-clock (3s)
+   runner exit=124
+
+Quy uoc ma thoat:  0 = PASS   124 = TIMEOUT (mo phong hoac wall-clock)   khac = FAIL

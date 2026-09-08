@@ -136,13 +136,43 @@ if {[info exists ::env(VOPT_FLOW)]} {
     set NumericStdNoWarnings 1
 
     # check exit status in tb and quit the simulation accordingly
+    #
+    # Watchdog: dat bien moi truong SIM_TIMEOUT (vd 'export SIM_TIMEOUT="30 ms"')
+    # de gioi han THOI GIAN MO PHONG. Khong dat thi giu nguyen hanh vi cu.
+    #
+    # Vi sao can: 'run -all' khong co gioi han. Neu testbench khong bao gio toi
+    # $stop -- cluster khong khoi dong, DMA khong bao xong, core treo -- thi vsim
+    # dung im o prompt vo han, khong PASS khong FAIL.
+    #
+    # Cach phat hien treo: tb_pulp.sv:156 khoi tao exit_status = `EXIT_ERROR (-1)
+    # va CHI ghi de bang 0/1 khi test that su ket thuc. Con -1 sau khi het thoi
+    # gian nghia la testbench chua chay xong.
     proc run_and_exit {} {
-        run -all
 	if {[info exists ::env(VSIM_EXIT_SIGNAL)]} {
-	    quit -code [examine -radix decimal sim:$::env(VSIM_EXIT_SIGNAL)]
+	    set exit_sig sim:$::env(VSIM_EXIT_SIGNAL)
 	} else {
-	    quit -code [examine -radix decimal sim:/tb_pulp/exit_status]
+	    set exit_sig sim:/tb_pulp/exit_status
 	}
+
+	if {[info exists ::env(SIM_TIMEOUT)] && [string trim $::env(SIM_TIMEOUT)] ne ""} {
+	    set timeout [string trim $::env(SIM_TIMEOUT)]
+	    echo "WATCHDOG|bat, gioi han thoi gian mo phong = $timeout"
+	    if {[catch {eval run $timeout} err]} {
+		echo "WATCHDOG|loi khi chay: $err"
+		quit -code 1
+	    }
+	    set st [examine -radix decimal $exit_sig]
+	    if {$st == -1} {
+		echo "WATCHDOG|TIMEOUT sau $timeout - testbench chua ket thuc"
+		echo "WATCHDOG|exit_status van la EXIT_ERROR(-1), khong phai PASS cung khong phai FAIL"
+		quit -code 124
+	    }
+	    echo "WATCHDOG|testbench ket thuc truoc han, exit_status = $st"
+	    quit -code $st
+	}
+
+        run -all
+	quit -code [examine -radix decimal $exit_sig]
     }
 
     #+ set StdArithNoWarnings 1

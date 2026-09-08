@@ -1,0 +1,21 @@
+# patch-deps va sinh compile script
+
+Hai loi deu la typo trong Bender.yml cua dependency, khong phai loi cau hinh:
+  common_cells  line 134: 'src/deprecated/clk_div.s'   thieu chu 'v' (file that: clk_div.sv)
+  adv_dbg_if    line  14: 'rtl/adbg_axi_biu.sv,'       thua dau phay cuoi dong
+
+Bender 0.25.x bo qua duong dan hong, 0.31.0 bao loi [E31] va dung. Vi .bender/ bi
+.gitignore va sinh lai sau moi checkout, patch khong commit duoc -- phai ap lai
+bang ./patch-deps moi lan.
+
+## Quet toan bo dependency tim duong dan hong con lai
+(script quet nam trong 04_quet_bender_yml.py)
+Ket qua sau khi patch: 0 duong dan hong.
+
+## make scripts: THANH CONG
+  1575 sim/compile.tcl
+   968 fpga/pulp/tcl/generated/compile.tcl
+  2543 total
+
+fpga/pulp/tcl/generated/compile.tcl la tien de cho synthesis ZCU104 (Milestone 6):
+fpga/pulp/tcl/add_sources.tcl source chinh file nay.

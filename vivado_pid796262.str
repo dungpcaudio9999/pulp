@@ -1,0 +1,267 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:47:09 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 796262
+License: Customer
+
+Current time: 	Tue Sep 08 16:26:40 ICT 2026
+Time zone: 	Indochina Time (Asia/Bangkok)
+
+OS: Ubuntu
+OS Version: 7.0.0-30-generic
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Available disk space: 268 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/tools/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/tools/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	dungpc9
+User home directory: /home/dungpc9
+User working directory: /home/dungpc9/ndmoney4porche/uni/pulp
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/Vivado
+HDI_APPROOT: /tools/Xilinx/Vivado/2019.1
+RDI_DATADIR: /tools/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: /tools/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: /home/dungpc9/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /home/dungpc9/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /home/dungpc9/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/tools/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	/home/dungpc9/ndmoney4porche/uni/pulp/vivado.log
+Vivado journal file location: 	/home/dungpc9/ndmoney4porche/uni/pulp/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-796262-A520M-K-V2
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /tools/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /tools/Xilinx/Vivado/2019.1
+XILINX_SDK: /tools/Xilinx/SDK/2019.1
+XILINX_VIVADO: /tools/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: /tools/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 950 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 81 MB (+82100kb) [00:00:04]
+// [Engine Memory]: 915 MB (+808421kb) [00:00:04]
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: fpga/pulp/pulp-zcu104.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project fpga/pulp/pulp-zcu104.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 960 MB. GUI used memory: 52 MB. Current time: 9/8/26, 4:26:42 PM ICT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 110 MB (+26544kb) [00:00:13]
+// [Engine Memory]: 983 MB (+23257kb) [00:00:13]
+// [Engine Memory]: 1,043 MB (+11091kb) [00:00:13]
+// [GUI Memory]: 119 MB (+3612kb) [00:00:13]
+// WARNING: HEventQueue.dispatchEvent() is taking  1969 ms.
+// Tcl Message: open_project fpga/pulp/pulp-zcu104.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.1/data/ip'. 
+// Project name: pulp-zcu104; location: /home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp; part: xczu7ev-ffvc1156-2-e
+// [Engine Memory]: 1,117 MB (+22314kb) [00:00:15]
+// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 6540.785 ; gain = 122.652 ; free physical = 813 ; free virtual = 11926 
+dismissDialog("Open Project"); // by (cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 129 MB (+4437kb) [00:00:21]
+// [Engine Memory]: 1,175 MB (+2635kb) [00:00:22]
+// [GUI Memory]: 136 MB (+746kb) [00:00:23]
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// 'k' command handler elapsed time: 5 seconds
+// Elapsed time: 111 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aK (aH, cl)
+// Tcl Command: 'rdi::info_commands {r*}'
+// Tcl Command: 'rdi::info_commands {rết*}'
+// Tcl Command: 'rdi::info_commands {resert*}'
+// Tcl Command: 'rdi::info_commands {reser*}'
+// Tcl Command: 'rdi::info_commands {reset*}'
+// Tcl Command: 'rdi::info_commands {reset_*}'
+// Tcl Command: 'rdi::info_commands {reset_run*}'
+// Elapsed time: 15 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "reset_run synth_1", true); // aC (Z, cl)
+// Tcl Command: 'reset_run synth_1'
+// Tcl Command: 'reset_run synth_1'
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 150 MB (+7344kb) [00:02:36]
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// f (cl): Launch Runs: addNotify
+// Elapsed time: 55 seconds
+selectRadioButton(PAResourceItoN.LaunchPanel_LAUNCH_RUNS_ON_REMOTE_HOSTS, "Launch runs on remote hosts"); // a (Q, f)
+selectButton(PAResourceItoN.LaunchPanel_CONFIGURE_HOSTS, "Configure Hosts"); // a (Q, f)
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// D (f): Settings: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1639 ms.
+dismissDialog("Settings"); // D (f)
+selectRadioButton(PAResourceItoN.LaunchPanel_LAUNCH_RUNS_ON_LOCAL_HOST, "Launch runs on local host:"); // a (Q, f)
+// Elapsed time: 19 seconds
+selectRadioButton(PAResourceItoN.LaunchPanel_GENERATE_SCRIPTS_ONLY, "Generate scripts only"); // a (Q, f)
+// Elapsed time: 21 seconds
+selectRadioButton(PAResourceItoN.LaunchPanel_LAUNCH_RUNS_ON_LOCAL_HOST, "Launch runs on local host:"); // a (Q, f)
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "2", 1); // e (bd, f)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// [GUI Memory]: 159 MB (+894kb) [00:04:52]
+// by (cl):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// [GUI Memory]: 188 MB (+22493kb) [00:04:52]
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/ips/xilinx_clk_mngr/xilinx_clk_mngr.srcs/sources_1/ip/xilinx_clk_mngr/xilinx_clk_mngr.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/ips/xilinx_slow_clk_mngr/xilinx_slow_clk_mngr.srcs/sources_1/ip/xilinx_slow_clk_mngr/xilinx_slow_clk_mngr.xci' is already up-to-date 
+// Tcl Message: [Tue Sep  8 16:31:26 2026] Launched synth_1... Run output will be captured here: /home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/pulp-zcu104.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 115 seconds
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,199 MB. GUI used memory: 91 MB. Current time: 9/8/26, 4:31:28 PM ICT
+// Tcl Command: 'rdi::info_commands {re*}'
+// Tcl Command: 'rdi::info_commands {r*}'
+// Tcl Command: 'rdi::info_commands {reset*}'
+// Tcl Command: 'rdi::info_commands {reset_*}'
+// Elapsed time: 39 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "reset_run synth_1", true); // aC (Z, cl)
+// Tcl Command: 'reset_run synth_1'
+// Tcl Command: 'reset_run synth_1'
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cl):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: launch_simulation 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/pulp-zcu104.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds INFO: [USF-XSim-99] Step results log file:'/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/pulp-zcu104.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/pulp-zcu104.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 5 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 554, 132); // dt (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 447, 87, false, false, false, true, false); // dt (af, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ah (an, cl)
+// Elapsed time: 211 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// by (cl):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/ips/xilinx_clk_mngr/xilinx_clk_mngr.srcs/sources_1/ip/xilinx_clk_mngr/xilinx_clk_mngr.xci' is already up-to-date INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/ips/xilinx_slow_clk_mngr/xilinx_slow_clk_mngr.srcs/sources_1/ip/xilinx_slow_clk_mngr/xilinx_slow_clk_mngr.xci' is already up-to-date 
+// Tcl Message: [Tue Sep  8 16:35:58 2026] Launched synth_1... Run output will be captured here: /home/dungpc9/ndmoney4porche/uni/pulp/fpga/pulp/pulp-zcu104.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 578ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2360 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1293 ms.
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 501ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 1281ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1281 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 3959ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3988 ms.
+// WARNING: HTimer (a Update Status Timer) is taking 5152ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  8398 ms.
+// WARNING: HTimer (StateMonitor Timer) is taking 9899ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  12103 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 25287 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2891 ms. Increasing delay to 8673 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Synthesis Completed: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,212 MB. GUI used memory: 94 MB. Current time: 9/8/26, 5:01:28 PM ICT
+// Elapsed time: 3051 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a (Q, ah)
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // ah (cl)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synth_1_synth_report_utilization_0 ; report_utilization ;  ; Tue Sep 08 16:52:50 ICT 2026 ; 8352", 2, "synth_1_synth_report_utilization_0", 0, false); // O (O, cl)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synth_1_synth_report_utilization_0 ; report_utilization ;  ; Tue Sep 08 16:52:50 ICT 2026 ; 8352", 2, "synth_1_synth_report_utilization_0", 0, false); // O (O, cl)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synth_1_synth_report_utilization_0 ; report_utilization ;  ; Tue Sep 08 16:52:50 ICT 2026 ; 8352", 2); // O (O, cl)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "synth_1_synth_report_utilization_0 ; report_utilization ;  ; Tue Sep 08 16:52:50 ICT 2026 ; 8352", 2, "synth_1_synth_report_utilization_0", 0, false, false, false, false, false, true); // O (O, cl) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 1,212 MB. GUI used memory: 88 MB. Current time: 9/8/26, 5:31:28 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,212 MB. GUI used memory: 87 MB. Current time: 9/8/26, 6:01:28 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,212 MB. GUI used memory: 86 MB. Current time: 9/8/26, 6:31:28 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,212 MB. GUI used memory: 86 MB. Current time: 9/8/26, 7:01:28 PM ICT

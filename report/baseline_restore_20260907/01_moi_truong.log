@@ -1,0 +1,25 @@
+# Khao sat moi truong tren may hien tai
+Ngay: 2026-09-07   Hostname: A520M-K-V2   User: dungpc9
+
+## Cong cu bat buoc
+vsim                         KHONG CO
+vlog                         KHONG CO
+vopt                         KHONG CO
+vivado                       KHONG CO
+riscv32-unknown-elf-gcc      KHONG CO
+bender                       bender 0.31.0
+
+## Thu muc toolchain ma run_sim.sh cu hardcode
+/home/dungpc9/questasim                                                KHONG TON TAI
+/home/dungpc9/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16    KHONG TON TAI
+
+## Python
+/usr/bin/python3             Python 3.14.4
+pyelftools                   KHONG CO (stim_utils.py can)
+
+## Dia
+/dev/nvme0n1p2  468G  100G  345G  23% /
+
+## Ket luan
+May nay KHONG chay duoc mo phong: thieu Questa, thieu toolchain RISC-V, thieu pyelftools.
+Cac log mo phong cu trong report/ deu sinh tren may 'dungpc-ThinkPad-P1-Gen-4i'.

@@ -1,0 +1,56 @@
+# Thử lại trên máy A520M-K-V2 sau khi cài Questa và Vivado — 2026-09-08
+
+## Cái gì chạy được
+
+| Bước | Kết quả |
+|---|---|
+| `vsim -version` | Questa Sim-64 10.7c 2018.08 — đúng bản PROJECT_STATUS ghi nhận |
+| license server | UP (MASTER) v11.14.1, `mgcld` UP, lmgrd nghe cổng 27001 |
+| `bender checkout` + `patch-deps` + `make scripts` | xong, 0 lỗi |
+| `vlib` / `vmap -c` / `vmap work` | xong |
+| RTL compile (`vsim -c -do 'source compile.tcl; quit'`) | **0 error**, 1053 module biên dịch |
+| `pip install --user pyelftools` | xong (0.33, vào ~/.local) |
+
+## Cái gì KHÔNG chạy được: vopt
+
+** Error: (vopt-1981) Version check failed with optimized design "vopt_tb" - "the design version information is corrupted".
+** Error: (vopt-2064) Compiler back-end code generation process terminated with code 6.
+** Error: (vopt-1981) Version check failed with optimized design "vopt_tb" - "the design version information is corrupted".
+** Error: (vopt-2064) Compiler back-end code generation process terminated with code 6.
+End time: 13:06:39 on Sep 08,2026, Elapsed time: 0:00:02
+Errors: 56, Warnings: 12
+
+56 lỗi = 28 tiến trình back-end song song, mỗi tiến trình 2 dòng. Hỏng sau 2 giây,
+tức là gãy ngay khi bắt đầu sinh mã, không phải do thiết kế lớn.
+
+## Phép thử tách bạch: KHÔNG phải lỗi của thiết kế PULP
+
+vopt một module 4 dòng (`module tiny; ... endmodule`) — cũng hỏng y hệt:
+
+    ** Error: (vopt-1981) Version check failed with optimized design "tiny_opt"
+              - "the design version information is corrupted".
+    ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 6.
+
+`vsim -c tiny` (tự gọi vopt) cũng hỏng, `vsim -c -novopt tiny` cũng 'Error loading design'.
+Nghĩa là bản cài này KHÔNG mô phỏng được bất cứ thứ gì, kể cả thiết kế tối giản.
+
+## Đã loại trừ
+
+| Giả thuyết | Cách loại trừ |
+|---|---|
+| Thiết kế PULP quá lớn / có lỗi | module 4 dòng cũng hỏng |
+| Sai cổng license | thử cả 27001 và 27000 (script ~/run_questasim.sh dùng 27000), y hệt |
+| License server chết | `lmutil lmstat` báo UP, và `vlog` chạy tốt — vlog cũng cần license |
+| Thiếu thư viện hệ thống | `ldd` trên vopt/vlog/vsimk/vish: không thiếu thư viện nào |
+| `work` hỏng / còn rác | thư viện tạo mới hoàn toàn bằng `vlib`, vẫn hỏng |
+| Hết chỗ /tmp | /tmp còn 7.2 GB trống |
+
+## Chẩn đoán
+
+Lỗi 'the design version information is corrupted' là một phép kiểm tra tính toàn vẹn
+bên trong Questa, thất bại ở khâu sinh mã back-end. Thư mục cài chứa
+`MentorKG.exe`, `Patch_DownLoadLy.iR.bat`, `START_SERVER` — đây là dấu vết của
+một bản cài được vá bằng keygen, không phải bản cài chính thức. Kiểu bản vá này
+thường làm hỏng đúng phép kiểm tra nói trên: vlog/vmap qua được, còn vopt thì không.
+
+Đây là vấn đề của bản cài, không sửa được từ phía repo.

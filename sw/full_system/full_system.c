@@ -202,11 +202,42 @@ int phase5_tcdm(void)
     return 0;   /* đã tự báo qua cl_report, không trả về nữa kẻo đếm hai lần */
 }
 
+/* Chờ DMA có giới hạn.
+ *
+ * KHÔNG dùng plp_dma_wait() của runtime ở đây. Thân nó là
+ *
+ *     while (DMA_READ(MCHAN_STATUS_OFFSET) & (1 << counter))
+ *         eu_evt_maskWaitAndClr(1 << ARCHI_CL_EVT_DMA0);
+ *
+ * (mchan_v7.h:414-419) — vòng lặp không có giới hạn, và thân vòng làm core
+ * NGỦ chờ sự kiện DMA. Nếu DMA không bao giờ báo xong thì core ngủ vĩnh viễn:
+ * không log, không FAIL, mô phỏng đứng im cho tới khi hết giờ. Poll có giới
+ * hạn đổi cái treo đó lấy một dòng FAIL đọc được.
+ *
+ * Trả về 1 nếu transfer xong trước hạn, 0 nếu hết hạn.
+ */
+static int demo_dma_wait(int id)
+{
+    int ok = POLL_UNTIL(!(plp_dma_status() & (1 << id)), POLL_LIMIT);
+    plp_dma_counter_free(id);
+    return ok;
+}
+
 int phase6_dma(void)
 {
     PHASE_BEGIN(6, "MCHAN DMA, AXI hai chieu");
 
     const unsigned short nbytes = DEMO_L2_WORDS * 4;
+
+    /* Phép thử ngược cho phase 6: cắt ngắn lượt về 2 word. DMA vẫn báo xong
+     * bình thường — chỉ có dữ liệu là thiếu. Nếu phase 6 thật sự đối chiếu
+     * dữ liệu thì phải FAIL tại word DEMO_L2_WORDS-2; nếu nó chỉ đọc thanh
+     * ghi trạng thái thì sẽ báo OK và lộ ra là phép kiểm tra rỗng. */
+#ifdef DEMO_INJECT_FAULT_DMA
+    const unsigned short nbytes_back = nbytes - 8;
+#else
+    const unsigned short nbytes_back = nbytes;
+#endif
 
     for (int i = 0; i < DEMO_L2_WORDS; i++) {
         demo_l1_scratch[i]  = 0;
@@ -216,12 +247,16 @@ int phase6_dma(void)
     /* L2 -> L1 */
     int id = plp_dma_extToL1((unsigned int)demo_l1_scratch,
                              (mchan_ext_t)(unsigned int)demo_l2_src, nbytes);
-    plp_dma_wait(id);
+    if (!demo_dma_wait(id))
+        PHASE_FAIL("DMA L2->L1 khong bao xong sau %d lan poll, status=0x%08x",
+                   POLL_LIMIT, plp_dma_status());
 
     /* L1 -> L2, sang vùng đích khác */
     id = plp_dma_l1ToExt((mchan_ext_t)(unsigned int)demo_l2_dst,
-                         (unsigned int)demo_l1_scratch, nbytes);
-    plp_dma_wait(id);
+                         (unsigned int)demo_l1_scratch, nbytes_back);
+    if (!demo_dma_wait(id))
+        PHASE_FAIL("DMA L1->L2 khong bao xong sau %d lan poll, status=0x%08x",
+                   POLL_LIMIT, plp_dma_status());
 
     for (int i = 0; i < DEMO_L2_WORDS; i++)
         if (demo_l2_dst[i] != demo_l2_src[i])

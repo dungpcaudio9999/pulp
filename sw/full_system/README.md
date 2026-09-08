@@ -13,6 +13,40 @@ lần sau trên cả 8 core cluster thông qua `bench_cluster_forward()`.
 `run_sim.sh` tự dựng toàn bộ môi trường vì `source setup/vsim.sh` là **chưa đủ**.
 Xem [nhật ký QuestaSim](../../doc/dungpc/nhat-ky-mo-phong-pulp-questasim.md).
 
+Nếu thiếu công cụ, script báo hết một lượt rồi dừng thay vì chết giữa chừng. Bốn biến
+môi trường ghi đè được:
+
+| Biến | Mặc định | Ý nghĩa |
+|---|---|---|
+| `QUESTA_HOME` | `$HOME/questasim` | thư mục cài Questa |
+| `PULP_RISCV_GCC_TOOLCHAIN` | tự dò vài nơi quen thuộc | toolchain RISC-V |
+| `SIM_TIMEOUT` | `40 ms` | watchdog **thời gian mô phỏng** |
+| `WALL_TIMEOUT` | `1800` | watchdog **thời gian thực**, giây |
+
+Trước đây hai đường dẫn đầu bị hardcode vào một máy cụ thể; trên máy khác chúng trỏ vào
+hư vô và lỗi chỉ lộ ra rất muộn dưới dạng `No rule to make target 'clean'`.
+
+## Watchdog
+
+`run -all` không có giới hạn. Nếu testbench không bao giờ tới `$stop` — cluster không
+khởi động, DMA không báo xong, core treo — thì vsim đứng im ở prompt: không PASS, không
+FAIL, không thông báo gì.
+
+Cách phát hiện: `tb_pulp.sv:156` khởi tạo `exit_status = EXIT_ERROR (-1)` và **chỉ** ghi
+đè bằng 0/1 khi test kết thúc thật. Còn `-1` sau khi hết giờ nghĩa là chưa chạy xong.
+
+Hai tầng, vì tầng một không cứu được trường hợp vsim treo trước khi nạp do-file:
+
+1. **Thời gian mô phỏng** — `SIM_TIMEOUT`, đọc bởi `run_and_exit`
+   (`sim/tcl_files/config/vsim.tcl`) và bởi `wave_capture.do`.
+2. **Thời gian thực** — `WALL_TIMEOUT` trong `run_sim.sh`, giết cả process group.
+
+Mã thoát: `0` PASS, `1` lỗi dữ liệu, `124` treo.
+
+```bash
+SIM_TIMEOUT="5 ms" ./run_sim.sh     # ép watchdog nổ để kiểm chứng đường TIMEOUT
+```
+
 Bản FPGA (dùng sau khi có bitstream):
 
 ```bash
@@ -123,6 +157,21 @@ Bài test phải FAIL với status khác 0. Đây là phép thử **quan trọng
 nó chứng minh lỗi do một core **khác core 0** phát hiện vẫn tới được exit status. Nếu bỏ
 `cl_report()` và để mỗi core `return` số lỗi của mình, phép thử này sẽ PASS sai — lỗi bị
 nuốt mất hoàn toàn trong im lặng.
+
+### Phép thử ngược cho phase 6 (DMA)
+
+```bash
+./run_sim.sh clean all run INJECT_FAULT_DMA=1
+```
+
+Cắt ngắn lượt DMA trả về 2 word. DMA vẫn báo xong bình thường — **chỉ dữ liệu là thiếu**.
+Phải FAIL tại word 254. Nếu nó báo OK thì phase 6 chỉ đang đọc thanh ghi trạng thái
+MCHAN chứ không đối chiếu dữ liệu, tức là một phép kiểm tra rỗng.
+
+Phase 6 cũng không dùng `plp_dma_wait()` của runtime nữa. Thân hàm đó là vòng `while`
+không giới hạn mà thân vòng là `eu_evt_maskWaitAndClr` — core **ngủ** chờ sự kiện DMA.
+DMA không bao giờ báo xong thì core ngủ vĩnh viễn. `demo_dma_wait()` poll có giới hạn và
+hết hạn thì FAIL kèm giá trị `MCHAN_STATUS`.
 
 Bốn lỗi `vsim-191` và warning `jtag_tick` là nhiễu đã biết của Questa 10.7c, không phải
 hồi quy của chương trình này.

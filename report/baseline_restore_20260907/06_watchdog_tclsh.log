@@ -1,0 +1,36 @@
+# Watchdog — kiem chung logic bang tclsh (khong co Questa tren may nay)
+
+proc run_and_exit trong sim/tcl_files/config/vsim.tcl duoc trich ra va chay voi
+stub cho cac lenh cua vsim (run/examine/quit/echo). Kiem tra 5 duong.
+
+--- treo: watchdog bat, exit_status con -1 ---
+  WATCHDOG|bat, gioi han thoi gian mo phong = 30 ms
+  run 30 ms
+  WATCHDOG|TIMEOUT sau 30 ms - testbench chua ket thuc
+  WATCHDOG|exit_status van la EXIT_ERROR(-1), khong phai PASS cung khong phai FAIL
+  => QUIT code=124
+  ket qua: exit code 124
+--- PASS: watchdog bat, ket thuc som ---
+  WATCHDOG|bat, gioi han thoi gian mo phong = 30 ms
+  run 30 ms
+  WATCHDOG|testbench ket thuc truoc han, exit_status = 0
+  => QUIT code=0
+  ket qua: exit code 0
+--- FAIL du lieu: watchdog bat, exit_status = 1 ---
+  WATCHDOG|bat, gioi han thoi gian mo phong = 30 ms
+  run 30 ms
+  WATCHDOG|testbench ket thuc truoc han, exit_status = 1
+  => QUIT code=1
+  ket qua: exit code 1
+--- loi khi run ---
+  WATCHDOG|bat, gioi han thoi gian mo phong = 30 ms
+  run 30 ms
+  WATCHDOG|loi khi chay: vsim loi gia lap
+  => QUIT code=1
+  ket qua: exit code 1
+--- khong dat SIM_TIMEOUT: hanh vi cu ---
+  run -all (khong gioi han)
+  => QUIT code=0
+  ket qua: exit code 0
+
+Quy uoc ma thoat:  0 = PASS   1 = FAIL du lieu   124 = TIMEOUT (giong lenh timeout)

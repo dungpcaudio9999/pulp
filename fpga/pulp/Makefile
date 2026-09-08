@@ -7,13 +7,16 @@ VIVADO ?= vivado
 
 .DEFAULT_GOAL:=help
 
-.PHONY: help all gui ips clean-ips clk clean-clk clean
+.PHONY: help all gui synth ips clean-ips clk clean-clk clean
 
 all: ips ## Generate the bitstream for pulpissimo with vivado in batch mode. The vivado invocation command may be overriden with the env variable VIVADO.
 	$(VIVADO) -mode batch -source tcl/run.tcl
 
 gui: ips ## Generates the bitstream for pulpissimo with vivado in GUI mode. The vivado invocation command may be overriden with the env variable VIVADO.
 	$(VIVADO) -mode gui -source tcl/run.tcl &
+
+synth: ips ## Run synthesis only and stop (no implementation, no bitstream). Reports land in reports/.
+	$(VIVADO) -mode batch -source tcl/run_synth_only.tcl
 
 ips: clk ## Synthesizes necessary xilinx IP
 

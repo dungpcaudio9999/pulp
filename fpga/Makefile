@@ -3,7 +3,7 @@ export BENDER
 
 all: zcu102
 
-clean_all: clean_ips clean_zcu102 clean_vcu118
+clean_all: clean_ips clean_zcu102 clean_zcu104 clean_vcu118
 
 zcu102: ## Generates the bistream for the zcu102 board
 ifdef gui
@@ -19,6 +19,25 @@ clean_zcu102: ## Removes all bitstreams, *.log files and vivado related files (r
 	$(MAKE) -C pulp clean BOARD=zcu102
 	rm -f pulp_zcu102.bit
 	rm -f pulp_zcu102.bin
+
+
+zcu104: ## Generates the bitstream for the zcu104 board
+ifdef gui
+	$(MAKE) -C pulp gui BOARD=zcu104
+else
+	$(MAKE) -C pulp all BOARD=zcu104
+	cp pulp/pulp-zcu104.runs/impl_1/xilinx_pulp.bit pulp_zcu104.bit
+	cp pulp/pulp-zcu104.runs/impl_1/xilinx_pulp.bin pulp_zcu104.bin
+	@echo "Bitstream generation for zcu104 board finished. The bitstream Configuration Memory File was copied to ./pulp_zcu104.bit and ./pulp_zcu104.bin"
+endif
+
+zcu104-synth: ## Runs synthesis ONLY for zcu104 and stops before implementation. Use this for the first run to catch errors early.
+	$(MAKE) -C pulp synth BOARD=zcu104
+
+clean_zcu104: ## Removes all bitstreams, *.log files and vivado related files (rm -rf vivado*) for the zcu104 board.
+	$(MAKE) -C pulp clean BOARD=zcu104
+	rm -f pulp_zcu104.bit
+	rm -f pulp_zcu104.bin
 
 
 vcu118: ## Generates the bitstream for the vcu118 board

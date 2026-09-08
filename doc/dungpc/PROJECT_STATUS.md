@@ -2,26 +2,30 @@
 
 ## 1. Thông tin snapshot
 
-- Ngày cập nhật: `2026-09-07` (cập nhật lần 7: hoàn thành Milestone 7)
+- Ngày cập nhật: `2026-09-07` (cập nhật lần 8: khôi phục baseline trên máy mới)
 - Repository: `pulp` (fork `dungpcaudio9999/pulp`)
-- Branch: `feature/dungpc-work`
-- HEAD: `b6ae547` — bằng `origin/feature/dungpc-work`, không ahead/behind
-- Baseline ban đầu: `b6ae547` (HEAD hiện tại **chính là** baseline)
-- Máy làm việc: Linux (`dungpc-ThinkPad-P1-Gen-4i`), không còn là Windows/MSYS2
-- Giai đoạn hiện tại: Milestone 0 và 2–7 hoàn thành. Còn Milestone 1 (chờ review) và phần port ZCU104 thật (tùy scope)
+- Branch: `feature/pc-work`
+- HEAD: `cabb650` — *docs: add final project report for handover*
+- Baseline ban đầu: `b6ae547`
+- **Máy làm việc: `A520M-K-V2`** — KHÔNG phải máy đã sinh các log mô phỏng cũ
+- Đích cuối đã chốt: **board ZCU104 chạy được**. Báo cáo là sản phẩm phụ, không phải đích.
 - Trạng thái tổng thể: **đang thực hiện**
 
+> **Đổi máy làm việc.** Mọi log mô phỏng trong `report/` đều sinh trên
+> `dungpc-ThinkPad-P1-Gen-4i`. Máy hiện tại **không có Questa, không có Vivado,
+> không có toolchain RISC-V, không có `pyelftools`** — xem
+> [report/baseline_restore_20260907/01_moi_truong.log](../../report/baseline_restore_20260907/01_moi_truong.log).
+> Dependency và compile script đã khôi phục được ở đây; mô phỏng thì chưa.
+>
 > **Đính chính so với snapshot `2026-09-01`.** Bản trước ghi HEAD là `ad0c389` với các
-> file tài liệu đã được commit. Commit đó **không tồn tại** trong working copy hiện tại
-> (`git cat-file -t ad0c389` → *not a valid object name*). Reflog chỉ có hai entry:
-> `clone` rồi `checkout` sang `feature/dungpc-work`. Đây là một bản clone mới trên máy
-> Linux; toàn bộ `doc/dungpc/` hiện là **untracked**, chưa có commit nào của mình.
+> file tài liệu đã được commit. Commit đó không tồn tại trong working copy hồi đó.
+> Nay `doc/dungpc/` đã được commit đầy đủ.
 
 ## 2. Tổng quan milestone
 
 | Milestone | Nội dung | Trạng thái | Ghi chú |
 |---|---|---|---|
-| 0 | Baseline và branch | Hoàn thành | Branch `feature/dungpc-work` tại `b6ae547` |
+| 0 | Baseline và branch | Hoàn thành | Nay là `feature/pc-work` tại `cabb650`; baseline gốc `b6ae547` |
 | 1 | Kiến trúc và source map | Gần hoàn thành | 4 chương deep-dive + source map đã viết; chưa commit, chưa review, sơ đồ Draw.io vẫn ngoài repo |
 | 2 | Dependency, toolchain và RTL build | **Hoàn thành** | Bender 0.31.0, dependency đã checkout, `vopt_tb` build sạch 0 error |
 | 3 | Software toolchain và FC smoke test | **Hoàn thành** | Toolchain RISC-V có sẵn; `hello` chạy pass trên Questa |
@@ -34,7 +38,7 @@
 
 ### Baseline và tài liệu
 
-- Branch `feature/dungpc-work` tại `b6ae547`.
+- Branch `feature/pc-work` (trước là `feature/dungpc-work`), baseline gốc `b6ae547`.
 - Đã đọc `README.md`, `Bender.yml`, `Bender.lock`, xác định platform top `rtl/pulp/pulp.sv`,
   ba domain (`safe_domain`, `soc_domain`, `cluster_domain`), simulation top `rtl/tb/tb_pulp.sv`.
 - Artifact Milestone 1 (tất cả **chưa commit**):
@@ -90,30 +94,23 @@ Kết luận trong `21_final_result.log`: **PULP hello test passed functionally.
 
 ## 4. Trạng thái working tree
 
-Đã có **7 commit** trên `feature/dungpc-work` (kèm merge `ad0c389` từ máy cũ):
+12 commit trên `feature/pc-work`, HEAD `cabb650`. Toàn bộ kết quả Milestone 4, 5, 6, 7
+đã được commit — mục này trước đây liệt kê chúng là "đang chờ commit", nay không còn đúng.
 
-```
-97132c6 test: add cluster bring-up and HWPE probe evidence
-a8d3271 docs: record cluster bring-up evidence and resolve HWPE blocker
-48b11a2 merge: hợp nhất commit ad0c389 từ máy cũ
-54aa56a test: add Questa hello simulation logs as milestone evidence
-5ebb58d sim: add experimental Vivado XSim flow for tb_pulp
-25fa939 docs: add PULP architecture analysis, project status and demo plan
-27e764e chore: ignore simulator and Vivado build artifacts
-```
+Thay đổi **chưa commit** của lượt khôi phục baseline `2026-09-07`:
 
-Đang chờ commit (kết quả Milestone 4 và 5):
-
-| Mục | Nội dung |
+| File | Nội dung |
 |---|---|
-| `sw/` | `sw/full_system/` — chương trình 9 phase, Makefile, `run_sim.sh`, `wave_capture.do`, README |
-| `report/full_system_20260906/` | chuỗi chẩn đoán phase 7 và hai log kết quả |
-| `report/waveform_20260906/` | dòng thời gian và phân bổ thời gian mô phỏng |
-| `doc/dungpc/PROJECT_STATUS.md` | file này |
-| `.gitignore` | bỏ qua `*.vcd`, `*.vcd.gz`, `*.wlf` |
+| `patch-deps` (mới) | Sửa hai typo trong `Bender.yml` của dependency upstream |
+| `sim/tcl_files/config/vsim.tcl` | Watchdog thời gian mô phỏng trong `run_and_exit` |
+| `sw/full_system/run_sim.sh` | Sửa lỗi đối số, bỏ hardcode đường dẫn máy cũ, preflight, watchdog wall-clock |
+| `sw/full_system/wave_capture.do` | Watchdog cho đường thu waveform |
+| `sw/full_system/full_system.c` | Phase 6: chờ DMA có giới hạn + đường tiêm lỗi |
+| `sw/full_system/Makefile` | Thêm `INJECT_FAULT_DMA=1` |
+| `report/baseline_restore_20260907/` (mới) | Bằng chứng của lượt này |
 
-Patch `const ref` trên `rtl/tb/{dbg,jtag,pulp_tap}_pkg.sv` đã được commit tại `5ebb58d`,
-kèm bằng chứng nó vô hại với Questa. Các file rác ở thư mục gốc đã dọn tại `27e764e`.
+Không sinh ra file rác nào ở thư mục gốc; `.bender/`, `pulp-runtime/`, `sim/compile.tcl`
+và `fpga/pulp/tcl/generated/` đều đã nằm trong `.gitignore`.
 
 ## 5. Trạng thái dependency
 
@@ -132,21 +129,78 @@ blocker: `make checkout` đã chạy được và `vopt_tb` build sạch.
 
 ## 6. Trạng thái toolchain
 
+Trên máy hiện tại `A520M-K-V2`, cập nhật `2026-09-08`. Bằng chứng:
+[10_thu_lai_20260908.log](../../report/baseline_restore_20260907/10_thu_lai_20260908.log).
+
 | Tool | Trạng thái |
 |---|---|
-| `vsim`/`vlog`/`vopt` | Questa **10.7c**, license server UP |
-| `riscv32-unknown-elf-gcc` | 7.1.1 (PULP GCC v1.0.16, Ubuntu 16 build) |
+| `vlog` / `vlib` / `vmap` | **Chạy tốt** — Questa 10.7c tại `~/ndmoney4porche/questasim`, license UP cổng 27001 |
+| `vopt` | **HỎNG** — `vopt-1981` "design version information is corrupted". Hỏng cả với module 4 dòng ⇒ chặn mọi mô phỏng |
+| `riscv32-unknown-elf-gcc` | **Chạy tốt** — 7.1.1, cài `2026-09-08`, xem ghi chú `libmpfr` bên dưới |
 | `bender` | 0.31.0 (`./bender` trong repo) |
-| `make`, `python3` | Có |
-| `vivado` | Có — nhưng XSim không dùng được, xem mục 7 |
+| `python3` + `pyelftools` | **Đủ** — pyelftools 0.33 cài vào `~/.local` ngày `2026-09-08` |
+| `vivado` | **Chạy tốt** — 2019.1 tại `/tools/Xilinx/Vivado/2019.1`, xem lưu ý dưới |
+
+### Cài toolchain RISC-V — có một bước không ghi ở đâu cả
+
+```bash
+cd ~/ndmoney4porche/tools
+U=https://github.com/pulp-platform/pulp-riscv-gnu-toolchain/releases/download/v1.0.16
+curl -sSLO $U/v1.0.16-pulp-riscv-gcc-ubuntu-16.tar.bz2
+curl -sSLO $U/v1.0.16-pulp-riscv-gcc-ubuntu-16.tar.bz2.sha256
+sha256sum -c v1.0.16-pulp-riscv-gcc-ubuntu-16.tar.bz2.sha256   # phải OK
+tar xjf v1.0.16-pulp-riscv-gcc-ubuntu-16.tar.bz2
+```
+
+Đến đây `riscv32-unknown-elf-gcc --version` chạy, **nhưng biên dịch thật thì hỏng**:
+
+```
+cc1: error while loading shared libraries: libmpfr.so.4: cannot open shared object file
+```
+
+Tarball **không** kèm thư mục `compat-libs` (máy cũ có là do ai đó tự thêm). Ubuntu hiện
+tại chỉ có `libmpfr.so.6`. Phải lấy gói cũ về:
+
+```bash
+T=~/ndmoney4porche/tools/v1.0.16-pulp-riscv-gcc-ubuntu-16
+curl -sSfLO http://archive.ubuntu.com/ubuntu/pool/main/m/mpfr4/libmpfr4_3.1.4-1_amd64.deb
+dpkg-deb -x libmpfr4_3.1.4-1_amd64.deb /tmp/mpfr_x
+mkdir -p $T/compat-libs/usr/lib/x86_64-linux-gnu
+cp -a /tmp/mpfr_x/usr/lib/x86_64-linux-gnu/libmpfr.so.4* $T/compat-libs/usr/lib/x86_64-linux-gnu/
+```
+
+`run_sim.sh` đã trỏ `LD_LIBRARY_PATH` vào đúng đường dẫn `compat-libs` này. Chỉ thiếu
+`libmpfr.so.4`; `libisl` thì bản này không cần.
+
+Kiểm chứng `2026-09-08`: `sw/full_system` build ra ELF 32-bit RISC-V (text 9360, data
+4188, bss 2108), cả bản sạch lẫn bản `INJECT_FAULT_DMA=1`.
+
+### Cách khởi động đúng trên máy này
+
+```bash
+# Questa (đường dẫn KHÁC mặc định ~/questasim)
+export QUESTA_HOME=~/ndmoney4porche/questasim
+export PATH="$QUESTA_HOME/bin:$PATH"
+export LM_LICENSE_FILE=27001@localhost MGLS_LICENSE_FILE=27001@localhost
+
+# Vivado — settings64.sh là CHƯA ĐỦ. Không có dòng LD_LIBRARY_PATH thì Vivado
+# chết ngay với: couldn't load librdi_commontasks.so: libtinfo.so.5 not found.
+# Ubuntu mới không còn libtinfo5; Vivado tự mang theo một bản trong lib/lnx64.o/SuSE.
+source /tools/Xilinx/Vivado/2019.1/settings64.sh
+export LD_LIBRARY_PATH="/tools/Xilinx/Vivado/2019.1/lib/lnx64.o/SuSE:$LD_LIBRARY_PATH"
+```
+
+Đã kiểm chứng Vivado có đủ cho ZCU104: 27 part `xczu7ev*`, có đúng
+`xczu7ev-ffvc1156-2-e`, và board file `xilinx.com:zcu104:part0:1.0` + `1.1`.
 
 ## 7. Build và simulation status
 
 | Hạng mục | Trạng thái |
 |---|---|
-| Dependency checkout | **Xong** |
-| `make scripts` / `sim/compile.tcl` | **Xong** |
-| RTL compile + `vopt_tb` | **Xong**, 0 error |
+| Dependency checkout | **Xong** — chạy lại được trên máy mới `2026-09-08` |
+| `make scripts` / `sim/compile.tcl` | **Xong** — cần `./patch-deps` xen giữa, xem mục 8 |
+| RTL compile | **Xong**, 0 error, 1053 module (`2026-09-08`) |
+| `vopt_tb` | **Hỏng trên máy này** — lỗi của bản cài Questa, xem mục 6 |
 | FC software build (`hello`) | **Xong** |
 | FC simulation trên Questa | **Pass** |
 | Cluster simulation | **Pass** — `mchan` status `0x00000000`; 8 core in ra `CL0_PE0..PE7` |
@@ -319,32 +373,74 @@ vivado -mode batch -source sim/xsim/run_hello_xsim_nofpu.tcl
 Nếu vẫn `43-4177` với 20+ GB trống thật thì đó là giới hạn thật của XSim 2019.1 với thiết kế
 cỡ này, và Questa là lựa chọn duy nhất.
 
-**Trạng thái file đang để dở:** `rtl/includes/pulp_soc_defines.sv` hiện đang bị sửa
-(`CLUST_FPU 0`, `CLUST_FP_DIVSQRT 0`) để phục vụ phép thử trên; bản gốc ở
-`pulp_soc_defines.sv.before_nofpu_experiment`. Khôi phục khi quay lại dùng Questa.
+**Đính chính `2026-09-07`:** cảnh báo cũ ở đây nói `rtl/includes/pulp_soc_defines.sv`
+"đang bị sửa dở" cho phép thử no-FPU. Không còn đúng — file hiện là
+`CLUST_FPU 1` / `CLUST_FP_DIVSQRT 1` (dòng 77-78), không có bản backup
+`.before_nofpu_experiment` nào còn lại, và `git status` sạch với file này.
 
 **Lỗi này không chặn hạng mục A.** Synthesis dùng engine khác `xelab`; flow
 `fpga/pulp-zcu102` là flow chính thức upstream và vẫn tạo được bitstream. Mô phỏng hành vi
 `tb_pulp` trên XSim không nằm trên đường tới ZCU104.
 
+### Làm chắc demo — `2026-09-07`
+
+Bằng chứng: [report/baseline_restore_20260907/](../../report/baseline_restore_20260907/).
+Đây là kiểm chứng **logic**, chưa chạy trên RTL vì máy này không có Questa.
+
+| Chỗ hổng | Xử lý |
+|---|---|
+| `run -all` không giới hạn: tb không tới `$stop` thì vsim treo im ở prompt | Watchdog đọc `SIM_TIMEOUT` trong `run_and_exit` (`sim/tcl_files/config/vsim.tcl`) và trong `wave_capture.do` |
+| Treo trước khi nạp do-file (chờ license…) thì watchdog trên vô dụng | Watchdog wall-clock trong `run_sim.sh`, giết cả process group qua `setsid` |
+| `plp_dma_wait()` là vòng `while` vô hạn, thân vòng làm core **ngủ** chờ sự kiện DMA | `demo_dma_wait()` poll có giới hạn, hết hạn thì FAIL kèm `MCHAN_STATUS` |
+| Phase 6 chưa có phép thử ngược nào | `INJECT_FAULT_DMA=1` cắt ngắn lượt DMA 2 word; DMA vẫn báo xong, chỉ thiếu dữ liệu |
+| `./run_sim.sh` không tham số luôn hỏng | Sửa `"${@:-clean all run}"` — trong dấu nháy nó nở ra một từ duy nhất |
+| Đường dẫn Questa/toolchain hardcode vào máy cũ | Cho ghi đè bằng biến môi trường + preflight báo hết thứ thiếu một lần |
+
+Cách phát hiện treo: `tb_pulp.sv:156` khởi tạo `exit_status = EXIT_ERROR (-1)` và chỉ ghi
+đè bằng 0/1 khi test kết thúc. Còn `-1` sau khi hết giờ nghĩa là chưa chạy xong.
+
+Ba kết cục nay phân biệt được: `0` PASS, `1` lỗi dữ liệu, `124` treo.
+
 ## 8. Vấn đề còn tồn
 
-### Chặn Milestone 4
+### Chặn việc chạy lại mô phỏng — **blocker hiện tại** (cập nhật `2026-09-08`)
 
-Không có blocker về hạ tầng. Việc còn lại là viết chương trình test — đã có kế hoạch tại
-[plan_demo.md](plan_demo.md).
+Hai thứ, độc lập nhau:
 
-### Chặn Milestone 5
+1. **`vopt` của bản Questa này không chạy.** Lỗi `vopt-1981` *"the design version
+   information is corrupted"* xảy ra **cả với một module 4 dòng**, nên không liên quan
+   tới thiết kế PULP. Đã loại trừ: cổng license, license server, thiếu thư viện hệ
+   thống, thư viện `work` hỏng, hết chỗ `/tmp`. Thư mục cài chứa `MentorKG.exe` và
+   `Patch_DownLoadLy.iR.bat` — dấu vết bản vá keygen, và kiểu bản vá này thường làm
+   hỏng đúng phép kiểm tra toàn vẹn ở khâu sinh mã back-end. **Cần một bản Questa cài
+   hợp lệ** (hoặc license server của trường) mới mô phỏng được.
+2. **Toolchain RISC-V chưa có.** `~/ndmoney4porche/tools/` rỗng. Cần tải release
+   `v1.0.16-pulp-riscv-gcc-ubuntu-16.tar.bz2` (308 MB) từ
+   `pulp-platform/pulp-riscv-gnu-toolchain`. Không có nó thì không build được ELF.
 
-`sim/waves/wave_hello.vcd` chỉ 118 byte. Cần bật dump waveform đúng cách trong `run.tcl`
-trước khi có gì để phân tích.
+Cái đã hết chặn: `pyelftools` (đã cài 0.33) và Vivado (đã chạy được, xem mục 6).
 
-### Chặn Milestone 6
+Bằng chứng: [10_thu_lai_20260908.log](../../report/baseline_restore_20260907/10_thu_lai_20260908.log).
+
+### Bẫy khi khôi phục dependency — đã xử lý
+
+- `make bender`: nếu `curl` hỏng (gặp 503 thật), recipe **vẫn** chạy `touch bender`, tạo
+  file rỗng không executable. Lần chạy sau `make` tưởng bender đã có và báo
+  `Permission denied`. Phải `rm -f bender` trước khi cài lại.
+- `Bender.yml` của `common_cells` và `adv_dbg_if` có typo đường dẫn. Bender 0.25.x bỏ qua,
+  0.31.0 báo `[E31]` và dừng cả `make scripts`. Đã có [`patch-deps`](../../patch-deps);
+  phải chạy lại sau **mỗi** lần `bender checkout` vì `.bender/` bị gitignore.
+
+### Chặn Milestone 6 (ZCU104)
 
 - Repo chỉ có `fpga/pulp-zcu102`, chưa có target ZCU104.
 - Bản FPGA đặt `USE_HWPE = 0` và `USE_HWPE_CL = 0` (`xilinx_pulp.v:93,127-128`) — HWPE
-  không tồn tại trên board.
+  không tồn tại trên board, nên phase 7 phải ghi SKIP khi chạy trên board.
 - Toàn bộ LED trong `zcu102.xdc` đang bị comment.
+- `fpga/pulp/tcl/run.tcl:67` trở đi chạy thẳng sang implementation và bitstream. Muốn dừng
+  sau synthesis để lấy số tài nguyên phải có bản tcl riêng.
+- JTAG trên ZCU104 phải đi qua PMOD0 — **cần adapter JTAG rời**, xem
+  [gap analysis](zcu102-to-zcu104-gap.md) mục 2. Đây là rủi ro thiết bị, nên kiểm tra sớm.
 
 ### Nhiễu chưa lý giải (không chặn)
 
@@ -356,31 +452,45 @@ trước khi có gì để phân tích.
 
 ## 9. Next actions theo thứ tự
 
-Milestone 0–5 đã xong. Còn lại:
+Đích đã chốt là **board ZCU104 chạy được**, nên thứ tự dưới đây ưu tiên đường tới
+bitstream, không ưu tiên bổ sung bằng chứng cho báo cáo.
 
-1. **Commit kết quả Milestone 4 và 5** (danh sách ở mục 4).
-2. **Đóng Milestone 1** — việc duy nhất còn thiếu là review tài liệu và quyết định số phận
-   sơ đồ `pulp_domains.drawio`; xem mục 11.
-3. **Dọn đĩa trước khi bắt đầu Milestone 6.** Còn 36 GB trên `/home` (đã dùng 89%). Một
-   lượt synthesis + implementation cho ZU7EV thường ngốn 20–40 GB thư mục `.runs`; thiếu
-   chỗ sẽ hỏng sau vài giờ chạy.
-4. **Milestone 6 — dựng target ZCU104.** Vivado 2019.1 đã có sẵn part `xczu7ev*` (27 part)
-   và board file ZCU104 (2 mục), nên không vướng công cụ. Việc thật:
+1. **Gỡ hai blocker ở mục 8 rồi chạy lại mô phỏng.** RTL compile đã chạy được trên máy
+   này; còn thiếu `vopt` (chờ bản Questa hợp lệ), ELF (chờ toolchain), rồi lượt sạch,
+   hai lượt tiêm lỗi (`INJECT_FAULT=1`, `INJECT_FAULT_DMA=1`) và một lượt ép
+   `SIM_TIMEOUT`. Kỳ vọng lần lượt: `0`, `1`, `1`, `124`.
+   Quy trình đầy đủ: [00_README.md](../../report/baseline_restore_20260907/00_README.md).
+
+   **Việc này không chặn bước 2.** Synthesis dùng Vivado, không dùng Questa.
+2. **Milestone 6 — dựng target ZCU104 và chạy tới synthesis.** Vivado 2019.1 có sẵn part
+   `xczu7ev*` và board file ZCU104. Việc thật:
    - tạo `fpga/pulp-zcu104/fpga-settings.mk` (đổi `XILINX_PART`, `XILINX_BOARD`);
-   - viết lại `constraints/zcu104.xdc` — pinout ZCU104 khác ZCU102 hoàn toàn;
-   - dùng lại `rtl/xilinx_pulp.v` gần như nguyên vẹn;
-   - thêm target `zcu104` vào `fpga/Makefile` song song với `zcu102` và `vcu118`.
+   - viết `constraints/zcu104.xdc` — bảng chân đầy đủ đã có ở [gap analysis](zcu102-to-zcu104-gap.md) mục 2;
+   - dùng lại `rtl/xilinx_pulp.v` nguyên vẹn (đã kiểm: file này không có `ifdef` theo board;
+     define `zcu102=1` trong `run.tcl:18` **không được RTL nào dùng**, bỏ qua được);
+   - thêm target `zcu104` vào `fpga/Makefile`;
+   - thêm bản tcl dừng sau synthesis, giữ `remove_cell ... padinst_bootsel*` và thêm
+     `report_utilization` / `report_timing_summary`.
 
-   Lưu ý repo **chưa từng chạy synthesis lần nào** — toàn bộ lịch sử Vivado ở đây là mô
-   phỏng XSim (xem mục 7).
-5. **Milestone 7 — báo cáo và bàn giao.** Đã có đủ evidence trong `report/`.
+   Lưu ý repo **chưa từng chạy synthesis lần nào**. Và "synth pass" chưa chứng minh XDC
+   đúng: cổng không ràng buộc chân thường chỉ nổ ở DRC lúc implementation.
+3. **Quyết định ~44 cổng ngoại vi FMC** — hạng mục lớn nhất còn bỏ ngỏ trong gap analysis
+   (mục 4). Phải chốt trước khi viết XDC hoàn chỉnh.
+4. **Bring-up board theo từng tầng:** clock/reset → JTAG truy cập L2 → FC hello qua UART →
+   8 core cluster → DMA → full_system → GPIO/LED. Phase 7 ghi SKIP vì bản FPGA tắt HWPE.
 
 ### Việc tùy chọn, chi phí thấp
 
 - Đổi sang `-gLOAD_L2=STANDALONE` cho vòng lặp debug: cắt được ~70% thời gian mô phỏng
   (xem Milestone 5). Giữ ít nhất một lần chạy `LOAD_L2=JTAG` để bảo chứng đường nạp.
-- Mở rộng `wave_capture.do` thu thêm nhóm `pad_*` để xác minh tín hiệu GPIO ra chân thật —
-  hiện phase 8 mới chỉ chứng minh ghi/đọc lại được thanh ghi `PADOUT`.
+- **Chứng minh GPIO ra pad bằng loopback có sẵn của testbench.** `tb_pulp.sv:669-684` nối
+  `w_gpios[16..31]` từ `w_gpios[0..15]`. Đặt PADDIR cho 0–15 là output, ghi pattern ra
+  `PADOUT`, rồi đọc `PADIN` ở bit 16–31: khớp là đã chứng minh trọn đường thanh ghi → OE →
+  pad, bằng một phép so sánh dữ liệu tự động, không cần đọc waveform bằng mắt. Hiện phase 8
+  mới chỉ ghi/đọc lại được thanh ghi `PADOUT`.
+- Thử UART thật bằng `io=uart`: monitor `uart_tb_rx` có sẵn (`tb_pulp.sv:530`) và được bật
+  vô điều kiện (`tb_pulp.sv:803`). Giá phải trả là thời gian mô phỏng dài hơn nhiều ở
+  115200 baud — nên để thành một lượt riêng, không thay mặc định.
 - Nhánh Vivado XSim đang dừng ở lỗi bộ nhớ `43-4177` chưa được kiểm chứng trong điều kiện
   đủ RAM (xem mục 7). Không chặn gì, chỉ là câu hỏi bỏ ngỏ.
 

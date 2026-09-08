@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Sửa các lỗi trong Bender.yml của dependency upstream khiến `bender script` gãy.
+#
+# Phải chạy GIỮA `./bender checkout` và `make scripts`. Vì `.bender/` bị
+# .gitignore và sinh lại sau mỗi lần checkout, patch không thể commit được —
+# phải áp lại bằng script này mỗi lần.
+#
+# Idempotent: chạy lại nhiều lần không hỏng gì.
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT"
+
+rc=0
+
+# --- common_cells: 'src/deprecated/clk_div.s' thiếu chữ 'v' ---------------
+# File thật là clk_div.sv. Bender 0.25.x bỏ qua file không tồn tại, 0.31.0 thì
+# báo lỗi '[E31] File ... doesn't exist' và dừng cả `make scripts`.
+CC="$(ls -d .bender/git/checkouts/common_cells-* 2>/dev/null | head -1 || true)"
+if [[ -z "$CC" ]]; then
+    echo "SKIP: chưa có checkout common_cells (chạy './bender checkout' trước)"
+    rc=1
+elif grep -q 'src/deprecated/clk_div\.s$' "$CC/Bender.yml"; then
+    sed -i 's|src/deprecated/clk_div\.s$|src/deprecated/clk_div.sv|' "$CC/Bender.yml"
+    echo "OK: đã sửa clk_div.s -> clk_div.sv trong $CC/Bender.yml"
+else
+    echo "OK: common_cells/Bender.yml không cần sửa"
+fi
+
+# --- adv_dbg_if: 'rtl/adbg_axi_biu.sv,' thua dau phay cuoi dong -----------
+# Bender coi ca dau phay la mot phan cua ten file.
+ADB="$(ls -d .bender/git/checkouts/adv_dbg_if-* 2>/dev/null | head -1 || true)"
+if [[ -z "$ADB" ]]; then
+    echo "SKIP: chưa có checkout adv_dbg_if"
+    rc=1
+elif grep -q 'rtl/adbg_axi_biu\.sv,$' "$ADB/Bender.yml"; then
+    sed -i 's|rtl/adbg_axi_biu\.sv,$|rtl/adbg_axi_biu.sv|' "$ADB/Bender.yml"
+    echo "OK: đã bỏ dấu phẩy thừa sau adbg_axi_biu.sv trong $ADB/Bender.yml"
+else
+    echo "OK: adv_dbg_if/Bender.yml không cần sửa"
+fi
+
+exit $rc
