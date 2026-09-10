@@ -115,46 +115,49 @@ do FC ghi qua AXI. Runtime dùng đúng đường đó: `cluster_start()` gọi
 
 ## 5. Quy trình tái lập từ checkout sạch
 
+Các bước chi tiết, chạy được từ máy trắng, nằm ở **[RUNBOOK.md](RUNBOOK.md)** — gồm cả
+bảng triệu chứng → nguyên nhân và lệnh thu waveform. Tóm tắt:
+
 ```bash
-# 1. Lấy mã nguồn và dependency
-git clone <fork-url> pulp && cd pulp
-git checkout feature/dungpc-work
-make checkout                # tải bender, checkout dependency, sinh sim/compile.tcl
-make pulp-runtime            # clone pulp-runtime v0.0.15
-./update-regression-tests    # clone regression_tests v2.0.0
+git clone <fork-url> pulp && cd pulp && git checkout feature/dungpc-work
 
-# 2. Môi trường (xem chi tiết ở nhật ký, Phụ lục B)
-#    Hoặc dùng luôn sw/full_system/run_sim.sh vốn đã gói sẵn.
+./bender checkout && ./patch-deps && make scripts   # KHONG dung 'make checkout'
+make pulp-runtime
+sed -i 's|"rU"|"r"|' pulp-runtime/bin/slm_hyper.py  # Python 3.11+ da bo mode 'rU'
 
-# 3. Build RTL
-source setup/vsim.sh
-ulimit -n 4096
+source setup/vsim.sh && ulimit -n 4096
+cd sim && make clean && vmap -c && make lib && make build && make opt && cd ..
 
-#    KHONG chay 'make build' o goc tren checkout sach: no goi 'make -C sim all'
-#    = clean + lib + build + opt, ma 'clean' xoa modelsim.ini (sim/Makefile:74)
-#    con 'lib' ngay sau do lai 'chmod +w modelsim.ini' (dong 57) -> hong.
-#    Trinh tu da kiem chung:
-cd sim
-make clean
-vmap -c                      # tao modelsim.ini; PHAI dung sau 'clean'
-make lib
-make build                   # vlog toan bo RTL
-make opt                     # vopt -> sim/work/vopt_tb
-cd ..
-
-#    Tu lan build thu hai tro di, khi modelsim.ini da ton tai:
-#    'make build' o thu muc goc dung duoc binh thuong.
-
-# 3b. Thu vien DPI cho JTAG (chi can mot lan)
-make -C rtl/tb/remote_bitbang clean
-make -C rtl/tb/remote_bitbang all CFLAGS="-Wall -O2 -g -fcommon"
-#    '-fcommon' bat buoc voi GCC moi: ma C cu dinh nghia bien toan cuc trong header
-
-# 4. Chạy chương trình demo
 cd sw/full_system
-./run_sim.sh                          # lượt sạch, kỳ vọng SUCCESS
-./run_sim.sh clean all run INJECT_FAULT=1   # phép thử ngược, kỳ vọng FAIL
+./run_sim.sh                                  # luot sach, ky vong SUCCESS
+./run_sim.sh clean all run INJECT_FAULT=1     # phep thu nguoc core 3, ky vong FAIL
+./run_sim.sh clean all run INJECT_FAULT_DMA=1 # phep thu nguoc phase 6, ky vong FAIL
 ```
+
+Bốn chỗ dễ vấp, cả bốn đều báo lỗi không gợi ý nguyên nhân:
+
+- **`make checkout` không dùng được trên checkout sạch.** Target đó nhảy thẳng từ
+  `./bender checkout` sang `make scripts`, không có khe chèn `./patch-deps`, nên gãy với
+  `[E31] File ... doesn't exist`.
+- **`make build` ở gốc cũng vậy.** Nó gọi `make -C sim all` = `clean lib build opt`, mà
+  `clean` xoá `modelsim.ini` (`sim/Makefile:74`) còn `lib` ngay sau đó `chmod +w` chính
+  file ấy (dòng 57). Phải chèn `vmap -c` vào giữa. Từ lần build thứ hai trở đi thì
+  `make build` dùng được bình thường.
+- **`-fcommon` phải nằm trong `rtl/tb/remote_bitbang/Makefile`, không truyền qua dòng lệnh.**
+  `sim/Makefile` target `build-deps` gọi `make -C ../rtl/tb/remote_bitbang all` không kèm
+  `CFLAGS` nào, nên đặt cờ trên dòng lệnh chỉ cứu được lần build thủ công. Khi `build-deps`
+  gãy thì RTL không được vlog, và `make opt` sau đó báo `(vopt-13130) Failed to find design
+  unit tb_pulp` — triệu chứng trông chẳng liên quan gì tới lỗi C thật.
+- **`slm_hyper.py` phải vá lại sau mỗi lần clone.** `pulp-runtime` bị gitignore ở repo cha
+  nên bản vá không đi theo `git pull`, và lỗi chỉ lộ ra ở bước sinh stimuli của `make run`
+  — sau khi đã compile xong mọi thứ.
+
+Môi trường thì không cần đặt tay: `sw/full_system/run_sim.sh` tự dò toolchain, rời conda,
+khởi động `lmgrd`, nạp cả `setup/vsim.sh` lẫn `pulp-runtime/configs/pulp.sh`, và chạy
+preflight báo hết một lượt những gì còn thiếu. Nó cũng bọc hai tầng watchdog
+(`SIM_TIMEOUT` thời gian mô phỏng, `WALL_TIMEOUT` thời gian thực) vì `run -all` không có
+giới hạn: testbench không tới `$stop` thì vsim đứng im ở prompt, không PASS không FAIL.
+Mã thoát: `0` PASS, `1` lỗi dữ liệu, `124` treo.
 
 Chỉ dành cho XSim (không bắt buộc):
 
@@ -306,6 +309,8 @@ Nêu rõ để người tiếp nhận không suy diễn quá phạm vi đã ki�
 
 | Tài liệu | Nội dung |
 |---|---|
+| [RUNBOOK.md](RUNBOOK.md) | chạy `full_system` từ máy trắng đến kết quả |
+| [full_system-giai-thich.md](full_system-giai-thich.md) | giải thích chi tiết chương trình test: test gì, vào/ra, so với cái gì |
 | [PLAN.md](PLAN.md) | kế hoạch tổng thể theo milestone |
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | trạng thái động, cập nhật liên tục |
 | [nhat-ky-mo-phong-pulp-questasim.md](nhat-ky-mo-phong-pulp-questasim.md) | quy trình dựng môi trường, 15 bài học |

@@ -102,6 +102,9 @@ Thay đổi **chưa commit** của lượt khôi phục baseline `2026-09-07`:
 | File | Nội dung |
 |---|---|
 | `patch-deps` (mới) | Sửa hai typo trong `Bender.yml` của dependency upstream |
+| `doc/dungpc/RUNBOOK.md` (mới) | Hướng dẫn chạy `full_system` từ máy trắng; `BAO-CAO-TONG-KET.md` § 5 rút gọn và trỏ sang |
+| `doc/dungpc/full_system-giai-thich.md` (mới) | Giải thích chi tiết `full_system.c`: test gì, hoạt động ra sao, vào/ra, đối chiếu với gì |
+| `rtl/tb/remote_bitbang/Makefile` | Thêm `-fcommon` vào `CFLAGS`: `sim/Makefile` target `build-deps` gọi sang không kèm `CFLAGS`, nên `cd sim && make build` luôn gãy trên GCC 10+ |
 | `sim/tcl_files/config/vsim.tcl` | Watchdog thời gian mô phỏng trong `run_and_exit` |
 | `sw/full_system/run_sim.sh` | Sửa lỗi đối số, bỏ hardcode đường dẫn máy cũ, preflight, watchdog wall-clock |
 | `sw/full_system/wave_capture.do` | Watchdog cho đường thu waveform |

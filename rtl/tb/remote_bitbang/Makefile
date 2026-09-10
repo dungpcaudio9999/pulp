@@ -15,9 +15,14 @@
 #
 # Author: Robert Balas (balasr@iis.ee.ethz.ch)
 
+# -fcommon: remote_bitbang.h dinh nghia bien toan cuc (tck, tms, tdi, rbs_err...)
+# ngay trong header, va ca remote_bitbang.c lan sim_jtag.c deu include no. GCC 10
+# tro di mac dinh -fno-common nen link bao 'multiple definition'. Phai dat ngay
+# TRONG day vi sim/Makefile 'build-deps' goi 'make -C ../rtl/tb/remote_bitbang all'
+# khong kem CFLAGS nao -- dat qua dong lenh chi cuu duoc lan build thu cong.
 CFLAGS          = -Wall -Wextra -Wno-missing-field-initializers \
 			-Wno-unused-function -Wno-missing-braces \
-			-O2 -g -march=native \
+			-O2 -g -march=native -fcommon \
 			-DENABLE_LOGGING -DNDEBUG
 CFLAGS_DBG      =
 # we need gnu11 and no-strict-aliasing

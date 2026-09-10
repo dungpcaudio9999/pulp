@@ -13,6 +13,12 @@ lần sau trên cả 8 core cluster thông qua `bench_cluster_forward()`.
 `run_sim.sh` tự dựng toàn bộ môi trường vì `source setup/vsim.sh` là **chưa đủ**.
 Xem [nhật ký QuestaSim](../../doc/dungpc/nhat-ky-mo-phong-pulp-questasim.md).
 
+Nếu repo chưa build bao giờ, đi từ [RUNBOOK.md](../../doc/dungpc/RUNBOOK.md) — checkout
+dependency, build RTL, build DPI, rồi mới tới đây.
+
+Giải thích chi tiết chương trình — test gì, vào/ra, đối chiếu với gì — ở
+[full_system-giai-thich.md](../../doc/dungpc/full_system-giai-thich.md).
+
 Nếu thiếu công cụ, script báo hết một lượt rồi dừng thay vì chết giữa chừng. Bốn biến
 môi trường ghi đè được:
 
