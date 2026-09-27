@@ -1,0 +1,6 @@
+command: timeout 20 gvsoc --target=pulp-open --binary <full_system ELF> run
+exit_code: 124
+classification: UNSUPPORTED
+last_completed_phase: 6
+next_phase: 7 HWPE datamover
+reason: target pulp-open has no datamover model, so the program waits indefinitely

@@ -1,0 +1,8 @@
+Run date: 2026-09-27 Asia/Bangkok
+PULP RTL: 3f06b9c
+GVSoC: 3b4c489
+PULP SDK: d4b5bcd
+Target: pulp-open
+RISC-V GCC: 7.1.1 20170509
+RTL simulator: Questa Sim-64 10.7c
+GVSoC Python: /usr/bin/python3 (selected by sw/gvsoc/env.sh)

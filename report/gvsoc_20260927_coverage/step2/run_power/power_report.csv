@@ -1,0 +1,628 @@
+Power report start
+------------------
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.0
+/chip/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.000000
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.0
+/chip/cluster/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.000000
+/chip/soc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/padframe/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc_clock_domain/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster_clock/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.0
+/chip/cluster/l1/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.000000
+/chip/cluster/pe0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe4/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe5/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe6/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe7/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/cluster/pe8/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/power_trace; 0.000000078481; 0.000083200000; 0.000083278481; 1.0
+/chip/cluster/l1/bank0/power_trace; 0.000000001682; 0.000005200000; 0.000005201682; 0.062461
+/chip/cluster/l1/bank1/power_trace; 0.000000006306; 0.000005200000; 0.000005206306; 0.062517
+/chip/cluster/l1/bank2/power_trace; 0.000000003784; 0.000005200000; 0.000005203784; 0.062487
+/chip/cluster/l1/bank3/power_trace; 0.000000001261; 0.000005200000; 0.000005201261; 0.062456
+/chip/cluster/l1/bank4/power_trace; 0.000000002943; 0.000005200000; 0.000005202943; 0.062476
+/chip/cluster/l1/bank5/power_trace; 0.000000004625; 0.000005200000; 0.000005204625; 0.062497
+/chip/cluster/l1/bank6/power_trace; 0.000000002102; 0.000005200000; 0.000005202102; 0.062466
+/chip/cluster/l1/bank7/power_trace; 0.000000001682; 0.000005200000; 0.000005201682; 0.062461
+/chip/cluster/l1/bank8/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 0.062471
+/chip/cluster/l1/bank9/power_trace; 0.000000003784; 0.000005200000; 0.000005203784; 0.062487
+/chip/cluster/l1/bank10/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 0.062471
+/chip/cluster/l1/bank11/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 0.062471
+/chip/cluster/l1/bank12/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 0.062471
+/chip/cluster/l1/bank13/power_trace; 0.000000034474; 0.000005200000; 0.000005234474; 0.062855
+/chip/cluster/l1/bank14/power_trace; 0.000000000841; 0.000005200000; 0.000005200841; 0.062451
+/chip/cluster/l1/bank15/power_trace; 0.000000005045; 0.000005200000; 0.000005205045; 0.062502
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank0/power_trace; 0.000000001682; 0.000005200000; 0.000005201682; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank1/power_trace; 0.000000006306; 0.000005200000; 0.000005206306; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank2/power_trace; 0.000000003784; 0.000005200000; 0.000005203784; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank3/power_trace; 0.000000001261; 0.000005200000; 0.000005201261; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank4/power_trace; 0.000000002943; 0.000005200000; 0.000005202943; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank5/power_trace; 0.000000004625; 0.000005200000; 0.000005204625; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank6/power_trace; 0.000000002102; 0.000005200000; 0.000005202102; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank7/power_trace; 0.000000001682; 0.000005200000; 0.000005201682; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank8/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank9/power_trace; 0.000000003784; 0.000005200000; 0.000005203784; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank10/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank11/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank12/power_trace; 0.000000002522; 0.000005200000; 0.000005202522; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank13/power_trace; 0.000000034474; 0.000005200000; 0.000005234474; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank14/power_trace; 0.000000000841; 0.000005200000; 0.000005200841; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/bank15/power_trace; 0.000000005045; 0.000005200000; 0.000005205045; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe0_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe1_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe2_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe3_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe4_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe5_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe6_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe7_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/pe8_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/interleaver/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/ext2loc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/l1/ext2loc_ts/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe4/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe5/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe6/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe7/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/pe8/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank0/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank1/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank2/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank3/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank4/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank4/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank5/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank5/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank6/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank6/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank7/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank7/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank8/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l0_bank8/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l1_bank0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l1_bank0/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l1_bank1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/l1_bank1/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache/interleaver/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/event_unit/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/cluster_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/periph_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/demux_periph_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/dma/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/timer/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/cluster_ctrl/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/cluster/icache_ctrl/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+/chip/soc/debug_rom/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/fc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/loader/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/debug_rom/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fll_soc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fll_periph/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fll_cluster/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fc_itc/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fc_icache/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fc_icache/refill_queue/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/fc_icache_ctrl/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/apb_soc_ctrl/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/apb_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/ll_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/hb_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/fc_fetch_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/fc_data_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/udma_rx_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_ico/udma_tx_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/axi_ico/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/gpio/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/udma/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+/chip/soc/l2/priv0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/priv1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_0_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_0_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_0_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_0_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_1_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_1_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_1_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_1_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_2_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_2_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_2_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_2_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_3_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_3_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_3_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_3_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_4_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_4_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_4_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_4_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_5_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_5_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_5_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_5_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_6_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_6_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_6_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_6_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_7_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_7_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_7_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_7_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_8_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_8_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_8_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_8_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_9_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_9_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_9_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_9_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_10_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_10_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_10_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_10_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_11_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_11_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_11_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+/chip/soc/l2/shared_11_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 0.000000
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/priv0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/priv1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_0_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_0_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_0_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_0_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_1_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_1_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_1_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_1_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_2_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_2_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_2_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_2_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_3_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_3_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_3_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_3_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_4/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_4_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_4_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_4_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_4_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_5/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_5_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_5_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_5_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_5_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_6/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_6_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_6_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_6_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_6_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_7/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_7_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_7_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_7_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_7_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_8/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_8_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_8_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_8_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_8_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_9/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_9_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_9_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_9_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_9_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_10/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_10_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_10_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_10_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_10_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/l2_shared_11/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_11_cut_0/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_11_cut_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_11_cut_2/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/l2/shared_11_cut_3/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/soc_eu/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/timer/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/timer_1/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/stdout/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/pulp_tag/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/riscv_tap/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/gdbserver/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/soc/periph_clock/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/fast_clock/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/fast_clock_generator/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/ref_clock/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/ref_clock_generator/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/chip/axi_proxy/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/hyperflash/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/ram/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/uart_checker/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/uart_checker/uart_checker/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+Trace path; Dynamic power (W); Leakage power (W); Total (W); Percentage
+/uart_checker/clock/power_trace; 0.000000000000; 0.000000000000; 0.000000000000; 1.0
+
+
+
+

@@ -1,0 +1,4 @@
+command: gvsoc --target=pulp-open --binary <full_system SKIP_HWPE=1 ELF> run
+exit_code: 0
+classification: PASS
+last_result: FULL-SYSTEM SUMMARY: SUCCESS (0 phase loi)
