@@ -1,0 +1,161 @@
+{
+  "date": "2026-09-10",
+  "kind": "static source audit; no simulator run",
+  "root_head": "ce0628648cb0b7d2d29ed348a235b6b12442034a",
+  "compile_targets": [
+    "TARGET_RTL",
+    "TARGET_SIMULATION",
+    "TARGET_TEST",
+    "TARGET_VSIM"
+  ],
+  "listed_rtl_sources": 811,
+  "missing_listed_rtl_sources": [],
+  "dependencies": [
+    {
+      "name": "pulp_soc",
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582",
+      "head": "d878151e0e40912642c5275d470cef76258f5fc6",
+      "status": [
+        "M rtl/pulp_soc/soc_interconnect.sv",
+        "?? rtl/pulp_soc/soc_interconnect.sv.before_xsim_enum_patch",
+        "?? rtl/pulp_soc/soc_interconnect.sv.before_xsim_struct_xbar_patch"
+      ],
+      "listed_rtl_sources": 34,
+      "listed_source_content_sha256": "38cc17e7e325ce2fd127e73215713e50f53103b9df009760369d11fbaf4e27c0",
+      "modified_tracked_file_sha256": {
+        "rtl/pulp_soc/soc_interconnect.sv": "1a3e030f4ab7adc81628aef30bba4a474a5f179ece6b7d35912520c93418808c"
+      }
+    },
+    {
+      "name": "pulp_cluster",
+      "path": ".bender/git/checkouts/pulp_cluster-48721e3ce381c984",
+      "head": "040fc3e3b2dbf11ce0d08bf7554f310c483b8c9f",
+      "status": [
+        "M rtl/cluster_bus_wrap.sv",
+        "?? rtl/cluster_bus_wrap.sv.before_xsim_struct_xbar_patch"
+      ],
+      "listed_rtl_sources": 21,
+      "listed_source_content_sha256": "be8dc418b65a76db853a8d26a2bd49318d6db630f08c08d424e3c3838e9648fb",
+      "modified_tracked_file_sha256": {
+        "rtl/cluster_bus_wrap.sv": "a4e8465ccb87ed0df2d78bf2b4198236c2574f6ec4925c408f751b2b6dbc41f1"
+      }
+    },
+    {
+      "name": "cv32e40p",
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482",
+      "head": "8d58109ab61e1fb6c9dcbafefb8f3a56ee596427",
+      "status": [],
+      "listed_rtl_sources": 28,
+      "listed_source_content_sha256": "4c9f647e3b172e3d1f59d688618b445bdf545d3c99858c8b62d498f9e861612f",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "common_cells",
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5",
+      "head": "b5ec8905ed7828655155b0ae971023adf793c600",
+      "status": [
+        "M Bender.yml",
+        "?? src/deprecated/clk_div.s"
+      ],
+      "listed_rtl_sources": 99,
+      "listed_source_content_sha256": "69eee93430e1a60ebaaf18f5eda9cacca4baea47208d44a2909ea3aebae159b4",
+      "modified_tracked_file_sha256": {
+        "Bender.yml": "9806e39b0891e1886ed3264e304198f8c8c667c858c9bd297cc8fcc713e3f5a8"
+      }
+    },
+    {
+      "name": "tech_cells_generic",
+      "path": ".bender/git/checkouts/tech_cells_generic-6a4b27e0e56cbcda",
+      "head": "e6226a6f374eb88fed84d4989bb3f066cb470f33",
+      "status": [],
+      "listed_rtl_sources": 13,
+      "listed_source_content_sha256": "e7e4a6061380fb204c14c26bf2caec6b3b57631088e487efbbd224cd7515e56e",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "generic_fll",
+      "path": ".bender/git/checkouts/generic_fll-5f6d72bdaf06f326",
+      "head": "1c92dc73a940392182fd4cb7b86f35649b349595",
+      "status": [],
+      "listed_rtl_sources": 16,
+      "listed_source_content_sha256": "a1509b0904950ab129b350b5ce139266ebf55c3f951104a0739fcefed4cfc360",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "apb_interrupt_cntrl",
+      "path": ".bender/git/checkouts/apb_interrupt_cntrl-dd2e5ce27b208df0",
+      "head": "86d650f590a385cc0d5148125528527377f0527c",
+      "status": [],
+      "listed_rtl_sources": 1,
+      "listed_source_content_sha256": "0ec785e16ca48e149ca64c70b58573651949e99625815c463ccd9ab5f8f35418",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "cluster_peripherals",
+      "path": ".bender/git/checkouts/cluster_peripherals-cc771700129bb934",
+      "head": "d388a790d9e1129e3ec57b2e0075ee21e454c3b1",
+      "status": [],
+      "listed_rtl_sources": 18,
+      "listed_source_content_sha256": "c07340a5af7fdce5200b3ab286b40c5b40da3ef181065c4148f25bd62dc62326",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "cluster_interconnect",
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c",
+      "head": "7d0a4f8acae71a583a6713cab5554e60b9bb8d27",
+      "status": [],
+      "listed_rtl_sources": 41,
+      "listed_source_content_sha256": "c574d305640b3c306a63bda16c0ea59fae09caf2ba217328dd191089c683c40f",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "hci",
+      "path": ".bender/git/checkouts/hci-fdec9f801a620ca3",
+      "head": "8fb848e8f6722c1c21b44533535f430960c31b0b",
+      "status": [],
+      "listed_rtl_sources": 20,
+      "listed_source_content_sha256": "4c3096779540c0617c7c6fcb714707892711cfd9c28c787abbcc7627760a03ff",
+      "modified_tracked_file_sha256": {}
+    },
+    {
+      "name": "axi",
+      "path": ".bender/git/checkouts/axi-d42e23417b564294",
+      "head": "527cf64a95f7aea36836b2db76dc4d767e150358",
+      "status": [
+        "M src/axi_burst_splitter.sv",
+        " M src/axi_xbar.sv",
+        "?? src/axi_burst_splitter.sv.before_xsim_default_disable_patch",
+        "?? src/axi_xbar.sv.before_xsim_modport_patch"
+      ],
+      "listed_rtl_sources": 52,
+      "listed_source_content_sha256": "402d7855b232f2e382b09bf0f656997801b471caf80ce9a2ccf1ecdf57432e32",
+      "modified_tracked_file_sha256": {
+        "src/axi_burst_splitter.sv": "6cdcbe6260ef71c064ee6fed038128b1ec3f7659f69abf4a6abf43bf13f9ff10",
+        "src/axi_xbar.sv": "7bebebed146bf93e2788c51a5da0811d5da04dc6812e06df2681f839d5a4016a"
+      }
+    },
+    {
+      "name": "hwpe-datamover-example",
+      "path": ".bender/git/checkouts/hwpe-datamover-example-a9b2d6689c13b9f9",
+      "head": "47e7fe8a38331b123d763ecab11be4058d425021",
+      "status": [],
+      "listed_rtl_sources": 4,
+      "listed_source_content_sha256": "b7ace752932d1bbbfcf129bd378c07d42e314b962428d7db07727265b907074d",
+      "modified_tracked_file_sha256": {}
+    }
+  ],
+  "sha256": {
+    "Bender.lock": "d8bdd45141bcb613cb7d2bc5671a9c73d73b31426e2b573dbc1742e7d2241591",
+    "Bender.yml": "81dfe1cb68a8af780ed6ba71d2025e73abe6ba1f8e5c6e454a041edb6f5e7319",
+    "sim/compile.tcl": "22ef808d9fd21d734b333faa2bea16b234fd3c2bf0cf8171147a5bc21c1f1c39",
+    "rtl/tb/tb_pulp.sv": "dc33426ca466e1fa317d087f3914406384234aa37352810c3421f950708d6cd7",
+    "rtl/pulp/pulp.sv": "b172970b8201c1ebe9cb31372e96ce8d6a71d6d728dbd4d677140e92ea9aec43",
+    "rtl/pulp/safe_domain.sv": "882ee46f9d56761d0a19f799041d4e2015ef021e0e9b1c575ae5cab0f95208bc",
+    "rtl/includes/pulp_soc_defines.sv": "89de2a16da21a4c5285aab52e8a0d5a45dda9a20e7e1eed67d5432595f1677a4",
+    "sim/boot/boot_code.cde": "75477cb3e16182431360b01cbdb9af05078407ddd532a9300aa215740263e932",
+    "sw/full_system/run_sim.sh": "89bd3a199fbefbbec0a82b478e793ac1c54a5ce49a2bc18623cbce7058c8a284",
+    "sw/full_system/full_system.c": "ca10855cc302e246ef0e8844bbdff504e8a1e50c5b3bd22466bd9b4821e737e9",
+    "pulp-runtime/kernel/crt0.S": "d60df0725ac797fc6e90090ad28842fd69e81b921be94df76fce9b3c86c94246"
+  },
+  "rom_word_at_0x80": "0x4ec0006f"
+}

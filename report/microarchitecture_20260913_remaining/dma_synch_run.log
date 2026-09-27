@@ -1,0 +1,14 @@
+CHECK DMA 1: ungranted command does not start transfer
+CHECK DMA 2: matching accepted command registers transfer
+CHECK DMA 3: two commands pending at both interfaces
+CHECK DMA 4: all TCDM completions alone do not finish DMA
+CHECK DMA 5: different SID does not retire this transfer
+CHECK DMA 6: one external completion still leaves work
+CHECK DMA 7: final external completion produces event; busy has delayed tail
+CHECK DMA 8: completion pulse and delayed busy drain
+CHECK DMA 9: simultaneous enqueue and retire preserves new work
+CHECK DMA 10: external complete still waits for TCDM
+CHECK DMA 11: last TCDM completion also closes transfer
+CHECK DMA 12: both directions drained
+PASS DMA synch: 12 checks
+- /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_dma_synch.sv:38: Verilog $finish

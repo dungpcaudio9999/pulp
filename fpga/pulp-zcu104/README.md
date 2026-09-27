@@ -1,6 +1,6 @@
 # PULP trên ZCU104
 
-Target này được dựng từ [gap analysis](../../doc/dungpc/zcu102-to-zcu104-gap.md).
+Target này được dựng từ [gap analysis](../../doc/dungpc/master_analysis/fpga/zcu102-to-zcu104-gap.md).
 Nó **chưa từng chạy trên board thật** — mới chỉ qua synthesis.
 
 ## Chạy

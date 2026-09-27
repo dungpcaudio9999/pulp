@@ -1,0 +1,229 @@
+RUNNER|make all run | SIM_TIMEOUT='200 ms' | WALL_TIMEOUT=7200s
+CC  test.c
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test.o`
+/opt/pulp-toolchain/bin/riscv32-unknown-elf-gcc  -c test.c -o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test.o -MMD -MP -march=rv32imcxgap9 -O2 -g -DCLUSTER_STACK_SIZE=0x1000 -D__riscv__ -fdata-sections -ffunction-sections -include chips/pulp/config.h -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include/chips/pulp  -fno-jump-tables -fno-tree-loop-distribute-patterns -D__PLATFORM__=ARCHI_PLATFORM_RTL -DCONFIG_IO_UART=0 -DCONFIG_IO_UART_BAUDRATE=115200 -DCONFIG_IO_UART_ITF=0 -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/lib/libc/minimal/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/include -I/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel 
+LD  /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test
+mkdir -p `dirname /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test`
+/opt/pulp-toolchain/bin/riscv32-unknown-elf-gcc -o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/fll-v1.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/freq-domains.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/chips/pulp/soc.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/lib/libc/minimal/io.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/lib/libc/minimal/fprintf.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/lib/libc/minimal/prf.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/lib/libc/minimal/sprintf.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/init.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/kernel.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/alloc.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/alloc_pool.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/irq.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/soc_event.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/bench.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/drivers/uart.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/cluster.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/crt0.o /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/kernel/irq_asm.o -MMD -MP -march=rv32imcxgap9 -nostartfiles -nostdlib -Wl,--gc-sections -L/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/kernel -Tchips/pulp/link.ld -lgcc 
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/modelsim.ini /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/modelsim.ini
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/work /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/work
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/boot /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/boot
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/tcl_files
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/stdout
+mkdir -p /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/fs
+ln -s /home/dungpc/ndmoney4porche/projects/pulp/sim/waves /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/waves
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py --binary=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test --vectors=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/vectors/stim.txt
+Created stimuli generator
+  Added binary: /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test
+  Handling section (base: 0x10000004, size: 0x64)
+  Handling section (base: 0x1c000004, size: 0xc4)
+  Init section to 0 (base: 0x1c0000c8, size: 0x840)
+  Handling section (base: 0x1c008000, size: 0x598c)
+  Generating to file: /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/vectors/stim.txt
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/plp_mkflash  --flash-boot-binary=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/test/test  --stimuli=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/vectors/qspi_stim.slm --flash-type=spi --qpi
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/slm_hyper.py  --input=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/vectors/qspi_stim.slm  --output=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build/vectors/hyper_stim.slm
+cd /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/icache_sweep/build && export VSIM_RUNNER_FLAGS='+ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf -gBAUDRATE=115200 -gUSE_HWPE_CL=1 -gLOAD_L2=JTAG' && vsim -64 -c -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl' -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl; run_and_exit;'
+Reading pref.tcl
+
+# 10.7c
+
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl
+# vsim -c -quiet vopt_tb -L models_lib -L vip_lib -t ps "+nowarnTRAN" "+nowarnTSCALE" "+nowarnTFMPC" "+TB_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim/../../fe/tb/" "+UVM_NO_RELNOTES" "+ENTRY_POINT=0x1c008080" -permit_unmatched_virtual_intf "+VSIM_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim" -gUSE_SDVT_SPI=0 -gUSE_SDVT_CPI=0 -gBAUDRATE=115200 -gENABLE_DEV_DPI=0 -gLOAD_L2=JTAG -gUSE_SDVT_I2S=0 -gUSE_HWPE_CL=1 
+# Start time: 01:50:07 on Sep 19,2026
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Warning: (vsim-3770) Failed to find user specified function 'jtag_tick' in DPI C/C++ source files.
+#    Time: 0 ps  Iteration: 0  Region: /SimJTAG_sv_unit File: /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/SimJTAG.sv
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_I2S" not found in design.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_SPI" not found in design.
+#  run_and_exit
+# WATCHDOG|bat, gioi han thoi gian mo phong = 200 ms
+# [CORE] Core settings: PULP_SECURE =           1, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [TB]       0ns - Entry point is set to 0x1c008080
+# [TB]       0ns - Asserting hard reset
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 2  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [TB]       1ns - Using FLL
+# [TB]       1ns - Not using CAM SDVT
+# Loading default stimuli
+# [JTAG] SoftReset Done(    701ns)
+# [JTAG] Bypass Test Passed (  33301ns)
+# [JTAG] Tap ID: 249511c3 (  43701ns)
+# [JTAG] Tap ID Test PASSED (  43701ns)
+# [test_mode_if]   50301ns - Init
+# [TB]   50301ns - Enabling clock out via jtag
+# [test_mode_if]   51801ns - Setting confreg to value 002.
+# [TB]   51801ns - jtag_conf_reg set to 002
+# [TB]   51801ns - Releasing hard reset
+# [TB]   53401ns - Init PULP TAP
+# [pulp_tap_if] WRITE32 burst @1c008080 for           4 bytes.
+# [TB]   67501ns - Write32 PULP TAP
+# [JTAG] R/W test of L2 succeeded
+# [TB]  177701ns - Halting the Core
+# [TB]  236501ns - Writing the boot address into dpc
+# [TB]  280601ns - Loading L2
+# [JTAG] Loading L2 with pulp tap jtag interface
+# [pulp_tap_if] WRITE32 burst @10000000 for         104 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000800 for         264 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00a000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00a400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00a800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00ac00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00b000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00b400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00b800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00bc00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00c000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00c400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00c800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00cc00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00d000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00d400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00d800 for         400 bytes.
+# [TB] 20853301ns - Resuming the CORE
+# [TB] 20912101ns retrying debug reg access
+# [TB] 20941401ns retrying debug reg access
+# [TB] 20970701ns retrying debug reg access
+# [TB] 21000001ns retrying debug reg access
+# [TB] 21029301ns retrying debug reg access
+# [TB] 21058601ns retrying debug reg access
+# [TB] 21087901ns retrying debug reg access
+# [TB] 21117201ns retrying debug reg access
+# [TB] 21146501ns retrying debug reg access
+# [TB] 21175801ns retrying debug reg access
+# [TB] 21205101ns retrying debug reg access
+# [TB] 21234401ns retrying debug reg access
+# [TB] 21263701ns retrying debug reg access
+# [TB] 21293001ns retrying debug reg access
+# [TB] 21322301ns retrying debug reg access
+# [TB] 21351601ns retrying debug reg access
+# [TB] 21380901ns retrying debug reg access
+# [TB] 21410201ns retrying debug reg access
+# [TB] 21439501ns retrying debug reg access
+# [TB] 21468801ns retrying debug reg access
+# [TB] 21498101ns retrying debug reg access
+# [TB] 21527401ns retrying debug reg access
+# [TB] 21556701ns retrying debug reg access
+# [TB] 21586001ns retrying debug reg access
+# [TB] 21615301ns retrying debug reg access
+# [TB] 22174001ns - Waiting for end of computation
+# [STDOUT-CL31_PE0] INFO,start
+# [STDOUT-CL0_PE0] CSV,icache_1core,256,0,cycles=2689,instr=2606,imiss=44
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,0,cycles=2673,instr=2604,imiss=30
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,1,cycles=2674,instr=2606,imiss=28
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,2,cycles=2674,instr=2606,imiss=28
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,3,cycles=2674,instr=2606,imiss=28
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,4,cycles=2676,instr=2606,imiss=30
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,5,cycles=2676,instr=2606,imiss=30
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,6,cycles=2676,instr=2606,imiss=30
+# [STDOUT-CL0_PE0] CSV,icache_8core,256,7,cycles=2676,instr=2606,imiss=30
+# [STDOUT-CL0_PE0] CSV,icache_1core,1024,0,cycles=10391,instr=10284,imiss=67
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,0,cycles=10389,instr=10283,imiss=67
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,1,cycles=10393,instr=10283,imiss=71
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,2,cycles=10389,instr=10283,imiss=67
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,3,cycles=10383,instr=10283,imiss=61
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,4,cycles=10382,instr=10283,imiss=60
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,5,cycles=10383,instr=10283,imiss=61
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,6,cycles=10394,instr=10283,imiss=72
+# [STDOUT-CL0_PE0] CSV,icache_8core,1024,7,cycles=10388,instr=10283,imiss=66
+# [STDOUT-CL0_PE0] CSV,icache_1core,2048,0,cycles=20971,instr=20524,imiss=407
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,0,cycles=20761,instr=20523,imiss=199
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,1,cycles=20753,instr=20523,imiss=191
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,2,cycles=20761,instr=20523,imiss=199
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,3,cycles=20759,instr=20523,imiss=197
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,4,cycles=20760,instr=20523,imiss=198
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,5,cycles=20750,instr=20523,imiss=188
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,6,cycles=20760,instr=20523,imiss=198
+# [STDOUT-CL0_PE0] CSV,icache_8core,2048,7,cycles=20755,instr=20523,imiss=193
+# [STDOUT-CL0_PE0] CSV,icache_1core,3072,0,cycles=32378,instr=30764,imiss=1574
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,0,cycles=31483,instr=30763,imiss=681
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,1,cycles=31483,instr=30763,imiss=681
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,2,cycles=31477,instr=30763,imiss=675
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,3,cycles=31477,instr=30763,imiss=675
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,4,cycles=31483,instr=30763,imiss=681
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,5,cycles=31491,instr=30763,imiss=689
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,6,cycles=31488,instr=30763,imiss=686
+# [STDOUT-CL0_PE0] CSV,icache_8core,3072,7,cycles=31483,instr=30763,imiss=681
+# [STDOUT-CL0_PE0] CSV,icache_1core,4096,0,cycles=47542,instr=41023,imiss=6496
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,0,cycles=44610,instr=41022,imiss=3566
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,1,cycles=44610,instr=41022,imiss=3566
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,2,cycles=44610,instr=41022,imiss=3566
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,3,cycles=44610,instr=41022,imiss=3566
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,4,cycles=44610,instr=41022,imiss=3566
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,5,cycles=44610,instr=41022,imiss=3566
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,6,cycles=44612,instr=41022,imiss=3568
+# [STDOUT-CL0_PE0] CSV,icache_8core,4096,7,cycles=44608,instr=41022,imiss=3564
+# [STDOUT-CL0_PE0] CSV,icache_1core,6144,0,cycles=145897,instr=61503,imiss=84371
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,0,cycles=145899,instr=61502,imiss=84375
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,1,cycles=145899,instr=61502,imiss=84375
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,2,cycles=145893,instr=61502,imiss=84369
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,3,cycles=145899,instr=61502,imiss=84375
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,4,cycles=145898,instr=61502,imiss=84374
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,5,cycles=145903,instr=61502,imiss=84379
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,6,cycles=145899,instr=61502,imiss=84375
+# [STDOUT-CL0_PE0] CSV,icache_8core,6144,7,cycles=145902,instr=61502,imiss=84378
+# [STDOUT-CL31_PE0] INFO,done,rc=0
+# [TB] 44216801ns - Received status core: 0x00000000
+# ** Note: $stop    : /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv(1008)
+#    Time: 44216801 ns  Iteration: 0  Instance: /tb_pulp
+# Break at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# Stopped at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# WATCHDOG|testbench ket thuc truoc han, exit_status = 0
+# End time: 01:56:50 on Sep 19,2026, Elapsed time: 0:06:43
+# Errors: 4, Warnings: 12
+RUNNER|PASS (exit 0)

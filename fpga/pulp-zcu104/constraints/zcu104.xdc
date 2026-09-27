@@ -1,7 +1,7 @@
 ###############################################################################
 # ZCU104 constraints for PULP
 #
-# Bang chan lay tu doc/dungpc/zcu102-to-zcu104-gap.md muc 2, doi chieu UG1267
+# Bang chan lay tu doc/dungpc/master_analysis/fpga/zcu102-to-zcu104-gap.md muc 2, doi chieu UG1267
 # (ZCU104 Evaluation Board User Guide v1.1) va kiem chung ton tai tren package
 # xczu7ev-ffvc1156 bang get_package_pins.
 #

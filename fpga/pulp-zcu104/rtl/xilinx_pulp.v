@@ -11,7 +11,7 @@
 // nen phai bo han thay vi de treo.
 //
 // Chuong trinh sw/full_system chi can UART (stdout), JTAG (nap) va GPIO/LED,
-// nen tap cong nay la du. Chi tiet o doc/dungpc/zcu102-to-zcu104-gap.md muc 4.
+// nen tap cong nay la du. Chi tiet o doc/dungpc/master_analysis/fpga/zcu102-to-zcu104-gap.md muc 4.
 //-----------------------------------------------------------------------------
 // Copyright (C) 2013-2019 ETH Zurich, University of Bologna
 // Copyright and related rights are licensed under the Solderpad Hardware

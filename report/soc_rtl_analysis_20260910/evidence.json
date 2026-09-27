@@ -1,0 +1,1061 @@
+{
+  "scope": "Static source inventory for SoC walkthrough, 2026-09-10",
+  "limitations": [
+    "Literal text locations are navigation aids, not proof of RTL behavior.",
+    "Compile membership is a textual filelist check, not elaboration or active-branch proof.",
+    "Files may be included indirectly; false explicit membership does not prove unused.",
+    "No RTL compile, simulation, waveform measurement or formal verification was run.",
+    "Per-file hashes cover listed evidence only, not every transitive input."
+  ],
+  "root_head": "ce0628648cb0b7d2d29ed348a235b6b12442034a",
+  "compile_inventory": {
+    "unique_explicit_rtl_files": 811,
+    "missing_files": []
+  },
+  "dependencies": {
+    "pulp_soc": {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582",
+      "head": "d878151e0e40912642c5275d470cef76258f5fc6",
+      "tracked_status": [
+        "M rtl/pulp_soc/soc_interconnect.sv"
+      ]
+    },
+    "tech_cells_generic": {
+      "path": ".bender/git/checkouts/tech_cells_generic-6a4b27e0e56cbcda",
+      "head": "e6226a6f374eb88fed84d4989bb3f066cb470f33",
+      "tracked_status": []
+    },
+    "common_cells": {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5",
+      "head": "b5ec8905ed7828655155b0ae971023adf793c600",
+      "tracked_status": [
+        "M Bender.yml"
+      ]
+    },
+    "cluster_interconnect": {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c",
+      "head": "7d0a4f8acae71a583a6713cab5554e60b9bb8d27",
+      "tracked_status": []
+    },
+    "l2_tcdm_hybrid_interco": {
+      "path": ".bender/git/checkouts/l2_tcdm_hybrid_interco-f03a86a7ac111e77",
+      "head": "fa55e72859dcfb117a2788a77352193bef94ff2b",
+      "tracked_status": []
+    },
+    "axi": {
+      "path": ".bender/git/checkouts/axi-d42e23417b564294",
+      "head": "527cf64a95f7aea36836b2db76dc4d767e150358",
+      "tracked_status": [
+        "M src/axi_burst_splitter.sv",
+        " M src/axi_xbar.sv"
+      ]
+    },
+    "apb_node": {
+      "path": ".bender/git/checkouts/apb_node-38396597780c7975",
+      "head": "4e350ef4980141397e3e17ced00e310e30f8dc95",
+      "tracked_status": []
+    },
+    "timer_unit": {
+      "path": ".bender/git/checkouts/timer_unit-7ee4cd321dafe5e2",
+      "head": "3f4ee3e5b3875a473242de5d0c3ebb5a0fe4b8db",
+      "tracked_status": []
+    },
+    "apb_interrupt_cntrl": {
+      "path": ".bender/git/checkouts/apb_interrupt_cntrl-dd2e5ce27b208df0",
+      "head": "86d650f590a385cc0d5148125528527377f0527c",
+      "tracked_status": []
+    },
+    "cv32e40p": {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482",
+      "head": "8d58109ab61e1fb6c9dcbafefb8f3a56ee596427",
+      "tracked_status": []
+    },
+    "udma_core": {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6",
+      "head": "7af2db5ea8cee3ecfe8e0e647bbdbc7f58ecb73b",
+      "tracked_status": []
+    },
+    "udma_uart": {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57",
+      "head": "18ed1986fd62920b1065005c370fd740995cfd4a",
+      "tracked_status": []
+    }
+  },
+  "sources": [
+    {
+      "path": "sim/compile.tcl",
+      "sha256": "22ef808d9fd21d734b333faa2bea16b234fd3c2bf0cf8171147a5bc21c1f1c39",
+      "line_count": 1575,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "timer_unit-": [
+          1170,
+          1171,
+          1172,
+          1173
+        ],
+        "lint_2_axi.sv": [
+          368
+        ]
+      }
+    },
+    {
+      "path": "rtl/tb/tb_pulp.sv",
+      "sha256": "dc33426ca466e1fa317d087f3914406384234aa37352810c3421f950708d6cd7",
+      "line_count": 1089,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "CORE_TYPE_FC": [
+          38,
+          691
+        ],
+        "USE_HWPE": [
+          42,
+          48,
+          694,
+          695
+        ]
+      }
+    },
+    {
+      "path": "rtl/pulp/pulp.sv",
+      "sha256": "b172970b8201c1ebe9cb31372e96ce8d6a71d6d728dbd4d677140e92ea9aec43",
+      "line_count": 1279,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "soc_domain": [
+          972,
+          1000
+        ],
+        "NB_HWPE_PORTS": [
+          1161
+        ]
+      }
+    },
+    {
+      "path": "rtl/includes/periph_bus_defines.sv",
+      "sha256": "54daf12df5516cf4dfa269bb0dbbc7d82854f2ad9591bebba24f9eb642d9ffdd",
+      "line_count": 73,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "TIMER_START_ADDR": [
+          37,
+          47
+        ],
+        "EU_START_ADDR": [
+          44
+        ]
+      }
+    },
+    {
+      "path": "sw/full_system/full_system.c",
+      "sha256": "ca10855cc302e246ef0e8844bbdff504e8a1e50c5b3bd22466bd9b4821e737e9",
+      "line_count": 417,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "timer_base_fc": [
+          46
+        ]
+      }
+    },
+    {
+      "path": "sw/full_system/run_sim.sh",
+      "sha256": "89bd3a199fbefbbec0a82b478e793ac1c54a5ce49a2bc18623cbce7058c8a284",
+      "line_count": 137,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "USE_HWPE_CL": [
+          5,
+          83,
+          87
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/pulp_soc.sv",
+      "sha256": "5cf0c093987b8be41801c38a1209fd2620e47ceec6ba69d576d30564e8804a24",
+      "line_count": 1038,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "i_dm_top": [
+          896
+        ],
+        "jtag_lint_arbiter_i": [
+          971
+        ],
+        "axi_cdc_src": [
+          509
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/fc/fc_subsystem.sv",
+      "sha256": "836e5c9cd935377d40f7232b4e9324349cca2525f9ac53ca173600d221fa63ea",
+      "line_count": 330,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "core_data_we": [
+          80,
+          97,
+          152,
+          236
+        ],
+        "core_data_err": [
+          79,
+          103,
+          240
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_interconnect_wrap.sv",
+      "sha256": "e035a17676b2cd47203c698b31e523a486f043a4f210a484695a7319fde920af",
+      "line_count": 274,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "tcdm_fc_data_addr_remapped": [
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          130,
+          132,
+          153
+        ],
+        "axi_lite_to_apb_intf": [
+          248
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/tcdm_demux.sv",
+      "sha256": "b8f7fe9c2cbdd87233999ae7391fa130f5915d77bb0108759aefa357d7046ad2",
+      "line_count": 154,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "PENDING": [
+          70,
+          116,
+          126,
+          139,
+          148
+        ],
+        "active_slave_q": [
+          73,
+          79,
+          82,
+          106,
+          127,
+          128,
+          129,
+          131
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/contiguous_crossbar.sv",
+      "sha256": "cfb953762bce4101dfffb7c5c205aa90d92be74f19d0e383321665bf729ac817",
+      "line_count": 139,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "WriteRespOn": [
+          121
+        ],
+        "RespLat": [
+          120
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/interleaved_crossbar.sv",
+      "sha256": "c8e83c939262c98e6c88ef8b8862d8fda86a2ed0b7d2e222a8a549a173083064",
+      "line_count": 124,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "PORT_SEL_WIDTH": [
+          43,
+          94,
+          96
+        ],
+        "RespLat": [
+          105
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/l2_ram_multi_bank.sv",
+      "sha256": "d096f4776daacedc4cab1b09dbe97913a146ba8831255542b236f3a15e42b41a",
+      "line_count": 133,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "tc_sram": [
+          52,
+          85,
+          116
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/boot_rom.sv",
+      "sha256": "7a89eb431fc4775851368167fc294caa65438476c5358472c1234b433f3d2e83",
+      "line_count": 71,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "generic_rom": [
+          43
+        ],
+        "ADDR_WIDTH": [
+          15,
+          44,
+          49,
+          54,
+          59,
+          64
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/include/tcdm_macros.svh",
+      "sha256": "6b0479be2720a2fcf45092843b07ec1556a4d7a1e8140b86590a025a347c01b3",
+      "line_count": 73,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "TCDM_EXPLODE_ARRAY_DECLARE": [
+          5
+        ],
+        "[3:0]": [
+          10,
+          21
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/tech_cells_generic-6a4b27e0e56cbcda/src/rtl/tc_sram.sv",
+      "sha256": "e909173570d2d14e46a91f2c083708bc194c6858029777f0a1288d92adae3054",
+      "line_count": 207,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "Latency": [
+          25,
+          42,
+          58,
+          106,
+          107,
+          116,
+          119,
+          133,
+          134,
+          142,
+          143,
+          192
+        ],
+        "sram[addr_i[i]][j]": [
+          155
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/tech_cells_generic-6a4b27e0e56cbcda/src/deprecated/generic_rom.sv",
+      "sha256": "2a22a965a014bd203f65d9749f788b91ce5884639bc6753e8559a860fa48fd85",
+      "line_count": 42,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "$readmemb": [
+          31
+        ],
+        "A_Q <= A": [
+          37
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/lint_2_axi_wrap.sv",
+      "sha256": "a5adc36a71e28b1a531df234e8bc5fbd441166a0cb456e687747182b2ab3a318",
+      "line_count": 136,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "REGISTERED_GRANT": [
+          53
+        ],
+        "data_we_i": [
+          61
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/periph_bus_wrap.sv",
+      "sha256": "905ee573c628ef63b4bba811094f14d6b9de17cd7cf4086dd55740b75278e4c5",
+      "line_count": 115,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "timer_master": [
+          25,
+          29,
+          69,
+          81
+        ],
+        "apb_node": [
+          100,
+          104
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_peripherals.sv",
+      "sha256": "b19bc508cd7ff4e2ef862972744a6be06e780d79ecadf0b653cd2e3a5904a33d",
+      "line_count": 663,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "i_apb_timer_unit": [
+          626
+        ],
+        "s_timer_hi_event": [
+          197,
+          224,
+          641
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_event_generator.sv",
+      "sha256": "9fbaea4e1bd9ba04c5f632a44b2307fb7270d1decc1918db24ea9309d9b8c858",
+      "line_count": 427,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "s_valid_fc": [
+          114,
+          139,
+          143,
+          147
+        ],
+        "s_event_ready": [
+          91,
+          151,
+          155,
+          178
+        ],
+        "r_fc_mask": [
+          102,
+          131,
+          201,
+          221,
+          225,
+          229,
+          233,
+          237,
+          241,
+          245,
+          249,
+          352,
+          354,
+          356,
+          358,
+          360,
+          362,
+          364,
+          366
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_event_queue.sv",
+      "sha256": "40295692180a07cdf4387d5834a9d429a3c083e872d92bcf4a964acb6835691c",
+      "line_count": 58,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "r_event_count": [
+          23,
+          29,
+          30,
+          36,
+          38,
+          39,
+          42,
+          43,
+          48,
+          50,
+          54
+        ],
+        "err_o": [
+          18,
+          29
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/components/tcdm_arbiter_2x1.sv",
+      "sha256": "cb8a3b19f58a23dd68e798a3812a2aa188341e41775fdb8d0560ffd64710c30c",
+      "line_count": 147,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "RR_FLAG": [
+          29
+        ],
+        "WAIT_VALID_0": [
+          31,
+          64,
+          87,
+          90,
+          99
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/components/apb_timer_unit.sv",
+      "sha256": "12ceaeb44b9e0d8d9633f43a01357159eed3c51f8b8780a0ec7790b97b2a25d5",
+      "line_count": 501,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "module apb_timer_unit": [
+          36
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/udma_subsystem/udma_subsystem.sv",
+      "sha256": "0bd1665205f2d16e0717fda6d67a44e8d4ac89846f93008bbf9a1bbddb14b6a2",
+      "line_count": 1132,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "i_uart_gen": [
+          436
+        ],
+        "CH_ID_TX_UART": [
+          153,
+          438,
+          445,
+          476,
+          477,
+          478,
+          479,
+          480,
+          481,
+          482,
+          483,
+          484,
+          487,
+          488,
+          489,
+          490,
+          491,
+          492
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/addr_decode.sv",
+      "sha256": "84e2b6d49c834b21f13b12d94919efd9a7d541b191a0651d2cca97435a5ca85a",
+      "line_count": 161,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "start_addr": [
+          27,
+          42,
+          47,
+          92,
+          106,
+          108,
+          129,
+          134,
+          142,
+          146,
+          147,
+          152,
+          153
+        ],
+        "end_addr": [
+          27,
+          43,
+          48,
+          92,
+          129,
+          134,
+          142,
+          146,
+          147,
+          152,
+          153
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rr_arb_tree.sv",
+      "sha256": "c7361280318a605131345932ab3325bc53f8fc76e67c5579b991b96a5b4ffeed",
+      "line_count": 348,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "ExtPrio": [
+          23,
+          54,
+          60,
+          90,
+          92,
+          145,
+          316,
+          317
+        ],
+        "FairArb": [
+          25,
+          42,
+          78,
+          203
+        ],
+        "LockIn": [
+          68,
+          74,
+          90,
+          152,
+          174,
+          182,
+          183,
+          316,
+          317
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/xbar.sv",
+      "sha256": "0a28a137c189d25586775056427644d70b8cf2f94c9e1bbc2bc3ca8767a91236",
+      "line_count": 132,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "rr_arb_tree": [
+          98,
+          99,
+          103
+        ],
+        "addr_dec_resp_mux": [
+          59,
+          66
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/addr_dec_resp_mux.sv",
+      "sha256": "7732eabbd1ae86ff9a5bf6e294eb89ae0f23676fbca38cdb7fe2ca92df1e9356",
+      "line_count": 184,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "WriteRespOn": [
+          20,
+          56,
+          58,
+          114,
+          132,
+          153,
+          156
+        ],
+        "bank_sel_q": [
+          111,
+          113,
+          117,
+          124,
+          126,
+          147,
+          149,
+          152,
+          161,
+          164
+        ],
+        "vld_q": [
+          42,
+          53,
+          56,
+          63,
+          65,
+          91,
+          114,
+          138,
+          141,
+          153,
+          162,
+          165
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/l2_tcdm_hybrid_interco-f03a86a7ac111e77/RTL/lint_2_axi.sv",
+      "sha256": "ec07094416c85808e40c051122ba5c846bc3b39ec1f018feb38b22c3da06f3b7",
+      "line_count": 383,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "WRITE_DATA": [
+          111,
+          156,
+          185
+        ],
+        "WRITE_ADDR": [
+          111,
+          160,
+          196
+        ],
+        "WRITE_WAIT": [
+          111,
+          136,
+          152,
+          189,
+          201,
+          207
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/axi-d42e23417b564294/src/axi_lite_to_apb.sv",
+      "sha256": "9d4948b8c062f59b25d3d5691b03b4414350c6af08728f745e39e6e2647ef688",
+      "line_count": 494,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "fall_through_register": [
+          184,
+          228,
+          242
+        ],
+        "Setup:": [
+          295
+        ],
+        "Access:": [
+          326
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/apb_node-38396597780c7975/src/apb_node.sv",
+      "sha256": "07fbba163ce58bdaaa0c2dcc8facbd21ee4fd6f321bf462356fd1fe04fa68851",
+      "line_count": 83,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "match_address": [
+          50
+        ],
+        "pready_o": [
+          32,
+          65,
+          78
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/timer_unit-7ee4cd321dafe5e2/rtl/apb_timer_unit.sv",
+      "sha256": "9cc48681f95c17117bdd00a645f56f99d7a56a441dfd03f185cd96a9a1366fb9",
+      "line_count": 508,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "IEM_BIT": [
+          28,
+          146,
+          163
+        ],
+        "PADDR[5:0]": [
+          110,
+          214
+        ],
+        "irq_hi_o": [
+          59,
+          400,
+          405
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/timer_unit-7ee4cd321dafe5e2/rtl/timer_unit_counter.sv",
+      "sha256": "83d4944a461c0bef8a29693c89b0f3f2fa02e8edde88d8c37dfd4b66990fe56e",
+      "line_count": 73,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "s_count == compare_value_i": [
+          65
+        ],
+        "reset_count_i": [
+          21,
+          37
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/apb_interrupt_cntrl-dd2e5ce27b208df0/apb_interrupt_cntrl.sv",
+      "sha256": "f32ebe0b62a7ddf7a9093b11e63dbda7e189c7b27e2451d3f2396f5bf6d6dddc",
+      "line_count": 238,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "s_event_fifo_ready": [
+          67,
+          98,
+          128,
+          211
+        ],
+        "proc_id": [
+          146
+        ],
+        "proc_int": [
+          155
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_controller.sv",
+      "sha256": "cddacd0bd51bb5ed85030ec3ef7ee8dfcc0a822e9bc3185c2d97a30680e695bb",
+      "line_count": 1128,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "SLEEP:": [
+          324,
+          335
+        ],
+        "IRQ_TAKEN_ID:": [
+          695
+        ],
+        "IRQ_TAKEN_IF:": [
+          721
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_if_stage.sv",
+      "sha256": "d7164a4c8d9f723cc7ad28792d756bc89f74000b1e03128a1e248e1b3fe79c7b",
+      "line_count": 418,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "EXC_PC_IRQ": [
+          142
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_core.sv",
+      "sha256": "f9f68a6b885feb99a7743294c5372ba70229faea9f949b13f60a2057edd52456",
+      "line_count": 414,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "periph_valid_o": [
+          66,
+          189,
+          351
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/common/udma_apb_if.sv",
+      "sha256": "8847538787a83b7913fc0e73fb0cfb1b2ab9134ae8cd1f6b696f84b231757b5e",
+      "line_count": 83,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "PADDR[11:7]": [
+          54
+        ],
+        "PADDR[6:2]": [
+          50
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/common/udma_ctrl.sv",
+      "sha256": "cdb5a219961f4443e08e53da5c976e1ab27e07e8ac55ffe24ce4a7cab9161793",
+      "line_count": 136,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "r_cg": [
+          55,
+          73,
+          74,
+          92,
+          103,
+          123
+        ],
+        "cg_core_o": [
+          46,
+          74
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_ch_addrgen.sv",
+      "sha256": "7b8ccc1e8ce7bb84dce0e1a4b9b328f94e96c798a0f3e14f1a3994ec438bc016",
+      "line_count": 277,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "s_compare": [
+          74,
+          93,
+          102,
+          108,
+          110,
+          112,
+          138,
+          180,
+          240,
+          253
+        ],
+        "int_ch_events_o": [
+          49,
+          84
+        ],
+        "int_not_stall_i": [
+          38,
+          138,
+          140,
+          178,
+          236,
+          240,
+          251
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_tx_channels.sv",
+      "sha256": "efcb13bc9202cf4907a195b6bf07fb7604584057fecfe94746c82078f2b8f381",
+      "line_count": 505,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "s_fifoin": [
+          117,
+          142,
+          215
+        ],
+        "s_stall": [
+          131,
+          159,
+          334
+        ],
+        "l2_addr_o": [
+          38,
+          167,
+          169,
+          174,
+          178,
+          182,
+          186
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57/rtl/udma_uart_reg_if.sv",
+      "sha256": "670b5af605edd30311076bfb7634057d90e013cba7479ab66054785111ddf6c7",
+      "line_count": 309,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "REG_TX_CFG": [
+          29,
+          236,
+          282
+        ],
+        "cfg_data_i[6]": [
+          228,
+          238
+        ],
+        "cfg_data_i[31:16]": [
+          245
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57/rtl/udma_uart_top.sv",
+      "sha256": "586be8e21005de967a1dca5459165e8885c07c4eaa7e9259bfb7da296af7d8fa",
+      "line_count": 333,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "io_tx_fifo": [
+          184
+        ],
+        "udma_dc_fifo #(8,4)": [
+          201,
+          231
+        ],
+        "s_uart_tx_sample": [
+          110,
+          293,
+          321
+        ]
+      }
+    },
+    {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57/rtl/udma_uart_tx.sv",
+      "sha256": "217d72d528605386979c6d7a411a1aca2a7fed85595937414fd1cbfd508653c8",
+      "line_count": 222,
+      "explicitly_listed_rtl_in_compile_tcl": true,
+      "literal_anchors": {
+        "STOP_BIT_FIRST:": [
+          137
+        ],
+        "busy_o": [
+          24,
+          55
+        ],
+        "cfg_div_i": [
+          26,
+          203
+        ]
+      }
+    },
+    {
+      "path": "pulp-runtime/drivers/uart.c",
+      "sha256": "84828173f01a1161fc8c13af9fad9ecf45283b4b8b0265a83dea4d6db093370d",
+      "line_count": 116,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "uart_wait_tx_done": [
+          25,
+          77,
+          97
+        ],
+        "plp_udma_enqueue": [
+          95,
+          111
+        ]
+      }
+    },
+    {
+      "path": "pulp-runtime/kernel/irq.c",
+      "sha256": "6ff616ea51e7a3296b13619d7b5415b65d23225db42425835683a48a8488637e",
+      "line_count": 92,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "rt_irq_set_handler": [
+          46
+        ],
+        "pos_irq_init": [
+          82
+        ]
+      }
+    },
+    {
+      "path": "pulp-runtime/kernel/soc_event.c",
+      "sha256": "368c1393dba86a19cc3cfb6eda9cd3d2b06f62b6257f14f26128ab13e8073401",
+      "line_count": 36,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "pos_irq_set_handler": [
+          33
+        ]
+      }
+    },
+    {
+      "path": "pulp-runtime/include/archi/chips/pulp/memory_map.h",
+      "sha256": "1132b2198d2f5cb386aff3d33a164fbd0102aedd935bef17ddbd667bb2e76069",
+      "line_count": 128,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "ARCHI_FC_ITC_OFFSET": [
+          50,
+          60
+        ]
+      }
+    },
+    {
+      "path": "pulp-runtime/include/archi/udma/udma_v3.h",
+      "sha256": "4719f8caef71a4cfe11ff187f0afc241168c313fbab125ba3159c4ed6c9a5897",
+      "line_count": 176,
+      "explicitly_listed_rtl_in_compile_tcl": false,
+      "literal_anchors": {
+        "UDMA_CHANNEL_CFG_CLEAR_BIT": [
+          102,
+          107
+        ]
+      }
+    }
+  ]
+}

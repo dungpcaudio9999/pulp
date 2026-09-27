@@ -1,0 +1,6 @@
+PASS xbar case: same_bank=0 blocked_cycles=0 four_requests_service_cycles=1
+PASS xbar case: same_bank=1 blocked_cycles=0 four_requests_service_cycles=4
+PASS xbar case: same_bank=1 blocked_cycles=3 four_requests_service_cycles=4
+PASS xbar case: same_bank=0 blocked_cycles=2 four_requests_service_cycles=1
+PASS xbar: 16 accepted requests, 16 checked responses; independent banks 4 requests/cycle, same bank 1 request/cycle in this fixture
+- /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_xbar.sv:58: Verilog $finish

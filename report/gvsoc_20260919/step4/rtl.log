@@ -1,0 +1,237 @@
+RUNNER|make all run | SIM_TIMEOUT='200 ms' | WALL_TIMEOUT=7200s
+make: Nothing to be done for 'all'.
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/stim_utils.py --binary=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/test/test --vectors=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/vectors/stim.txt
+Created stimuli generator
+  Added binary: /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/test/test
+  Handling section (base: 0x10000040, size: 0x4a44)
+  Handling section (base: 0x1c000004, size: 0x208)
+  Init section to 0 (base: 0x1c00020c, size: 0x83c)
+  Handling section (base: 0x1c008000, size: 0x2274)
+  Handling section (base: 0x1c010000, size: 0x4448)
+  Generating to file: /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/vectors/stim.txt
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/plp_mkflash  --flash-boot-binary=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/test/test  --stimuli=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/vectors/qspi_stim.slm --flash-type=spi --qpi
+/home/dungpc/ndmoney4porche/projects/pulp/pulp-runtime/bin/slm_hyper.py  --input=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/vectors/qspi_stim.slm  --output=/home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build/vectors/hyper_stim.slm
+cd /home/dungpc/ndmoney4porche/projects/pulp/sw/gvsoc/ubench_rt/build && export VSIM_RUNNER_FLAGS='+ENTRY_POINT=0x1c008080 -permit_unmatched_virtual_intf -gBAUDRATE=115200 -gUSE_HWPE_CL=1 -gLOAD_L2=JTAG' && vsim -64 -c -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl' -do 'source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl; run_and_exit;'
+Reading pref.tcl
+
+# 10.7c
+
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/config/run_and_exit.tcl
+# source /home/dungpc/ndmoney4porche/projects/pulp/sim/tcl_files/run.tcl
+# vsim -c -quiet vopt_tb -L models_lib -L vip_lib -t ps "+nowarnTRAN" "+nowarnTSCALE" "+nowarnTFMPC" "+TB_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim/../../fe/tb/" "+UVM_NO_RELNOTES" "+ENTRY_POINT=0x1c008080" -permit_unmatched_virtual_intf "+VSIM_PATH=/home/dungpc/ndmoney4porche/projects/pulp/sim" -gUSE_SDVT_SPI=0 -gUSE_SDVT_CPI=0 -gBAUDRATE=115200 -gENABLE_DEV_DPI=0 -gLOAD_L2=JTAG -gUSE_SDVT_I2S=0 -gUSE_HWPE_CL=1 
+# Start time: 01:38:22 on Sep 19,2026
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Error: (vsim-191) Questa has encountered an unexpected internal error: ../../src/vsim/vsimfunc.c(1989). 
+# Please contact Questa support at http://supportnet.mentor.com
+# ** Warning: (vsim-3770) Failed to find user specified function 'jtag_tick' in DPI C/C++ source files.
+#    Time: 0 ps  Iteration: 0  Region: /SimJTAG_sv_unit File: /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/SimJTAG.sv
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_soc/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_per/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/TQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/i_clk_rst_gen/i_fll_cluster/i_FLL_digital/JTQ has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_I2S" not found in design.
+# ** Warning: (vsim-3040) Command line generic/parameter "USE_SDVT_SPI" not found in design.
+#  run_and_exit
+# WATCHDOG|bat, gioi han thoi gian mo phong = 200 ms
+# [CORE] Core settings: PULP_SECURE =           1, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 0  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
+# [TB]       0ns - Entry point is set to 0x1c008080
+# [TB]       0ns - Asserting hard reset
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 1  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ps  Iteration: 2  Process: /tb_pulp/i_dut/soc_domain_i/pulp_soc_i/fc_subsystem_i/FC_CORE/lFC_CORE/RISCY_PMP/pmp_unit_i/<anonymous> File: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv Line: 677
+# [TB]       1ns - Using FLL
+# [TB]       1ns - Not using CAM SDVT
+# Loading default stimuli
+# [JTAG] SoftReset Done(    701ns)
+# [JTAG] Bypass Test Passed (  33301ns)
+# [JTAG] Tap ID: 249511c3 (  43701ns)
+# [JTAG] Tap ID Test PASSED (  43701ns)
+# [test_mode_if]   50301ns - Init
+# [TB]   50301ns - Enabling clock out via jtag
+# [test_mode_if]   51801ns - Setting confreg to value 002.
+# [TB]   51801ns - jtag_conf_reg set to 002
+# [TB]   51801ns - Releasing hard reset
+# [TB]   53401ns - Init PULP TAP
+# [pulp_tap_if] WRITE32 burst @1c008080 for           4 bytes.
+# [TB]   67501ns - Write32 PULP TAP
+# [JTAG] R/W test of L2 succeeded
+# [TB]  177701ns - Halting the Core
+# [TB]  236501ns - Writing the boot address into dpc
+# [TB]  280601ns - Loading L2
+# [JTAG] Loading L2 with pulp tap jtag interface
+# [pulp_tap_if] WRITE32 burst @10000040 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10000440 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10000840 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10000c40 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001040 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001440 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001840 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10001c40 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002040 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002440 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002840 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10002c40 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003040 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003440 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003840 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10003c40 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10004040 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10004440 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @10004840 for         584 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c000800 for         584 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c008c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c009c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c00a000 for         632 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c010c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c011c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c012c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013400 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013800 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c013c00 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c014000 for        1024 bytes.
+# [pulp_tap_if] WRITE32 burst @1c014400 for          72 bytes.
+# [TB] 39179501ns - Resuming the CORE
+# [TB] 39238301ns retrying debug reg access
+# [TB] 39267601ns retrying debug reg access
+# [TB] 39296901ns retrying debug reg access
+# [TB] 39326201ns retrying debug reg access
+# [TB] 39355501ns retrying debug reg access
+# [TB] 39384801ns retrying debug reg access
+# [TB] 39414101ns retrying debug reg access
+# [TB] 39443401ns retrying debug reg access
+# [TB] 39472701ns retrying debug reg access
+# [TB] 39502001ns retrying debug reg access
+# [TB] 39531301ns retrying debug reg access
+# [TB] 39560601ns retrying debug reg access
+# [TB] 39589901ns retrying debug reg access
+# [TB] 39619201ns retrying debug reg access
+# [TB] 39648501ns retrying debug reg access
+# [TB] 39677801ns retrying debug reg access
+# [TB] 39707101ns retrying debug reg access
+# [TB] 39736401ns retrying debug reg access
+# [TB] 39765701ns retrying debug reg access
+# [TB] 39795001ns retrying debug reg access
+# [TB] 39824301ns retrying debug reg access
+# [TB] 39853601ns retrying debug reg access
+# [TB] 39882901ns retrying debug reg access
+# [TB] 39912201ns retrying debug reg access
+# [TB] 39941501ns retrying debug reg access
+# [TB] 40500201ns - Waiting for end of computation
+# [STDOUT-CL31_PE0] INFO,start
+# [STDOUT-CL31_PE0] CSV,fc_alu,1000,0,cycles=12007,instr=10007,ld_stall=0,jr_stall=0,imiss=0,ld=0,st=0,jump=2,branch=1000,btaken=999,rvc=10004,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL31_PE0] CSV,fc_ld_dep,1000,0,cycles=7005,instr=4005,ld_stall=1000,jr_stall=0,imiss=0,ld=1000,st=0,jump=2,branch=1000,btaken=999,rvc=3003,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL31_PE0] CSV,fc_ld_indep,1000,0,cycles=6006,instr=4005,ld_stall=0,jr_stall=0,imiss=1,ld=1000,st=0,jump=2,branch=1000,btaken=999,rvc=3003,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL31_PE0] CSV,fc_chase_l2,256,0,cycles=901,instr=517,ld_stall=128,jr_stall=0,imiss=0,ld=256,st=0,jump=2,branch=128,btaken=127,rvc=387,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] INFO,cluster,nb_pe=8
+# [STDOUT-CL0_PE0] CSV,cl_alu,1000,0,cycles=12092,instr=10007,ld_stall=0,jr_stall=0,imiss=84,ld=0,st=0,jump=2,branch=1000,btaken=999,rvc=10004,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,cl_ld_dep,1000,0,cycles=7047,instr=4006,ld_stall=1000,jr_stall=0,imiss=40,ld=1000,st=0,jump=2,branch=1000,btaken=999,rvc=3004,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,cl_ld_indep,1000,0,cycles=6051,instr=4005,ld_stall=0,jr_stall=0,imiss=45,ld=1000,st=0,jump=2,branch=1000,btaken=999,rvc=3003,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,cl_chase_l2,256,0,cycles=4516,instr=518,ld_stall=128,jr_stall=0,imiss=22,ld=256,st=0,jump=2,branch=128,btaken=127,rvc=387,elw=0,ld_ext=256,st_ext=0,ld_ext_cyc=3848,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,cl_chase_l1,256,0,cycles=927,instr=517,ld_stall=128,jr_stall=0,imiss=26,ld=256,st=0,jump=2,branch=128,btaken=127,rvc=387,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,0,cycles=931,instr=518,ld_stall=0,jr_stall=0,imiss=156,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,1,cycles=934,instr=520,ld_stall=0,jr_stall=0,imiss=158,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,2,cycles=928,instr=520,ld_stall=0,jr_stall=0,imiss=152,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,3,cycles=928,instr=520,ld_stall=0,jr_stall=0,imiss=152,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,4,cycles=928,instr=520,ld_stall=0,jr_stall=0,imiss=152,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,5,cycles=931,instr=520,ld_stall=0,jr_stall=0,imiss=155,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,6,cycles=931,instr=520,ld_stall=0,jr_stall=0,imiss=155,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_diff_bank,128,7,cycles=934,instr=520,ld_stall=0,jr_stall=0,imiss=158,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=260,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,0,cycles=1032,instr=518,ld_stall=0,jr_stall=0,imiss=131,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=127
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,1,cycles=1031,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=126
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,2,cycles=1031,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=126
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,3,cycles=1031,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=126
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,4,cycles=1032,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=127
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,5,cycles=1032,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=127
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,6,cycles=1032,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=127
+# [STDOUT-CL0_PE0] CSV,tcdm_same_bank,128,7,cycles=1032,instr=517,ld_stall=0,jr_stall=0,imiss=132,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=0,st_ext=0,ld_ext_cyc=0,st_ext_cyc=0,tcdm_cont=127
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,0,cycles=2686,instr=518,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=259,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1912,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,1,cycles=2678,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1905,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,2,cycles=2682,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1909,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,3,cycles=2679,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1906,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,4,cycles=2684,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1911,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,5,cycles=2685,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1912,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,6,cycles=2686,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1913,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,l2_8core,128,7,cycles=2687,instr=517,ld_stall=0,jr_stall=0,imiss=128,ld=128,st=0,jump=2,branch=128,btaken=127,rvc=258,elw=0,ld_ext=128,st_ext=0,ld_ext_cyc=1914,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,64,0,cycles=195,instr=28,ld_stall=3,jr_stall=0,imiss=142,ld=6,st=6,jump=1,branch=4,btaken=4,rvc=13,elw=0,ld_ext=3,st_ext=4,ld_ext_cyc=12,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,128,0,cycles=95,instr=28,ld_stall=3,jr_stall=0,imiss=37,ld=6,st=6,jump=1,branch=4,btaken=4,rvc=13,elw=0,ld_ext=3,st_ext=4,ld_ext_cyc=12,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,256,0,cycles=111,instr=28,ld_stall=3,jr_stall=0,imiss=53,ld=6,st=6,jump=1,branch=4,btaken=4,rvc=13,elw=0,ld_ext=3,st_ext=4,ld_ext_cyc=12,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,512,0,cycles=137,instr=60,ld_stall=15,jr_stall=0,imiss=15,ld=18,st=10,jump=1,branch=12,btaken=8,rvc=37,elw=0,ld_ext=7,st_ext=4,ld_ext_cyc=28,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,1024,0,cycles=217,instr=100,ld_stall=30,jr_stall=0,imiss=15,ld=33,st=15,jump=1,branch=22,btaken=13,rvc=67,elw=0,ld_ext=12,st_ext=4,ld_ext_cyc=48,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,2048,0,cycles=345,instr=164,ld_stall=54,jr_stall=0,imiss=15,ld=57,st=23,jump=1,branch=38,btaken=21,rvc=115,elw=0,ld_ext=20,st_ext=4,ld_ext_cyc=80,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,4096,0,cycles=633,instr=308,ld_stall=108,jr_stall=0,imiss=15,ld=111,st=41,jump=1,branch=74,btaken=39,rvc=223,elw=0,ld_ext=38,st_ext=4,ld_ext_cyc=152,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l2_to_l1,8192,0,cycles=1177,instr=580,ld_stall=210,jr_stall=0,imiss=15,ld=213,st=75,jump=1,branch=142,btaken=73,rvc=427,elw=0,ld_ext=72,st_ext=4,ld_ext_cyc=288,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,64,0,cycles=79,instr=35,ld_stall=6,jr_stall=0,imiss=11,ld=9,st=7,jump=0,branch=6,btaken=4,rvc=18,elw=0,ld_ext=4,st_ext=4,ld_ext_cyc=16,st_ext_cyc=16,tcdm_cont=0
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,128,0,cycles=79,instr=35,ld_stall=6,jr_stall=0,imiss=10,ld=9,st=7,jump=0,branch=6,btaken=4,rvc=18,elw=0,ld_ext=4,st_ext=4,ld_ext_cyc=16,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,256,0,cycles=95,instr=43,ld_stall=9,jr_stall=0,imiss=10,ld=12,st=8,jump=0,branch=8,btaken=5,rvc=24,elw=0,ld_ext=5,st_ext=4,ld_ext_cyc=20,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,512,0,cycles=127,instr=59,ld_stall=15,jr_stall=0,imiss=10,ld=18,st=10,jump=0,branch=12,btaken=7,rvc=36,elw=0,ld_ext=7,st_ext=4,ld_ext_cyc=28,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,1024,0,cycles=207,instr=99,ld_stall=30,jr_stall=0,imiss=10,ld=33,st=15,jump=0,branch=22,btaken=12,rvc=66,elw=0,ld_ext=12,st_ext=4,ld_ext_cyc=48,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,2048,0,cycles=351,instr=171,ld_stall=57,jr_stall=0,imiss=10,ld=60,st=24,jump=0,branch=40,btaken=21,rvc=120,elw=0,ld_ext=21,st_ext=4,ld_ext_cyc=84,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,4096,0,cycles=623,instr=307,ld_stall=108,jr_stall=0,imiss=10,ld=111,st=41,jump=0,branch=74,btaken=38,rvc=222,elw=0,ld_ext=38,st_ext=4,ld_ext_cyc=152,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,dma_l1_to_l2,8192,0,cycles=1183,instr=587,ld_stall=213,jr_stall=0,imiss=10,ld=216,st=76,jump=0,branch=144,btaken=73,rvc=432,elw=0,ld_ext=73,st_ext=4,ld_ext_cyc=292,st_ext_cyc=16,tcdm_cont=1
+# [STDOUT-CL0_PE0] CSV,barrier_8core,100,0,timer=2864,cycles=2128,instr=1103,ld_stall=0,jr_stall=0,imiss=127,ld=100,st=0,jump=200,branch=201,btaken=99,rvc=400,elw=500,ld_ext=100,st_ext=0,ld_ext_cyc=300,st_ext_cyc=0,tcdm_cont=0
+# [STDOUT-CL31_PE0] INFO,done,rc=0
+# [TB] 77222601ns - Received status core: 0x00000000
+# ** Note: $stop    : /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv(1008)
+#    Time: 77222601 ns  Iteration: 0  Instance: /tb_pulp
+# Break at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# Stopped at /home/dungpc/ndmoney4porche/projects/pulp/rtl/tb/tb_pulp.sv line 1008
+# WATCHDOG|testbench ket thuc truoc han, exit_status = 0
+# End time: 01:49:26 on Sep 19,2026, Elapsed time: 0:11:04
+# Errors: 4, Warnings: 12
+RUNNER|PASS (exit 0)

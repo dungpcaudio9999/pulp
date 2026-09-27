@@ -1,0 +1,65 @@
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cf_math_pkg.sv:18:9: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   18 | package cf_math_pkg;
+      |         ^~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_xbar.sv:2:8: ... Location of module with timescale
+    2 | module tb_xbar;
+      |        ^~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.020
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   15 | module lzc #(
+      |        ^~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_xbar.sv:2:8: ... Location of module with timescale
+    2 | module tb_xbar;
+      |        ^~~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rr_arb_tree.sv:47:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   47 | module rr_arb_tree #(
+      |        ^~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_xbar.sv:2:8: ... Location of module with timescale
+    2 | module tb_xbar;
+      |        ^~~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/addr_dec_resp_mux.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   15 | module addr_dec_resp_mux #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_xbar.sv:2:8: ... Location of module with timescale
+    2 | module tb_xbar;
+      |        ^~~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/xbar.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   15 | module xbar #(
+      |        ^~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_xbar.sv:2:8: ... Location of module with timescale
+    2 | module tb_xbar;
+      |        ^~~~~~~
+%Warning-UNSIGNED: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rr_arb_tree.sv:209:37: Comparison is constant due to unsigned arithmetic
+                                                                                                                                          : ... note: In instance 'tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree'
+  209 |           assign upper_mask[i] = (i >  rr_q) ? req_d[i] : 1'b0;
+      |                                     ^
+%Warning-UNSIGNED: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rr_arb_tree.sv:210:37: Comparison is constant due to unsigned arithmetic
+                                                                                                                                          : ... note: In instance 'tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree'
+  210 |           assign lower_mask[i] = (i <= rr_q) ? req_d[i] : 1'b0;
+      |                                     ^~
+%Warning-UNOPTFLAT: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:49:30: Signal unoptimizable: Circular combinational logic: 'tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper.gen_lzc.sel_nodes'
+   49 |     logic [2**NumLevels-1:0] sel_nodes;
+      |                              ^~~~~~~~~
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:49:30:      Example path: tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper.gen_lzc.sel_nodes
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:91:13:      Example path: ASSIGNW
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:50:45:      Example path: tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper.gen_lzc.index_nodes
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:91:13:      Example path: ASSIGNW
+%Warning-UNOPTFLAT: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:50:45: Signal unoptimizable: Circular combinational logic: 'tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper.gen_lzc.index_nodes'
+   50 |     logic [2**NumLevels-1:0][NumLevels-1:0] index_nodes;
+      |                                             ^~~~~~~~~~~
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:50:45:      Example path: tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper.gen_lzc.index_nodes
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:91:13:      Example path: ASSIGNW
+                    /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv:50:45:      Example path: tb_xbar.dut.gen_outputs[0].gen_rr_arb_tree.i_rr_arb_tree.gen_arbiter.gen_int_rr.gen_fair_arb.i_lzc_upper.gen_lzc.index_nodes
+make: Entering directory '/tmp/pulp-micro-remaining.JaIbP6/xbar'
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_vcd_c.o /usr/share/verilator/include/verilated_vcd_c.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_xbar.cpp Vtb_xbar___024root__DepSet_h3344dd43__0.cpp Vtb_xbar___024root__DepSet_h4c2403ad__0.cpp Vtb_xbar__main.cpp Vtb_xbar__Trace__0.cpp Vtb_xbar___024root__Slow.cpp Vtb_xbar___024root__DepSet_h3344dd43__0__Slow.cpp Vtb_xbar___024root__DepSet_h4c2403ad__0__Slow.cpp Vtb_xbar__Syms.cpp Vtb_xbar__Trace__0__Slow.cpp Vtb_xbar__TraceDecls__0__Slow.cpp > Vtb_xbar__ALL.cpp
+echo "" > Vtb_xbar__ALL.verilator_deplist.tmp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_xbar__ALL.o Vtb_xbar__ALL.cpp
+Archive ar -rcs Vtb_xbar__ALL.a Vtb_xbar__ALL.o
+g++     verilated.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vtb_xbar__ALL.a    -pthread -lpthread -latomic   -o Vtb_xbar
+rm Vtb_xbar__ALL.verilator_deplist.tmp
+make: Leaving directory '/tmp/pulp-micro-remaining.JaIbP6/xbar'

@@ -1,0 +1,2 @@
+ELF sha256 b1da6af639742de9
+cd sw/gvsoc/ubench && source ../env.sh && make clean all run

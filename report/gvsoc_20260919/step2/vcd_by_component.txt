@@ -1,0 +1,112 @@
+  [x1]: dyn_power_trace, power_trace, static_power_trace
+/chip  [x1]: dyn_power_trace, power_trace, static_power_trace
+/chip/cluster  [x1]: dyn_power_trace, power_trace, static_power_trace
+/chip/cluster/cluster_ico/error  [x1]: addr, size
+/chip/cluster/cluster_ico/lN  [x1]: addr, size
+/chip/cluster/cluster_ico/lN_ts  [x1]: addr, size
+/chip/cluster/cluster_ico/periph_ico  [x1]: addr, size
+/chip/cluster/cluster_ico/periph_ico_alias  [x1]: addr, size
+/chip/cluster/cluster_ico/soc  [x1]: addr, size
+/chip/cluster/dma  [x1]: channel_N
+/chip/cluster/event_unit/core_N  [x9]: active
+/chip/cluster/icache/lN_bankN  [x11]: port_N, refill, refill_addr, req_addr
+/chip/cluster/icache/lN_bankN/set_N  [x44]: line_N
+/chip/cluster/lN  [x1]: dyn_power_trace, power_trace, static_power_trace
+/chip/cluster/lN/bankN  [x16]: dyn_power_trace, power_trace, req_addr, req_is_write, req_size, static_power_trace
+/chip/cluster/lN/peN_ico/cluster_ico  [x9]: addr, size
+/chip/cluster/lN/peN_ico/dma  [x9]: addr, size
+/chip/cluster/lN/peN_ico/dma_alias  [x9]: addr, size
+/chip/cluster/lN/peN_ico/event_unit  [x9]: addr, size
+/chip/cluster/lN/peN_ico/event_unit_alias  [x9]: addr, size
+/chip/cluster/lN/peN_ico/lN  [x9]: addr, size
+/chip/cluster/lN/peN_ico/lN_alias  [x9]: addr, size
+/chip/cluster/lN/peN_ico/lN_ts  [x9]: addr, size
+/chip/cluster/lN/peN_ico/lN_ts_alias  [x9]: addr, size
+/chip/cluster/peN  [x9]: active_pc, asm, binaries, bootaddr, busy, do_step, dyn_power_trace, elw, elw_stalled, fetch_enable, file, func, halted, inline_func, insn_is_jal_noreg, insn_is_jal_reg, irq_enable, irq_enter, irq_exit, label, line, pc, pcer_branch, pcer_cycles, pcer_imiss, pcer_insn_cont, pcer_instr, pcer_jmp_stall, pcer_jump, pcer_ld, pcer_ld_ext, pcer_ld_ext_cycles, pcer_ld_stall, pcer_misaligned, pcer_rvc, pcer_st, pcer_st_ext, pcer_st_ext_cycles, pcer_taken_branch, pcer_tcdm_cont, power_trace, stalled, state, static_power_trace, step_mode, thread_current, thread_lifecycle, user_file, user_func, user_inline_func, user_line, wfi
+/chip/cluster/peN/lsu  [x9]: addr, is_write, req_denied, size, stalled
+/chip/cluster/peN/regfile  [x9]: xN
+/chip/cluster/periph_ico/cluster_ctrl  [x1]: addr, size
+/chip/cluster/periph_ico/cluster_ico  [x1]: addr, size
+/chip/cluster/periph_ico/dma  [x1]: addr, size
+/chip/cluster/periph_ico/error  [x1]: addr, size
+/chip/cluster/periph_ico/event_unit  [x1]: addr, size
+/chip/cluster/periph_ico/icache_ctrl  [x1]: addr, size
+/chip/cluster/periph_ico/timer  [x1]: addr, size
+/chip/cluster_clock  [x1]: cycles, period
+/chip/fast_clock  [x1]: cycles, period
+/chip/padframe  [x1]: ref_clock
+/chip/padframe/cpiN  [x1]: data, href, pclk, vsync
+/chip/padframe/hyperN  [x2]: cs_N, data
+/chip/padframe/iNcN  [x1]: scl, sda
+/chip/padframe/iNsN  [x3]: sck, sdi, sdo, ws
+/chip/padframe/jtagN  [x1]: tck, tdi, tdo, tms, trst
+/chip/padframe/spimN  [x4]: cs_N, data_N
+/chip/padframe/uartN  [x5]: rx, tx
+/chip/ref_clock  [x1]: cycles, period
+/chip/soc  [x1]: dyn_power_trace, power_trace, static_power_trace
+/chip/soc/apb_ico/apb_soc_ctrl  [x1]: addr, size
+/chip/soc/apb_ico/debug_rom  [x1]: addr, size
+/chip/soc/apb_ico/fc_dbg_unit  [x1]: addr, size
+/chip/soc/apb_ico/fc_icache_ctrl  [x1]: addr, size
+/chip/soc/apb_ico/fc_itc  [x1]: addr, size
+/chip/soc/apb_ico/fc_timer  [x1]: addr, size
+/chip/soc/apb_ico/fc_timer_N  [x1]: addr, size
+/chip/soc/apb_ico/fll_cluster  [x1]: addr, size
+/chip/soc/apb_ico/fll_periph  [x1]: addr, size
+/chip/soc/apb_ico/fll_soc  [x1]: addr, size
+/chip/soc/apb_ico/gpio  [x1]: addr, size
+/chip/soc/apb_ico/pmu  [x1]: addr, size
+/chip/soc/apb_ico/rtc  [x1]: addr, size
+/chip/soc/apb_ico/soc_eu  [x1]: addr, size
+/chip/soc/apb_ico/stdout  [x1]: addr, size
+/chip/soc/apb_ico/udma  [x1]: addr, size
+/chip/soc/apb_ico/xip  [x1]: addr, size
+/chip/soc/apb_soc_ctrl  [x1]: jtag_reg_ext
+/chip/soc/axi_ico/axi_proxy  [x1]: addr, size
+/chip/soc/axi_ico/cluster  [x1]: addr, size
+/chip/soc/axi_ico/ddr  [x1]: addr, size
+/chip/soc/axi_ico/soc  [x1]: addr, size
+/chip/soc/debug_rom  [x1]: dyn_power_trace, power_trace, req_addr, req_is_write, req_size, static_power_trace
+/chip/soc/fc  [x1]: active_pc, asm, binaries, bootaddr, busy, do_step, dyn_power_trace, elw, elw_stalled, fetch_enable, file, func, halted, inline_func, insn_is_jal_noreg, insn_is_jal_reg, irq_enable, irq_enter, irq_exit, label, line, pc, pcer_branch, pcer_cycles, pcer_imiss, pcer_insn_cont, pcer_instr, pcer_jmp_stall, pcer_jump, pcer_ld, pcer_ld_stall, pcer_misaligned, pcer_rvc, pcer_st, pcer_taken_branch, power_trace, stalled, state, static_power_trace, step_mode, thread_current, thread_lifecycle, user_file, user_func, user_inline_func, user_line, wfi
+/chip/soc/fc/lsu  [x1]: addr, is_write, req_denied, size, stalled
+/chip/soc/fc/regfile  [x1]: xN
+/chip/soc/fc_icache  [x1]: port_N, refill, refill_addr, req_addr
+/chip/soc/fc_icache/set_N  [x4]: line_N
+/chip/soc/fc_itc  [x1]: input_status, irq, mask, status
+/chip/soc/gpio  [x1]: gpioen, inten, intstatus, inttypeN, padcfgN, paddir, padin, padout
+/chip/soc/lN  [x1]: dyn_power_trace, power_trace, static_power_trace
+/chip/soc/lN/privN  [x2]: dyn_power_trace, power_trace, req_addr, req_is_write, req_size, static_power_trace
+/chip/soc/lN/shared_N_cut_N  [x48]: dyn_power_trace, power_trace, req_addr, req_is_write, req_size, static_power_trace
+/chip/soc/periph_clock  [x1]: cycles, period
+/chip/soc/riscv_tap  [x1]: dm_control
+/chip/soc/soc_ico/fc_data_ico/axi_proxy  [x1]: addr, size
+/chip/soc/soc_ico/fc_data_ico/ddr  [x1]: addr, size
+/chip/soc/soc_ico/fc_data_ico/lN_shared  [x1]: addr, size
+/chip/soc/soc_ico/fc_data_ico/ll_ico  [x1]: addr, size
+/chip/soc/soc_ico/fc_data_ico/xip  [x1]: addr, size
+/chip/soc/soc_ico/fc_fetch_ico/lN_shared  [x1]: addr, size
+/chip/soc/soc_ico/fc_fetch_ico/ll_ico  [x1]: addr, size
+/chip/soc/soc_ico/fc_fetch_ico/xip  [x1]: addr, size
+/chip/soc/soc_ico/hb_ico/lN_shared_N  [x12]: addr, size
+/chip/soc/soc_ico/ll_ico/apb  [x1]: addr, size
+/chip/soc/soc_ico/ll_ico/axi_master  [x1]: addr, size
+/chip/soc/soc_ico/ll_ico/lN_privN  [x2]: addr, size
+/chip/soc/soc_ico/ll_ico/lN_privN_alias  [x1]: addr, size
+/chip/soc/soc_ico/ll_ico/lN_shared  [x1]: addr, size
+/chip/soc/soc_ico/ll_ico/rom  [x1]: addr, size
+/chip/soc/soc_ico/udma_rx_ico/lN_shared  [x1]: addr, size
+/chip/soc/soc_ico/udma_rx_ico/ll_ico  [x1]: addr, size
+/chip/soc/soc_ico/udma_tx_ico/lN_shared  [x1]: addr, size
+/chip/soc/soc_ico/udma_tx_ico/ll_ico  [x1]: addr, size
+/chip/soc/udma  [x1]: iNsNiNs_clkcfg_setup, iNsNiNs_mst_setup, iNsNiNs_pdm_setup, iNsNiNs_slv_setup
+/chip/soc/udma/cpiN_rx  [x1]: state
+/chip/soc/udma/hyperN_rx  [x1]: state
+/chip/soc/udma/hyperN_tx  [x1]: state
+/chip/soc/udma/iNsN_N  [x2]: state
+/chip/soc/udma/spimN_cmd  [x1]: state
+/chip/soc/udma/spimN_rx  [x1]: state
+/chip/soc/udma/spimN_tx  [x1]: state
+/chip/soc/udma/uartN_rx  [x1]: state
+/chip/soc/udma/uartN_tx  [x1]: state
+/chip/soc_clock_domain  [x1]: cycles, period
+/uart_checker/clock  [x1]: cycles, period

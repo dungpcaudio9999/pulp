@@ -37,9 +37,10 @@ VCD **không được commit** — tái tạo được và nằm trong `.gitigno
 `-gLOAD_L2=JTAG`, testbench đẩy toàn bộ ELF qua giao thức JTAG mô phỏng từng bit. Phần
 thực thi thật chỉ chiếm 29.7%.
 
-Hệ quả: muốn rút ngắn vòng lặp debug thì đổi sang `-gLOAD_L2=STANDALONE` (nạp thẳng vào
-mô hình bộ nhớ) sẽ cắt được phần lớn 12.8 ms này. Đánh đổi: không còn kiểm chứng đường
-JTAG/debug — nên giữ ít nhất một lần chạy `LOAD_L2=JTAG` để bảo chứng đường nạp.
+> **Đính chính phân tích 2026-09-10:** `LOAD_L2=STANDALONE` là đường boot từ flash,
+> không phải backdoor nạp thẳng L2. Cần model flash và image phù hợp; chưa có phép đo
+> để khẳng định nó rút ngắn thời gian. Các mốc/tỷ lệ ở trên giữ nguyên số liệu lượt cũ.
+> Xem [bài boot](../../doc/dungpc/master_analysis/architecture/deep_dive_04_boot_debug_testbench.md).
 
 ## Một mốc giả cần loại bỏ
 

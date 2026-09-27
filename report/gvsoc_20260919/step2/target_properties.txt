@@ -1,0 +1,30 @@
+Properties
+├── chip
+│   ├── cluster
+│   │   └──                              Properties                             
+│   │       ┏━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+│   │       ┃ Name    ┃ Value ┃ Full name     ┃ Allowed values ┃ Description   ┃
+│   │       ┡━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│   │       │ redmule │ False │ chip/cluster… │ any string     │ Enable        │
+│   │       │         │       │               │                │ Redmule       │
+│   │       └─────────┴───────┴───────────────┴────────────────┴───────────────┘
+│   └── soc
+│       └──                              Properties                             
+│           ┏━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+│           ┃ Name   ┃ Value ┃ Full name      ┃ Allowed values ┃ Description   ┃
+│           ┡━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│           │ fic    │ False │ chip/soc/fic   │ any string     │ Enable Fic    │
+│           │ binary │ None  │ chip/soc/bina… │ any string     │ Binary to be  │
+│           │        │       │                │                │ loaded and    │
+│           │        │       │                │                │ started       │
+│           └────────┴───────┴────────────────┴────────────────┴───────────────┘
+└── uart_checker
+    └── uart_checker
+        └──                              Properties                             
+            ┏━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+            ┃          ┃       ┃               ┃ Allowed       ┃               ┃
+            ┃ Name     ┃ Value ┃ Full name     ┃ values        ┃ Description   ┃
+            ┡━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+            │ loopback │ False │ uart_checker… │ any string    │ Enable uart   │
+            │          │       │               │               │ loopback      │
+            └──────────┴───────┴───────────────┴───────────────┴───────────────┘

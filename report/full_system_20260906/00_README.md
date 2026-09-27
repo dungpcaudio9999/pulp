@@ -1,6 +1,6 @@
 # `sw/full_system` — chuỗi phát triển và kết quả `2026-09-06`
 
-Chương trình 9 phase theo [plan_demo.md](../../doc/dungpc/plan_demo.md).
+Chương trình 9 phase theo [plan_demo.md](../../doc/dungpc/master_analysis/simulation/plan_demo.md).
 Nguồn: [sw/full_system/](../../sw/full_system/).
 
 ## Kết quả cuối
@@ -29,11 +29,11 @@ Bước `05` không sửa được lỗi nhưng là bước quyết định về
 trong khi số word đúng mỗi chu kỳ vẫn luôn là 3. Vậy stride do phần mềm đặt, còn payload
 mỗi nhịp là hằng số phần cứng 3 word = 12 byte = 96 bit.
 
-Đáng chú ý: suy luận từ RTL cho ra số **sai**. `hwpe_subsystem` nhận
-`N_MASTER_PORT = NB_HWPE_PORTS = 9` (`pulp_cluster.sv:34,1037`) và `datamover_top` lấy
-`BW = N_MASTER_PORT*32` bit = 36 byte — nhưng thực đo là 12 byte. Hằng số
-`DATAMOVER_BW = 256/8 = 32` trong `test_datamover.c` của dependency cũng sai với cấu
-hình này. Ở đây đo thực nghiệm đáng tin hơn đọc tham số.
+> **Đính chính phân tích 2026-09-10:** suy luận 9 port bỏ sót override ở `pulp.sv`:
+> số port hiệu lực là 4. Datamover đặt `BW_ALIGNED=BW-32`, nên payload là
+> `4*32-32=96 bit=12 byte`, phù hợp kết quả cũ. Độ rộng payload không phải phép đo
+> throughput mỗi clock. Log và quá trình chẩn đoán cũ được giữ nguyên; xem
+> [cấu hình hiệu lực](../../doc/dungpc/master_analysis/architecture/deep_dive_00_effective_configuration.md).
 
 ## Hai lỗi im lặng đã bị bắt trong quá trình
 

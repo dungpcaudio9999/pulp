@@ -1,0 +1,7 @@
+Build directory: /tmp/pulp-micro-lsu.qHX8rH
+Icarus Verilog version 12.0 (stable) ()
+VCD info: dumpfile lsu.vcd opened for output.
+PASS: 20 checks, standalone LSU only
+/home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913/tb_fc_lsu.sv:98: $finish called at 109000 (1ps)
+Compiler log: /tmp/pulp-micro-lsu.qHX8rH/compile.log
+Waveform: /tmp/pulp-micro-lsu.qHX8rH/lsu.vcd

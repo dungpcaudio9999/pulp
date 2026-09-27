@@ -1,0 +1,11 @@
+Hello from cluster_id: 0, core_id: 0
+======== Memory allocator state: ============
+Free Block at 1C001308, size:     6cf8, Next:        0 
+=============================================
+======== Memory allocator state: ============
+Free Block at 1C0101A8, size:    6fe58, Next:        0 
+=============================================
+
+A Gtkwave script has been generated and can be opened with the following command:
+gtkwave /home/dungpc/ndmoney4porche/projects/pulp/report/gvsoc_20260919/step2/run_vcd_all/view.gtkw
+

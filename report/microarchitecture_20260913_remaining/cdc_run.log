@@ -1,0 +1,3 @@
+CHECK CDC blocked consumer: accepted=6 (4 FIFO + 2 spill), received=0
+PASS CDC: sent=64 received=64 max_pending=6 src_stall_cycles=111 first_delivery_elapsed_ns=289 (includes deliberate consumer stall)
+- /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:48: Verilog $finish

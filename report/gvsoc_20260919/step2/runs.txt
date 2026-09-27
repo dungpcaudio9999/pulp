@@ -1,0 +1,7 @@
+ELF=/home/dungpc/pulp-sdk/tests/hello/BUILD/PULP/GCC_RISCV/cl/test/test sha256=d2529e927a8d966d
+trace_all: exit=0
+vcd_all: exit=0
+power: exit=0
+trace paths:  1475
+vcd signals:  2555
+power rows:   262

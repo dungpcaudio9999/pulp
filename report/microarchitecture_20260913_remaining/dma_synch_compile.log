@@ -1,0 +1,32 @@
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ctrl_unit/synch_unit.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   15 | module synch_unit
+      |        ^~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_dma_synch.sv:2:8: ... Location of module with timescale
+    2 | module tb_dma_synch;
+      |        ^~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.020
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-WIDTHTRUNC: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ctrl_unit/synch_unit.sv:120:21: Operator ASSIGNDLY expects 8 bits on the Assign RHS, but Assign RHS's CONST '10'h0' generates 10 bits.
+                                                                                                                                              : ... note: In instance 'tb_dma_synch.dut'
+  120 |       s_tcdm_cmd_nb <= 10'b0;
+      |                     ^~
+%Warning-WIDTHTRUNC: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ctrl_unit/synch_unit.sv:224:20: Operator ASSIGNDLY expects 8 bits on the Assign RHS, but Assign RHS's CONST '10'h0' generates 10 bits.
+                                                                                                                                              : ... note: In instance 'tb_dma_synch.dut'
+  224 |       s_ext_cmd_nb <= 10'b0;
+      |                    ^~
+%Warning-WIDTHEXPAND: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ctrl_unit/synch_unit.sv:336:24: Operator EQ expects 14 bits on the LHS, but LHS's VARREF 's_trans_cells_nb' generates 12 bits.
+                                                                                                                                               : ... note: In instance 'tb_dma_synch.dut'
+  336 |  if ( s_trans_cells_nb == 14'b0 )
+      |                        ^~
+make: Entering directory '/tmp/pulp-micro-remaining.JaIbP6/dma_synch'
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_vcd_c.o /usr/share/verilator/include/verilated_vcd_c.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_dma_synch.cpp Vtb_dma_synch___024root__DepSet_h8ff41234__0.cpp Vtb_dma_synch___024root__DepSet_haa3e58cc__0.cpp Vtb_dma_synch__main.cpp Vtb_dma_synch__Trace__0.cpp Vtb_dma_synch___024root__Slow.cpp Vtb_dma_synch___024root__DepSet_h8ff41234__0__Slow.cpp Vtb_dma_synch___024root__DepSet_haa3e58cc__0__Slow.cpp Vtb_dma_synch__Syms.cpp Vtb_dma_synch__Trace__0__Slow.cpp Vtb_dma_synch__TraceDecls__0__Slow.cpp > Vtb_dma_synch__ALL.cpp
+echo "" > Vtb_dma_synch__ALL.verilator_deplist.tmp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_dma_synch__ALL.o Vtb_dma_synch__ALL.cpp
+Archive ar -rcs Vtb_dma_synch__ALL.a Vtb_dma_synch__ALL.o
+g++     verilated.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vtb_dma_synch__ALL.a    -pthread -lpthread -latomic   -o Vtb_dma_synch
+rm Vtb_dma_synch__ALL.verilator_deplist.tmp
+make: Leaving directory '/tmp/pulp-micro-remaining.JaIbP6/dma_synch'

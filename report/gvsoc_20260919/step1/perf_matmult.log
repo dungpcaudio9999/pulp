@@ -1,0 +1,41 @@
+RM  /home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult
+CC  test.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/fll-v1.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/freq-domains.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/pulp/kernel/chips/pulp/soc.c
+CC  /home/dungpc/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/read_fs/read_fs.c
+CC  /home/dungpc/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/host_fs/semihost.c
+CC  /home/dungpc/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/host_fs/host_fs.c
+CC  /home/dungpc/pulp-sdk/rtos/pmsis/pmsis_bsp/fs/fs.c
+CC  /home/dungpc/pulp-sdk/rtos/pmsis/pmsis_bsp/bsp/pulp.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/io.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/fprintf.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/prf.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/sprintf.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/lib/libc/minimal/semihost.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/init.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/kernel.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/device.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/task.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/alloc.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/alloc_pool.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/irq.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/soc_event.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/log.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/time.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/pulp/drivers/uart/uart-v1.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/pulp/drivers/udma/udma-v3.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/pulp/drivers/cluster/cluster.c
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/crt0.S
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/irq_asm.S
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/task_asm.S
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/time_asm.S
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/common/kernel/soc_event_v2_itc.S
+CC  /home/dungpc/pulp-sdk/rtos/pulpos/pulp/drivers/cluster/pe-eu-v3.S
+LD  /home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult/test/test
+gvrun --target=pulp-open --work-dir=/home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult --param chip/soc/binary=/home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult/test/test      image
+gvrun --target=pulp-open --work-dir=/home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult --param chip/soc/binary=/home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult/test/test      flash
+gvrun --target=pulp-open --work-dir=/home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult --param chip/soc/binary=/home/dungpc/pulp-sdk/tests/perf/matmult/BUILD/PULP/GCC_RISCV/matmult/test/test      image flash run
+Number of Instructions: 49802
+Clock Cycles: 247077
+CPI: 4.9611860.000000

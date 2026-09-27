@@ -4,7 +4,7 @@
  * main() chạy hai lần: lần đầu trên FC (cluster id = 31), lần sau trên cả 8
  * core cluster, do bench_cluster_forward() gọi lại chính main().
  *
- * Xem doc/dungpc/plan_demo.md. Hai điều dễ sai nhất đã được xử lý ở đây:
+ * Xem doc/dungpc/master_analysis/simulation/plan_demo.md. Hai điều dễ sai nhất đã được xử lý ở đây:
  *   1. Lỗi ở core 1..7 phải gom qua cl_report(), nếu không sẽ bị nuốt mất.
  *   2. Stack mỗi core cluster mặc định chỉ 2 KB — xem Makefile.
  * ---------------------------------------------------------------------- */
@@ -408,7 +408,13 @@ int main(void)
 
     if (get_core_id() == 0) {
         cl_report(phase6_dma());
+#ifdef DEMO_SKIP_HWPE
+        /* GVSoC pulp-open khong co model HWPE datamover: phase 7 se treo */
+        PHASE_BEGIN(7, "HWPE datamover");
+        printf("SKIP (DEMO_SKIP_HWPE)\n");
+#else
         cl_report(phase7_hwpe());
+#endif
     }
     synch_barrier();
 

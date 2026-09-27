@@ -32,6 +32,13 @@ ifdef INJECT_FAULT_DMA
 PULP_CFLAGS += -DDEMO_INJECT_FAULT_DMA
 endif
 
+# Chay tren GVSoC: 'make all SKIP_HWPE=1', roi
+#   gvsoc --target=pulp-open --binary build/test/test run
+# pulp-open khong co model HWPE datamover nen phase 7 se treo neu khong bo qua.
+ifdef SKIP_HWPE
+PULP_CFLAGS += -DDEMO_SKIP_HWPE
+endif
+
 # Build cho FPGA: make all PLATFORM=fpga io=uart
 ifeq ($(PLATFORM),fpga)
 PULP_CFLAGS += -DDEMO_PLATFORM_FPGA=1

@@ -1,0 +1,33 @@
+CHECK 1: TX empty permits reservation
+CHECK 2: TX second credit available
+CHECK 3: TX two inflight reserve both empty slots
+CHECK 4: TX delayed responses cannot cause third request
+CHECK 5: TX first return held under consumer stall
+CHECK 6: TX full after second reserved response
+CHECK 7: TX stable output during extended stall
+CHECK 8: TX ordered second byte
+CHECK 9: TX drain restores credits
+CHECK 10: event counter saturates at three
+CHECK 11: full plus simultaneous ack still reports error
+CHECK 12: event count two after ack
+CHECK 13: event count one after ack
+CHECK 14: event queue empty after third ack
+CHECK 15: APU no grant causes nack stall
+CHECK 16: APU accepts second latency-two request
+CHECK 17: APU full blocks third outstanding request
+CHECK 18: APU RAW dependency on oldest result
+CHECK 19: APU oldest response selects rd5 and clears its dependency
+CHECK 20: APU next response selects rd6
+CHECK 21: APU both responses drained
+CHECK 22: APU latency-two blocked behind multicycle operation
+CHECK 23: barrier waits for missing fourth participant
+CHECK 24: barrier duplicate arrival does not increment count
+CHECK 25: barrier releases configured target mask
+CHECK 26: barrier clears after match
+CHECK 27: barrier exact equality rejects extra participant bit
+CHECK 28: clock gate stays enabled for first three idle samples
+CHECK 29: clock gate disables after four idle samples
+CHECK 30: gated clock produces no edges while idle
+CHECK 31: incoming request reopens clock gate
+PASS control: 31 checks
+- /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_control.sv:89: Verilog $finish

@@ -1,0 +1,16 @@
+# gvsoc 3b4c489, pulp-sdk d4b5bcd, 2026-09-19T01:18:48+07:00
+TEST                     RESULT EXIT  WALL_S
+hello_fc                 PASS   0     2
+hello_cl                 PASS   0     3
+cluster_call             PASS   0     3
+cluster_fork             PASS   0     3
+cluster_fork_power       FAIL   143   277
+dma_1d                   PASS   0     3
+flash_simple             PASS   0     19
+flash_with_ram           FAIL   2     4
+fs_read_fc               PASS   0     4
+fs_read_cl               PASS   0     4
+perf_double_buffering    PASS   0     4
+perf_matmult             PASS   0     3
+ram_simple               PASS   0     3
+uart_loopback            PASS   0     3

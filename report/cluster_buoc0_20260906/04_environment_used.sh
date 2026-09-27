@@ -1,4 +1,4 @@
-# Môi trường theo doc/dungpc/nhat-ky-mo-phong-pulp-questasim.md, Phụ lục B
+# Môi trường theo doc/dungpc/master_analysis/simulation/nhat-ky-mo-phong-pulp-questasim.md, Phụ lục B
 # Rời conda (script không interactive nên không có hàm 'conda deactivate')
 export PATH="$(echo "$PATH" | tr ':' '\n' | grep -v miniforge3 | paste -sd:)"
 hash -r

@@ -1,0 +1,292 @@
+{
+  "scope": "2026-09-13: FC pipeline/LSU to SoC, static analysis plus isolated LSU simulation",
+  "root_head": "ce0628648cb0b7d2d29ed348a235b6b12442034a",
+  "limitations": "Direct evidence only; no transitive elaboration proof or integrated CPU/SoC simulation.",
+  "dependencies": {
+    "cluster_interconnect-abcda71a83f4333c": {
+      "head": "7d0a4f8acae71a583a6713cab5554e60b9bb8d27",
+      "tracked_status": []
+    },
+    "common_cells-f18d75f6d6d026a5": {
+      "head": "b5ec8905ed7828655155b0ae971023adf793c600",
+      "tracked_status": [
+        "M Bender.yml"
+      ]
+    },
+    "cv32e40p-0a3884e05ea5a482": {
+      "head": "8d58109ab61e1fb6c9dcbafefb8f3a56ee596427",
+      "tracked_status": []
+    },
+    "l2_tcdm_hybrid_interco-f03a86a7ac111e77": {
+      "head": "fa55e72859dcfb117a2788a77352193bef94ff2b",
+      "tracked_status": []
+    },
+    "pulp_soc-c519334bd3ac5582": {
+      "head": "d878151e0e40912642c5275d470cef76258f5fc6",
+      "tracked_status": [
+        "M rtl/pulp_soc/soc_interconnect.sv"
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/addr_dec_resp_mux.sv",
+      "sha256": "7732eabbd1ae86ff9a5bf6e294eb89ae0f23676fbca38cdb7fe2ca92df1e9356",
+      "bytes": 6433,
+      "lines": 184,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/xbar.sv",
+      "sha256": "0a28a137c189d25586775056427644d70b8cf2f94c9e1bbc2bc3ca8767a91236",
+      "bytes": 5677,
+      "lines": 132,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rr_arb_tree.sv",
+      "sha256": "c7361280318a605131345932ab3325bc53f8fc76e67c5579b991b96a5b4ffeed",
+      "bytes": 14988,
+      "lines": 348,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_controller.sv",
+      "sha256": "cddacd0bd51bb5ed85030ec3ef7ee8dfcc0a822e9bc3185c2d97a30680e695bb",
+      "bytes": 40264,
+      "lines": 1128,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_core.sv",
+      "sha256": "4dc42a8867ac738904cd3df0067dc6ff2d0b9a97cf77647fa839d09d93b2cc8c",
+      "bytes": 48960,
+      "lines": 1191,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_decoder.sv",
+      "sha256": "df52de0e3f1144342b5b5306580bc3547ee9800ae0c60f1a5b1039d4f868689d",
+      "bytes": 104000,
+      "lines": 2479,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_ex_stage.sv",
+      "sha256": "6b4afeb67d1c7ac8337930b4485c9a5e18ee658f4018e88ad69b99c21beefd57",
+      "bytes": 21964,
+      "lines": 561,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_fetch_fifo.sv",
+      "sha256": "ad464503b2bdd691777296586dfb02ea3259e85c65aea9fdd1a3ec71d53c4486",
+      "bytes": 9749,
+      "lines": 274,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_id_stage.sv",
+      "sha256": "7cc67bde1633a2f6f149fbacd8deff93ba3f3714d6d3621367525c3481a33521",
+      "bytes": 64747,
+      "lines": 1649,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_if_stage.sv",
+      "sha256": "d7164a4c8d9f723cc7ad28792d756bc89f74000b1e03128a1e248e1b3fe79c7b",
+      "bytes": 14825,
+      "lines": 418,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_load_store_unit.sv",
+      "sha256": "53a82beb5e4f9523b3d6b2926785d077e380c599da67f19c984db7c8e2b43d92",
+      "bytes": 17099,
+      "lines": 500,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv",
+      "sha256": "3d8d538684bc2be1d66527488824649fcf69e364620b4c279751212ab83bb2b0",
+      "bytes": 34147,
+      "lines": 808,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_prefetch_buffer.sv",
+      "sha256": "8c5ea038c05119027f338e98b1e831a9a295335b1840752e4fd541802551421f",
+      "bytes": 13168,
+      "lines": 435,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_register_file_latch.sv",
+      "sha256": "f8afd74c5a064f2ddf6bfbbf6b5bedf6df9d224d0855a74c3b5869228de5a9cf",
+      "bytes": 8801,
+      "lines": 224,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/l2_tcdm_hybrid_interco-f03a86a7ac111e77/RTL/lint_2_axi.sv",
+      "sha256": "ec07094416c85808e40c051122ba5c846bc3b39ec1f018feb38b22c3da06f3b7",
+      "bytes": 11658,
+      "lines": 383,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/fc/fc_subsystem.sv",
+      "sha256": "836e5c9cd935377d40f7232b4e9324349cca2525f9ac53ca173600d221fa63ea",
+      "bytes": 13740,
+      "lines": 330,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/interleaved_crossbar.sv",
+      "sha256": "c8e83c939262c98e6c88ef8b8862d8fda86a2ed0b7d2e222a8a549a173083064",
+      "bytes": 6277,
+      "lines": 124,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/l2_ram_multi_bank.sv",
+      "sha256": "d096f4776daacedc4cab1b09dbe97913a146ba8831255542b236f3a15e42b41a",
+      "bytes": 5482,
+      "lines": 133,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/pulp_soc.sv",
+      "sha256": "5cf0c093987b8be41801c38a1209fd2620e47ceec6ba69d576d30564e8804a24",
+      "bytes": 49876,
+      "lines": 1038,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_interconnect_wrap.sv",
+      "sha256": "e035a17676b2cd47203c698b31e523a486f043a4f210a484695a7319fde920af",
+      "bytes": 16478,
+      "lines": 274,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/tcdm_demux.sv",
+      "sha256": "b8f7fe9c2cbdd87233999ae7391fa130f5915d77bb0108759aefa357d7046ad2",
+      "bytes": 6834,
+      "lines": 154,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": "doc/dungpc/micro_00_plan_phan_tich_pulp.md",
+      "sha256": "e2c885c5e2716e61b904657096067e2eebb199e61f2cf411c42b18d398126b52",
+      "bytes": 6174,
+      "lines": 86,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "doc/dungpc/micro_01_fc_pipeline.md",
+      "sha256": "424e12d235adbad4cbbeaef260721256274e9a7b9038e124e68d79d684f80c49",
+      "bytes": 14978,
+      "lines": 240,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "doc/dungpc/micro_02_fc_lsu.md",
+      "sha256": "575b3971130a7b1d9ddca2ccd2c378b3f8ef3088cadc452c8c00cd791dac8c9f",
+      "bytes": 11416,
+      "lines": 220,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "doc/dungpc/micro_03_fc_soc_interconnect.md",
+      "sha256": "a2c117fadb9251933c708967d22814d04d60030587b93b49c4641170790bc8da",
+      "bytes": 12482,
+      "lines": 216,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/README.md",
+      "sha256": "9d3116cf13bb069fb5a776f6eb37b4aff1b8de632962364b99d0e21be4e7bc96",
+      "bytes": 3256,
+      "lines": 63,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/collect_evidence.py",
+      "sha256": "ddb2c4c80537ca881b26ac6c032b5e4feaab346eddca5ee991cd0ef6a3c6cb23",
+      "bytes": 3070,
+      "lines": 69,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/compile.log",
+      "sha256": "4e9241dc522208e7d5c64a5dd8bb0adca3cc3e1297c21ce24d2dfaf001fad956",
+      "bytes": 7036,
+      "lines": 31,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/lsu.vcd",
+      "sha256": "2a01051f223894bdef448fbe2981a460f53fdfa6b71f89d05fbb82c929be674d",
+      "bytes": 7905,
+      "lines": 547,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/run.log",
+      "sha256": "a3fb4905e4a785ccf26dfeabde4e31a15ec71699aab9b14906ab890033c7a139",
+      "bytes": 389,
+      "lines": 7,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/run_lsu.sh",
+      "sha256": "64f4e88a1b0819becb9a98957f597796ecba71ec533da699a770fcb80f435890",
+      "bytes": 816,
+      "lines": 18,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "report/microarchitecture_20260913/tb_fc_lsu.sv",
+      "sha256": "6ed3a2866a11a52ab8d65888177ccb2640898b97d99afab87e6972c274c652de",
+      "bytes": 5003,
+      "lines": 101,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "rtl/pulp/pulp.sv",
+      "sha256": "b172970b8201c1ebe9cb31372e96ce8d6a71d6d728dbd4d677140e92ea9aec43",
+      "bytes": 62598,
+      "lines": 1279,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": "rtl/pulp/soc_domain.sv",
+      "sha256": "5b33a429fd6757dd99d55b7a6103c182e0631025fa1589eb12cd374458b41a6a",
+      "bytes": 12451,
+      "lines": 237,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": "rtl/tb/tb_pulp.sv",
+      "sha256": "dc33426ca466e1fa317d087f3914406384234aa37352810c3421f950708d6cd7",
+      "bytes": 37371,
+      "lines": 1089,
+      "explicit_compile_tcl_entry": true
+    },
+    {
+      "path": "sim/compile.tcl",
+      "sha256": "22ef808d9fd21d734b333faa2bea16b234fd3c2bf0cf8171147a5bc21c1f1c39",
+      "bytes": 102229,
+      "lines": 1575,
+      "explicit_compile_tcl_entry": false
+    },
+    {
+      "path": "sw/full_system/run_sim.sh",
+      "sha256": "89bd3a199fbefbbec0a82b478e793ac1c54a5ce49a2bc18623cbce7058c8a284",
+      "bytes": 6083,
+      "lines": 137,
+      "explicit_compile_tcl_entry": false
+    }
+  ]
+}

@@ -9,6 +9,7 @@
 #   PULP_RISCV_GCC_TOOLCHAIN toolchain RISC-V              (mac dinh: do tu tim)
 #   SIM_TIMEOUT              watchdog thoi gian MO PHONG   (mac dinh: "40 ms")
 #   WALL_TIMEOUT             watchdog thoi gian THUC, giay (mac dinh: 1800)
+#   APP_DIR                  thu muc ung dung              (mac dinh: sw/full_system)
 #
 # Vi du:
 #   ./run_sim.sh                       # clean all run
@@ -98,7 +99,9 @@ if (( $# == 0 )); then
     set -- clean all run
 fi
 
-cd "$ROOT/sw/full_system"
+# APP_DIR: chay ung dung pulp-runtime khac voi cung moi truong
+# (vd. sw/gvsoc/ubench_rt de so sanh GVSoC voi RTL).
+cd "${APP_DIR:-$ROOT/sw/full_system}"
 
 # --- Watchdog tang 2: thoi gian thuc ---------------------------------------
 # Tang 1 khong cuu duoc truong hop vsim treo TRUOC khi nap do-file (cho

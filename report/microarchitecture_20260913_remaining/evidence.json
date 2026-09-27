@@ -1,0 +1,846 @@
+{
+  "scope": "2026-09-13 continuation M4-M7 static + M8 component simulation",
+  "limitations": "No new full-system elaboration/simulation; no physical CDC or numerical FP sign-off.",
+  "root_head": "ce0628648cb0b7d2d29ed348a235b6b12442034a",
+  "tool": "Verilator 5.020 2024-01-01 rev (Debian 5.020-1)",
+  "markdown_links_checked": 203,
+  "results": {
+    "control": [
+      "PASS control: 31 checks"
+    ],
+    "cdc": [
+      "PASS CDC: sent=64 received=64 max_pending=6 src_stall_cycles=111 first_delivery_elapsed_ns=289 (includes deliberate consumer stall)"
+    ],
+    "xbar": [
+      "PASS xbar case: same_bank=0 blocked_cycles=0 four_requests_service_cycles=1",
+      "PASS xbar case: same_bank=1 blocked_cycles=0 four_requests_service_cycles=4",
+      "PASS xbar case: same_bank=1 blocked_cycles=3 four_requests_service_cycles=4",
+      "PASS xbar case: same_bank=0 blocked_cycles=2 four_requests_service_cycles=1",
+      "PASS xbar: 16 accepted requests, 16 checked responses; independent banks 4 requests/cycle, same bank 1 request/cycle in this fixture"
+    ],
+    "dma_synch": [
+      "PASS DMA synch: 12 checks"
+    ]
+  },
+  "dependencies": {
+    "axi-d42e23417b564294": {
+      "head": "527cf64a95f7aea36836b2db76dc4d767e150358",
+      "tracked_status": [
+        "M src/axi_burst_splitter.sv",
+        " M src/axi_xbar.sv"
+      ]
+    },
+    "cluster_interconnect-abcda71a83f4333c": {
+      "head": "7d0a4f8acae71a583a6713cab5554e60b9bb8d27",
+      "tracked_status": []
+    },
+    "common_cells-f18d75f6d6d026a5": {
+      "head": "b5ec8905ed7828655155b0ae971023adf793c600",
+      "tracked_status": [
+        "M Bender.yml"
+      ]
+    },
+    "cv32e40p-0a3884e05ea5a482": {
+      "head": "8d58109ab61e1fb6c9dcbafefb8f3a56ee596427",
+      "tracked_status": []
+    },
+    "event_unit_flex-385402acb0ace331": {
+      "head": "53fb3a1093aaaedfe883739fd8a3155d601210bc",
+      "tracked_status": []
+    },
+    "fpnew-3f06cec0e0e04d73": {
+      "head": "8dc44406b1ccbc4487121710c1883e805f893965",
+      "tracked_status": [
+        "M src/fpnew_pkg.sv"
+      ]
+    },
+    "fpu_interco-f206baa74ecb3390": {
+      "head": "66b4084117546d5b748c30b5500769805f489d2f",
+      "tracked_status": []
+    },
+    "hci-fdec9f801a620ca3": {
+      "head": "8fb848e8f6722c1c21b44533535f430960c31b0b",
+      "tracked_status": []
+    },
+    "hier-icache-fa9462fd6a0f0398": {
+      "head": "c82025995fbb18e045bb14ad2e94b35734994956",
+      "tracked_status": []
+    },
+    "hwpe-datamover-example-a9b2d6689c13b9f9": {
+      "head": "47e7fe8a38331b123d763ecab11be4058d425021",
+      "tracked_status": []
+    },
+    "l2_tcdm_hybrid_interco-f03a86a7ac111e77": {
+      "head": "fa55e72859dcfb117a2788a77352193bef94ff2b",
+      "tracked_status": []
+    },
+    "mchan-1903412f92cb4b0c": {
+      "head": "a9c71f2d9845a4ca05cf2c6ad089b4753f76fc2e",
+      "tracked_status": []
+    },
+    "pulp_cluster-48721e3ce381c984": {
+      "head": "040fc3e3b2dbf11ce0d08bf7554f310c483b8c9f",
+      "tracked_status": [
+        "M rtl/cluster_bus_wrap.sv"
+      ]
+    },
+    "pulp_soc-c519334bd3ac5582": {
+      "head": "d878151e0e40912642c5275d470cef76258f5fc6",
+      "tracked_status": [
+        "M rtl/pulp_soc/soc_interconnect.sv"
+      ]
+    },
+    "tech_cells_generic-6a4b27e0e56cbcda": {
+      "head": "e6226a6f374eb88fed84d4989bb3f066cb470f33",
+      "tracked_status": []
+    },
+    "udma_core-25b62500cd51a5c6": {
+      "head": "7af2db5ea8cee3ecfe8e0e647bbdbc7f58ecb73b",
+      "tracked_status": []
+    },
+    "udma_uart-987a5c3aaae1cf57": {
+      "head": "18ed1986fd62920b1065005c370fd740995cfd4a",
+      "tracked_status": []
+    }
+  },
+  "files": [
+    {
+      "path": ".bender/git/checkouts/axi-d42e23417b564294/src/axi_cdc_dst.sv",
+      "sha256": "d7c8974b5ae9108423c9c013946c807a5f5fd4d2319426cec18e9b21c3655ec1",
+      "bytes": 10200,
+      "lines": 264
+    },
+    {
+      "path": ".bender/git/checkouts/axi-d42e23417b564294/src/axi_cdc_src.sv",
+      "sha256": "e308ea2225f5ed6b8cef13aff547ea582f51ed4d1e44d0b90cac144524aca26f",
+      "bytes": 10320,
+      "lines": 264
+    },
+    {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/addr_dec_resp_mux.sv",
+      "sha256": "7732eabbd1ae86ff9a5bf6e294eb89ae0f23676fbca38cdb7fe2ca92df1e9356",
+      "bytes": 6433,
+      "lines": 184
+    },
+    {
+      "path": ".bender/git/checkouts/cluster_interconnect-abcda71a83f4333c/rtl/tcdm_interconnect/xbar.sv",
+      "sha256": "0a28a137c189d25586775056427644d70b8cf2f94c9e1bbc2bc3ca8767a91236",
+      "bytes": 5677,
+      "lines": 132
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/include/common_cells/assertions.svh",
+      "sha256": "d44ed5ffbbfb69c65f5b398428c6b5b5a1103883b925040cbc7bece257d13b1a",
+      "bytes": 9449,
+      "lines": 201
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/include/common_cells/registers.svh",
+      "sha256": "a4e19da894564fd30a4dec4ca8466d181592c9202be2bf124fc4caa82b432d25",
+      "bytes": 9703,
+      "lines": 221
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/binary_to_gray.sv",
+      "sha256": "99e8a0bac473921d7e2c0f5e248f88705e3f44f9aeaa4d637cecf5fbf2a4d511",
+      "bytes": 904,
+      "lines": 22
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cdc_fifo_gray.sv",
+      "sha256": "0ddcfd5984b21884b61efbb57a7d17783c7a862a4719065890af74f2783bd7d8",
+      "bytes": 10703,
+      "lines": 293
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cf_math_pkg.sv",
+      "sha256": "afc32fcae21f6cbb834c5ee602a1aaee1b518fc436a86d4fe1b97942473d35c8",
+      "bytes": 2733,
+      "lines": 61
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/edge_propagator_rx.sv",
+      "sha256": "2d73f35952ec22d16754b928ddb560d7854be23ffa608d9f5652d30f1befe82a",
+      "bytes": 1137,
+      "lines": 31
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/edge_propagator_tx.sv",
+      "sha256": "8b4cd6b8539ad6f8ee47993870675eca92937d6bc892a0c5baf14664a1a4281b",
+      "bytes": 1349,
+      "lines": 40
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/gray_to_binary.sv",
+      "sha256": "e8cc57b3e6a6accb91a5f204d0f71a95ec7383f9975c727b70fa49fa6bc72470",
+      "bytes": 943,
+      "lines": 23
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/lzc.sv",
+      "sha256": "a5f342689d5ea0be8730ea822da8d620e107da894aaa9481a27034cac5bbe02a",
+      "bytes": 4379,
+      "lines": 111
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rr_arb_tree.sv",
+      "sha256": "c7361280318a605131345932ab3325bc53f8fc76e67c5579b991b96a5b4ffeed",
+      "bytes": 14988,
+      "lines": 348
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/rstgen_bypass.sv",
+      "sha256": "51322d03a0479f16a4acb66cccee48003e2e224c02a7d3188cbaea9b2f8b2756",
+      "bytes": 1981,
+      "lines": 57
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/spill_register.sv",
+      "sha256": "97bf85128f538c54c749896b8eee5fcfe4b27c16845d2a17990979a63b09f2ec",
+      "bytes": 1381,
+      "lines": 46
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/spill_register_flushable.sv",
+      "sha256": "f25965444dd82ef32a8a5eaaf6bcc5f05d1ab577b42ee4157dffb38aff5ccfe9",
+      "bytes": 3651,
+      "lines": 105
+    },
+    {
+      "path": ".bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/sync.sv",
+      "sha256": "cc7605468d124b0af0d4b2d17323ade1f4093bc96999fab037b9dacac5fe5956",
+      "bytes": 1269,
+      "lines": 37
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/include/apu_core_package.sv",
+      "sha256": "edf83da44b7e44968f2728098eb3af6fa1326e76323fa613816ac1fe4a511d8d",
+      "bytes": 2780,
+      "lines": 70
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/include/apu_macros.sv",
+      "sha256": "31c9cbff9d1f7663cda19aafb89b197d16c5d09a1cc2587a95321c73a811b5aa",
+      "bytes": 3446,
+      "lines": 77
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/include/riscv_defines.sv",
+      "sha256": "5fe56aabf41e7f7af781b5aaac07ce66587bf1f70a8345667e97d95c044dd99c",
+      "bytes": 16264,
+      "lines": 456
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_apu_disp.sv",
+      "sha256": "57ec97ec938a5f5a3384f2b200ac23cd5ce61274a390ed283a379a0b2bdc111e",
+      "bytes": 9890,
+      "lines": 248
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_controller.sv",
+      "sha256": "cddacd0bd51bb5ed85030ec3ef7ee8dfcc0a822e9bc3185c2d97a30680e695bb",
+      "bytes": 40264,
+      "lines": 1128
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_core.sv",
+      "sha256": "4dc42a8867ac738904cd3df0067dc6ff2d0b9a97cf77647fa839d09d93b2cc8c",
+      "bytes": 48960,
+      "lines": 1191
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_decoder.sv",
+      "sha256": "df52de0e3f1144342b5b5306580bc3547ee9800ae0c60f1a5b1039d4f868689d",
+      "bytes": 104000,
+      "lines": 2479
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_ex_stage.sv",
+      "sha256": "6b4afeb67d1c7ac8337930b4485c9a5e18ee658f4018e88ad69b99c21beefd57",
+      "bytes": 21964,
+      "lines": 561
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_fetch_fifo.sv",
+      "sha256": "ad464503b2bdd691777296586dfb02ea3259e85c65aea9fdd1a3ec71d53c4486",
+      "bytes": 9749,
+      "lines": 274
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_id_stage.sv",
+      "sha256": "7cc67bde1633a2f6f149fbacd8deff93ba3f3714d6d3621367525c3481a33521",
+      "bytes": 64747,
+      "lines": 1649
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_if_stage.sv",
+      "sha256": "d7164a4c8d9f723cc7ad28792d756bc89f74000b1e03128a1e248e1b3fe79c7b",
+      "bytes": 14825,
+      "lines": 418
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_load_store_unit.sv",
+      "sha256": "53a82beb5e4f9523b3d6b2926785d077e380c599da67f19c984db7c8e2b43d92",
+      "bytes": 17099,
+      "lines": 500
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_pmp.sv",
+      "sha256": "3d8d538684bc2be1d66527488824649fcf69e364620b4c279751212ab83bb2b0",
+      "bytes": 34147,
+      "lines": 808
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_prefetch_buffer.sv",
+      "sha256": "8c5ea038c05119027f338e98b1e831a9a295335b1840752e4fd541802551421f",
+      "bytes": 13168,
+      "lines": 435
+    },
+    {
+      "path": ".bender/git/checkouts/cv32e40p-0a3884e05ea5a482/rtl/riscv_register_file_latch.sv",
+      "sha256": "f8afd74c5a064f2ddf6bfbbf6b5bedf6df9d224d0855a74c3b5869228de5a9cf",
+      "bytes": 8801,
+      "lines": 224
+    },
+    {
+      "path": ".bender/git/checkouts/event_unit_flex-385402acb0ace331/rtl/event_unit_core.sv",
+      "sha256": "b594740ef1505d37c419d4d8755a2b8995c4e60ea227a10e2046453bf2b67163",
+      "bytes": 29816,
+      "lines": 688
+    },
+    {
+      "path": ".bender/git/checkouts/event_unit_flex-385402acb0ace331/rtl/hw_barrier_unit.sv",
+      "sha256": "11ed9a8607d2287036776c0256c1d4ee049bb91d8cb1f5de3d7ce6ad5e7864e3",
+      "bytes": 7544,
+      "lines": 193
+    },
+    {
+      "path": ".bender/git/checkouts/fpnew-3f06cec0e0e04d73/src/fpnew_fma.sv",
+      "sha256": "623dbb5f554fd3c44042f01d3c9734b84c9043e225adcb8c66545f2850f3cb7b",
+      "bytes": 34532,
+      "lines": 673
+    },
+    {
+      "path": ".bender/git/checkouts/fpu_interco-f206baa74ecb3390/FP_WRAP/fp_iter_divsqrt_msv_wrapper_2_STAGE.sv",
+      "sha256": "27d0db28758fdc88ff7f7ab62f3c1a6ee60ddcbe6f8387bc6b8997d72b167415",
+      "bytes": 9300,
+      "lines": 221
+    },
+    {
+      "path": ".bender/git/checkouts/fpu_interco-f206baa74ecb3390/FP_WRAP/fpnew_wrapper.sv",
+      "sha256": "4441828fb9a5990d9e09fc5a2779dd46f11dba30810018105f82343a9baaf879",
+      "bytes": 8856,
+      "lines": 178
+    },
+    {
+      "path": ".bender/git/checkouts/fpu_interco-f206baa74ecb3390/RTL/XBAR_FPU.sv",
+      "sha256": "9b50cb286b76c4253f5e6e1bb3ce1eb5a0c5291e6c3fbac642ffd9a603a22502",
+      "bytes": 11354,
+      "lines": 237
+    },
+    {
+      "path": ".bender/git/checkouts/fpu_interco-f206baa74ecb3390/RTL/optimal_alloc.sv",
+      "sha256": "a12e08697128f774253ba87b867b5c0e4529856a8724e067a8cf4b01d4b859c6",
+      "bytes": 4088,
+      "lines": 82
+    },
+    {
+      "path": ".bender/git/checkouts/fpu_interco-f206baa74ecb3390/RTL/shared_fpu_cluster.sv",
+      "sha256": "0fffbaab444dfff1d30a00695877dba21aa049ceab15bd073aa3df0b7fa2def3",
+      "bytes": 55953,
+      "lines": 1060
+    },
+    {
+      "path": ".bender/git/checkouts/hci-fdec9f801a620ca3/rtl/hci_interconnect.sv",
+      "sha256": "9b299be19c7e8879cf8399726970991199463b80972a33d6250365d7852cd8fe",
+      "bytes": 7941,
+      "lines": 204
+    },
+    {
+      "path": ".bender/git/checkouts/hier-icache-fa9462fd6a0f0398/RTL/L1.5_CACHE/AXI4_REFILL_Resp_Deserializer.sv",
+      "sha256": "3b9065d2be5052c00ce0e79acbe41f830487ee5ec4f323d60f7756c2e04fc954",
+      "bytes": 11935,
+      "lines": 342
+    },
+    {
+      "path": ".bender/git/checkouts/hier-icache-fa9462fd6a0f0398/RTL/L1.5_CACHE/share_icache_controller.sv",
+      "sha256": "70a848ce9690a245f4a34bed5da44dd467638d2bf6d1bc9f5f8776f3f2255f2d",
+      "bytes": 39368,
+      "lines": 1032
+    },
+    {
+      "path": ".bender/git/checkouts/hier-icache-fa9462fd6a0f0398/RTL/L1_CACHE/pri_icache.sv",
+      "sha256": "b0df7f9cb25511ddccc116d64701ac82161b2e744e3beec83b9c77ece740ed6d",
+      "bytes": 19685,
+      "lines": 368
+    },
+    {
+      "path": ".bender/git/checkouts/hier-icache-fa9462fd6a0f0398/RTL/L1_CACHE/pri_icache_controller.sv",
+      "sha256": "b4c231d704b9242142cdb30b744f17e925ea6a5056787fcc1c7d193bc775cab3",
+      "bytes": 34021,
+      "lines": 904
+    },
+    {
+      "path": ".bender/git/checkouts/hier-icache-fa9462fd6a0f0398/RTL/TOP/icache_hier_top.sv",
+      "sha256": "c4a38a430332344daca63463ed20a59a645f15e75603ad8d05a15d2abdc5a40f",
+      "bytes": 33566,
+      "lines": 554
+    },
+    {
+      "path": ".bender/git/checkouts/hwpe-datamover-example-a9b2d6689c13b9f9/rtl/datamover_engine.sv",
+      "sha256": "a08212e55e1b22938f1ed6bd195be94519b6007d2ecb88d76d3b78b607263b54",
+      "bytes": 1679,
+      "lines": 52
+    },
+    {
+      "path": ".bender/git/checkouts/hwpe-datamover-example-a9b2d6689c13b9f9/rtl/datamover_streamer.sv",
+      "sha256": "d22b7334636a44ed7a8b7dade51a91e94c3c17df458e21013c529e0362aa5fc3",
+      "bytes": 6632,
+      "lines": 179
+    },
+    {
+      "path": ".bender/git/checkouts/hwpe-datamover-example-a9b2d6689c13b9f9/rtl/datamover_top.sv",
+      "sha256": "10cdf26a83fecaf3cc3dfbbc35c6d885f950072dd83e29e01cb10311cee1b692",
+      "bytes": 7608,
+      "lines": 204
+    },
+    {
+      "path": ".bender/git/checkouts/l2_tcdm_hybrid_interco-f03a86a7ac111e77/RTL/lint_2_axi.sv",
+      "sha256": "ec07094416c85808e40c051122ba5c846bc3b39ec1f018feb38b22c3da06f3b7",
+      "bytes": 11658,
+      "lines": 383
+    },
+    {
+      "path": ".bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ctrl_unit/ctrl_fsm.sv",
+      "sha256": "6fedae8d17aed0b12d0d44d8d146d7a4aa999afdffe9919952fab3b14bcb2233",
+      "bytes": 28345,
+      "lines": 1044
+    },
+    {
+      "path": ".bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ctrl_unit/synch_unit.sv",
+      "sha256": "61580dcc52b34c9438bcb0e222f7fa0462f692d528ab140960fd8ee83bc3eff6",
+      "bytes": 10086,
+      "lines": 386
+    },
+    {
+      "path": ".bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ext_unit/ext_rx_if.sv",
+      "sha256": "d66903aa0132b7b79cb8927cbcb87e4ab4128460cb847b5d68bb4dfbcc541541",
+      "bytes": 8456,
+      "lines": 251
+    },
+    {
+      "path": ".bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/ext_unit/ext_tx_if.sv",
+      "sha256": "979914fec1089448d060ebc1c79ae3c62a83da44690520e29cc94484d81af83d",
+      "bytes": 9963,
+      "lines": 311
+    },
+    {
+      "path": ".bender/git/checkouts/mchan-1903412f92cb4b0c/rtl/include/mchan_defines.sv",
+      "sha256": "f18f09baeb1101964b9f165b1b7c294953792020f5c4b622dcb0569c232a15fa",
+      "bytes": 1705,
+      "lines": 46
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_cluster-48721e3ce381c984/rtl/cluster_clock_gate.sv",
+      "sha256": "da0d462f1383d787d5c05d0fd1b9d0ed399eaae07d4a1d723377024c459c68b8",
+      "bytes": 2361,
+      "lines": 77
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_cluster-48721e3ce381c984/rtl/core_region.sv",
+      "sha256": "a0f9c86a37b073003ed06e5a6b69a88c31e7ea304f50da304eda00d35914a1e6",
+      "bytes": 27243,
+      "lines": 691
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_cluster-48721e3ce381c984/rtl/dmac_wrap.sv",
+      "sha256": "47e8fd7cb658d7048309cee22efac53106ce7126bff1530f76051fa832494d5e",
+      "bytes": 13906,
+      "lines": 273
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_cluster-48721e3ce381c984/rtl/hwpe_subsystem.sv",
+      "sha256": "b766312328b542517ad6dca882f8c2a35b663ddf76e12894d8367036a510aae7",
+      "bytes": 2842,
+      "lines": 91
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_cluster-48721e3ce381c984/rtl/pulp_cluster.sv",
+      "sha256": "ade5e9fc69e3f30a5a158d739d7c2da51eb35780480f961ca4aaed9eaa7790fb",
+      "bytes": 67057,
+      "lines": 1561
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/components/pulp_interfaces.sv",
+      "sha256": "c9f8567cb8ecbe22960bf7011ff87ecf25a111c6eaa3728c3d40dd44d48a968c",
+      "bytes": 36960,
+      "lines": 1321
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/components/tcdm_arbiter_2x1.sv",
+      "sha256": "cb8a3b19f58a23dd68e798a3812a2aa188341e41775fdb8d0560ffd64710c30c",
+      "bytes": 5264,
+      "lines": 147
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/fc/fc_subsystem.sv",
+      "sha256": "836e5c9cd935377d40f7232b4e9324349cca2525f9ac53ca173600d221fa63ea",
+      "bytes": 13740,
+      "lines": 330
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/pulp_soc.sv",
+      "sha256": "5cf0c093987b8be41801c38a1209fd2620e47ceec6ba69d576d30564e8804a24",
+      "bytes": 49876,
+      "lines": 1038
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_event_generator.sv",
+      "sha256": "9fbaea4e1bd9ba04c5f632a44b2307fb7270d1decc1918db24ea9309d9b8c858",
+      "bytes": 15635,
+      "lines": 427
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_event_queue.sv",
+      "sha256": "40295692180a07cdf4387d5834a9d429a3c083e872d92bcf4a964acb6835691c",
+      "bytes": 1790,
+      "lines": 58
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/pulp_soc/soc_interconnect_wrap.sv",
+      "sha256": "e035a17676b2cd47203c698b31e523a486f043a4f210a484695a7319fde920af",
+      "bytes": 16478,
+      "lines": 274
+    },
+    {
+      "path": ".bender/git/checkouts/pulp_soc-c519334bd3ac5582/rtl/udma_subsystem/udma_subsystem.sv",
+      "sha256": "0bd1665205f2d16e0717fda6d67a44e8d4ac89846f93008bbf9a1bbddb14b6a2",
+      "bytes": 60404,
+      "lines": 1132
+    },
+    {
+      "path": ".bender/git/checkouts/tech_cells_generic-6a4b27e0e56cbcda/src/rtl/tc_clk.sv",
+      "sha256": "24295927db39a9629e69cb1022bb85bd7e8c75cf923da673eb6d48d7a81197ea",
+      "bytes": 2339,
+      "lines": 102
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/common/io_generic_fifo.sv",
+      "sha256": "5a8aa0c6ab9bf703d9a7897e0b67c425f6bc6d934ae09fc7175bea8dc2d2037d",
+      "bytes": 5278,
+      "lines": 148
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/common/io_tx_fifo.sv",
+      "sha256": "3b4a1c5d8977c8e50917864e90474523e00766dc0ac1cf901f88697bc7ae4e47",
+      "bytes": 2965,
+      "lines": 94
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/common/udma_apb_if.sv",
+      "sha256": "8847538787a83b7913fc0e73fb0cfb1b2ab9134ae8cd1f6b696f84b231757b5e",
+      "bytes": 2718,
+      "lines": 83
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/common/udma_ctrl.sv",
+      "sha256": "cdb5a219961f4443e08e53da5c976e1ab27e07e8ac55ffe24ce4a7cab9161793",
+      "bytes": 4386,
+      "lines": 136
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_ch_addrgen.sv",
+      "sha256": "7b8ccc1e8ce7bb84dce0e1a4b9b328f94e96c798a0f3e14f1a3994ec438bc016",
+      "bytes": 9380,
+      "lines": 277
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_core.sv",
+      "sha256": "f9f68a6b885feb99a7743294c5372ba70229faea9f949b13f60a2057edd52456",
+      "bytes": 19152,
+      "lines": 414
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_rx_channels.sv",
+      "sha256": "9c83d5071e5e62fc769de3737509f2de410337b3bca0f34ffadea0741335ea74",
+      "bytes": 29921,
+      "lines": 689
+    },
+    {
+      "path": ".bender/git/checkouts/udma_core-25b62500cd51a5c6/rtl/core/udma_tx_channels.sv",
+      "sha256": "efcb13bc9202cf4907a195b6bf07fb7604584057fecfe94746c82078f2b8f381",
+      "bytes": 17271,
+      "lines": 505
+    },
+    {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57/rtl/udma_uart_reg_if.sv",
+      "sha256": "670b5af605edd30311076bfb7634057d90e013cba7479ab66054785111ddf6c7",
+      "bytes": 11857,
+      "lines": 309
+    },
+    {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57/rtl/udma_uart_top.sv",
+      "sha256": "586be8e21005de967a1dca5459165e8885c07c4eaa7e9259bfb7da296af7d8fa",
+      "bytes": 12643,
+      "lines": 333
+    },
+    {
+      "path": ".bender/git/checkouts/udma_uart-987a5c3aaae1cf57/rtl/udma_uart_tx.sv",
+      "sha256": "217d72d528605386979c6d7a411a1aca2a7fed85595937414fd1cbfd508653c8",
+      "bytes": 4798,
+      "lines": 222
+    },
+    {
+      "path": "doc/dungpc/DEEP_DIVE_INDEX.md",
+      "sha256": "fdb4a922c418e263102ed8c255622f62f5559ece4bf4b7295a467b97d6d2ee0b",
+      "bytes": 8432,
+      "lines": 103
+    },
+    {
+      "path": "doc/dungpc/micro_00_plan_phan_tich_pulp.md",
+      "sha256": "5332730b434aa1ca67a2afbf97aec9c5394ce7ff7769cd401f5b2fcb44b29b33",
+      "bytes": 7249,
+      "lines": 96
+    },
+    {
+      "path": "doc/dungpc/micro_01_fc_pipeline.md",
+      "sha256": "424e12d235adbad4cbbeaef260721256274e9a7b9038e124e68d79d684f80c49",
+      "bytes": 14978,
+      "lines": 240
+    },
+    {
+      "path": "doc/dungpc/micro_02_fc_lsu.md",
+      "sha256": "575b3971130a7b1d9ddca2ccd2c378b3f8ef3088cadc452c8c00cd791dac8c9f",
+      "bytes": 11416,
+      "lines": 220
+    },
+    {
+      "path": "doc/dungpc/micro_03_fc_soc_interconnect.md",
+      "sha256": "14998eee7891c8947c57db9ac41c7a4aedd1175b6a7d9e1a84ba0f4748ae0cfe",
+      "bytes": 12972,
+      "lines": 224
+    },
+    {
+      "path": "doc/dungpc/micro_04_soc_udma_event.md",
+      "sha256": "724dd2cc874cf08fac657556436de1e011a6a0c071129c192e07818b4975ccb1",
+      "bytes": 10839,
+      "lines": 181
+    },
+    {
+      "path": "doc/dungpc/micro_05_cluster_memory_dma_eu.md",
+      "sha256": "61d7144d602b8b4c767561a0f0f7eb641f0009d483feca3f6c1c74195b491c3b",
+      "bytes": 15082,
+      "lines": 247
+    },
+    {
+      "path": "doc/dungpc/micro_06_fpu_hwpe.md",
+      "sha256": "bddb66a9ab167b5e0ff0ba7b25519d538541b5056d604d9611bfebfe3c9068fa",
+      "bytes": 14408,
+      "lines": 236
+    },
+    {
+      "path": "doc/dungpc/micro_07_cdc_clock_reset.md",
+      "sha256": "07095836cc0aa7721b7ed10993bfb9d962d65e4a5e528e07bdb9d3095f4a2945",
+      "bytes": 13423,
+      "lines": 221
+    },
+    {
+      "path": "doc/dungpc/micro_08_validation.md",
+      "sha256": "ca2a103fd2d607d21c93b7084736a74c8e05e6c708ad07efd754bdb5be411c24",
+      "bytes": 9384,
+      "lines": 117
+    },
+    {
+      "path": "doc/dungpc/soc_03_udma_debug_cluster_rtl.md",
+      "sha256": "cb754680becebfe7f25f070a6702c83fef23e6a953068c155b01aca417151812",
+      "bytes": 19685,
+      "lines": 321
+    },
+    {
+      "path": "pulp-runtime/drivers/uart.c",
+      "sha256": "84828173f01a1161fc8c13af9fad9ecf45283b4b8b0265a83dea4d6db093370d",
+      "bytes": 2473,
+      "lines": 116
+    },
+    {
+      "path": "pulp-runtime/include/archi/udma/udma_v3.h",
+      "sha256": "4719f8caef71a4cfe11ff187f0afc241168c313fbab125ba3159c4ed6c9a5897",
+      "bytes": 5155,
+      "lines": 176
+    },
+    {
+      "path": "report/microarchitecture_20260913/tb_fc_lsu.sv",
+      "sha256": "6ed3a2866a11a52ab8d65888177ccb2640898b97d99afab87e6972c274c652de",
+      "bytes": 5003,
+      "lines": 101
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/README.md",
+      "sha256": "afd7f0046521a83d04edd204fb031b5a26134d1370be8cb2eace690251a3548d",
+      "bytes": 3980,
+      "lines": 69
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/cdc.vcd",
+      "sha256": "8c1f2dd1e8dfa34cf5cd0ed11af3f8ff2339b7f5dd46ecfac0f6f91567cb03a2",
+      "bytes": 47902,
+      "lines": 4001
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/cdc_compile.log",
+      "sha256": "b09fd1b5452770ba1aee2f42c984d79796dfcaed1f26481031c723fed14cee1f",
+      "bytes": 8021,
+      "lines": 68
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/cdc_run.log",
+      "sha256": "a12345ce6556d4c00219af1df922ac487757586345fe157e29efc068bce15a3f",
+      "bytes": 320,
+      "lines": 3
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/collect_evidence.py",
+      "sha256": "acaa98e39d63e6cf4da91dc41ad2382d5b681494ea12bc2bd2c58e7164a2957f",
+      "bytes": 4517,
+      "lines": 91
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/control.vcd",
+      "sha256": "6793257c406f8d2cf6b1092121a63d444ebc6cf1ded658dd8acb2fbfc3527d23",
+      "bytes": 16494,
+      "lines": 1019
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/control_compile.log",
+      "sha256": "9d2847247b31a089f257bc4d0854afcc6c962a74955e937c8d485107b8089a31",
+      "bytes": 15025,
+      "lines": 134
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/control_run.log",
+      "sha256": "49974e400b5a45cbfa2e4b2087529c441dd565d9d844d91ce71400d2d1c1dadc",
+      "bytes": 1633,
+      "lines": 33
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/dma_synch.vcd",
+      "sha256": "58e5fb776913a078018f1d17a834ede1eda62cf8f53401ba8392b211fb0afd55",
+      "bytes": 4462,
+      "lines": 279
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/dma_synch_compile.log",
+      "sha256": "f1f1f41463d7ab1d62c40f3d3971cc5430f1751c1e12152ab3db2cfa749a333a",
+      "bytes": 5668,
+      "lines": 32
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/dma_synch_run.log",
+      "sha256": "f44df88e289b6dffbf7b49c61b05cbae7f4c7bc603d8a8085c88c937b57e3f12",
+      "bytes": 827,
+      "lines": 14
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/questa_preflight.log",
+      "sha256": "411dd55436e2fc7ebbff50471bc6d3430b7813e870eeb85f3b6b0b9e9d22aef6",
+      "bytes": 305,
+      "lines": 6
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/run.sh",
+      "sha256": "b9784baf743afd985efa32e8a44117ff5fec8d1f0897aca168389e999e341329",
+      "bytes": 2781,
+      "lines": 45
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/tb_cdc.sv",
+      "sha256": "71217abd7e6e70c99156a00202027835fd9e27a812dd5c9c8f364028d88d8c05",
+      "bytes": 2341,
+      "lines": 51
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/tb_control.sv",
+      "sha256": "a94a4dde6db1c8e1dcae8ccf625cb84d93d0d47c753d374a2c7dc6f3333550a3",
+      "bytes": 5803,
+      "lines": 92
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/tb_dma_synch.sv",
+      "sha256": "32d5ce6426a570a697b0a62884b8ba971ca5eb7309a779cb0c273834e24e681e",
+      "bytes": 2632,
+      "lines": 41
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/tb_xbar.sv",
+      "sha256": "e37ae54db35c17a259c50ca48028f029ecb93648fbc8f3f1b623544d0ddcb921",
+      "bytes": 2693,
+      "lines": 61
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/tool_version.txt",
+      "sha256": "26daf9ad1ba36ee1c20cab9a869d0a1fbb8117230c80c78ec2d8cf597f64c4a5",
+      "bytes": 48,
+      "lines": 1
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/xbar.vcd",
+      "sha256": "64e27c9815c5989a272c33a20f4935e0aa5b37bb6e40bb1fa3336286c856e51b",
+      "bytes": 52605,
+      "lines": 1858
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/xbar_compile.log",
+      "sha256": "4d800c49038b8efcb8f87d8cff5800f6fe311755b961f42a72f74e729f36effb",
+      "bytes": 9523,
+      "lines": 65
+    },
+    {
+      "path": "report/microarchitecture_20260913_remaining/xbar_run.log",
+      "sha256": "73e5548ca1eefb3f1e9fe1df3819734d76e803379b657b65f7fb0d673338bd7a",
+      "bytes": 556,
+      "lines": 6
+    },
+    {
+      "path": "rtl/includes/pulp_soc_defines.sv",
+      "sha256": "89de2a16da21a4c5285aab52e8a0d5a45dda9a20e7e1eed67d5432595f1677a4",
+      "bytes": 3845,
+      "lines": 139
+    },
+    {
+      "path": "rtl/pulp/pulp.sv",
+      "sha256": "b172970b8201c1ebe9cb31372e96ce8d6a71d6d728dbd4d677140e92ea9aec43",
+      "bytes": 62598,
+      "lines": 1279
+    },
+    {
+      "path": "rtl/pulp/safe_domain.sv",
+      "sha256": "882ee46f9d56761d0a19f799041d4e2015ef021e0e9b1c575ae5cab0f95208bc",
+      "bytes": 25529,
+      "lines": 548
+    },
+    {
+      "path": "rtl/pulp/soc_domain.sv",
+      "sha256": "5b33a429fd6757dd99d55b7a6103c182e0631025fa1589eb12cd374458b41a6a",
+      "bytes": 12451,
+      "lines": 237
+    },
+    {
+      "path": "rtl/tb/tb_pulp.sv",
+      "sha256": "dc33426ca466e1fa317d087f3914406384234aa37352810c3421f950708d6cd7",
+      "bytes": 37371,
+      "lines": 1089
+    },
+    {
+      "path": "sim/compile.tcl",
+      "sha256": "22ef808d9fd21d734b333faa2bea16b234fd3c2bf0cf8171147a5bc21c1f1c39",
+      "bytes": 102229,
+      "lines": 1575
+    },
+    {
+      "path": "sw/full_system/run_sim.sh",
+      "sha256": "89bd3a199fbefbbec0a82b478e793ac1c54a5ce49a2bc18623cbce7058c8a284",
+      "bytes": 6083,
+      "lines": 137
+    }
+  ]
+}

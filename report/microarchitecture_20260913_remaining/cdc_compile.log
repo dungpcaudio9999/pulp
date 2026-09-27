@@ -1,0 +1,68 @@
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cf_math_pkg.sv:18:9: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   18 | package cf_math_pkg;
+      |         ^~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.020
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/sync.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   13 | module sync #(
+      |        ^~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/gray_to_binary.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   15 | module gray_to_binary #(
+      |        ^~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/binary_to_gray.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   15 | module binary_to_gray #(
+      |        ^~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/spill_register_flushable.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   17 | module spill_register_flushable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/spill_register.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   17 | module spill_register #(
+      |        ^~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cdc_fifo_gray.sv:102:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+  102 | module cdc_fifo_gray #(
+      |        ^~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cdc_fifo_gray.sv:172:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+  172 | module cdc_fifo_gray_src #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+%Warning-TIMESCALEMOD: /home/dungpc/ndmoney4porche/projects/pulp/.bender/git/checkouts/common_cells-f18d75f6d6d026a5/src/cdc_fifo_gray.sv:230:8: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+  230 | module cdc_fifo_gray_dst #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /home/dungpc/ndmoney4porche/projects/pulp/report/microarchitecture_20260913_remaining/tb_cdc.sv:2:8: ... Location of module with timescale
+    2 | module tb_cdc;
+      |        ^~~~~~
+make: Entering directory '/tmp/pulp-micro-remaining.JaIbP6/cdc'
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_vcd_c.o /usr/share/verilator/include/verilated_vcd_c.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_cdc.cpp Vtb_cdc___024root__DepSet_h2168c2a1__0.cpp Vtb_cdc___024root__DepSet_h8e71c160__0.cpp Vtb_cdc__main.cpp Vtb_cdc__Trace__0.cpp Vtb_cdc___024root__Slow.cpp Vtb_cdc___024root__DepSet_h2168c2a1__0__Slow.cpp Vtb_cdc___024root__DepSet_h8e71c160__0__Slow.cpp Vtb_cdc__Syms.cpp Vtb_cdc__Trace__0__Slow.cpp Vtb_cdc__TraceDecls__0__Slow.cpp > Vtb_cdc__ALL.cpp
+echo "" > Vtb_cdc__ALL.verilator_deplist.tmp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_cdc__ALL.o Vtb_cdc__ALL.cpp
+Archive ar -rcs Vtb_cdc__ALL.a Vtb_cdc__ALL.o
+g++     verilated.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vtb_cdc__ALL.a    -pthread -lpthread -latomic   -o Vtb_cdc
+rm Vtb_cdc__ALL.verilator_deplist.tmp
+make: Leaving directory '/tmp/pulp-micro-remaining.JaIbP6/cdc'

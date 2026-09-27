@@ -1,7 +1,7 @@
 # Bước 0 — chạy test cluster có sẵn (2026-09-06)
 
 Mục đích: xác định cluster có boot và chạy được không, TRƯỚC khi viết
-`sw/full_system/` theo `doc/dungpc/plan_demo.md`.
+`sw/full_system/` theo `doc/dungpc/master_analysis/simulation/plan_demo.md`.
 
 | Bài test | Kết quả | Bằng chứng |
 |---|---|---|
