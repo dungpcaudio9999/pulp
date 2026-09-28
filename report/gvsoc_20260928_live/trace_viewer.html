@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GVSoC PULP Trace Replay</title>
+  <style>
+    :root{color-scheme:dark;--bg:#111318;--panel:#191c23;--panel2:#20242d;--line:#343a46;--text:#eef1f6;--muted:#9aa4b3;--accent:#69a7ff;--ok:#69c38f;--warn:#e5b567;--bad:#ef7d7d;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:28px}h1{font-size:24px;margin:0}h2{font-size:18px;margin:0 0 12px}.muted{color:var(--muted)}code,.mono{font-family:var(--mono)}code{background:var(--panel2);padding:2px 5px;border-radius:4px}.head,.toolbar,.flow,.stats,.phase-grid{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.head{justify-content:space-between;margin-bottom:18px}.pill{border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:12px}.ok{color:var(--ok)}.warn{color:var(--warn)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:18px 0}.stat,.card,.node,.phase{background:var(--panel);border:1px solid var(--line);border-radius:7px}.stat{padding:12px}.stat b{display:block;font-size:20px;margin:2px 0}.callout{border-left:3px solid var(--warn);background:var(--panel);padding:12px 14px;margin:18px 0}.flow{margin-bottom:24px}.node{padding:10px 12px;min-width:130px}.node.active{border-color:var(--accent);background:var(--panel2)}.arrow{color:var(--muted)}button,.file-label{font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:6px 10px;cursor:pointer}button.primary{background:var(--accent);color:#0c1727;border-color:var(--accent);font-weight:650}button:disabled{opacity:.45;cursor:not-allowed}input[type=file]{display:none}.viewer{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:12px}.card{overflow:hidden}.card-head{padding:10px 13px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.card-body{padding:15px}.instruction{font-size:18px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:16px}.op{font-size:22px;font-weight:700;color:var(--accent)}.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.detail{background:var(--panel2);padding:10px;border-radius:5px}.detail small{display:block;color:var(--muted)}.values{display:grid;gap:12px}.values small{display:block;color:var(--muted);margin-bottom:5px}.value-list{display:flex;gap:6px;flex-wrap:wrap}.trace-list{margin-top:12px;border-top:1px solid var(--line)}.trace-row{display:grid;grid-template-columns:95px 110px minmax(0,1fr) 155px;gap:8px;padding:7px 10px;border-bottom:1px solid var(--line);cursor:pointer}.trace-row:hover,.trace-row.active{background:var(--panel2)}.trace-row.active{border-left:3px solid var(--accent);padding-left:7px}.phase-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:12px}.phase{padding:10px;border-top:2px solid var(--accent)}.phase.fail{border-top-color:var(--warn)}.phase small{display:block;color:var(--muted)}.source{margin-top:22px;font-size:12px;color:var(--muted)}a{color:var(--accent)}@media(max-width:850px){.stats,.phase-grid{grid-template-columns:repeat(2,1fr)}.viewer{grid-template-columns:1fr}.trace-row{grid-template-columns:75px 100px 1fr}.trace-row span:last-child{display:none}}@media(max-width:520px){main{padding:16px}.stats,.phase-grid,.detail-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body><main>
+  <div class="head"><div><h1>GVSoC PULP — trace replay</h1><div class="muted">Lần chạy mới ngày 2026-09-28 · target <code>pulp-open</code></div></div><div class="toolbar"><span class="pill ok">hello exit 0</span><span class="pill warn">full_system partial</span></div></div>
+  <section class="stats">
+    <div class="stat"><span class="muted">Hello · FC instructions</span><b>715</b><small>cycle 1,657 → 33,603</small></div>
+    <div class="stat"><span class="muted">Full-system · FC</span><b>28,016</b><small>10,524 load · 1,272 store</small></div>
+    <div class="stat"><span class="muted">Full-system · PE0</span><b>11,301</b><small>2,015 load · 1,661 store</small></div>
+    <div class="stat"><span class="muted">Waveform hello</span><b>415 KiB</b><small>all.vcd · exit 0</small></div>
+  </section>
+  <div class="callout"><b>Kết quả tái chạy:</b> phase 0–5 PASS. Phase 6 báo <code>word 254 sau khôi hồi = 0x00000000, gốc 0xfb0abd9e</code>. Model MAGIA GVSoC tìm được trên máy không hoàn toàn trùng baseline cũ; sai lệch này được giữ nguyên thay vì che đi.</div>
+  <section><h2>Luồng mô phỏng</h2><div class="flow"><div class="node"><b>ELF RISC-V</b><small class="muted">loader + debug symbols</small></div><span class="arrow">→</span><div class="node active" id="flow-fc"><b>FC</b><small class="muted">boot · runtime · offload</small></div><span class="arrow">→</span><div class="node"><b>L2 / SoC</b><small class="muted">interconnect · APB · DMA</small></div><span class="arrow">→</span><div class="node" id="flow-pe0"><b>Cluster</b><small class="muted">8 PE · TCDM · barrier</small></div><span class="arrow">→</span><div class="node"><b>Trace + VCD</b><small class="muted">instruction · PC · state</small></div></div></section>
+  <section>
+    <div class="head"><h2>Instruction replay</h2><div class="toolbar"><button id="fcBtn" class="primary">FC boot</button><button id="peBtn">PE0 cluster</button><button id="prev">Lùi</button><button id="next" class="primary">Lệnh tiếp</button><label class="file-label">Nạp log đầy đủ<input id="file" type="file" accept=".log,text/plain"></label></div></div>
+    <div class="viewer"><div class="card"><div class="card-head"><b id="core-cycle"></b><span id="counter" class="pill"></span></div><div class="card-body"><div class="instruction"><code id="pc"></code><span class="op" id="op"></span><code id="args"></code></div><div class="detail-grid"><div class="detail"><small>Simulation time</small><b id="time"></b></div><div class="detail"><small>Function / source</small><b id="func"></b></div><div class="detail"><small>Δ cycle</small><b id="delta"></b></div></div></div></div><div class="card"><div class="card-head"><b>Giá trị quan sát được</b></div><div class="card-body values"><div><small>Register write</small><div id="writes" class="value-list"></div></div><div><small>Register read</small><div id="reads" class="value-list"></div></div><div><small>Physical address</small><div id="pa" class="value-list"></div></div></div></div></div>
+    <div id="trace-list" class="trace-list"></div>
+  </section>
+  <section style="margin-top:24px"><h2>Full-system phases</h2><div class="phase-grid"><div class="phase"><b>Phase 0 · PASS</b><small>FC, L2, stdout</small></div><div class="phase"><b>Phase 1 · PASS</b><small>FC core, SoC interconnect</small></div><div class="phase"><b>Phase 2 · PASS</b><small>APB timer, FC clock</small></div><div class="phase"><b>Phase 3 · PASS</b><small>PMU, cluster clock/reset, AXI</small></div><div class="phase"><b>Phase 4 · PASS</b><small>8 core, event unit, barrier</small></div><div class="phase"><b>Phase 5 · PASS</b><small>TCDM và interconnect</small></div><div class="phase fail"><b>Phase 6 · FAIL</b><small>MCHAN DMA, word 254</small></div></div></section>
+  <div class="source">Nguồn thật: <a href="hello/fc.log">hello/fc.log</a> · <a href="hello/all.vcd">hello/all.vcd</a> · <a href="fc.log">full-system fc.log</a> · <a href="pe0.log">full-system pe0.log</a> · <a href="run.log">run.log</a>. Viewer có mẫu khởi động sẵn; dùng “Nạp log đầy đủ” để duyệt toàn bộ file trace.</div>
+</main>
+<script>
+const rawFC=`23008592: 1657: [/chip/soc/fc/insn] _start:133 M 1c008080 auipc a0, 0x0 a0=1c008080
+23091884: 1663: [/chip/soc/fc/insn] _start:133 M 1c008084 addi a0, a0, 1382 a0=1c0085e6 a0:1c008080
+23105766: 1664: [/chip/soc/fc/insn] _start:134 M 1c008088 jalr 0, a0, 0 a0:1c0085e6
+23133530: 1666: [/chip/soc/fc/insn] pos_init_entry:29 M 1c0085e6 csrrw 0, 0, pccr
+23216822: 1672: [/chip/soc/fc/insn] pos_init_entry:35 M 1c0085ea csrrs a0, 0, mhartid a0=000003e0
+23230704: 1673: [/chip/soc/fc/insn] pos_init_entry:36 M 1c0085ee andi a1, a0, 31 a1=00000000 a0:000003e0
+23313996: 1679: [/chip/soc/fc/insn] pos_init_entry:37 M 1c0085f2 c.srli a0, a0, 0x5 a0=0000001f a0:000003e0
+23327878: 1680: [/chip/soc/fc/insn] pos_init_entry:38 M 1c0085f4 c.li a2, 0, 31 a2=0000001f
+23341760: 1681: [/chip/soc/fc/insn] pos_init_entry:40 M 1c0085f6 beq a0, a2, 8 a0:0000001f a2:0000001f
+23383406: 1684: [/chip/soc/fc/insn] label0:48 M 1c0085fe auipc t0, 0xffff9000 t0=1c0015fe
+23466698: 1690: [/chip/soc/fc/insn] label0:48 M 1c008602 addi t0, t0, -1342 t0=1c0010c0 t0:1c0015fe
+23480580: 1691: [/chip/soc/fc/insn] label0:49 M 1c008606 auipc t1, 0xffff9000 t1=1c001606
+23494462: 1692: [/chip/soc/fc/insn] label0:49 M 1c00860a addi t1, t1, -1302 t1=1c0010f0 t1:1c001606
+23508344: 1693: [/chip/soc/fc/insn] label0:51 M 1c00860e sw 0, 0(t0) t0:1c0010c0 PA:1c0010c0
+23591636: 1699: [/chip/soc/fc/insn] label0:52 M 1c008612 c.addi t0, t0, 4 t0=1c0010c4 t0:1c0010c0
+23605518: 1700: [/chip/soc/fc/insn] label0:53 M 1c008614 bltu t0, t1, -6 t0:1c0010c4 t1:1c0010f0`;
+const rawPE=`3033820044: 218543: [/chip/cluster/pe0/insn] _start:137 M 1c008080 jal 0, 96
+3034153212: 218567: [/chip/cluster/pe0/insn] pos_init_entry:27 M 1c0080e0 csrrs a0, 0, mhartid a0=00000000
+3034500262: 218592: [/chip/cluster/pe0/insn] pos_init_entry:28 M 1c0080e4 andi a1, a0, 31 a1=00000000 a0:00000000
+3034514144: 218593: [/chip/cluster/pe0/insn] pos_init_entry:29 M 1c0080e8 c.srli a0, a0, 0x5 a0=00000000 a0:00000000
+3034528026: 218594: [/chip/cluster/pe0/insn] pos_init_entry:39 M 1c0080ea c.li a2, 0, 31 a2=0000001f
+3034541908: 218595: [/chip/cluster/pe0/insn] pos_init_entry:40 M 1c0080ec beq a0, a2, 8 a0:00000000 a2:0000001f
+3034555790: 218596: [/chip/cluster/pe0/insn] pos_init_entry:40 M 1c0080f0 jal 0, -92
+3034944486: 218624: [/chip/cluster/pe0/insn] pe_start:156 M 1c008094 auipc sp, 0xf3ff8000 sp=10000094
+3035263772: 218647: [/chip/cluster/pe0/insn] pe_start:156 M 1c008098 addi sp, sp, 1996 sp=10000860 sp:10000094
+3035277654: 218648: [/chip/cluster/pe0/insn] pe_start:157 M 1c00809c lw sp, 0(sp) sp=10000868 sp:10000860 PA:10000860
+3035388710: 218656: [/chip/cluster/pe0/insn] pe_start:158 M 1c0080a0 lui gp, 0x1000 gp=00001000
+3035610822: 218672: [/chip/cluster/pe0/insn] pe_start:159 M 1c0080a4 addi a1, a1, 1 a1=00000001 a1:00000000
+3035624704: 218673: [/chip/cluster/pe0/insn] pe_start:160 M 1c0080a8 mul ra, gp, a1 ra=00001000 gp:00001000 a1:00000001
+3035652468: 218675: [/chip/cluster/pe0/insn] pe_start:161 M 1c0080ac add sp, sp, ra sp=10001868 sp:10000868 ra:00001000
+3035680232: 218677: [/chip/cluster/pe0/insn] pe_start:162 M 1c0080b0 jal 0, 7488
+3036013400: 218701: [/chip/cluster/pe0/insn] cluster_entry_stub:47 M 1c009df0 c.addi sp, sp, -16 sp=10001858 sp:10001868`;
+function parse(text){return text.replace(/\x1b\[[0-9;]*m/g,'').split(/\r?\n/).map(row=>{const m=row.match(/^(\d+):\s+(\d+):\s+\[([^\]]+)\]\s+(\S+):(\d+)\s+M\s+([0-9a-f]+)\s+(\S+)\s*(.*)$/i);if(!m)return null;const tail=m[8]||'',writes=[...tail.matchAll(/\b([a-z][a-z0-9]*)=([0-9a-f]{8})\b/gi)].map(x=>`${x[1]} = 0x${x[2]}`),reads=[...tail.matchAll(/\b([a-z][a-z0-9]*):([0-9a-f]{8})\b/gi)].map(x=>`${x[1]} = 0x${x[2]}`),pa=tail.match(/\bPA:([0-9a-f]{8})\b/i),args=tail.replace(/\s+\b[a-z][a-z0-9]*[=:][0-9a-f]{8}\b/gi,'').replace(/\s+PA:[0-9a-f]{8}\b/gi,'').trim();return{time:+m[1],cycle:+m[2],core:m[3].includes('pe')?'PE0':'FC',func:m[4],line:+m[5],pc:'0x'+m[6],op:m[7],args,writes,reads,pa:pa?'0x'+pa[1]:''}}).filter(Boolean)}
+const built={FC:parse(rawFC),PE0:parse(rawPE)};let core='FC',trace=built.FC,index=0;
+const $=id=>document.getElementById(id),chips=(id,values)=>{$(id).innerHTML=values.length?values.map(v=>`<code>${v}</code>`).join(''):'<span class="muted">Không có</span>'};
+function render(){index=Math.max(0,Math.min(index,trace.length-1));const x=trace[index];$('core-cycle').textContent=`${x.core} · cycle ${x.cycle.toLocaleString()}`;$('counter').textContent=`${index+1} / ${trace.length}`;$('pc').textContent=x.pc;$('op').textContent=x.op;$('args').textContent=x.args||'—';$('time').textContent=x.time.toLocaleString()+' ps';$('func').textContent=`${x.func}:${x.line}`;$('delta').textContent=index?x.cycle-trace[index-1].cycle:'0';chips('writes',x.writes);chips('reads',x.reads);chips('pa',x.pa?[x.pa]:[]);$('prev').disabled=index===0;$('next').disabled=index===trace.length-1;const from=Math.max(0,index-4),to=Math.min(trace.length,index+5);$('trace-list').innerHTML=trace.slice(from,to).map((r,j)=>{const n=from+j;return`<div class="trace-row ${n===index?'active':''}" data-i="${n}"><span class="muted">cy ${r.cycle}</span><code>${r.pc}</code><span><b>${r.op}</b> ${r.args}</span><span class="muted">${r.func}:${r.line}</span></div>`}).join('');document.querySelectorAll('.trace-row').forEach(el=>el.onclick=()=>{index=+el.dataset.i;render()})}
+function select(name){core=name;trace=built[name];index=0;$('fcBtn').className=name==='FC'?'primary':'';$('peBtn').className=name==='PE0'?'primary':'';$('flow-fc').classList.toggle('active',name==='FC');$('flow-pe0').classList.toggle('active',name==='PE0');render()}
+$('fcBtn').onclick=()=>select('FC');$('peBtn').onclick=()=>select('PE0');$('prev').onclick=()=>{index--;render()};$('next').onclick=()=>{index++;render()};$('file').onchange=e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{const parsed=parse(reader.result);if(!parsed.length){alert('Không tìm thấy dòng instruction trace hợp lệ.');return}trace=parsed;core=parsed[0].core;index=0;render()};reader.readAsText(f)};render();
+</script></body></html>

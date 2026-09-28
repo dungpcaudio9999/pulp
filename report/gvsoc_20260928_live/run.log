@@ -1,0 +1,19 @@
+
+=== PULP full-system demo ===
+[PHASE 0] FC, L2, duong stdout           ... 
+          cluster_id=31 core_id=0 nb_pe=8
+[PHASE 0] FC, L2, duong stdout           ... OK
+[PHASE 1] FC core, L2, SoC interco       ... OK
+[PHASE 2] APB timer, FC clock            ... OK
+[PHASE 3] PMU, cluster clk/rst, AXI      ... 
+          core 0 dang chay
+          core 1 dang chay
+          core 2 dang chay
+          core 3 dang chay
+          core 4 dang chay
+          core 5 dang chay
+          core 6 dang chay
+          core 7 dang chay
+[PHASE 4] 8 core, event unit, barrier    ... OK
+[PHASE 5] TCDM va interconnect           ... OK
+[PHASE 6] MCHAN DMA, AXI hai chieu       ... FAIL  word 254 sau khu hoi = 0x00000000, goc 0xfb0abd9e

@@ -1,0 +1,715 @@
+23008592: 1657: [[34m/chip/soc/fc/insn                               [0m] _start:133                       M 1c008080 auipc               a0, 0x0           a0=1c008080 
+23091884: 1663: [[34m/chip/soc/fc/insn                               [0m] _start:133                       M 1c008084 addi                a0, a0, 1382      a0=1c0085e6  a0:1c008080 
+23105766: 1664: [[34m/chip/soc/fc/insn                               [0m] _start:134                       M 1c008088 jalr                0, a0, 0          a0:1c0085e6 
+23133530: 1666: [[34m/chip/soc/fc/insn                               [0m] pos_init_entry:29                M 1c0085e6 csrrw               0, 0, pccr       
+23216822: 1672: [[34m/chip/soc/fc/insn                               [0m] pos_init_entry:35                M 1c0085ea csrrs               a0, 0, mhartid    a0=000003e0 
+23230704: 1673: [[34m/chip/soc/fc/insn                               [0m] pos_init_entry:36                M 1c0085ee andi                a1, a0, 31        a1=00000000  a0:000003e0 
+23313996: 1679: [[34m/chip/soc/fc/insn                               [0m] pos_init_entry:37                M 1c0085f2 c.srli              a0, a0, 0x5       a0=0000001f  a0:000003e0 
+23327878: 1680: [[34m/chip/soc/fc/insn                               [0m] pos_init_entry:38                M 1c0085f4 c.li                a2, 0, 31         a2=0000001f 
+23341760: 1681: [[34m/chip/soc/fc/insn                               [0m] pos_init_entry:40                M 1c0085f6 beq                 a0, a2, 8         a0:0000001f  a2:0000001f 
+23383406: 1684: [[34m/chip/soc/fc/insn                               [0m] label0:48                        M 1c0085fe auipc               t0, 0xffff9000    t0=1c0015fe 
+23466698: 1690: [[34m/chip/soc/fc/insn                               [0m] label0:48                        M 1c008602 addi                t0, t0, -1342     t0=1c0010c0  t0:1c0015fe 
+23480580: 1691: [[34m/chip/soc/fc/insn                               [0m] label0:49                        M 1c008606 auipc               t1, 0xffff9000    t1=1c001606 
+23494462: 1692: [[34m/chip/soc/fc/insn                               [0m] label0:49                        M 1c00860a addi                t1, t1, -1302     t1=1c0010f0  t1:1c001606 
+23508344: 1693: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010c0  PA:1c0010c0 
+23591636: 1699: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010c4  t0:1c0010c0 
+23605518: 1700: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010c4  t1:1c0010f0 
+23647164: 1703: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010c4  PA:1c0010c4 
+23855394: 1718: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010c8  t0:1c0010c4 
+23869276: 1719: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010c8  t1:1c0010f0 
+23910922: 1722: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010c8  PA:1c0010c8 
+24119152: 1737: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010cc  t0:1c0010c8 
+24133034: 1738: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010cc  t1:1c0010f0 
+24174680: 1741: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010cc  PA:1c0010cc 
+24382910: 1756: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010d0  t0:1c0010cc 
+24396792: 1757: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010d0  t1:1c0010f0 
+24438438: 1760: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010d0  PA:1c0010d0 
+24646668: 1775: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010d4  t0:1c0010d0 
+24660550: 1776: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010d4  t1:1c0010f0 
+24702196: 1779: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010d4  PA:1c0010d4 
+24910426: 1794: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010d8  t0:1c0010d4 
+24924308: 1795: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010d8  t1:1c0010f0 
+24965954: 1798: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010d8  PA:1c0010d8 
+25174184: 1813: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010dc  t0:1c0010d8 
+25188066: 1814: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010dc  t1:1c0010f0 
+25229712: 1817: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010dc  PA:1c0010dc 
+25437942: 1832: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010e0  t0:1c0010dc 
+25451824: 1833: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010e0  t1:1c0010f0 
+25493470: 1836: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010e0  PA:1c0010e0 
+25701700: 1851: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010e4  t0:1c0010e0 
+25715582: 1852: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010e4  t1:1c0010f0 
+25757228: 1855: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010e4  PA:1c0010e4 
+25965458: 1870: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010e8  t0:1c0010e4 
+25979340: 1871: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010e8  t1:1c0010f0 
+26020986: 1874: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010e8  PA:1c0010e8 
+26229216: 1889: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010ec  t0:1c0010e8 
+26243098: 1890: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010ec  t1:1c0010f0 
+26284744: 1893: [[34m/chip/soc/fc/insn                               [0m] label0:51                        M 1c00860e sw                  0, 0(t0)          t0:1c0010ec  PA:1c0010ec 
+26492974: 1908: [[34m/chip/soc/fc/insn                               [0m] label0:52                        M 1c008612 c.addi              t0, t0, 4         t0=1c0010f0  t0:1c0010ec 
+26506856: 1909: [[34m/chip/soc/fc/insn                               [0m] label0:53                        M 1c008614 bltu                t0, t1, -6        t0:1c0010f0  t1:1c0010f0 
+26520738: 1910: [[34m/chip/soc/fc/insn                               [0m] label0:58                        M 1c008618 auipc               sp, 0xffff9000    sp=1c001618 
+26534620: 1911: [[34m/chip/soc/fc/insn                               [0m] label0:58                        M 1c00861c addi                sp, sp, -1432     sp=1c001080  sp:1c001618 
+26548502: 1912: [[34m/chip/soc/fc/insn                               [0m] label0:63                        M 1c008620 auipc               t0, 0x0           t0=1c008620 
+26631794: 1918: [[34m/chip/soc/fc/insn                               [0m] label0:63                        M 1c008624 addi                t0, t0, -952      t0=1c008268  t0:1c008620 
+26645676: 1919: [[34m/chip/soc/fc/insn                               [0m] label0:64                        M 1c008628 jalr                ra, t0, 0         ra=1c00862c  t0:1c008268 
+26673440: 1921: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:57                M 1c008268 c.addi              sp, sp, -16       sp=1c001070  sp:1c001080 
+26756732: 1927: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:57                M 1c00826a c.swsp              s0, 8(sp)         s0:57575757  sp:1c001070  PA:1c001078 
+26770614: 1928: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:57                M 1c00826c lui                 s0, 0x1c001000    s0=1c001000 
+26784496: 1929: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:57                M 1c008270 c.swsp              ra, 12(sp)        ra:1c00862c  sp:1c001070  PA:1c00107c 
+26867788: 1935: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:57                M 1c008272 addi                s0, s0, -1968     s0=1c000850  s0:1c001000 
+26881670: 1936: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:65                M 1c008276 c.jal               ra, 378           ra=1c008278 
+26909434: 1938: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_clr:38            M 1c0083f0 lui                 a5, 0x1a10a000    a5=1a10a000 
+26992726: 1944: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_clr:38            M 1c0083f4 c.li                a4, 0, -1         a4=ffffffff 
+27006608: 1945: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_clr:38            M 1c0083f6 sw                  a4, -2040(a5)     a4:ffffffff  a5:1a10a000  PA:1a109808 
+27131546: 1954: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0083fa csrrs               a4, 0, mhartid    a4=000003e0 
+27145428: 1955: [[34m/chip/soc/fc/insn                               [0m] pos_irq_vector_base:28           M 1c0083fe lui                 a5, 0x1c008000    a5=1c008000 
+27228720: 1961: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_fc_vector_base:141   M 1c008402 c.li                a3, 0, 31         a3=0000001f 
+27242602: 1962: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008404 p.extractui         a4, a4, 0x5, 0x5  a4=0000001f  a4:000003e0 
+27256484: 1963: [[34m/chip/soc/fc/insn                               [0m] pos_irq_vector_base:28           M 1c008408 addi                a5, a5, 0         a5=1c008000  a5:1c008000 
+27270366: 1964: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_fc_vector_base:141   M 1c00840c bne                 a4, a3, 14        a4:0000001f  a3:0000001f 
+27284248: 1965: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_fc_vector_base:148   M 1c008410 p.bseti             a5, a5, 0x0, 0x0  a5=1c008001  a5:1c008000 
+27367540: 1971: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_fc_vector_base:148   M 1c008414 csrrw               0, a5, mtvec      a5:1c008001 
+27381422: 1972: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_fc_vector_base:148   M 1c008418 c.jr                0, ra, 0, 0       ra:1c008278 
+27409186: 1974: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:67                M 1c008278 c.jal               ra, -166          ra=1c00827a 
+27506360: 1981: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:25                  M 1c0081d2 c.addi              sp, sp, -16       sp=1c001060  sp:1c001070 
+27589652: 1987: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:25                  M 1c0081d4 c.swsp              ra, 12(sp)        ra:1c00827a  sp:1c001060  PA:1c00106c 
+27603534: 1988: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:25                  M 1c0081d6 c.swsp              s0, 8(sp)         s0:1c000850  sp:1c001060  PA:1c001068 
+27617416: 1989: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:26                  M 1c0081d8 c.jal               ra, -32           ra=1c0081da 
+27645180: 1991: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:187          M 1c0081b8 addi                a5, 0, 4          a5=00000004 
+27728472: 1997: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:187          M 1c0081bc sw                  0, 0(a5)          a5:00000004  PA:00000004 
+27742354: 1998: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:187          M 1c0081c0 sw                  0, 4(a5)          a5:00000004  PA:00000008 
+27825646: 2004: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:187          M 1c0081c4 sw                  0, 8(a5)          a5:00000004  PA:0000000c 
+27839528: 2005: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:188          M 1c0081c8 sh                  0, 12(a5)         a5:00000004  PA:00000010 
+27853410: 2006: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:188          M 1c0081cc sb                  0, 14(a5)         a5:00000004  PA:00000012 
+27867292: 2007: [[34m/chip/soc/fc/insn                               [0m] pos_fll_constructor:190          M 1c0081d0 c.jr                0, ra, 0, 0       ra:1c0081da 
+27964466: 2014: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:28                  M 1c0081da c.li                a0, 0, 0          a0=00000000 
+27978348: 2015: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:28                  M 1c0081dc c.jal               ra, -200          ra=1c0081de 
+28006112: 2017: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008114 c.addi              sp, sp, -16       sp=1c001050  sp:1c001060 
+28089404: 2023: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c008116 slli                a2, a0, 0x4       a2=00000000  a0:00000000 
+28103286: 2024: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c00811a c.swsp              s2, 0(sp)         s2:57575757  sp:1c001050  PA:1c001050 
+28117168: 2025: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c00811c addi                a6, a2, 4         a6=00000004  a2:00000000 
+28131050: 2026: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008120 c.mv                s2, 0, a0         s2=00000000  a0:00000000 
+28214342: 2032: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c008122 lui                 a3, 0x1a100000    a3=1a100000 
+28228224: 2033: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008126 c.swsp              ra, 12(sp)        ra:1c0081de  sp:1c001050  PA:1c00105c 
+28242106: 2034: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008128 c.swsp              s0, 8(sp)         s0:1c000850  sp:1c001050  PA:1c001058 
+28255988: 2035: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c00812a c.swsp              s1, 4(sp)         s1:57575757  sp:1c001050  PA:1c001054 
+30517578: 2197: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c00812c p.lw                a4, a6(a3)        a4=454c05f5  a6:00000004  a3:1a100000  PA:1a100004 
+30629810: 2206: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:122                 M 1c008130 c.mv                a5, 0, a4         a5=454c05f5  a4:454c05f5 
+30713102: 2212: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:125                 M 1c008132 blt                 a4, 0, 66         a4:454c05f5 
+30726984: 2213: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_get:134        M 1c008136 addi                a7, a2, 8         a7=00000008  a2:00000000 
+61035156: 4396: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:128                 M 1c00813a p.lw                a0, a7(a3)        a0=02004109  a7:00000008  a3:1a100000  PA:1a100008 
+61156328: 4405: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:129                 M 1c00813e c.li                a1, 0, 6          a1=00000006 
+61239620: 4411: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:129                 M 1c008140 p.inserti           a0, a1, 0x5, 0xa  a0=02001909  a0:02004109  a1:00000006 
+61253502: 4412: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:130                 M 1c008144 addi                a1, 0, 80         a1=00000050 
+61267384: 4413: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:130                 M 1c008148 p.inserti           a0, a1, 0xb, 0x10  a0=00501909  a0:02001909  a1:00000050 
+61281266: 4414: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_set:125        M 1c00814c lui                 a1, 0x1a100000     a1=1a100000 
+91552734: 6594: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_set:125        M 1c008150 p.sw                a0, a7(a1)         a0:00501909  a7:00000008  a1:1a100000  PA:1a100008 
+91627318: 6600: [[34m/chip/soc/fc/insn                               [0m] hal_fll_integrator_get:151       M 1c008154 c.addi              a2, a2, 12         a2=0000000c  a2:00000000 
+122070312: 8792: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:139                 M 1c008156 p.lw                a3, a2(a3)         a3=00000000  a2:0000000c  a3:1a100000  PA:1a10000c 
+122181600: 8801: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:141                 M 1c00815a addi                a0, 0, 332         a0=0000014c 
+122195482: 8802: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:141                 M 1c00815e p.inserti           a3, a0, 0x9, 0x10  a3=014c0000  a3:00000000  a0:0000014c 
+152587890: 10991: [[34m/chip/soc/fc/insn                               [0m] hal_fll_integrator_set:142       M 1c008162 p.sw                a3, a2(a1)         a3:014c0000  a2:0000000c  a1:1a100000  PA:1a10000c 
+152597062: 10992: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:146                 M 1c008166 c.li                a3, 0, 1           a3=00000001 
+152610944: 10993: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:146                 M 1c008168 p.inserti           a5, a3, 0x0, 0x1e  a5=454c05f5  a5:454c05f5  a3:00000001 
+152624826: 10994: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:147                 M 1c00816c p.inserti           a5, a3, 0x0, 0x1f  a5=c54c05f5  a5:454c05f5  a3:00000001 
+183105468: 13189: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_set:108        M 1c008170 p.sw                a5, a6(a1)         a5:c54c05f5  a6:00000004  a1:1a100000  PA:1a100004 
+1770134718: 13195: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008174 addi                a3, 0, 4           a3=00000004 
+1770153917: 13196: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008178 slli                a2, s2, 0x2        a2=00000000  s2:00000000 
+1770173116: 13197: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c00817c c.add               a3, a3, a2         a3=00000004  a3:00000004  a2:00000000 
+1770192315: 13198: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c00817e c.lw                s1, 0(a3)          s1=00000000  a3:00000004  PA:00000004 
+1770307509: 13204: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008180 addi                s0, 0, 4           s0=00000004 
+1770326708: 13205: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:153                 M 1c008184 c.beqz              s1, 0, 32          s1:00000000 
+1770384305: 13208: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:159                 M 1c0081a4 p.exthz             a4, a4             a4=000005f5  a4:454c05f5 
+1770499499: 13214: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:159                 M 1c0081a8 p.extractui         a5, a5, 0x3, 0x1a  a5=00000001  a5:c54c05f5 
+1770518698: 13215: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081ac c.slli              a4, a4, 0xf        a4=02fa8000  a4:000005f5 
+1770537897: 13216: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081ae c.addi              a5, a5, -1         a5=00000000  a5:00000001 
+1770653091: 13222: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081b0 srl                 s1, a4, a5         s1=02fa8000  a4:02fa8000  a5:00000000 
+1770672290: 13223: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:160                 M 1c0081b4 c.sw                s1, 0(a3)          s1:02fa8000  a3:00000004  PA:00000004 
+1770691489: 13224: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:160                 M 1c0081b6 c.j                 0, -42            
+1770729887: 13226: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c00818c add                 a0, s0, s2         a0=00000004  s0:00000004  s2:00000000 
+1770845081: 13232: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c008190 c.li                a5, 0, 1           a5=00000001 
+1770960275: 13238: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c008192 sb                  a5, 12(a0)         a5:00000001  a0:00000004  PA:00000010 
+1770979474: 13239: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c008196 c.lwsp              ra, 12(sp)         ra=1c0081de  sp:1c001050  PA:1c00105c 
+1770998673: 13240: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c008198 c.lwsp              s0, 8(sp)          s0=1c000850  sp:1c001050  PA:1c001058 
+1771017872: 13241: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819a c.mv                a0, 0, s1          a0=02fa8000  s1:02fa8000 
+1771037071: 13242: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819c c.lwsp              s2, 0(sp)          s2=57575757  sp:1c001050  PA:1c001050 
+1771056270: 13243: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819e c.lwsp              s1, 4(sp)          s1=57575757  sp:1c001050  PA:1c001054 
+1771171464: 13249: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c0081a0 c.addi              sp, sp, 16         sp=1c001060  sp:1c001050 
+1771190663: 13250: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c0081a2 c.jr                0, ra, 0, 0        ra:1c0081de 
+1771229061: 13252: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:28                  M 1c0081de sw                  a0, 20(0)          a0:02fa8000   0:00000000  PA:00000014 
+1771517046: 13267: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:30                  M 1c0081e2 c.li                a0, 0, 1           a0=00000001 
+1771536245: 13268: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:30                  M 1c0081e4 c.jal               ra, -208           ra=1c0081e6 
+1771574643: 13270: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008114 c.addi              sp, sp, -16        sp=1c001050  sp:1c001060 
+1771689837: 13276: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c008116 slli                a2, a0, 0x4        a2=00000010  a0:00000001 
+1771709036: 13277: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c00811a c.swsp              s2, 0(sp)          s2:57575757  sp:1c001050  PA:1c001050 
+1771728235: 13278: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c00811c addi                a6, a2, 4          a6=00000014  a2:00000010 
+1771747434: 13279: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008120 c.mv                s2, 0, a0          s2=00000001  a0:00000001 
+1771862628: 13285: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c008122 lui                 a3, 0x1a100000     a3=1a100000 
+1771881827: 13286: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008126 c.swsp              ra, 12(sp)         ra:1c0081e6  sp:1c001050  PA:1c00105c 
+1771901026: 13287: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008128 c.swsp              s0, 8(sp)          s0:1c000850  sp:1c001050  PA:1c001058 
+1771920225: 13288: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c00812a c.swsp              s1, 4(sp)          s1:57575757  sp:1c001050  PA:1c001054 
+1800537102: 14778: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c00812c p.lw                a4, a6(a3)         a4=00000000  a6:00000014  a3:1a100000  PA:1a100014 
+1800701766: 14787: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:122                 M 1c008130 c.mv                a5, 0, a4          a5=00000000  a4:00000000 
+1800818640: 14793: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:125                 M 1c008132 blt                 a4, 0, 66          a4:00000000 
+1800838119: 14794: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_get:134        M 1c008136 addi                a7, a2, 8          a7=00000018  a2:00000010 
+1831054680: 16345: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:128                 M 1c00813a p.lw                a0, a7(a3)         a0=00000000  a7:00000018  a3:1a100000  PA:1a100018 
+1831225359: 16354: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:129                 M 1c00813e c.li                a1, 0, 6           a1=00000006 
+1831342233: 16360: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:129                 M 1c008140 p.inserti           a0, a1, 0x5, 0xa   a0=00001800  a0:00000000  a1:00000006 
+1831361712: 16361: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:130                 M 1c008144 addi                a1, 0, 80          a1=00000050 
+1831381191: 16362: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:130                 M 1c008148 p.inserti           a0, a1, 0xb, 0x10  a0=00501800  a0:00001800  a1:00000050 
+1831400670: 16363: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_set:125        M 1c00814c lui                 a1, 0x1a100000     a1=1a100000 
+1861572258: 17911: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_set:125        M 1c008150 p.sw                a0, a7(a1)         a0:00501800  a7:00000018  a1:1a100000  PA:1a100018 
+1861671036: 17917: [[34m/chip/soc/fc/insn                               [0m] hal_fll_integrator_get:151       M 1c008154 c.addi              a2, a2, 12         a2=0000001c  a2:00000010 
+1892089836: 19478: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:139                 M 1c008156 p.lw                a3, a2(a3)         a3=00000000  a2:0000001c  a3:1a100000  PA:1a10001c 
+1892253066: 19487: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:141                 M 1c00815a addi                a0, 0, 332         a0=0000014c 
+1892272545: 19488: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:141                 M 1c00815e p.inserti           a3, a0, 0x9, 0x10  a3=014c0000  a3:00000000  a0:0000014c 
+1922607414: 21045: [[34m/chip/soc/fc/insn                               [0m] hal_fll_integrator_set:142       M 1c008162 p.sw                a3, a2(a1)         a3:014c0000  a2:0000001c  a1:1a100000  PA:1a10001c 
+1922620827: 21046: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:146                 M 1c008166 c.li                a3, 0, 1           a3=00000001 
+1922640306: 21047: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:146                 M 1c008168 p.inserti           a5, a3, 0x0, 0x1e  a5=40000000  a5:00000000  a3:00000001 
+1922659785: 21048: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:147                 M 1c00816c p.inserti           a5, a3, 0x0, 0x1f  a5=c0000000  a5:40000000  a3:00000001 
+1953124992: 22612: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_set:108        M 1c008170 p.sw                a5, a6(a1)         a5:c0000000  a6:00000014  a1:1a100000  PA:1a100014 
+1953241815: 22618: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008174 addi                a3, 0, 4           a3=00000004 
+1953261294: 22619: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008178 slli                a2, s2, 0x2        a2=00000004  s2:00000001 
+1953280773: 22620: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c00817c c.add               a3, a3, a2         a3=00000008  a3:00000004  a2:00000004 
+1953300252: 22621: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c00817e c.lw                s1, 0(a3)          s1=00000000  a3:00000008  PA:00000008 
+1953417126: 22627: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008180 addi                s0, 0, 4           s0=00000004 
+1953436605: 22628: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:153                 M 1c008184 c.beqz              s1, 0, 32          s1:00000000 
+1953495042: 22631: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:159                 M 1c0081a4 p.exthz             a4, a4             a4=00000000  a4:00000000 
+1953611916: 22637: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:159                 M 1c0081a8 p.extractui         a5, a5, 0x3, 0x1a  a5=00000000  a5:c0000000 
+1953631395: 22638: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081ac c.slli              a4, a4, 0xf        a4=00000000  a4:00000000 
+1953650874: 22639: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081ae c.addi              a5, a5, -1         a5=ffffffff  a5:00000000 
+1953767748: 22645: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081b0 srl                 s1, a4, a5         s1=00000000  a4:00000000  a5:ffffffff 
+1953787227: 22646: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:160                 M 1c0081b4 c.sw                s1, 0(a3)          s1:00000000  a3:00000008  PA:00000008 
+1953806706: 22647: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:160                 M 1c0081b6 c.j                 0, -42            
+1953845664: 22649: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c00818c add                 a0, s0, s2         a0=00000005  s0:00000004  s2:00000001 
+1953962538: 22655: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c008190 c.li                a5, 0, 1           a5=00000001 
+1954079412: 22661: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c008192 sb                  a5, 12(a0)         a5:00000001  a0:00000005  PA:00000011 
+1954098891: 22662: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c008196 c.lwsp              ra, 12(sp)         ra=1c0081e6  sp:1c001050  PA:1c00105c 
+1954118370: 22663: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c008198 c.lwsp              s0, 8(sp)          s0=1c000850  sp:1c001050  PA:1c001058 
+1954137849: 22664: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819a c.mv                a0, 0, s1          a0=00000000  s1:00000000 
+1954157328: 22665: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819c c.lwsp              s2, 0(sp)          s2=57575757  sp:1c001050  PA:1c001050 
+1954176807: 22666: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819e c.lwsp              s1, 4(sp)          s1=57575757  sp:1c001050  PA:1c001054 
+1954293681: 22672: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c0081a0 c.addi              sp, sp, 16         sp=1c001060  sp:1c001050 
+1954313160: 22673: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c0081a2 c.jr                0, ra, 0, 0        ra:1c0081e6 
+1954352118: 22675: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:30                  M 1c0081e6 addi                s0, 0, 20          s0=00000014 
+1954468992: 22681: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:30                  M 1c0081ea c.sw                a0, 8(s0)          a0:00000000  s0:00000014  PA:0000001c 
+1954488471: 22682: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:32                  M 1c0081ec c.li                a0, 0, 2           a0=00000002 
+1954507950: 22683: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:32                  M 1c0081ee c.jal               ra, -218           ra=1c0081f0 
+1954644303: 22690: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008114 c.addi              sp, sp, -16        sp=1c001050  sp:1c001060 
+1954761177: 22696: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c008116 slli                a2, a0, 0x4        a2=00000020  a0:00000002 
+1954780656: 22697: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c00811a c.swsp              s2, 0(sp)          s2:57575757  sp:1c001050  PA:1c001050 
+1954800135: 22698: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c00811c addi                a6, a2, 4          a6=00000024  a2:00000020 
+1954819614: 22699: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008120 c.mv                s2, 0, a0          s2=00000002  a0:00000002 
+1954936488: 22705: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c008122 lui                 a3, 0x1a100000     a3=1a100000 
+1954955967: 22706: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008126 c.swsp              ra, 12(sp)         ra:1c0081f0  sp:1c001050  PA:1c00105c 
+1954975446: 22707: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c008128 c.swsp              s0, 8(sp)          s0:00000014  sp:1c001050  PA:1c001058 
+1954994925: 22708: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:119                 M 1c00812a c.swsp              s1, 4(sp)          s1:57575757  sp:1c001050  PA:1c001054 
+1983642570: 24178: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_get:117        M 1c00812c p.lw                a4, a6(a3)         a4=00000000  a6:00000024  a3:1a100000  PA:1a100024 
+1983804366: 24187: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:122                 M 1c008130 c.mv                a5, 0, a4          a5=00000000  a4:00000000 
+1983921240: 24193: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:125                 M 1c008132 blt                 a4, 0, 66          a4:00000000 
+1983940719: 24194: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_get:134        M 1c008136 addi                a7, a2, 8          a7=00000028  a2:00000020 
+2014160148: 25745: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:128                 M 1c00813a p.lw                a0, a7(a3)         a0=00000000  a7:00000028  a3:1a100000  PA:1a100028 
+2014327959: 25754: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:129                 M 1c00813e c.li                a1, 0, 6           a1=00000006 
+2014444833: 25760: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:129                 M 1c008140 p.inserti           a0, a1, 0x5, 0xa   a0=00001800  a0:00000000  a1:00000006 
+2014464312: 25761: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:130                 M 1c008144 addi                a1, 0, 80          a1=00000050 
+2014483791: 25762: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:130                 M 1c008148 p.inserti           a0, a1, 0xb, 0x10  a0=00501800  a0:00001800  a1:00000050 
+2014503270: 25763: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_set:125        M 1c00814c lui                 a1, 0x1a100000     a1=1a100000 
+2044677726: 27312: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg2_set:125        M 1c008150 p.sw                a0, a7(a1)         a0:00501800  a7:00000028  a1:1a100000  PA:1a100028 
+2044793115: 27318: [[34m/chip/soc/fc/insn                               [0m] hal_fll_integrator_get:151       M 1c008154 c.addi              a2, a2, 12         a2=0000002c  a2:00000020 
+2075195304: 28878: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:139                 M 1c008156 p.lw                a3, a2(a3)         a3=00000000  a2:0000002c  a3:1a100000  PA:1a10002c 
+2075355666: 28887: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:141                 M 1c00815a addi                a0, 0, 332         a0=0000014c 
+2075375145: 28888: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:141                 M 1c00815e p.inserti           a3, a0, 0x9, 0x10  a3=014c0000  a3:00000000  a0:0000014c 
+2105712882: 30445: [[34m/chip/soc/fc/insn                               [0m] hal_fll_integrator_set:142       M 1c008162 p.sw                a3, a2(a1)         a3:014c0000  a2:0000002c  a1:1a100000  PA:1a10002c 
+2105723427: 30446: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:146                 M 1c008166 c.li                a3, 0, 1           a3=00000001 
+2105742906: 30447: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:146                 M 1c008168 p.inserti           a5, a3, 0x0, 0x1e  a5=40000000  a5:00000000  a3:00000001 
+2105762385: 30448: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:147                 M 1c00816c p.inserti           a5, a3, 0x0, 0x1f  a5=c0000000  a5:40000000  a3:00000001 
+2136230460: 32012: [[34m/chip/soc/fc/insn                               [0m] hal_fll_conf_reg1_set:108        M 1c008170 p.sw                a5, a6(a1)         a5:c0000000  a6:00000024  a1:1a100000  PA:1a100024 
+2136344415: 32018: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008174 addi                a3, 0, 4           a3=00000004 
+2136363894: 32019: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008178 slli                a2, s2, 0x2        a2=00000008  s2:00000002 
+2136383373: 32020: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c00817c c.add               a3, a3, a2         a3=0000000c  a3:00000004  a2:00000008 
+2136402852: 32021: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c00817e c.lw                s1, 0(a3)          s1=00000000  a3:0000000c  PA:0000000c 
+2136519726: 32027: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:152                 M 1c008180 addi                s0, 0, 4           s0=00000004 
+2136539205: 32028: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:153                 M 1c008184 c.beqz              s1, 0, 32          s1:00000000 
+2136597642: 32031: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:159                 M 1c0081a4 p.exthz             a4, a4             a4=00000000  a4:00000000 
+2136714516: 32037: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:159                 M 1c0081a8 p.extractui         a5, a5, 0x3, 0x1a  a5=00000000  a5:c0000000 
+2136733995: 32038: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081ac c.slli              a4, a4, 0xf        a4=00000000  a4:00000000 
+2136753474: 32039: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081ae c.addi              a5, a5, -1         a5=ffffffff  a5:00000000 
+2136870348: 32045: [[34m/chip/soc/fc/insn                               [0m] pos_fll_get_freq_from_mult_di:65 M 1c0081b0 srl                 s1, a4, a5         s1=00000000  a4:00000000  a5:ffffffff 
+2136889827: 32046: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:160                 M 1c0081b4 c.sw                s1, 0(a3)          s1:00000000  a3:0000000c  PA:0000000c 
+2136909306: 32047: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:160                 M 1c0081b6 c.j                 0, -42            
+2136948264: 32049: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c00818c add                 a0, s0, s2         a0=00000006  s0:00000004  s2:00000002 
+2137065138: 32055: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c008190 c.li                a5, 0, 1           a5=00000001 
+2137182012: 32061: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:163                 M 1c008192 sb                  a5, 12(a0)         a5:00000001  a0:00000006  PA:00000012 
+2137201491: 32062: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c008196 c.lwsp              ra, 12(sp)         ra=1c0081f0  sp:1c001050  PA:1c00105c 
+2137220970: 32063: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c008198 c.lwsp              s0, 8(sp)          s0=00000014  sp:1c001050  PA:1c001058 
+2137240449: 32064: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819a c.mv                a0, 0, s1          a0=00000000  s1:00000000 
+2137259928: 32065: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819c c.lwsp              s2, 0(sp)          s2=57575757  sp:1c001050  PA:1c001050 
+2137279407: 32066: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c00819e c.lwsp              s1, 4(sp)          s1=57575757  sp:1c001050  PA:1c001054 
+2137396281: 32072: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c0081a0 c.addi              sp, sp, 16         sp=1c001060  sp:1c001050 
+2137415760: 32073: [[34m/chip/soc/fc/insn                               [0m] pos_fll_init:168                 M 1c0081a2 c.jr                0, ra, 0, 0        ra:1c0081f0 
+2137454718: 32075: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:32                  M 1c0081f0 c.sw                a0, 4(s0)          a0:00000000  s0:00000014  PA:00000018 
+2137571592: 32081: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:33                  M 1c0081f2 c.lwsp              ra, 12(sp)         ra=1c00827a  sp:1c001060  PA:1c00106c 
+2137591071: 32082: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:33                  M 1c0081f4 c.lwsp              s0, 8(sp)          s0=1c000850  sp:1c001060  PA:1c001068 
+2137610550: 32083: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:33                  M 1c0081f6 c.addi              sp, sp, 16         sp=1c001070  sp:1c001060 
+2137630029: 32084: [[34m/chip/soc/fc/insn                               [0m] pos_soc_init:33                  M 1c0081f8 c.jr                0, ra, 0, 0        ra:1c00827a 
+2137668987: 32086: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:69                M 1c00827a c.jal               ra, 424            ra=1c00827c 
+2137805340: 32093: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008422 lui                 a5, 0x1a106000     a5=1a106000 
+2137922214: 32099: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:32            M 1c008426 c.addi              sp, sp, -16        sp=1c001060  sp:1c001070 
+2137941693: 32100: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:32            M 1c008428 c.swsp              ra, 12(sp)         ra:1c00827c  sp:1c001060  PA:1c00106c 
+2137961172: 32101: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00842a c.li                a4, 0, -1          a4=ffffffff 
+2137980651: 32102: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00842c addi                a3, a5, 4          a3=1a106004  a5:1a106000 
+2138000130: 32103: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008430 c.sw                a4, 0(a3)          a4:ffffffff  a3:1a106004  PA:1a106004 
+2138272836: 32117: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008432 addi                a3, a5, 8          a3=1a106008  a5:1a106000 
+2138292315: 32118: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008436 c.sw                a4, 0(a3)          a4:ffffffff  a3:1a106008  PA:1a106008 
+2138467626: 32127: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008438 addi                a3, a5, 12         a3=1a10600c  a5:1a106000 
+2138487105: 32128: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00843c c.sw                a4, 0(a3)          a4:ffffffff  a3:1a10600c  PA:1a10600c 
+2138662416: 32137: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00843e addi                a3, a5, 16         a3=1a106010  a5:1a106000 
+2138779290: 32143: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008442 c.sw                a4, 0(a3)          a4:ffffffff  a3:1a106010  PA:1a106010 
+2138954601: 32152: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008444 addi                a3, a5, 20         a3=1a106014  a5:1a106000 
+2138974080: 32153: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008448 c.sw                a4, 0(a3)          a4:ffffffff  a3:1a106014  PA:1a106014 
+2139149391: 32162: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00844a addi                a3, a5, 24         a3=1a106018  a5:1a106000 
+2139168870: 32163: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00844e c.sw                a4, 0(a3)          a4:ffffffff  a3:1a106018  PA:1a106018 
+2139441576: 32177: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008450 addi                a3, a5, 28         a3=1a10601c  a5:1a106000 
+2139461055: 32178: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008454 c.sw                a4, 0(a3)          a4:ffffffff  a3:1a10601c  PA:1a10601c 
+2139636366: 32187: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c008456 addi                a5, a5, 32         a5=1a106020  a5:1a106000 
+2139655845: 32188: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:41            M 1c00845a lui                 a1, 0x1c008000     a1=1c008000 
+2139675324: 32189: [[34m/chip/soc/fc/insn                               [0m] soc_eu_eventMask_set:30          M 1c00845e c.sw                a4, 0(a5)          a4:ffffffff  a5:1a106020  PA:1a106020 
+2139948030: 32203: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:41            M 1c008460 addi                a1, a1, 1800       a1=1c008708  a1:1c008000 
+2139967509: 32204: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:41            M 1c008464 c.li                a0, 0, 26          a0=0000001a 
+2139986988: 32205: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:41            M 1c008466 c.jal               ra, -196           ra=1c008468 
+2140025946: 32207: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0083a2 csrrs               a5, 0, mhartid     a5=000003e0 
+2140142820: 32213: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:113   M 1c0083a6 c.li                a4, 0, 31          a4=0000001f 
+2140162299: 32214: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0083a8 p.extractui         a5, a5, 0x5, 0x5   a5=0000001f  a5:000003e0 
+2140181778: 32215: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:113   M 1c0083ac bne                 a5, a4, 60         a5:0000001f  a4:0000001f 
+2140201257: 32216: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:120   M 1c0083b0 csrrs               a4, 0, mtvec       a4=1c008001 
+2140318131: 32222: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:120   M 1c0083b4 p.bclri             a4, a4, 0x0, 0x0   a4=1c008000  a4:1c008001 
+2140337610: 32223: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_handler:62           M 1c0083b8 c.slli              a0, a0, 0x2        a0=00000068  a0:0000001a 
+2140357089: 32224: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:35             M 1c0083ba c.sub               a1, a1, a0         a1=1c0086a0  a1:1c008708  a0:00000068 
+2140376568: 32225: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:35             M 1c0083bc c.sub               a1, a1, a4         a1=000006a0  a1:1c0086a0  a4:1c008000 
+2140396047: 32226: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:41             M 1c0083be p.extracti          a3, a1, 0x0, 0x14  a3=00000000  a1:000006a0 
+2140512921: 32232: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:41             M 1c0083c2 addi                a5, 0, 111         a5=0000006f 
+2140532400: 32233: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:41             M 1c0083c6 p.inserti           a5, a3, 0x0, 0x1f  a5=0000006f  a5:0000006f  a3:00000000 
+2140551879: 32234: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:42             M 1c0083ca p.extracti          a3, a1, 0x9, 0x1   a3=ffffff50  a1:000006a0 
+2140571358: 32235: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:42             M 1c0083ce p.inserti           a5, a3, 0x9, 0x15  a5=6a00006f  a5:0000006f  a3:ffffff50 
+2140688232: 32241: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:43             M 1c0083d2 p.extracti          a3, a1, 0x0, 0xb   a3=00000000  a1:000006a0 
+2140707711: 32242: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:43             M 1c0083d6 p.inserti           a5, a3, 0x0, 0x14  a5=6a00006f  a5:6a00006f  a3:00000000 
+2140727190: 32243: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:44             M 1c0083da p.extracti          a1, a1, 0x7, 0xc   a1=00000000  a1:000006a0 
+2140746669: 32244: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:44             M 1c0083de p.inserti           a5, a1, 0x7, 0xc   a5=6a00006f  a5:6a00006f  a1:00000000 
+2140863543: 32250: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_handler:64           M 1c0083e2 p.sw                a5, a4(a0)         a5:6a00006f  a4:1c008000  a0:00000068  PA:1c008068 
+2140883022: 32251: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_handler:74           M 1c0083e6 c.jr                0, ra, 0, 0        ra:1c008468 
+2140921980: 32253: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:44            M 1c008468 c.lwsp              ra, 12(sp)         ra=1c00827c  sp:1c001060  PA:1c00106c 
+2141038854: 32259: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c00846a lui                 a5, 0x1a10a000     a5=1a10a000 
+2141058333: 32260: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c00846e lui                 a4, 0x4000000      a4=04000000 
+2141175207: 32266: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c008472 sw                  a4, -2044(a5)      a4:04000000  a5:1a10a000  PA:1a109804 
+2141350518: 32275: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:44            M 1c008476 c.addi              sp, sp, 16         sp=1c001070  sp:1c001060 
+2141369997: 32276: [[34m/chip/soc/fc/insn                               [0m] pos_soc_event_init:44            M 1c008478 c.jr                0, ra, 0, 0        ra:1c00827c 
+2141408955: 32278: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:75                M 1c00827c c.jal               ra, 198            ra=1c00827e 
+2141545308: 32285: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:60               M 1c008342 c.addi              sp, sp, -16        sp=1c001060  sp:1c001070 
+2141662182: 32291: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_base:48             M 1c008344 lui                 a1, 0x1c001000     a1=1c001000 
+2141681661: 32292: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:60               M 1c008348 c.swsp              ra, 12(sp)         ra:1c00827e  sp:1c001060  PA:1c00106c 
+2141701140: 32293: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:60               M 1c00834a c.swsp              s0, 8(sp)          s0:1c000850  sp:1c001060  PA:1c001068 
+2141720619: 32294: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_base:48             M 1c00834c addi                a5, a1, 240        a5=1c0010f0  a1:1c001000 
+2141740098: 32295: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_base:48             M 1c008350 lui                 a2, 0x1c008000     a2=1c008000 
+2141856972: 32301: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_base:48             M 1c008354 blt                 a5, a2, 70         a5:1c0010f0  a2:1c008000 
+2141915409: 32304: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_size:58             M 1c00839a c.sub               a2, a2, a5         a2=00006f10  a2:1c008000  a5:1c0010f0 
+2142032283: 32310: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_base:51             M 1c00839c addi                a1, a1, 240        a1=1c0010f0  a1:1c001000 
+2142051762: 32311: [[34m/chip/soc/fc/insn                               [0m] pos_l2_priv0_base:51             M 1c0083a0 c.j                 0, -68            
+2142188115: 32318: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:66               M 1c00835c lui                 s0, 0x1c001000     s0=1c001000 
+2142304989: 32324: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:66               M 1c008360 addi                a0, s0, 200        a0=1c0010c8  s0:1c001000 
+2142421863: 32330: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:66               M 1c008364 c.jal               ra, -138           ra=1c008366 
+2142460821: 32332: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:180               M 1c0082da addi                a5, a1, 7          a5=1c0010f7  a1:1c0010f0 
+2142577695: 32338: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:180               M 1c0082de p.bclri             a5, a5, 0x2, 0x0   a5=1c0010f0  a5:1c0010f7 
+2142694569: 32344: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:185               M 1c0082e2 sub                 a1, a5, a1         a1=00000000  a5:1c0010f0  a1:1c0010f0 
+2142714048: 32345: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:184               M 1c0082e6 c.sw                a5, 0(a0)          a5:1c0010f0  a0:1c0010c8  PA:1c0010c8 
+2142733527: 32346: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:185               M 1c0082e8 c.sub               a2, a2, a1         a2=00006f10  a2:00006f10  a1:00000000 
+2142753006: 32347: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:186               M 1c0082ea bge                 0, a2, 14          a2:00006f10 
+2142772485: 32348: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:188               M 1c0082ee p.bclri             a2, a2, 0x2, 0x0   a2=00006f10  a2:00006f10 
+2142889359: 32354: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:188               M 1c0082f2 c.sw                a2, 0(a5)          a2:00006f10  a5:1c0010f0  PA:1c0010f0 
+2142908838: 32355: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:189               M 1c0082f4 sw                  0, 4(a5)           a5:1c0010f0  PA:1c0010f4 
+2142928317: 32356: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:191               M 1c0082f8 c.jr                0, ra, 0, 0        ra:1c008366 
+2142967275: 32358: [[34m/chip/soc/fc/insn                               [0m] pos_l2_shared_size:80            M 1c008366 lui                 a1, 0x1c010000     a1=1c010000 
+2143084149: 32364: [[34m/chip/soc/fc/insn                               [0m] pos_l2_shared_size:80            M 1c00836a addi                a5, a1, 416        a5=1c0101a0  a1:1c010000 
+2143103628: 32365: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:69               M 1c00836e lui                 a2, 0x1c080000     a2=1c080000 
+2143220502: 32371: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:69               M 1c008372 lui                 a0, 0x1c001000     a0=1c001000 
+2143239981: 32372: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:69               M 1c008376 c.sub               a2, a2, a5         a2=0006fe60  a2:1c080000  a5:1c0101a0 
+2143259460: 32373: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:69               M 1c008378 addi                a1, a1, 416        a1=1c0101a0  a1:1c010000 
+2143278939: 32374: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:69               M 1c00837c addi                a0, a0, 204        a0=1c0010cc  a0:1c001000 
+2143298418: 32375: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:69               M 1c008380 c.jal               ra, -166           ra=1c008382 
+2143434771: 32382: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:180               M 1c0082da addi                a5, a1, 7          a5=1c0101a7  a1:1c0101a0 
+2143551645: 32388: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:180               M 1c0082de p.bclri             a5, a5, 0x2, 0x0   a5=1c0101a0  a5:1c0101a7 
+2143668519: 32394: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:185               M 1c0082e2 sub                 a1, a5, a1         a1=00000000  a5:1c0101a0  a1:1c0101a0 
+2143687998: 32395: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:184               M 1c0082e6 c.sw                a5, 0(a0)          a5:1c0101a0  a0:1c0010cc  PA:1c0010cc 
+2143707477: 32396: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:185               M 1c0082e8 c.sub               a2, a2, a1         a2=0006fe60  a2:0006fe60  a1:00000000 
+2143726956: 32397: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:186               M 1c0082ea bge                 0, a2, 14          a2:0006fe60 
+2143746435: 32398: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:188               M 1c0082ee p.bclri             a2, a2, 0x2, 0x0   a2=0006fe60  a2:0006fe60 
+2143863309: 32404: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:188               M 1c0082f2 c.sw                a2, 0(a5)          a2:0006fe60  a5:1c0101a0  PA:1c0101a0 
+2143882788: 32405: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:189               M 1c0082f4 sw                  0, 4(a5)           a5:1c0101a0  PA:1c0101a4 
+2143902267: 32406: [[34m/chip/soc/fc/insn                               [0m] pos_alloc_init:191               M 1c0082f8 c.jr                0, ra, 0, 0        ra:1c008382 
+2143941225: 32408: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:96               M 1c008382 addi                a0, s0, 200        a0=1c0010c8  s0:1c001000 
+2144058099: 32414: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:96               M 1c008386 c.li                a1, 0, 4           a1=00000004 
+2144077578: 32415: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:96               M 1c008388 c.jal               ra, -142           ra=1c00838a 
+2144116536: 32417: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:197                    M 1c0082fa c.lw                a5, 0(a0)          a5=1c0010f0  a0:1c0010c8  PA:1c0010c8 
+2144233410: 32423: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:199                    M 1c0082fc c.addi              a1, a1, 7          a1=0000000b  a1:00000004 
+2144252889: 32424: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:199                    M 1c0082fe p.bclri             a1, a1, 0x2, 0x0   a1=00000008  a1:0000000b 
+2144369763: 32430: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:197                    M 1c008302 c.li                a4, 0, 0           a4=00000000 
+2144389242: 32431: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:201                    M 1c008304 c.beqz              a5, 0, 18          a5:1c0010f0 
+2144408721: 32432: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:201                    M 1c008306 c.lw                a3, 0(a5)          a3=00006f10  a5:1c0010f0  PA:1c0010f0 
+2144428200: 32433: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:201                    M 1c008308 c.lw                a2, 4(a5)          a2=00000000  a5:1c0010f0  PA:1c0010f4 
+2144447679: 32434: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:201                    M 1c00830a blt                 a3, a1, 16         a3:00006f10  a1:00000008 
+2144467158: 32435: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:208                    M 1c00830e bne                 a3, a1, 22         a3:00006f10  a1:00000008 
+2144622990: 32443: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:228                    M 1c008324 add                 a6, a5, a1         a6=1c0010f8  a5:1c0010f0  a1:00000008 
+2144739864: 32449: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:229                    M 1c008328 sub                 a1, a3, a1         a1=00006f08  a3:00006f10  a1:00000008 
+2144759343: 32450: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:229                    M 1c00832c sw                  a1, 0(a6)          a1:00006f08  a6:1c0010f8  PA:1c0010f8 
+2144778822: 32451: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:230                    M 1c008330 sw                  a2, 4(a6)          a2:00000000  a6:1c0010f8  PA:1c0010fc 
+2144895696: 32457: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:232                    M 1c008334 c.beqz              a4, 0, 8           a4:00000000 
+2144954133: 32460: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:235                    M 1c00833c sw                  a6, 0(a0)          a6:1c0010f8  a0:1c0010c8  PA:1c0010c8 
+2144973612: 32461: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:235                    M 1c008340 c.j                 0, -42            
+2145109965: 32468: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:254                    M 1c008316 c.mv                a0, 0, a5          a0=1c0010f0  a5:1c0010f0 
+2145226839: 32474: [[34m/chip/soc/fc/insn                               [0m] pos_alloc:254                    M 1c008318 c.jr                0, ra, 0, 0        ra:1c00838a 
+2145265797: 32476: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:98               M 1c00838a c.lwsp              ra, 12(sp)         ra=1c00827e  sp:1c001060  PA:1c00106c 
+2145382671: 32482: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:98               M 1c00838c c.lwsp              s0, 8(sp)          s0=1c000850  sp:1c001060  PA:1c001068 
+2145402150: 32483: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:96               M 1c00838e lui                 a5, 0x1c001000     a5=1c001000 
+2145519024: 32489: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:96               M 1c008392 sw                  a0, 196(a5)        a0:1c0010f0  a5:1c001000  PA:1c0010c4 
+2145538503: 32490: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:98               M 1c008396 c.addi              sp, sp, 16         sp=1c001070  sp:1c001060 
+2145557982: 32491: [[34m/chip/soc/fc/insn                               [0m] pos_allocs_init:98               M 1c008398 c.jr                0, ra, 0, 0        ra:1c00827e 
+2145596940: 32493: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:78                M 1c00827e c.jal               ra, 86             ra=1c008280 
+2145908604: 32509: [[34m/chip/soc/fc/insn                               [0m] pos_sched_init:75                M 1c0082d4 sw                  0, 32(0)            0:00000000  PA:00000020 
+2146025478: 32515: [[34m/chip/soc/fc/insn                               [0m] pos_sched_init:76                M 1c0082d8 c.jr                0, ra, 0, 0        ra:1c008280 
+2146064436: 32517: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:37             M 1c008280 p.lw                a5, 4(s0!)         a5=1c008578  s0=1c000854  s0:1c000850  PA:1c000850 
+2146181310: 32523: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:37             M 1c008284 c.bnez              a5, 0, 16          a5:1c008578 
+2146259226: 32527: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:39             M 1c008294 c.jalr              ra, a5, 0, 0       ra=1c008296  a5:1c008578 
+2146395579: 32534: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:184                M 1c008578 c.addi              sp, sp, -16        sp=1c001060  sp:1c001070 
+2146512453: 32540: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:184                M 1c00857a c.swsp              s0, 8(sp)          s0:1c000854  sp:1c001060  PA:1c001068 
+2146531932: 32541: [[34m/chip/soc/fc/insn                               [0m] timer_cfg_lo_set:446             M 1c00857c lui                 a5, 0x1a10b000     a5=1a10b000 
+2146551411: 32542: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:185                M 1c008580 lui                 s0, 0x1c001000     s0=1c001000 
+2146668285: 32548: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:184                M 1c008584 c.swsp              ra, 12(sp)         ra:1c008296  sp:1c001060  PA:1c00106c 
+2146687764: 32549: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:185                M 1c008586 addi                s0, s0, 152        s0=1c001098  s0:1c001000 
+2146707243: 32550: [[34m/chip/soc/fc/insn                               [0m] timer_cfg_lo_set:446             M 1c00858a addi                a4, 0, 131         a4=00000083 
+2146726722: 32551: [[34m/chip/soc/fc/insn                               [0m] timer_cfg_lo_set:446             M 1c00858e c.addi              a5, a5, 4          a5=1a10b004  a5:1a10b000 
+2146843596: 32557: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:185                M 1c008590 sw                  0, 4(s0)           s0:1c001098  PA:1c00109c 
+2146863075: 32558: [[34m/chip/soc/fc/insn                               [0m] timer_cfg_lo_set:446             M 1c008594 sw                  a4, 0(a5)          a4:00000083  a5:1a10b004  PA:1a10b004 
+2147038386: 32567: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:196                M 1c008598 lui                 a1, 0x1c008000     a1=1c008000 
+2147057865: 32568: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:196                M 1c00859c addi                a1, a1, 1764       a1=1c0086e4  a1:1c008000 
+2147077344: 32569: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:196                M 1c0085a0 c.li                a0, 0, 11          a0=0000000b 
+2147194218: 32575: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:196                M 1c0085a2 c.jal               ra, -512           ra=1c0085a4 
+2147233176: 32577: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0083a2 csrrs               a5, 0, mhartid     a5=000003e0 
+2147350050: 32583: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:113   M 1c0083a6 c.li                a4, 0, 31          a4=0000001f 
+2147369529: 32584: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0083a8 p.extractui         a5, a5, 0x5, 0x5   a5=0000001f  a5:000003e0 
+2147389008: 32585: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:113   M 1c0083ac bne                 a5, a4, 60         a5:0000001f  a4:0000001f 
+2147408487: 32586: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:120   M 1c0083b0 csrrs               a4, 0, mtvec       a4=1c008001 
+2147525361: 32592: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_fc_vector_base:120   M 1c0083b4 p.bclri             a4, a4, 0x0, 0x0   a4=1c008000  a4:1c008001 
+2147544840: 32593: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_handler:62           M 1c0083b8 c.slli              a0, a0, 0x2        a0=0000002c  a0:0000000b 
+2147564319: 32594: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:35             M 1c0083ba c.sub               a1, a1, a0         a1=1c0086b8  a1:1c0086e4  a0:0000002c 
+2147583798: 32595: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:35             M 1c0083bc c.sub               a1, a1, a4         a1=000006b8  a1:1c0086b8  a4:1c008000 
+2147603277: 32596: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:41             M 1c0083be p.extracti          a3, a1, 0x0, 0x14  a3=00000000  a1:000006b8 
+2147720151: 32602: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:41             M 1c0083c2 addi                a5, 0, 111         a5=0000006f 
+2147739630: 32603: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:41             M 1c0083c6 p.inserti           a5, a3, 0x0, 0x1f  a5=0000006f  a5:0000006f  a3:00000000 
+2147759109: 32604: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:42             M 1c0083ca p.extracti          a3, a1, 0x9, 0x1   a3=ffffff5c  a1:000006b8 
+2147778588: 32605: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:42             M 1c0083ce p.inserti           a5, a3, 0x9, 0x15  a5=6b80006f  a5:0000006f  a3:ffffff5c 
+2147895462: 32611: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:43             M 1c0083d2 p.extracti          a3, a1, 0x0, 0xb   a3=00000000  a1:000006b8 
+2147914941: 32612: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:43             M 1c0083d6 p.inserti           a5, a3, 0x0, 0x14  a5=6b80006f  a5:6b80006f  a3:00000000 
+2147934420: 32613: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:44             M 1c0083da p.extracti          a1, a1, 0x7, 0xc   a1=00000000  a1:000006b8 
+2147953899: 32614: [[34m/chip/soc/fc/insn                               [0m] pos_irq_get_itvec:44             M 1c0083de p.inserti           a5, a1, 0x7, 0xc   a5=6b80006f  a5:6b80006f  a1:00000000 
+2148070773: 32620: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_handler:64           M 1c0083e2 p.sw                a5, a4(a0)         a5:6b80006f  a4:1c008000  a0:0000002c  PA:1c00802c 
+2148090252: 32621: [[34m/chip/soc/fc/insn                               [0m] pos_irq_set_handler:74           M 1c0083e6 c.jr                0, ra, 0, 0        ra:1c0085a4 
+2148129210: 32623: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c0085a4 c.lui               a5, 0x1000         a5=00001000 
+2148246084: 32629: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c0085a6 lui                 a4, 0x1a10a000     a4=1a10a000 
+2148265563: 32630: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c0085aa addi                a5, a5, -2048      a5=00000800  a5:00001000 
+2148285042: 32631: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:203                M 1c0085ae lui                 a2, 0x1c008000     a2=1c008000 
+2148401916: 32637: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:203                M 1c0085b2 addi                a0, s0, 8          a0=1c0010a0  s0:1c001098 
+2148421395: 32638: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:203                M 1c0085b6 c.li                a3, 0, 0           a3=00000000 
+2148440874: 32639: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:203                M 1c0085b8 addi                a2, a2, 1146       a2=1c00847a  a2:1c008000 
+2148460353: 32640: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:203                M 1c0085bc c.li                a1, 0, 2           a1=00000002 
+2148479832: 32641: [[34m/chip/soc/fc/insn                               [0m] hal_itc_enable_set:34            M 1c0085be sw                  a5, -2044(a4)      a5:00000800  a4:1a10a000  PA:1a109804 
+2148752538: 32655: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:203                M 1c0085c2 c.jal               ra, -776           ra=1c0085c4 
+2148791496: 32657: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082ba slli                a5, a1, 0x2        a5=00000008  a1:00000002 
+2148908370: 32663: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082be lui                 a1, 0x1c001000     a1=1c001000 
+2149025244: 32669: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082c2 addi                a1, a1, 128        a1=1c001080  a1:1c001000 
+2149044723: 32670: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082c6 c.add               a1, a1, a5         a1=1c001088  a1:1c001080  a5:00000008 
+2149064202: 32671: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082c8 c.lw                a5, 0(a1)          a5=00000000  a1:1c001088  PA:1c001088 
+2149083681: 32672: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:58                 M 1c0082ca c.sw                a2, 0(a0)          a2:1c00847a  a0:1c0010a0  PA:1c0010a0 
+2149103160: 32673: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:59                 M 1c0082cc c.sw                a3, 4(a0)          a3:00000000  a0:1c0010a0  PA:1c0010a4 
+2149122639: 32674: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082ce c.sw                a5, 8(a0)          a5:00000000  a0:1c0010a0  PA:1c0010a8 
+2149239513: 32680: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:61                 M 1c0082d0 c.sw                a0, 0(a1)          a0:1c0010a0  a1:1c001088  PA:1c001088 
+2149258992: 32681: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:62                 M 1c0082d2 c.jr                0, ra, 0, 0        ra:1c0085c4 
+2149297950: 32683: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:204                M 1c0085c4 addi                a0, s0, 24         a0=1c0010b0  s0:1c001098 
+2149414824: 32689: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:205                M 1c0085c8 c.lwsp              s0, 8(sp)          s0=1c000854  sp:1c001060  PA:1c001068 
+2149434303: 32690: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:205                M 1c0085ca c.lwsp              ra, 12(sp)         ra=1c008296  sp:1c001060  PA:1c00106c 
+2149453782: 32691: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:204                M 1c0085cc lui                 a2, 0x1c008000     a2=1c008000 
+2149473261: 32692: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:204                M 1c0085d0 c.li                a3, 0, 0           a3=00000000 
+2149590135: 32698: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:204                M 1c0085d2 addi                a2, a2, 1168       a2=1c008490  a2:1c008000 
+2149609614: 32699: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:204                M 1c0085d6 c.li                a1, 0, 3           a1=00000003 
+2149629093: 32700: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:205                M 1c0085d8 c.addi              sp, sp, 16         sp=1c001070  sp:1c001060 
+2149648572: 32701: [[34m/chip/soc/fc/insn                               [0m] pos_time_init:204                M 1c0085da c.j                 0, -800           
+2149687530: 32703: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082ba slli                a5, a1, 0x2        a5=0000000c  a1:00000003 
+2149804404: 32709: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082be lui                 a1, 0x1c001000     a1=1c001000 
+2149921278: 32715: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082c2 addi                a1, a1, 128        a1=1c001080  a1:1c001000 
+2149940757: 32716: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082c6 c.add               a1, a1, a5         a1=1c00108c  a1:1c001080  a5:0000000c 
+2149960236: 32717: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082c8 c.lw                a5, 0(a1)          a5=00000000  a1:1c00108c  PA:1c00108c 
+2149979715: 32718: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:58                 M 1c0082ca c.sw                a2, 0(a0)          a2:1c008490  a0:1c0010b0  PA:1c0010b0 
+2149999194: 32719: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:59                 M 1c0082cc c.sw                a3, 4(a0)          a3:00000000  a0:1c0010b0  PA:1c0010b4 
+2150018673: 32720: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:60                 M 1c0082ce c.sw                a5, 8(a0)          a5:00000000  a0:1c0010b0  PA:1c0010b8 
+2150135547: 32726: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:61                 M 1c0082d0 c.sw                a0, 0(a1)          a0:1c0010b0  a1:1c00108c  PA:1c00108c 
+2150155026: 32727: [[34m/chip/soc/fc/insn                               [0m] pos_cbsys_add:62                 M 1c0082d2 c.jr                0, ra, 0, 0        ra:1c008296 
+2150193984: 32729: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:39             M 1c008296 c.j                 0, -22            
+2150330337: 32736: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:37             M 1c008280 p.lw                a5, 4(s0!)         a5=1c0085dc  s0=1c000858  s0:1c000854  PA:1c000854 
+2150447211: 32742: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:37             M 1c008284 c.bnez              a5, 0, 16          a5:1c0085dc 
+2150525127: 32746: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:39             M 1c008294 c.jalr              ra, a5, 0, 0       ra=1c008296  a5:1c0085dc 
+2150661480: 32753: [[34m/chip/soc/fc/insn                               [0m] pos_uart_init:313                M 1c0085dc lui                 a5, 0x1c010000     a5=1c010000 
+2150778354: 32759: [[34m/chip/soc/fc/insn                               [0m] pos_uart_init:313                M 1c0085e0 sw                  0, 336(a5)         a5:1c010000  PA:1c010150 
+2150895228: 32765: [[34m/chip/soc/fc/insn                               [0m] pos_uart_init:317                M 1c0085e4 c.jr                0, ra, 0, 0        ra:1c008296 
+2150934186: 32767: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:39             M 1c008296 c.j                 0, -22            
+2151070539: 32774: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:37             M 1c008280 p.lw                a5, 4(s0!)         a5=00000000  s0=1c00085c  s0:1c000858  PA:1c000858 
+2151187413: 32780: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_ctors:37             M 1c008284 c.bnez              a5, 0, 16          a5:00000000 
+2151226371: 32782: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:85                M 1c008286 c.jal               ra, -38            ra=1c008288 
+2151265329: 32784: [[34m/chip/soc/fc/insn                               [0m] pos_io_start:570                 M 1c008260 c.li                a0, 0, 0           a0=00000000 
+2151382203: 32790: [[34m/chip/soc/fc/insn                               [0m] pos_io_start:570                 M 1c008262 c.jr                0, ra, 0, 0        ra:1c008288 
+2151421161: 32792: [[34m/chip/soc/fc/insn                               [0m] hal_irq_enable:246               M 1c008288 csrrsi              a5, mstatus, 0x300  a5=00006000 
+2151596472: 32801: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:89                M 1c00828c c.lwsp              ra, 12(sp)          ra=1c00862c  sp:1c001070  PA:1c00107c 
+2151615951: 32802: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:89                M 1c00828e c.lwsp              s0, 8(sp)           s0=57575757  sp:1c001070  PA:1c001078 
+2151732825: 32808: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:89                M 1c008290 c.addi              sp, sp, 16          sp=1c001080  sp:1c001070 
+2151752304: 32809: [[34m/chip/soc/fc/insn                               [0m] pos_init_start:89                M 1c008292 c.jr                0, ra, 0, 0         ra:1c00862c 
+2151791262: 32811: [[34m/chip/soc/fc/insn                               [0m] label0:71                        M 1c00862c addi                a0, 0, 0            a0=00000000 
+2151908136: 32817: [[34m/chip/soc/fc/insn                               [0m] label0:72                        M 1c008630 addi                a1, 0, 0            a1=00000000 
+2152025010: 32823: [[34m/chip/soc/fc/insn                               [0m] label0:75                        M 1c008634 auipc               t2, 0x0             t2=1c008634 
+2152044489: 32824: [[34m/chip/soc/fc/insn                               [0m] label0:75                        M 1c008638 addi                t2, t2, -1406       t2=1c0080b6  t2:1c008634 
+2152063968: 32825: [[34m/chip/soc/fc/insn                               [0m] label0:76                        M 1c00863c jalr                ra, t2, 0           ra=1c008640  t2:1c0080b6 
+2152102926: 32827: [[34m/chip/soc/fc/insn                               [0m] main:58                          M 1c0080b6 c.addi              sp, sp, -16         sp=1c001070  sp:1c001080 
+2152219800: 32833: [[34m/chip/soc/fc/insn                               [0m] main:58                          M 1c0080b8 c.swsp              ra, 12(sp)          ra:1c008640  sp:1c001070  PA:1c00107c 
+2152239279: 32834: [[34m/chip/soc/fc/insn                               [0m] pmsis_kickoff:90                 M 1c0080ba c.jal               ra, -30             ra=1c0080bc 
+2152278237: 32836: [[34m/chip/soc/fc/insn                               [0m] test_entry:45                    M 1c00809c lui                 a0, 0x1c001000      a0=1c001000 
+2152395111: 32842: [[34m/chip/soc/fc/insn                               [0m] test_kickoff:52                  M 1c0080a0 c.addi              sp, sp, -16         sp=1c001060  sp:1c001070 
+2152511985: 32848: [[34m/chip/soc/fc/insn                               [0m] test_entry:45                    M 1c0080a2 addi                a0, a0, -1944       a0=1c000868  a0:1c001000 
+2152531464: 32849: [[34m/chip/soc/fc/insn                               [0m] test_kickoff:52                  M 1c0080a6 c.swsp              ra, 12(sp)          ra:1c0080bc  sp:1c001060  PA:1c00106c 
+2152550943: 32850: [[34m/chip/soc/fc/insn                               [0m] test_entry:45                    M 1c0080a8 c.jal               ra, 370             ra=1c0080aa 
+2152589901: 32852: [[34m/chip/soc/fc/insn                               [0m] puts:428                         M 1c00821a c.addi              sp, sp, -16         sp=1c001050  sp:1c001060 
+2152706775: 32858: [[34m/chip/soc/fc/insn                               [0m] puts:428                         M 1c00821c c.swsp              s0, 8(sp)           s0:57575757  sp:1c001050  PA:1c001058 
+2152726254: 32859: [[34m/chip/soc/fc/insn                               [0m] puts:428                         M 1c00821e c.swsp              ra, 12(sp)          ra:1c0080aa  sp:1c001050  PA:1c00105c 
+2152843128: 32865: [[34m/chip/soc/fc/insn                               [0m] puts:428                         M 1c008220 c.mv                s0, 0, a0           s0=1c000868  a0:1c000868 
+2152862607: 32866: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000048  s0=1c000869  s0:1c000868  PA:1c000868 
+2152882086: 32867: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000048 
+2152921044: 32869: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2152960002: 32871: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2153076876: 32877: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2153193750: 32883: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2153213229: 32884: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2153232708: 32885: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2153252187: 32886: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2153271666: 32887: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2153388540: 32893: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2153408019: 32894: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000048  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2153583330: 32903: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2153622288: 32905: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2153758641: 32912: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000065  s0=1c00086a  s0:1c000869  PA:1c000869 
+2153778120: 32913: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000065 
+2153817078: 32915: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2153856036: 32917: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2153972910: 32923: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2154089784: 32929: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2154109263: 32930: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2154128742: 32931: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2154148221: 32932: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2154167700: 32933: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2154284574: 32939: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2154304053: 32940: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000065  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2154479364: 32949: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2154518322: 32951: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2154654675: 32958: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=0000006c  s0=1c00086b  s0:1c00086a  PA:1c00086a 
+2154674154: 32959: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:0000006c 
+2154713112: 32961: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2154752070: 32963: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2154868944: 32969: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2154985818: 32975: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2155005297: 32976: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2155024776: 32977: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2155044255: 32978: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2155063734: 32979: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2155180608: 32985: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2155200087: 32986: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:0000006c  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2155375398: 32995: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2155414356: 32997: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2155550709: 33004: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=0000006c  s0=1c00086c  s0:1c00086b  PA:1c00086b 
+2155570188: 33005: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:0000006c 
+2155609146: 33007: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2155648104: 33009: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2155764978: 33015: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2155881852: 33021: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2155901331: 33022: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2155920810: 33023: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2155940289: 33024: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2155959768: 33025: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2156076642: 33031: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2156096121: 33032: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:0000006c  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2156271432: 33041: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2156310390: 33043: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2156446743: 33050: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=0000006f  s0=1c00086d  s0:1c00086c  PA:1c00086c 
+2156466222: 33051: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:0000006f 
+2156505180: 33053: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2156544138: 33055: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2156661012: 33061: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2156777886: 33067: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2156797365: 33068: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2156816844: 33069: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2156836323: 33070: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2156855802: 33071: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2156972676: 33077: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2156992155: 33078: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:0000006f  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2157167466: 33087: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2157206424: 33089: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2157342777: 33096: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000020  s0=1c00086e  s0:1c00086d  PA:1c00086d 
+2157362256: 33097: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000020 
+2157401214: 33099: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2157440172: 33101: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2157557046: 33107: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2157673920: 33113: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2157693399: 33114: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2157712878: 33115: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2157732357: 33116: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2157751836: 33117: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2157868710: 33123: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2157888189: 33124: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000020  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2158063500: 33133: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2158102458: 33135: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2158238811: 33142: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000066  s0=1c00086f  s0:1c00086e  PA:1c00086e 
+2158258290: 33143: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000066 
+2158297248: 33145: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2158336206: 33147: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2158453080: 33153: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2158569954: 33159: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2158589433: 33160: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2158608912: 33161: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2158628391: 33162: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2158647870: 33163: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2158764744: 33169: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2158784223: 33170: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000066  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2158959534: 33179: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2158998492: 33181: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2159134845: 33188: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000072  s0=1c000870  s0:1c00086f  PA:1c00086f 
+2159154324: 33189: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000072 
+2159193282: 33191: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2159232240: 33193: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2159349114: 33199: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2159465988: 33205: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2159485467: 33206: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2159504946: 33207: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2159524425: 33208: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2159543904: 33209: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2159660778: 33215: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2159680257: 33216: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000072  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2159855568: 33225: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2159894526: 33227: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2160030879: 33234: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=0000006f  s0=1c000871  s0:1c000870  PA:1c000870 
+2160050358: 33235: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:0000006f 
+2160089316: 33237: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2160128274: 33239: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2160245148: 33245: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2160362022: 33251: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2160381501: 33252: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2160400980: 33253: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2160420459: 33254: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2160439938: 33255: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2160556812: 33261: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2160576291: 33262: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:0000006f  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2160751602: 33271: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2160790560: 33273: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2160926913: 33280: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=0000006d  s0=1c000872  s0:1c000871  PA:1c000871 
+2160946392: 33281: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:0000006d 
+2160985350: 33283: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2161024308: 33285: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2161141182: 33291: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2161258056: 33297: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2161277535: 33298: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2161297014: 33299: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2161316493: 33300: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2161335972: 33301: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2161452846: 33307: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2161472325: 33308: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:0000006d  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2161647636: 33317: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2161686594: 33319: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2161822947: 33326: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000020  s0=1c000873  s0:1c000872  PA:1c000872 
+2161842426: 33327: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000020 
+2161881384: 33329: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2161920342: 33331: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2162037216: 33337: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2162154090: 33343: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2162173569: 33344: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2162193048: 33345: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2162212527: 33346: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2162232006: 33347: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2162348880: 33353: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2162368359: 33354: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000020  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2162543670: 33363: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2162582628: 33365: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2162718981: 33372: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000046  s0=1c000874  s0:1c000873  PA:1c000873 
+2162738460: 33373: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000046 
+2162777418: 33375: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2162816376: 33377: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2162933250: 33383: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2163050124: 33389: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2163069603: 33390: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2163089082: 33391: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2163108561: 33392: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2163128040: 33393: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2163244914: 33399: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2163264393: 33400: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000046  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2163439704: 33409: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2163478662: 33411: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2163615015: 33418: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000043  s0=1c000875  s0:1c000874  PA:1c000874 
+2163634494: 33419: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000043 
+2163673452: 33421: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c008228 c.jal               ra, -46             ra=1c00822a 
+2163712410: 33423: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2163829284: 33429: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2163946158: 33435: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2163965637: 33436: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2163985116: 33437: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2164004595: 33438: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2164024074: 33439: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2164140948: 33445: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2164160427: 33446: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:00000043  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2164335738: 33455: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c00822a 
+2164374696: 33457: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c00822a c.j                 0, -8              
+2164511049: 33464: [[34m/chip/soc/fc/insn                               [0m] puts:437                         M 1c008222 p.lbu               a0, 1(s0!)          a0=00000000  s0=1c000876  s0:1c000875  PA:1c000875 
+2164530528: 33465: [[34m/chip/soc/fc/insn                               [0m] puts:438                         M 1c008226 c.beqz              a0, 0, 6            a0:00000000 
+2164608444: 33469: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c00822c c.li                a0, 0, 10           a0=0000000a 
+2164627923: 33470: [[34m/chip/soc/fc/insn                               [0m] pos_putc:421                     M 1c00822e c.jal               ra, -52             ra=1c008230 
+2164764276: 33477: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c0081fa csrrs               a5, 0, mhartid      a5=000003e0 
+2164881150: 33483: [[34m/chip/soc/fc/insn                               [0m] core_id:121                      M 1c0081fe csrrs               a4, 0, mhartid      a4=000003e0 
+2164998024: 33489: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008202 lui                 a3, 0x1a10f000      a3=1a10f000 
+2165017503: 33490: [[34m/chip/soc/fc/insn                               [0m] hal_cluster_id:153               M 1c008206 p.extractui         a5, a5, 0x5, 0x5    a5=0000001f  a5:000003e0 
+2165036982: 33491: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820a c.slli              a4, a4, 0x3         a4=00001f00  a4:000003e0 
+2165056461: 33492: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820c c.slli              a5, a5, 0x7         a5=00000f80  a5:0000001f 
+2165075940: 33493: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c00820e p.bclri             a4, a4, 0x17, 0x8   a4=00000000  a4:00001f00 
+2165192814: 33499: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008212 c.add               a5, a5, a3          a5=1a10ff80  a5:00000f80  a3:1a10f000 
+2165212293: 33500: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:249         M 1c008214 p.sw                a0, a5(a4)          a0:0000000a  a5:1a10ff80  a4:00000000  PA:1a10ff80 
+2165387604: 33509: [[34m/chip/soc/fc/insn                               [0m] pos_libc_putc_stdout:250         M 1c008218 c.jr                0, ra, 0, 0         ra:1c008230 
+2165426562: 33511: [[34m/chip/soc/fc/insn                               [0m] puts:453                         M 1c008230 c.lwsp              ra, 12(sp)          ra=1c0080aa  sp:1c001050  PA:1c00105c 
+2165543436: 33517: [[34m/chip/soc/fc/insn                               [0m] puts:453                         M 1c008232 c.lwsp              s0, 8(sp)           s0=57575757  sp:1c001050  PA:1c001058 
+2165562915: 33518: [[34m/chip/soc/fc/insn                               [0m] puts:453                         M 1c008234 c.li                a0, 0, 0            a0=00000000 
+2165582394: 33519: [[34m/chip/soc/fc/insn                               [0m] puts:453                         M 1c008236 c.addi              sp, sp, 16          sp=1c001060  sp:1c001050 
+2165601873: 33520: [[34m/chip/soc/fc/insn                               [0m] puts:453                         M 1c008238 c.jr                0, ra, 0, 0         ra:1c0080aa 
+2165640831: 33522: [[34m/chip/soc/fc/insn                               [0m] pmsis_exit:96                    M 1c0080aa lui                 a5, 0x1c001000      a5=1c001000 
+2165757705: 33528: [[34m/chip/soc/fc/insn                               [0m] pmsis_exit:97                    M 1c0080ae c.li                a0, 0, 0            a0=00000000 
+2165874579: 33534: [[34m/chip/soc/fc/insn                               [0m] pmsis_exit:96                    M 1c0080b0 sw                  0, 192(a5)          a5:1c001000  PA:1c0010c0 
+2165894058: 33535: [[34m/chip/soc/fc/insn                               [0m] pmsis_exit:97                    M 1c0080b4 c.jal               ra, 390             ra=1c0080b6 
+2165933016: 33537: [[34m/chip/soc/fc/insn                               [0m] exit:525                         M 1c00823a c.addi              sp, sp, -32         sp=1c001040  sp:1c001060 
+2166049890: 33543: [[34m/chip/soc/fc/insn                               [0m] exit:526                         M 1c00823c c.swsp              a0, 12(sp)          a0:00000000  sp:1c001040  PA:1c00104c 
+2166069369: 33544: [[34m/chip/soc/fc/insn                               [0m] exit:525                         M 1c00823e c.swsp              ra, 28(sp)          ra:1c0080b6  sp:1c001040  PA:1c00105c 
+2166186243: 33550: [[34m/chip/soc/fc/insn                               [0m] exit:526                         M 1c008240 c.jal               ra, 88              ra=1c008242 
+2166225201: 33552: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:93                 M 1c008298 c.addi              sp, sp, -16         sp=1c001030  sp:1c001040 
+2166342075: 33558: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:93                 M 1c00829a c.swsp              s0, 8(sp)           s0:57575757  sp:1c001030  PA:1c001038 
+2166361554: 33559: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:93                 M 1c00829c lui                 s0, 0x1c001000      s0=1c001000 
+2166381033: 33560: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:93                 M 1c0082a0 c.swsp              ra, 12(sp)          ra:1c008242  sp:1c001030  PA:1c00103c 
+2166497907: 33566: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:93                 M 1c0082a2 addi                s0, s0, -1948       s0=1c000864  s0:1c001000 
+2166517386: 33567: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:95                 M 1c0082a6 c.jal               ra, -66             ra=1c0082a8 
+2166556344: 33569: [[34m/chip/soc/fc/insn                               [0m] pos_io_stop:0                    M 1c008264 c.li                a0, 0, 0            a0=00000000 
+2166673218: 33575: [[34m/chip/soc/fc/insn                               [0m] pos_io_stop:0                    M 1c008266 c.jr                0, ra, 0, 0         ra:1c0082a8 
+2166712176: 33577: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_dtors:48             M 1c0082a8 p.lw                a5, 4(s0!)          a5=00000000  s0=1c000868  s0:1c000864  PA:1c000864 
+2166829050: 33583: [[34m/chip/soc/fc/insn                               [0m] pos_init_do_dtors:48             M 1c0082ac c.bnez              a5, 0, 10           a5:00000000 
+2166868008: 33585: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:99                 M 1c0082ae c.lwsp              ra, 12(sp)          ra=1c008242  sp:1c001030  PA:1c00103c 
+2166984882: 33591: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:99                 M 1c0082b0 c.lwsp              s0, 8(sp)           s0=57575757  sp:1c001030  PA:1c001038 
+2167004361: 33592: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:99                 M 1c0082b2 c.addi              sp, sp, 16          sp=1c001040  sp:1c001030 
+2167023840: 33593: [[34m/chip/soc/fc/insn                               [0m] pos_init_stop:99                 M 1c0082b4 c.jr                0, ra, 0, 0         ra:1c008242 
+2167062798: 33595: [[34m/chip/soc/fc/insn                               [0m] exit:529                         M 1c008242 c.lwsp              a0, 12(sp)          a0=00000000  sp:1c001040  PA:1c00104c 
+2167179672: 33601: [[34m/chip/soc/fc/insn                               [0m] apb_soc_ctrl_corestatus_set:80   M 1c008244 lui                 a5, 0x1a104000      a5=1a104000 
+2167199151: 33602: [[34m/chip/soc/fc/insn                               [0m] exit:529                         M 1c008248 p.bseti             a0, a0, 0x0, 0x1f   a0=80000000  a0:00000000 
+2167218630: 33603: [[34m/chip/soc/fc/insn                               [0m] apb_soc_ctrl_corestatus_set:80   M 1c00824c sw                  a0, 160(a5)         a0:80000000  a5:1a104000  PA:1a1040a0 
