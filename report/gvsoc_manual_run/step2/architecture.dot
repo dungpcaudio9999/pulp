@@ -1,0 +1,266 @@
+digraph "pulp-open" {
+    rankdir=TB;
+    newrank=true;
+    fontname="Helvetica";
+    node [fontname="Helvetica", fontsize=9, shape=record, style="filled,rounded"];
+    edge [fontname="Helvetica", fontsize=7];
+    compound=true;
+    splines=ortho;
+    nodesep=0.5;
+    ranksep=0.7;
+
+    label="pulp-open — Architecture Diagram\n(auto-generated from GVSoC Python generators)";
+    labelloc=t;
+    fontsize=13;
+
+    subgraph cluster_chip {
+        label="chip";
+        style="filled,rounded"; fillcolor="#e3f2fd"; color="#1565c0";
+        fontsize=10;
+
+        chip_padframe [label="padframe\n(Padframe)", fillcolor="#a5d6a7"];
+        chip_soc_clock_domain [label="soc_clock_domain\n(Clock_domain)", fillcolor="#a5d6a7"];
+        chip_cluster_clock [label="cluster_clock\n(Clock_domain)", fillcolor="#a5d6a7"];
+        subgraph cluster_chip_cluster {
+            label="cluster";
+            style="filled,rounded"; fillcolor="#c8e6c9"; color="#43a047";
+            fontsize=10;
+
+            subgraph cluster_chip_cluster_l1 {
+                label="l1";
+                style="filled,rounded"; fillcolor="#fff3e0"; color="#e65100";
+                fontsize=10;
+
+                chip_cluster_l1_bank_group [label="bank x16\n(Memory)\n4 KB each, 64 KB total", fillcolor="#f8bbd0", shape=box3d];
+                chip_cluster_l1_pe_ico_group [label="pe_ico x9\n(Router)\nBW=0B", fillcolor="#f8bbd0", shape=box3d];
+                chip_cluster_l1_interleaver [label="interleaver\n(L1_interleaver)", fillcolor="#f8bbd0"];
+                chip_cluster_l1_ext2loc [label="ext2loc\n(Converter)", fillcolor="#f8bbd0"];
+                chip_cluster_l1_ext2loc_ts [label="ext2loc_ts\n(Converter)", fillcolor="#f8bbd0"];
+            }
+
+            chip_cluster_pe_group [label="pe x9\n(ClusterCore)", fillcolor="#ffcc80", shape=box3d];
+            subgraph cluster_chip_cluster_icache {
+                label="icache";
+                style="filled,rounded"; fillcolor="#fff3e0"; color="#e65100";
+                fontsize=10;
+
+                chip_cluster_icache_l_bank_group [label="l_bank x11\n(Cache)", fillcolor="#f8bbd0", shape=box3d];
+                chip_cluster_icache_interleaver [label="interleaver\n(Interleaver)", fillcolor="#f8bbd0"];
+            }
+
+            chip_cluster_event_unit [label="event_unit\n(Event_unit)", fillcolor="#ffcc80"];
+            chip_cluster_cluster_ico [label="cluster_ico\n(Router)\nBW=0B", fillcolor="#ffcc80"];
+            chip_cluster_periph_ico [label="periph_ico\n(Router)\nBW=0B", fillcolor="#ffcc80"];
+            chip_cluster_demux_periph_ico [label="demux_periph_ico\n(Router)\nBW=0B", fillcolor="#ffcc80"];
+            chip_cluster_dma [label="dma\n(Mchan)", fillcolor="#ffcc80"];
+            chip_cluster_timer [label="timer\n(Timer)", fillcolor="#ffcc80"];
+            chip_cluster_cluster_ctrl [label="cluster_ctrl\n(Cluster_control)", fillcolor="#ffcc80"];
+            chip_cluster_icache_ctrl [label="icache_ctrl\n(Icache_ctrl)", fillcolor="#ffcc80"];
+        }
+
+        subgraph cluster_chip_soc {
+            label="soc";
+            style="filled,rounded"; fillcolor="#c8e6c9"; color="#43a047";
+            fontsize=10;
+
+            chip_soc_loader [label="loader\n(ElfLoader)", fillcolor="#ffcc80"];
+            chip_soc_debug_rom [label="debug_rom\n(Memory)", fillcolor="#ffcc80"];
+            chip_soc_fll_soc [label="fll_soc\n(Fll)", fillcolor="#ffcc80"];
+            chip_soc_fll_periph [label="fll_periph\n(Fll)", fillcolor="#ffcc80"];
+            chip_soc_fll_cluster [label="fll_cluster\n(Fll)", fillcolor="#ffcc80"];
+            chip_soc_fc [label="fc\n(FcCore)", fillcolor="#ffcc80"];
+            chip_soc_fc_itc [label="fc_itc\n(Itc_v1)", fillcolor="#ffcc80"];
+            chip_soc_fc_icache [label="fc_icache\n(Cache)", fillcolor="#ffcc80"];
+            chip_soc_fc_icache_ctrl [label="fc_icache_ctrl\n(Icache_ctrl)", fillcolor="#ffcc80"];
+            chip_soc_apb_soc_ctrl [label="apb_soc_ctrl\n(Apb_soc_ctrl)", fillcolor="#ffcc80"];
+            chip_soc_apb_ico [label="apb_ico\n(Router)\nBW=0B", fillcolor="#ffcc80"];
+            subgraph cluster_chip_soc_soc_ico {
+                label="soc_ico";
+                style="filled,rounded"; fillcolor="#fff3e0"; color="#e65100";
+                fontsize=10;
+
+                chip_soc_soc_ico_ll_ico [label="ll_ico\n(Router)\nBW=0B", fillcolor="#f8bbd0"];
+                chip_soc_soc_ico_hb_ico [label="hb_ico\n(Router)\nBW=0B", fillcolor="#f8bbd0"];
+                chip_soc_soc_ico_fc_fetch_ico [label="fc_fetch_ico\n(Router)\nBW=0B", fillcolor="#f8bbd0"];
+                chip_soc_soc_ico_fc_data_ico [label="fc_data_ico\n(Router)\nBW=0B", fillcolor="#f8bbd0"];
+                chip_soc_soc_ico_udma_rx_ico [label="udma_rx_ico\n(Router)\nBW=0B", fillcolor="#f8bbd0"];
+                chip_soc_soc_ico_udma_tx_ico [label="udma_tx_ico\n(Router)\nBW=0B", fillcolor="#f8bbd0"];
+            }
+
+            chip_soc_axi_ico [label="axi_ico\n(Router)\nBW=0B", fillcolor="#ffcc80"];
+            chip_soc_gpio [label="gpio\n(Gpio)", fillcolor="#ffcc80"];
+            chip_soc_udma [label="udma\n(Udma)", fillcolor="#ffcc80"];
+            subgraph cluster_chip_soc_l2 {
+                label="l2";
+                style="filled,rounded"; fillcolor="#fff3e0"; color="#e65100";
+                fontsize=10;
+
+                chip_soc_l2_priv0 [label="priv0\n(Memory)\n32 KB", fillcolor="#f8bbd0"];
+                chip_soc_l2_priv1 [label="priv1\n(Memory)\n32 KB", fillcolor="#f8bbd0"];
+                chip_soc_l2_l_shared_group [label="l_shared x12\n(Interleaver)", fillcolor="#f8bbd0", shape=box3d];
+                chip_soc_l2_shared_cut_group [label="shared_cut x48\n(Memory)\n32 KB each, 2 MB total", fillcolor="#f8bbd0", shape=box3d];
+            }
+
+            chip_soc_soc_eu [label="soc_eu\n(Soc_eu)", fillcolor="#ffcc80"];
+            chip_soc_timer [label="timer\n(Timer)", fillcolor="#ffcc80"];
+            chip_soc_timer_1 [label="timer_1\n(Timer)", fillcolor="#ffcc80"];
+            chip_soc_stdout [label="stdout\n(Stdout)", fillcolor="#ffcc80"];
+            chip_soc_pulp_tag [label="pulp_tag\n(Pulp_tap)", fillcolor="#ffcc80"];
+            chip_soc_riscv_tap [label="riscv_tap\n(Riscv_tap)", fillcolor="#ffcc80"];
+            chip_soc_gdbserver [label="gdbserver\n(Gdbserver)", fillcolor="#ffcc80"];
+            chip_soc_periph_clock [label="periph_clock\n(Clock_domain)", fillcolor="#ffcc80"];
+        }
+
+        chip_fast_clock [label="fast_clock\n(Clock_domain)", fillcolor="#a5d6a7"];
+        chip_fast_clock_generator [label="fast_clock_generator\n(Clock_generator)", fillcolor="#a5d6a7"];
+        chip_ref_clock [label="ref_clock\n(Clock_domain)", fillcolor="#a5d6a7"];
+        chip_ref_clock_generator [label="ref_clock_generator\n(Clock_generator)", fillcolor="#a5d6a7"];
+        chip_axi_proxy [label="axi_proxy\n(Router_proxy)", fillcolor="#a5d6a7"];
+    }
+
+    hyperflash [label="hyperflash\n(Hyperflash)\n64 MB", fillcolor="#90caf9"];
+    ram [label="ram\n(Hyperram)\n8 MB", fillcolor="#90caf9"];
+    subgraph cluster_uart_checker {
+        label="uart_checker";
+        style="filled,rounded"; fillcolor="#e3f2fd"; color="#1565c0";
+        fontsize=10;
+
+        uart_checker_uart_checker [label="uart_checker\n(Uart_checker_implem)", fillcolor="#a5d6a7"];
+        uart_checker_clock [label="clock\n(Clock_domain)", fillcolor="#a5d6a7"];
+    }
+
+
+    // ===================== CONNECTIONS =====================
+    chip_padframe -> hyperflash [color="#1565c0", penwidth=1.0, edgetooltip="hyper0_cs1_data_pad → input"];
+    chip_padframe -> ram [color="#1565c0", penwidth=1.0, edgetooltip="hyper0_cs0_data_pad → input"];
+    chip_padframe -> uart_checker_uart_checker [color="#1565c0", penwidth=1.0, edgetooltip="uart0_pad → input"];
+    chip_ref_clock_generator -> chip_padframe [color="#1565c0", penwidth=1.0, edgetooltip="clock_sync → ref_clock_pad"];
+    chip_padframe -> chip_soc_timer_1 [color="#1565c0", penwidth=1.0, edgetooltip="ref_clock → ref_clock"];
+    chip_soc_udma -> chip_padframe [color="#1565c0", penwidth=1.0, edgetooltip="spim0 → spim0"];
+    chip_padframe -> chip_soc_udma [color="#1565c0", penwidth=1.0, edgetooltip="i2s0 → i2s0"];
+    chip_padframe -> chip_soc_pulp_tag [color="#1565c0", penwidth=1.0, edgetooltip="jtag0 → jtag_in"];
+    chip_soc_riscv_tap -> chip_padframe [color="#1565c0", penwidth=1.0, edgetooltip="jtag_out → jtag0_out"];
+    chip_padframe -> chip_soc_gpio [color="#1565c0", penwidth=1.0, edgetooltip="gpio0_pad → gpio0"];
+    chip_ref_clock_generator -> chip_cluster_timer [color="#1565c0", penwidth=1.0, edgetooltip="clock_sync → ref_clock"];
+    chip_cluster_dma -> chip_soc_fc_itc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="ext_irq_itf → in_event_8"];
+    chip_soc_riscv_tap -> chip_cluster_pe_group [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="cluster0_pe0 → halt"];
+    chip_soc_fll_cluster -> chip_cluster_clock [color="#1565c0", penwidth=1.0, edgetooltip="clock_out → clock_in"];
+    chip_soc_axi_ico -> chip_cluster_cluster_ico [color="#1565c0", penwidth=1.0, edgetooltip="cluster → input"];
+    chip_cluster_cluster_ico -> chip_soc_axi_ico [color="#1565c0", penwidth=1.0, edgetooltip="soc → input"];
+    chip_soc_fll_soc -> chip_soc_clock_domain [color="#1565c0", penwidth=1.0, edgetooltip="clock_out → clock_in"];
+    chip_fast_clock_generator -> chip_fast_clock [color="#1565c0", penwidth=1.0, edgetooltip="clock_ctrl → clock_in"];
+    chip_axi_proxy -> chip_soc_axi_ico [color="#1565c0", penwidth=1.0, edgetooltip="out → input"];
+    chip_soc_axi_ico -> chip_axi_proxy [color="#1565c0", penwidth=1.0, edgetooltip="axi_proxy → input"];
+    chip_cluster_l1_pe_ico_group -> chip_cluster_dma [color="#e65100", penwidth=2.0, edgetooltip="dma_alias → in_0"];
+    chip_cluster_l1_pe_ico_group -> chip_cluster_event_unit [color="#7b1fa2", penwidth=2.0, edgetooltip="event_unit_alias → demux_in_0"];
+    chip_cluster_l1_pe_ico_group -> chip_cluster_cluster_ico [color="#7b1fa2", penwidth=2.0, edgetooltip="cluster_ico → input"];
+    chip_cluster_pe_group -> chip_cluster_l1_pe_ico_group [color="#7b1fa2", penwidth=2.0, edgetooltip="data → input"];
+    chip_cluster_pe_group -> chip_cluster_icache_l_bank_group [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="fetch → input"];
+    chip_cluster_pe_group -> chip_cluster_event_unit [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_ack → irq_ack_0"];
+    chip_cluster_icache_l_bank_group -> chip_cluster_cluster_ico [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="refill → input"];
+    chip_cluster_event_unit -> chip_cluster_pe_group [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_req_0 → irq_req"];
+    chip_cluster_cluster_ico -> chip_cluster_l1_ext2loc [color="#7b1fa2", penwidth=2.0, edgetooltip="l1 → input"];
+    chip_cluster_cluster_ico -> chip_cluster_l1_ext2loc_ts [color="#7b1fa2", penwidth=2.0, edgetooltip="l1_ts → input"];
+    chip_cluster_cluster_ico -> chip_cluster_periph_ico [color="#1565c0", penwidth=1.0, edgetooltip="periph_ico → input"];
+    chip_cluster_periph_ico -> chip_cluster_cluster_ico [color="#1565c0", penwidth=1.0, edgetooltip="cluster_ico → input"];
+    chip_cluster_periph_ico -> chip_cluster_event_unit [color="#1565c0", penwidth=1.0, edgetooltip="event_unit → input"];
+    chip_cluster_periph_ico -> chip_cluster_cluster_ctrl [color="#1565c0", penwidth=1.0, edgetooltip="cluster_ctrl → input"];
+    chip_cluster_periph_ico -> chip_cluster_icache_ctrl [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="icache_ctrl → input"];
+    chip_cluster_periph_ico -> chip_cluster_timer [color="#1565c0", penwidth=1.0, edgetooltip="timer → input"];
+    chip_cluster_periph_ico -> chip_cluster_dma [color="#e65100", penwidth=2.0, edgetooltip="dma → in_9"];
+    chip_cluster_dma -> chip_cluster_cluster_ico [color="#1565c0", penwidth=1.0, edgetooltip="ext_itf → input"];
+    chip_cluster_dma -> chip_cluster_l1_interleaver [color="#e65100", penwidth=2.0, edgetooltip="loc_itf_0 → in_9"];
+    chip_cluster_dma -> chip_cluster_event_unit [color="#1565c0", penwidth=1.0, edgetooltip="event_itf_0 → in_event_8_pe_0"];
+    chip_cluster_timer -> chip_cluster_event_unit [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_itf_0 → in_event_10_pe_0"];
+    chip_cluster_cluster_ctrl -> chip_cluster_pe_group [color="#1565c0", penwidth=1.0, edgetooltip="bootaddr_0 → bootaddr"];
+    chip_cluster_pe_group -> chip_cluster_cluster_ctrl [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="halt_status → core_halt_0"];
+    chip_cluster_icache_ctrl -> chip_cluster_icache_l_bank_group [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="enable → enable"];
+    chip_cluster_icache_ctrl -> chip_cluster_pe_group [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="flush → flush_cache"];
+    chip_cluster_l1_pe_ico_group -> chip_cluster_l1_interleaver [color="#7b1fa2", penwidth=2.0, edgetooltip="l1 → in_0"];
+    chip_cluster_l1_interleaver -> chip_cluster_l1_bank_group [color="#7b1fa2", penwidth=2.0, edgetooltip="out_0 → input"];
+    chip_cluster_l1_ext2loc -> chip_cluster_l1_interleaver [color="#7b1fa2", penwidth=2.0, edgetooltip="out → in_9"];
+    chip_cluster_l1_ext2loc_ts -> chip_cluster_l1_interleaver [color="#7b1fa2", penwidth=2.0, edgetooltip="out → ts_in_9"];
+    chip_cluster_icache_l_bank_group -> chip_cluster_icache_interleaver [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="refill → input"];
+    chip_cluster_icache_interleaver -> chip_cluster_icache_l_bank_group [color="#1565c0", penwidth=1.0, edgetooltip="out_0 → input"];
+    chip_soc_loader -> chip_soc_axi_ico [color="#1565c0", penwidth=1.0, edgetooltip="out → input"];
+    chip_soc_loader -> chip_soc_fc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="start → fetchen"];
+    chip_soc_fll_periph -> chip_soc_periph_clock [color="#1565c0", penwidth=1.0, edgetooltip="clock_out → clock_in"];
+    chip_soc_periph_clock -> chip_soc_udma [color="#e65100", penwidth=2.0, edgetooltip="out → periph_clock"];
+    chip_soc_fc -> chip_soc_fc_icache [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="fetch → input_0"];
+    chip_soc_fc -> chip_soc_fc_itc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_ack → irq_ack"];
+    chip_soc_fc -> chip_soc_soc_ico_fc_data_ico [color="#1565c0", penwidth=1.0, edgetooltip="data → input"];
+    chip_soc_fc_icache -> chip_soc_soc_ico_fc_fetch_ico [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="refill → input"];
+    chip_soc_fc_icache -> chip_soc_fc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="flush_ack → flush_cache_ack"];
+    chip_soc_fc_itc -> chip_soc_fc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_req → irq_req"];
+    chip_soc_fc_icache_ctrl -> chip_soc_fc_icache [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="enable → enable"];
+    chip_soc_fc_icache_ctrl -> chip_soc_fc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="flush → flush_cache"];
+    chip_soc_timer_1 -> chip_soc_fll_soc [color="#1565c0", penwidth=1.0, edgetooltip="ref_clock → ref_clock"];
+    chip_soc_timer_1 -> chip_soc_fll_periph [color="#1565c0", penwidth=1.0, edgetooltip="ref_clock → ref_clock"];
+    chip_soc_timer_1 -> chip_soc_fll_cluster [color="#1565c0", penwidth=1.0, edgetooltip="ref_clock → ref_clock"];
+    chip_soc_apb_soc_ctrl -> chip_soc_fc [color="#1565c0", penwidth=1.0, edgetooltip="bootaddr → bootaddr"];
+    chip_soc_apb_soc_ctrl -> chip_soc_pulp_tag [color="#1565c0", penwidth=1.0, edgetooltip="confreg_soc → confreg_soc"];
+    chip_soc_pulp_tag -> chip_soc_apb_soc_ctrl [color="#1565c0", penwidth=1.0, edgetooltip="confreg_ext → confreg_ext"];
+    chip_soc_apb_ico -> chip_soc_stdout [color="#1565c0", penwidth=1.0, edgetooltip="stdout → input"];
+    chip_soc_apb_ico -> chip_soc_fc_icache_ctrl [color="#0288d1", penwidth=1.5, style=dashed, edgetooltip="fc_icache_ctrl → input"];
+    chip_soc_apb_ico -> chip_soc_apb_soc_ctrl [color="#1565c0", penwidth=1.0, edgetooltip="apb_soc_ctrl → input"];
+    chip_soc_apb_ico -> chip_soc_soc_eu [color="#1565c0", penwidth=1.0, edgetooltip="soc_eu → input"];
+    chip_soc_apb_ico -> chip_soc_gpio [color="#1565c0", penwidth=1.0, edgetooltip="gpio → input"];
+    chip_soc_apb_ico -> chip_soc_udma [color="#e65100", penwidth=2.0, edgetooltip="udma → input"];
+    chip_soc_apb_ico -> chip_soc_fc_itc [color="#1565c0", penwidth=1.0, edgetooltip="fc_itc → input"];
+    chip_soc_apb_ico -> chip_soc_riscv_tap [color="#1565c0", penwidth=1.0, edgetooltip="fc_dbg_unit → input"];
+    chip_soc_apb_ico -> chip_soc_debug_rom [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="debug_rom → input"];
+    chip_soc_apb_ico -> chip_soc_fll_soc [color="#1565c0", penwidth=1.0, edgetooltip="fll_soc → input"];
+    chip_soc_apb_ico -> chip_soc_fll_periph [color="#1565c0", penwidth=1.0, edgetooltip="fll_periph → input"];
+    chip_soc_apb_ico -> chip_soc_fll_cluster [color="#1565c0", penwidth=1.0, edgetooltip="fll_cluster → input"];
+    chip_soc_apb_ico -> chip_soc_timer [color="#1565c0", penwidth=1.0, edgetooltip="fc_timer → input"];
+    chip_soc_apb_ico -> chip_soc_timer_1 [color="#1565c0", penwidth=1.0, edgetooltip="fc_timer_1 → input"];
+    chip_soc_soc_ico_ll_ico -> chip_soc_apb_ico [color="#1565c0", penwidth=1.0, edgetooltip="rom → input"];
+    chip_soc_soc_ico_ll_ico -> chip_soc_axi_ico [color="#1565c0", penwidth=1.0, edgetooltip="axi_master → input"];
+    chip_soc_soc_ico_ll_ico -> chip_soc_l2_priv0 [color="#1565c0", penwidth=1.0, edgetooltip="l2_priv0_alias → input"];
+    chip_soc_soc_ico_ll_ico -> chip_soc_l2_priv1 [color="#1565c0", penwidth=1.0, edgetooltip="l2_priv1 → input"];
+    chip_soc_soc_ico_hb_ico -> chip_soc_l2_l_shared_group [color="#1565c0", penwidth=1.0, edgetooltip="l2_shared_0 → input"];
+    chip_soc_soc_ico_fc_data_ico -> chip_soc_axi_ico [color="#1565c0", penwidth=1.0, edgetooltip="axi_proxy → input"];
+    chip_soc_axi_ico -> chip_soc_soc_ico_ll_ico [color="#1565c0", penwidth=1.0, edgetooltip="soc → input"];
+    chip_soc_gpio -> chip_soc_fc_itc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq → in_event_15"];
+    chip_soc_gpio -> chip_soc_soc_eu [color="#1565c0", penwidth=1.0, edgetooltip="event → event_in"];
+    chip_soc_udma -> chip_soc_soc_ico_udma_tx_ico [color="#e65100", penwidth=2.0, edgetooltip="l2_itf → input"];
+    chip_soc_udma -> chip_soc_soc_eu [color="#e65100", penwidth=2.0, edgetooltip="event_itf → event_in"];
+    chip_soc_soc_eu -> chip_soc_fc_itc [color="#1565c0", penwidth=1.0, edgetooltip="fc_event_itf → soc_event"];
+    chip_soc_timer_1 -> chip_soc_soc_eu [color="#1565c0", penwidth=1.0, edgetooltip="ref_clock → ref_clock"];
+    chip_soc_apb_soc_ctrl -> chip_soc_soc_eu [color="#1565c0", penwidth=1.0, edgetooltip="event → event_in"];
+    chip_soc_timer -> chip_soc_fc_itc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_itf_0 → in_event_10"];
+    chip_soc_timer_1 -> chip_soc_fc_itc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="irq_itf_0 → in_event_12"];
+    chip_soc_timer_1 -> chip_soc_timer [color="#1565c0", penwidth=1.0, edgetooltip="ref_clock → ref_clock"];
+    chip_soc_pulp_tag -> chip_soc_riscv_tap [color="#1565c0", penwidth=1.0, edgetooltip="jtag_out → jtag_in"];
+    chip_soc_riscv_tap -> chip_soc_fc [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="fc → halt"];
+    chip_soc_pulp_tag -> chip_soc_soc_ico_ll_ico [color="#43a047", penwidth=1.0, style=dashed, edgetooltip="io → input"];
+    chip_soc_soc_ico_udma_rx_ico -> chip_soc_soc_ico_hb_ico [color="#1565c0", penwidth=1.0, edgetooltip="l2_shared → input"];
+    chip_soc_soc_ico_udma_rx_ico -> chip_soc_soc_ico_ll_ico [color="#1565c0", penwidth=1.0, edgetooltip="ll_ico → input"];
+    chip_soc_soc_ico_udma_tx_ico -> chip_soc_soc_ico_hb_ico [color="#1565c0", penwidth=1.0, edgetooltip="l2_shared → input"];
+    chip_soc_soc_ico_udma_tx_ico -> chip_soc_soc_ico_ll_ico [color="#1565c0", penwidth=1.0, edgetooltip="ll_ico → input"];
+    chip_soc_soc_ico_fc_fetch_ico -> chip_soc_soc_ico_hb_ico [color="#1565c0", penwidth=1.0, edgetooltip="l2_shared → input"];
+    chip_soc_soc_ico_fc_fetch_ico -> chip_soc_soc_ico_ll_ico [color="#1565c0", penwidth=1.0, edgetooltip="ll_ico → input"];
+    chip_soc_soc_ico_fc_data_ico -> chip_soc_soc_ico_hb_ico [color="#1565c0", penwidth=1.0, edgetooltip="l2_shared → input"];
+    chip_soc_soc_ico_fc_data_ico -> chip_soc_soc_ico_ll_ico [color="#1565c0", penwidth=1.0, edgetooltip="ll_ico → input"];
+    chip_soc_soc_ico_ll_ico -> chip_soc_soc_ico_hb_ico [color="#1565c0", penwidth=1.0, edgetooltip="l2_shared → input"];
+    chip_soc_l2_l_shared_group -> chip_soc_l2_shared_cut_group [color="#1565c0", penwidth=1.0, edgetooltip="out_0 → input"];
+    uart_checker_uart_checker -> uart_checker_clock [color="#1565c0", penwidth=1.0, edgetooltip="clock_cfg → clock_in"];
+
+    subgraph cluster_legend {
+        label="Legend";
+        style="filled,rounded"; fillcolor="#f5f5f5"; color="#cccccc";
+        fontsize=10;
+        node [shape=plaintext, fillcolor="#f5f5f5"];
+
+        legend [label=<
+            <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="4">
+            <TR><TD><FONT COLOR="#e65100">━━━</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="8">DMA</FONT></TD></TR>
+            <TR><TD><FONT COLOR="#7b1fa2">━━━</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="8">Local memory</FONT></TD></TR>
+            <TR><TD><FONT COLOR="#1565c0">━━━</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="8">Data</FONT></TD></TR>
+            <TR><TD><FONT COLOR="#0288d1">╌╌╌</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="8">Instruction fetch</FONT></TD></TR>
+            <TR><TD><FONT COLOR="#43a047">╌╌╌</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="8">Control / IRQ</FONT></TD></TR>
+            <TR><TD></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="8">Arrow = master → slave</FONT></TD></TR>
+            </TABLE>
+        >];
+    }
+}

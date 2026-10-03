@@ -1,0 +1,27 @@
+Properties
+├── chip
+│   ├── cluster
+│   │   └──                                  Properties                                 
+│   │       ┏━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓
+│   │       ┃ Name    ┃ Value ┃ Full name            ┃ Allowed values ┃ Description    ┃
+│   │       ┡━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩
+│   │       │ redmule │ False │ chip/cluster/redmule │ any string     │ Enable Redmule │
+│   │       └─────────┴───────┴──────────────────────┴────────────────┴────────────────┘
+│   └── soc
+│       └──                                   Properties                                   
+│           ┏━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┓
+│           ┃ Name   ┃ Value ┃ Full name       ┃ Allowed values ┃ Description             ┃
+│           ┡━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│           │ fic    │ False │ chip/soc/fic    │ any string     │ Enable Fic              │
+│           │ binary │ None  │ chip/soc/binary │ any string     │ Binary to be loaded and │
+│           │        │       │                 │                │ started                 │
+│           └────────┴───────┴─────────────────┴────────────────┴─────────────────────────┘
+└── uart_checker
+    └── uart_checker
+        └──                                   Properties                                   
+            ┏━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+            ┃ Name     ┃ Value ┃ Full name          ┃ Allowed values ┃ Description        ┃
+            ┡━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+            │ loopback │ False │ uart_checker/uart… │ any string     │ Enable uart        │
+            │          │       │                    │                │ loopback           │
+            └──────────┴───────┴────────────────────┴────────────────┴────────────────────┘

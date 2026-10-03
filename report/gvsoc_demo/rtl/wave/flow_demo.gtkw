@@ -1,0 +1,24 @@
+[*] GTKWave Analyzer v3.3.104
+[dumpfile] "flow_demo.vcd.gz"
+[timestart] 0
+@28
+tb_pulp.s_rst_n
+tb_pulp.exit_status
+tb_pulp.i_dut.soc_domain_i.pulp_soc_i.fc_subsystem_i.fetch_en_i
+tb_pulp.i_dut.cluster_domain_i.cluster_i.s_rst_n
+tb_pulp.i_dut.cluster_domain_i.cluster_i.fetch_en_int[7:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.core_busy[7:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.busy_o
+tb_pulp.i_dut.cluster_domain_i.cluster_i.s_dmac_busy
+tb_pulp.i_dut.cluster_domain_i.cluster_i.s_dma_cl_event
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.ctrl_targ_req_i[9:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.ctrl_targ_gnt_o[9:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.tcdm_init_req_o[3:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.tcdm_init_gnt_i[3:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.axi_master_aw_valid_o
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.axi_master_aw_ready_i
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.axi_master_ar_valid_o
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.axi_master_ar_ready_i
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.axi_master_r_valid_i
+tb_pulp.i_dut.cluster_domain_i.cluster_i.dmac_wrap_i.mchan_i.axi_master_r_ready_o
+tb_pulp.i_dut.cluster_domain_i.cluster_i.cluster_peripherals_i.event_unit_flex_i.core_clock_en_o[7:0]
