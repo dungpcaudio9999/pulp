@@ -1,0 +1,15 @@
+[*] GTKWave Analyzer v3.3.104
+[dumpfile] "zcu104_uart_smoke.vcd.gz"
+[timestart] 0
+@28
+tb_pulp.s_rst_n
+tb_pulp.exit_status
+tb_pulp.w_uart_rx
+tb_pulp.w_uart_tx
+tb_pulp.uart_tb_rx_en
+tb_pulp.i_dut.soc_domain_i.pulp_soc_i.fc_subsystem_i.fetch_en_i
+tb_pulp.i_dut.cluster_domain_i.cluster_i.s_rst_n
+tb_pulp.i_dut.cluster_domain_i.cluster_i.fetch_en_int[7:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.core_busy[7:0]
+tb_pulp.i_dut.cluster_domain_i.cluster_i.busy_o
+

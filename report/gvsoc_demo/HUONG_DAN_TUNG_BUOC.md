@@ -4,6 +4,10 @@ Tài liệu này tái lập toàn bộ demo `flow_demo`: viết/build chương t
 **một ELF duy nhất**, chạy ELF đó trên GVSoC và RTL/Questa, thu log lệnh, thu
 waveform, rồi sinh trang HTML để so sánh hai backend.
 
+Nếu bắt đầu từ máy Ubuntu mới hoặc cần hướng dẫn cài từng tool, đọc trước
+[`SETUP_AND_RUN_FROM_SCRATCH.md`](SETUP_AND_RUN_FROM_SCRATCH.md). Tài liệu đó
+có hai đường chạy: setup từ máy trắng và fast path copy/paste cho máy hiện tại.
+
 Các lệnh bên dưới giả sử repository nằm tại:
 
 ```text
@@ -578,4 +582,3 @@ report/gvsoc_demo/
 
 Đọc nhanh kết quả: mở `flow_viewer.html`. Điều tra chi tiết CPU: mở raw trace.
 Điều tra DMA/event/interconnect: mở `flow_demo.gtkw` trong GTKWave.
-

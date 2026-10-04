@@ -4,6 +4,9 @@ Ngày chạy: 2026-10-03 (Asia/Bangkok).
 
 Tài liệu liên quan:
 
+- `SETUP_AND_RUN_FROM_SCRATCH.md`: runbook đầy đủ từ Ubuntu mới, cài/kiểm tra
+  toolchain, GVSoC, PULP SDK, Questa/license và RTL build, sau đó copy/paste toàn
+  bộ flow tới waveform và HTML viewer.
 - `HUONG_DAN_TUNG_BUOC.md`: hướng dẫn tái lập toàn bộ quy trình từ C/ELF tới
   GVSoC, RTL, trace, waveform và viewer.
 - `BAO_CAO_CONG_VIEC.md`: báo cáo phạm vi, công việc đã làm, kết quả và bàn giao.
